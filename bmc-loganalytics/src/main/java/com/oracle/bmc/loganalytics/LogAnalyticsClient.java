@@ -4,18 +4,17 @@
  */
 package com.oracle.bmc.loganalytics;
 
-import com.oracle.bmc.util.internal.Validate;
+import com.oracle.bmc.loganalytics.internal.http.*;
 import com.oracle.bmc.loganalytics.requests.*;
 import com.oracle.bmc.loganalytics.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
 
-import java.util.Objects;
-
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncClient
-        implements LogAnalytics {
-    /** Service instance for LogAnalytics. */
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+public class LogAnalyticsClient implements LogAnalytics {
+    /**
+     * Service instance for LogAnalytics.
+     */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("LOGANALYTICS")
@@ -23,30 +22,319 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                     .serviceEndpointTemplate(
                             "https://loganalytics.{region}.oci.{secondLevelDomain}")
                     .build();
+    // attempt twice if it's instance principals, immediately failures will try to refresh the token
+    private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
 
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(LogAnalyticsClient.class);
 
+    com.oracle.bmc.http.internal.RestClient getClient() {
+        return client;
+    }
+
     private final LogAnalyticsWaiters waiters;
 
     private final LogAnalyticsPaginators paginators;
+    private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+            authenticationDetailsProvider;
+    private final com.oracle.bmc.retrier.RetryConfiguration retryConfiguration;
+    private final org.glassfish.jersey.apache.connector.ApacheConnectionClosingStrategy
+            apacheConnectionClosingStrategy;
+    private final com.oracle.bmc.http.internal.RestClientFactory restClientFactory;
+    private final com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory;
+    private final java.util.Map<
+                    com.oracle.bmc.http.signing.SigningStrategy,
+                    com.oracle.bmc.http.signing.RequestSignerFactory>
+            signingStrategyRequestSignerFactories;
+    private final boolean isNonBufferingApacheClient;
+    private final com.oracle.bmc.ClientConfiguration clientConfigurationToUse;
+    private final com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration
+            circuitBreakerConfiguration;
+    private String regionId;
 
-    LogAnalyticsClient(
-            com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            java.util.concurrent.ExecutorService executorService) {
-        this(builder, authenticationDetailsProvider, executorService, true);
+    /**
+     * Used to synchronize any updates on the `this.client` object.
+     */
+    private final Object clientUpdate = new Object();
+
+    /**
+     * Stores the actual client object used to make the API calls.
+     * Note: This object can get refreshed periodically, hence it's important to keep any updates synchronized.
+     *       For any writes to the object, please synchronize on `this.clientUpdate`.
+     */
+    private volatile com.oracle.bmc.http.internal.RestClient client;
+
+    /**
+     * Keeps track of the last endpoint that was assigned to the client, which in turn can be used when the client is refreshed.
+     * Note: Always synchronize on `this.clientUpdate` when reading/writing this field.
+     */
+    private volatile String overrideEndpoint = null;
+
+    /**
+     * Creates a new service instance using the given authentication provider.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     */
+    public LogAnalyticsClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
+        this(authenticationDetailsProvider, null);
     }
 
-    LogAnalyticsClient(
-            com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            java.util.concurrent.ExecutorService executorService,
-            boolean isStreamWarningEnabled) {
-        super(
-                builder,
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     */
+    public LogAnalyticsClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration) {
+        this(authenticationDetailsProvider, configuration, null);
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     */
+    public LogAnalyticsClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
+        this(
                 authenticationDetailsProvider,
-                CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER_CONFIGURATION);
+                configuration,
+                clientConfigurator,
+                new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
+                        com.oracle.bmc.http.signing.SigningStrategy.STANDARD));
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     */
+    public LogAnalyticsClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory) {
+        this(
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                new java.util.ArrayList<com.oracle.bmc.http.ClientConfigurator>());
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     */
+    public LogAnalyticsClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators) {
+        this(
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                additionalClientConfigurators,
+                null);
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
+     */
+    public LogAnalyticsClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint) {
+        this(
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory
+                        .createDefaultRequestSignerFactories(),
+                additionalClientConfigurators,
+                endpoint);
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
+     */
+    public LogAnalyticsClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.Map<
+                            com.oracle.bmc.http.signing.SigningStrategy,
+                            com.oracle.bmc.http.signing.RequestSignerFactory>
+                    signingStrategyRequestSignerFactories,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint) {
+        this(
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                signingStrategyRequestSignerFactories,
+                additionalClientConfigurators,
+                endpoint,
+                null);
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
+     * @param executorService ExecutorService used by the client, or null to use the default configured ThreadPoolExecutor
+     */
+    public LogAnalyticsClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.Map<
+                            com.oracle.bmc.http.signing.SigningStrategy,
+                            com.oracle.bmc.http.signing.RequestSignerFactory>
+                    signingStrategyRequestSignerFactories,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint,
+            java.util.concurrent.ExecutorService executorService) {
+        this(
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                signingStrategyRequestSignerFactories,
+                additionalClientConfigurators,
+                endpoint,
+                executorService,
+                com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder());
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * Use the {@link Builder} to get access to all these parameters.
+     *
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
+     * @param executorService ExecutorService used by the client, or null to use the default configured ThreadPoolExecutor
+     * @param restClientFactoryBuilder the builder for the {@link com.oracle.bmc.http.internal.RestClientFactory}
+     */
+    protected LogAnalyticsClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.Map<
+                            com.oracle.bmc.http.signing.SigningStrategy,
+                            com.oracle.bmc.http.signing.RequestSignerFactory>
+                    signingStrategyRequestSignerFactories,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint,
+            java.util.concurrent.ExecutorService executorService,
+            com.oracle.bmc.http.internal.RestClientFactoryBuilder restClientFactoryBuilder) {
+        this.authenticationDetailsProvider = authenticationDetailsProvider;
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> authenticationDetailsConfigurators =
+                new java.util.ArrayList<>();
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.ProvidesClientConfigurators) {
+            authenticationDetailsConfigurators.addAll(
+                    ((com.oracle.bmc.auth.ProvidesClientConfigurators)
+                                    this.authenticationDetailsProvider)
+                            .getClientConfigurators());
+        }
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
+                new java.util.ArrayList<>(additionalClientConfigurators);
+        allConfigurators.addAll(authenticationDetailsConfigurators);
+        this.restClientFactory =
+                restClientFactoryBuilder
+                        .clientConfigurator(clientConfigurator)
+                        .additionalClientConfigurators(allConfigurators)
+                        .build();
+        this.isNonBufferingApacheClient =
+                com.oracle.bmc.http.ApacheUtils.isNonBufferingClientConfigurator(
+                        this.restClientFactory.getClientConfigurator());
+        this.apacheConnectionClosingStrategy =
+                com.oracle.bmc.http.ApacheUtils.getApacheConnectionClosingStrategy(
+                        restClientFactory.getClientConfigurator());
+
+        this.clientConfigurationToUse =
+                (configuration != null)
+                        ? configuration
+                        : com.oracle.bmc.ClientConfiguration.builder().build();
+        this.defaultRequestSignerFactory = defaultRequestSignerFactory;
+        this.signingStrategyRequestSignerFactories = signingStrategyRequestSignerFactories;
+        this.retryConfiguration = clientConfigurationToUse.getRetryConfiguration();
+        final com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration
+                userCircuitBreakerConfiguration =
+                        CircuitBreakerUtils.getUserDefinedCircuitBreakerConfiguration(
+                                configuration);
+        if (userCircuitBreakerConfiguration == null) {
+            this.circuitBreakerConfiguration =
+                    CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER_CONFIGURATION;
+        } else {
+            this.circuitBreakerConfiguration = userCircuitBreakerConfiguration;
+        }
+
+        this.refreshClient();
 
         if (executorService == null) {
             // up to 50 (core) threads, time out after 60s idle, all daemon
@@ -68,16 +356,34 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
         this.waiters = new LogAnalyticsWaiters(executorService, this);
 
         this.paginators = new LogAnalyticsPaginators(this);
-        if (isStreamWarningEnabled && com.oracle.bmc.util.StreamUtils.isExtraStreamLogsEnabled()) {
+
+        if (this.authenticationDetailsProvider instanceof com.oracle.bmc.auth.RegionProvider) {
+            com.oracle.bmc.auth.RegionProvider provider =
+                    (com.oracle.bmc.auth.RegionProvider) this.authenticationDetailsProvider;
+
+            if (provider.getRegion() != null) {
+                this.regionId = provider.getRegion().getRegionId();
+                this.setRegion(provider.getRegion());
+                if (endpoint != null) {
+                    LOG.info(
+                            "Authentication details provider configured for region '{}', but endpoint specifically set to '{}'. Using endpoint setting instead of region.",
+                            provider.getRegion(),
+                            endpoint);
+                }
+            }
+        }
+        if (endpoint != null) {
+            setEndpoint(endpoint);
+        }
+        if (com.oracle.bmc.http.ApacheUtils.isExtraStreamLogsEnabled()) {
             LOG.warn(
-                    com.oracle.bmc.util.StreamUtils.getStreamWarningMessage(
+                    com.oracle.bmc.http.ApacheUtils.getStreamWarningMessage(
                             "LogAnalyticsClient", "exportCustomContent,exportQueryResult"));
         }
     }
 
     /**
      * Create a builder for this client.
-     *
      * @return builder
      */
     public static Builder builder() {
@@ -85,18 +391,15 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
     }
 
     /**
-     * Builder class for this client. The "authenticationDetailsProvider" is required and must be
-     * passed to the {@link #build(AbstractAuthenticationDetailsProvider)} method.
+     * Builder class for this client. The "authenticationDetailsProvider" is required and must be passed to the
+     * {@link #build(AbstractAuthenticationDetailsProvider)} method.
      */
     public static class Builder
             extends com.oracle.bmc.common.RegionalClientBuilder<Builder, LogAnalyticsClient> {
-        private boolean isStreamWarningEnabled = true;
         private java.util.concurrent.ExecutorService executorService;
 
         private Builder(com.oracle.bmc.Service service) {
             super(service);
-            final String packageName = "loganalytics";
-            com.oracle.bmc.internal.Alloy.throwDisabledServiceExceptionIfAppropriate(packageName);
             requestSignerFactory =
                     new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
                             com.oracle.bmc.http.signing.SigningStrategy.STANDARD);
@@ -104,7 +407,6 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         /**
          * Set the ExecutorService for the client to be created.
-         *
          * @param executorService executorService
          * @return this builder
          */
@@ -114,7016 +416,7911 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
         }
 
         /**
-         * Enable/disable the stream warnings for the client
-         *
-         * @param isStreamWarningEnabled executorService
-         * @return this builder
-         */
-        public Builder isStreamWarningEnabled(boolean isStreamWarningEnabled) {
-            this.isStreamWarningEnabled = isStreamWarningEnabled;
-            return this;
-        }
-
-        /**
          * Build the client.
-         *
          * @param authenticationDetailsProvider authentication details provider
          * @return the client
          */
         public LogAnalyticsClient build(
-                @jakarta.annotation.Nonnull
-                        com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-                                authenticationDetailsProvider) {
+                @javax.annotation.Nonnull
+                com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+                        authenticationDetailsProvider) {
+            if (authenticationDetailsProvider == null) {
+                throw new NullPointerException(
+                        "authenticationDetailsProvider is marked non-null but is null");
+            }
             return new LogAnalyticsClient(
-                    this, authenticationDetailsProvider, executorService, isStreamWarningEnabled);
+                    authenticationDetailsProvider,
+                    configuration,
+                    clientConfigurator,
+                    requestSignerFactory,
+                    signingStrategyRequestSignerFactories,
+                    additionalClientConfigurators,
+                    endpoint,
+                    executorService,
+                    restClientFactoryBuilder);
         }
     }
 
     @Override
+    public void refreshClient() {
+        LOG.info("Refreshing client '{}'.", this.client != null ? this.client.getClass() : null);
+        com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
+                this.defaultRequestSignerFactory.createRequestSigner(
+                        SERVICE, this.authenticationDetailsProvider);
+
+        java.util.Map<
+                        com.oracle.bmc.http.signing.SigningStrategy,
+                        com.oracle.bmc.http.signing.RequestSigner>
+                requestSigners = new java.util.HashMap<>();
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.BasicAuthenticationDetailsProvider) {
+            for (com.oracle.bmc.http.signing.SigningStrategy s :
+                    com.oracle.bmc.http.signing.SigningStrategy.values()) {
+                requestSigners.put(
+                        s,
+                        this.signingStrategyRequestSignerFactories
+                                .get(s)
+                                .createRequestSigner(SERVICE, this.authenticationDetailsProvider));
+            }
+        }
+
+        com.oracle.bmc.http.internal.RestClient refreshedClient =
+                this.restClientFactory.create(
+                        defaultRequestSigner,
+                        requestSigners,
+                        this.clientConfigurationToUse,
+                        this.isNonBufferingApacheClient,
+                        null,
+                        this.circuitBreakerConfiguration);
+
+        synchronized (clientUpdate) {
+            if (this.overrideEndpoint != null) {
+                refreshedClient.setEndpoint(this.overrideEndpoint);
+            }
+
+            this.client = refreshedClient;
+        }
+
+        LOG.info("Refreshed client '{}'.", this.client != null ? this.client.getClass() : null);
+    }
+
+    @Override
+    public void setEndpoint(String endpoint) {
+        LOG.info("Setting endpoint to {}", endpoint);
+
+        synchronized (clientUpdate) {
+            this.overrideEndpoint = endpoint;
+            client.setEndpoint(endpoint);
+        }
+    }
+
+    @Override
+    public String getEndpoint() {
+        String endpoint = null;
+        java.net.URI uri = client.getBaseTarget().getUri();
+        if (uri != null) {
+            endpoint = uri.toString();
+        }
+        return endpoint;
+    }
+
+    @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        super.setRegion(region);
+        this.regionId = region.getRegionId();
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
+        if (endpoint.isPresent()) {
+            setEndpoint(endpoint.get());
+        } else {
+            throw new IllegalArgumentException(
+                    "Endpoint for " + SERVICE + " is not known in region " + region);
+        }
     }
 
     @Override
     public void setRegion(String regionId) {
-        super.setRegion(regionId);
+        regionId = regionId.toLowerCase(java.util.Locale.ENGLISH);
+        this.regionId = regionId;
+        try {
+            com.oracle.bmc.Region region = com.oracle.bmc.Region.fromRegionId(regionId);
+            setRegion(region);
+        } catch (IllegalArgumentException e) {
+            LOG.info("Unknown regionId '{}', falling back to default endpoint format", regionId);
+            String endpoint = com.oracle.bmc.Region.formatDefaultRegionEndpoint(SERVICE, regionId);
+            setEndpoint(endpoint);
+        }
+    }
+
+    /**
+     * This method should be used to enable or disable the use of realm-specific endpoint template.
+     * The default value is null. To enable the use of endpoint template defined for the realm in
+     * use, set the flag to true To disable the use of endpoint template defined for the realm in
+     * use, set the flag to false
+     *
+     * @param useOfRealmSpecificEndpointTemplateEnabled This flag can be set to true or false to
+     * enable or disable the use of realm-specific endpoint template respectively
+     */
+    public synchronized void useRealmSpecificEndpointTemplate(
+            boolean useOfRealmSpecificEndpointTemplateEnabled) {
+        setEndpoint(
+                com.oracle.bmc.util.RealmSpecificEndpointTemplateUtils
+                        .getRealmSpecificEndpointTemplate(
+                                useOfRealmSpecificEndpointTemplateEnabled, this.regionId, SERVICE));
+    }
+
+    @Override
+    public void close() {
+        client.close();
     }
 
     @Override
     public AddEntityAssociationResponse addEntityAssociation(AddEntityAssociationRequest request) {
+        LOG.trace("Called addEntityAssociation");
+        final AddEntityAssociationRequest interceptedRequest =
+                AddEntityAssociationConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AddEntityAssociationConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        Validate.notBlank(
-                request.getLogAnalyticsEntityId(), "logAnalyticsEntityId must not be blank");
-        Objects.requireNonNull(
-                request.getAddEntityAssociationDetails(),
-                "addEntityAssociationDetails is required");
-
-        return clientCall(request, AddEntityAssociationResponse::builder)
-                .logger(LOG, "addEntityAssociation")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "AddEntityAssociation",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEntity/AddEntityAssociation")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(AddEntityAssociationRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("logAnalyticsEntities")
-                .appendPathParam(request.getLogAnalyticsEntityId())
-                .appendPathParam("actions")
-                .appendPathParam("addEntityAssociations")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("if-match", request.getIfMatch())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-request-id", AddEntityAssociationResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEntity/AddEntityAssociation");
+        java.util.function.Function<javax.ws.rs.core.Response, AddEntityAssociationResponse>
+                transformer =
+                        AddEntityAssociationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getAddEntityAssociationDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public AddSourceEventTypesResponse addSourceEventTypes(AddSourceEventTypesRequest request) {
+        LOG.trace("Called addSourceEventTypes");
+        final AddSourceEventTypesRequest interceptedRequest =
+                AddSourceEventTypesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AddSourceEventTypesConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        Validate.notBlank(request.getSourceName(), "sourceName must not be blank");
-        Objects.requireNonNull(request.getAddEventTypeDetails(), "addEventTypeDetails is required");
-
-        return clientCall(request, AddSourceEventTypesResponse::builder)
-                .logger(LOG, "addSourceEventTypes")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "AddSourceEventTypes",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/AddSourceEventTypes")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(AddSourceEventTypesRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("sources")
-                .appendPathParam(request.getSourceName())
-                .appendPathParam("actions")
-                .appendPathParam("addEventTypes")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-request-id", AddSourceEventTypesResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/AddSourceEventTypes");
+        java.util.function.Function<javax.ws.rs.core.Response, AddSourceEventTypesResponse>
+                transformer =
+                        AddSourceEventTypesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getAddEventTypeDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public AppendLookupDataResponse appendLookupData(AppendLookupDataRequest request) {
-
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        Validate.notBlank(request.getLookupName(), "lookupName must not be blank");
-        Objects.requireNonNull(
-                request.getAppendLookupFileBody(), "appendLookupFileBody is required");
-
-        return clientCall(request, AppendLookupDataResponse::builder)
-                .logger(LOG, "appendLookupData")
-                .serviceDetails(
-                        "LogAnalytics",
-                        "AppendLookupData",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLookup/AppendLookupData")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(AppendLookupDataRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("lookups")
-                .appendPathParam(request.getLookupName())
-                .appendPathParam("actions")
-                .appendPathParam("appendData")
-                .appendQueryParam("isForce", request.getIsForce())
-                .appendQueryParam("charEncoding", request.getCharEncoding())
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("expect", request.getExpect())
-                .operationUsesDefaultRetries()
-                .hasBinaryRequestBody()
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-work-request-id", AppendLookupDataResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", AppendLookupDataResponse.Builder::opcRequestId)
-                .callSync();
+        LOG.trace("Called appendLookupData");
+        try {
+            final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                    com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                            request.getRetryConfiguration(), retryConfiguration, true);
+            if (request.getRetryConfiguration() != null
+                    || retryConfiguration != null
+                    || shouldRetryBecauseOfWaiterConfiguration(retrier)
+                    || authenticationDetailsProvider
+                            instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+                request =
+                        com.oracle.bmc.retrier.Retriers.wrapBodyInputStreamIfNecessary(
+                                request, AppendLookupDataRequest.builder());
+            }
+            final AppendLookupDataRequest interceptedRequest =
+                    AppendLookupDataConverter.interceptRequest(request);
+            com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                    AppendLookupDataConverter.fromRequest(client, interceptedRequest);
+            com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+            com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+            com.oracle.bmc.ServiceDetails serviceDetails =
+                    new com.oracle.bmc.ServiceDetails(
+                            "LogAnalytics",
+                            "AppendLookupData",
+                            ib.getRequestUri().toString(),
+                            "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLookup/AppendLookupData");
+            java.util.function.Function<javax.ws.rs.core.Response, AppendLookupDataResponse>
+                    transformer =
+                            AppendLookupDataConverter.fromResponse(
+                                    java.util.Optional.of(serviceDetails));
+            return retrier.execute(
+                    interceptedRequest,
+                    retryRequest -> {
+                        final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                                new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                        authenticationDetailsProvider);
+                        return tokenRefreshRetrier.execute(
+                                retryRequest,
+                                retriedRequest -> {
+                                    try {
+                                        javax.ws.rs.core.Response response =
+                                                client.post(
+                                                        ib,
+                                                        retriedRequest.getAppendLookupFileBody(),
+                                                        retriedRequest);
+                                        return transformer.apply(response);
+                                    } catch (RuntimeException e) {
+                                        if (interceptedRequest.getRetryConfiguration() != null
+                                                || retryConfiguration != null
+                                                || shouldRetryBecauseOfWaiterConfiguration(retrier)
+                                                || (e instanceof com.oracle.bmc.model.BmcException
+                                                        && tokenRefreshRetrier
+                                                                .getRetryCondition()
+                                                                .shouldBeRetried(
+                                                                        (com.oracle.bmc.model
+                                                                                        .BmcException)
+                                                                                e))) {
+                                            com.oracle.bmc.retrier.Retriers.tryResetStreamForRetry(
+                                                    interceptedRequest.getAppendLookupFileBody(),
+                                                    true);
+                                        }
+                                        throw e; // rethrow
+                                    }
+                                });
+                    });
+        } finally {
+            com.oracle.bmc.io.internal.KeepOpenInputStream.closeStream(
+                    request.getAppendLookupFileBody());
+        }
     }
 
     @Override
     public AssignEncryptionKeyResponse assignEncryptionKey(AssignEncryptionKeyRequest request) {
+        LOG.trace("Called assignEncryptionKey");
+        final AssignEncryptionKeyRequest interceptedRequest =
+                AssignEncryptionKeyConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AssignEncryptionKeyConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-        Objects.requireNonNull(
-                request.getAssignEncryptionKeyDetails(), "assignEncryptionKeyDetails is required");
-
-        return clientCall(request, AssignEncryptionKeyResponse::builder)
-                .logger(LOG, "assignEncryptionKey")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "AssignEncryptionKey",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/AssignEncryptionKey")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(AssignEncryptionKeyRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("storage")
-                .appendPathParam("actions")
-                .appendPathParam("assignEncryptionKey")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("if-match", request.getIfMatch())
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-request-id", AssignEncryptionKeyResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        AssignEncryptionKeyResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "location", AssignEncryptionKeyResponse.Builder::location)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/AssignEncryptionKey");
+        java.util.function.Function<javax.ws.rs.core.Response, AssignEncryptionKeyResponse>
+                transformer =
+                        AssignEncryptionKeyConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getAssignEncryptionKeyDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public BatchGetBasicInfoResponse batchGetBasicInfo(BatchGetBasicInfoRequest request) {
+        LOG.trace("Called batchGetBasicInfo");
+        final BatchGetBasicInfoRequest interceptedRequest =
+                BatchGetBasicInfoConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                BatchGetBasicInfoConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-        Objects.requireNonNull(request.getBasicDetails(), "basicDetails is required");
-
-        Objects.requireNonNull(request.getIsIncludeDeleted(), "isIncludeDeleted is required");
-
-        return clientCall(request, BatchGetBasicInfoResponse::builder)
-                .logger(LOG, "batchGetBasicInfo")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "BatchGetBasicInfo",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLabel/BatchGetBasicInfo")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(BatchGetBasicInfoRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("labels")
-                .appendPathParam("actions")
-                .appendPathParam("basicInfo")
-                .appendQueryParam("isIncludeDeleted", request.getIsIncludeDeleted())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("basicLabelSortBy", request.getBasicLabelSortBy())
-                .accept("application/json;charset=UTF-8")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.LogAnalyticsLabelCollection.class,
-                        BatchGetBasicInfoResponse.Builder::logAnalyticsLabelCollection)
-                .handleResponseHeaderString(
-                        "opc-prev-page", BatchGetBasicInfoResponse.Builder::opcPrevPage)
-                .handleResponseHeaderString(
-                        "opc-next-page", BatchGetBasicInfoResponse.Builder::opcNextPage)
-                .handleResponseHeaderString(
-                        "opc-request-id", BatchGetBasicInfoResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLabel/BatchGetBasicInfo");
+        java.util.function.Function<javax.ws.rs.core.Response, BatchGetBasicInfoResponse>
+                transformer =
+                        BatchGetBasicInfoConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getBasicDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public CancelQueryWorkRequestResponse cancelQueryWorkRequest(
             CancelQueryWorkRequestRequest request) {
+        LOG.trace("Called cancelQueryWorkRequest");
+        final CancelQueryWorkRequestRequest interceptedRequest =
+                CancelQueryWorkRequestConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CancelQueryWorkRequestConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
-
-        return clientCall(request, CancelQueryWorkRequestResponse::builder)
-                .logger(LOG, "cancelQueryWorkRequest")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "CancelQueryWorkRequest",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/QueryWorkRequest/CancelQueryWorkRequest")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(CancelQueryWorkRequestRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("queryWorkRequests")
-                .appendPathParam(request.getWorkRequestId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("if-match", request.getIfMatch())
-                .operationUsesDefaultRetries()
-                .handleResponseHeaderString(
-                        "opc-request-id", CancelQueryWorkRequestResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/QueryWorkRequest/CancelQueryWorkRequest");
+        java.util.function.Function<javax.ws.rs.core.Response, CancelQueryWorkRequestResponse>
+                transformer =
+                        CancelQueryWorkRequestConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ChangeIngestTimeRuleCompartmentResponse changeIngestTimeRuleCompartment(
             ChangeIngestTimeRuleCompartmentRequest request) {
+        LOG.trace("Called changeIngestTimeRuleCompartment");
+        final ChangeIngestTimeRuleCompartmentRequest interceptedRequest =
+                ChangeIngestTimeRuleCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeIngestTimeRuleCompartmentConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        Validate.notBlank(request.getIngestTimeRuleId(), "ingestTimeRuleId must not be blank");
-        Objects.requireNonNull(
-                request.getChangeIngestTimeRuleCompartmentDetails(),
-                "changeIngestTimeRuleCompartmentDetails is required");
-
-        return clientCall(request, ChangeIngestTimeRuleCompartmentResponse::builder)
-                .logger(LOG, "changeIngestTimeRuleCompartment")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "ChangeIngestTimeRuleCompartment",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/IngestTimeRule/ChangeIngestTimeRuleCompartment")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(ChangeIngestTimeRuleCompartmentRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("ingestTimeRules")
-                .appendPathParam(request.getIngestTimeRuleId())
-                .appendPathParam("actions")
-                .appendPathParam("changeCompartment")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ChangeIngestTimeRuleCompartmentResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/IngestTimeRule/ChangeIngestTimeRuleCompartment");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeIngestTimeRuleCompartmentResponse>
+                transformer =
+                        ChangeIngestTimeRuleCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getChangeIngestTimeRuleCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ChangeLogAnalyticsEmBridgeCompartmentResponse changeLogAnalyticsEmBridgeCompartment(
             ChangeLogAnalyticsEmBridgeCompartmentRequest request) {
+        LOG.trace("Called changeLogAnalyticsEmBridgeCompartment");
+        final ChangeLogAnalyticsEmBridgeCompartmentRequest interceptedRequest =
+                ChangeLogAnalyticsEmBridgeCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeLogAnalyticsEmBridgeCompartmentConverter.fromRequest(
+                        client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        Validate.notBlank(
-                request.getLogAnalyticsEmBridgeId(), "logAnalyticsEmBridgeId must not be blank");
-        Objects.requireNonNull(
-                request.getChangeLogAnalyticsEmBridgeCompartmentDetails(),
-                "changeLogAnalyticsEmBridgeCompartmentDetails is required");
-
-        return clientCall(request, ChangeLogAnalyticsEmBridgeCompartmentResponse::builder)
-                .logger(LOG, "changeLogAnalyticsEmBridgeCompartment")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "ChangeLogAnalyticsEmBridgeCompartment",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEmBridge/ChangeLogAnalyticsEmBridgeCompartment")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(ChangeLogAnalyticsEmBridgeCompartmentRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("logAnalyticsEmBridges")
-                .appendPathParam(request.getLogAnalyticsEmBridgeId())
-                .appendPathParam("actions")
-                .appendPathParam("changeCompartment")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ChangeLogAnalyticsEmBridgeCompartmentResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEmBridge/ChangeLogAnalyticsEmBridgeCompartment");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeLogAnalyticsEmBridgeCompartmentResponse>
+                transformer =
+                        ChangeLogAnalyticsEmBridgeCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getChangeLogAnalyticsEmBridgeCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ChangeLogAnalyticsEntityCompartmentResponse changeLogAnalyticsEntityCompartment(
             ChangeLogAnalyticsEntityCompartmentRequest request) {
+        LOG.trace("Called changeLogAnalyticsEntityCompartment");
+        final ChangeLogAnalyticsEntityCompartmentRequest interceptedRequest =
+                ChangeLogAnalyticsEntityCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeLogAnalyticsEntityCompartmentConverter.fromRequest(
+                        client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        Validate.notBlank(
-                request.getLogAnalyticsEntityId(), "logAnalyticsEntityId must not be blank");
-        Objects.requireNonNull(
-                request.getChangeLogAnalyticsEntityCompartmentDetails(),
-                "changeLogAnalyticsEntityCompartmentDetails is required");
-
-        return clientCall(request, ChangeLogAnalyticsEntityCompartmentResponse::builder)
-                .logger(LOG, "changeLogAnalyticsEntityCompartment")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "ChangeLogAnalyticsEntityCompartment",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEntity/ChangeLogAnalyticsEntityCompartment")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(ChangeLogAnalyticsEntityCompartmentRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("logAnalyticsEntities")
-                .appendPathParam(request.getLogAnalyticsEntityId())
-                .appendPathParam("actions")
-                .appendPathParam("changeCompartment")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ChangeLogAnalyticsEntityCompartmentResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEntity/ChangeLogAnalyticsEntityCompartment");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeLogAnalyticsEntityCompartmentResponse>
+                transformer =
+                        ChangeLogAnalyticsEntityCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getChangeLogAnalyticsEntityCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ChangeLogAnalyticsLogGroupCompartmentResponse changeLogAnalyticsLogGroupCompartment(
             ChangeLogAnalyticsLogGroupCompartmentRequest request) {
+        LOG.trace("Called changeLogAnalyticsLogGroupCompartment");
+        final ChangeLogAnalyticsLogGroupCompartmentRequest interceptedRequest =
+                ChangeLogAnalyticsLogGroupCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeLogAnalyticsLogGroupCompartmentConverter.fromRequest(
+                        client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        Validate.notBlank(
-                request.getLogAnalyticsLogGroupId(), "logAnalyticsLogGroupId must not be blank");
-        Objects.requireNonNull(
-                request.getChangeLogAnalyticsLogGroupCompartmentDetails(),
-                "changeLogAnalyticsLogGroupCompartmentDetails is required");
-
-        return clientCall(request, ChangeLogAnalyticsLogGroupCompartmentResponse::builder)
-                .logger(LOG, "changeLogAnalyticsLogGroupCompartment")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "ChangeLogAnalyticsLogGroupCompartment",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLogGroup/ChangeLogAnalyticsLogGroupCompartment")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(ChangeLogAnalyticsLogGroupCompartmentRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("logAnalyticsLogGroups")
-                .appendPathParam(request.getLogAnalyticsLogGroupId())
-                .appendPathParam("actions")
-                .appendPathParam("changeCompartment")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ChangeLogAnalyticsLogGroupCompartmentResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLogGroup/ChangeLogAnalyticsLogGroupCompartment");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeLogAnalyticsLogGroupCompartmentResponse>
+                transformer =
+                        ChangeLogAnalyticsLogGroupCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getChangeLogAnalyticsLogGroupCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ChangeLogAnalyticsObjectCollectionRuleCompartmentResponse
             changeLogAnalyticsObjectCollectionRuleCompartment(
                     ChangeLogAnalyticsObjectCollectionRuleCompartmentRequest request) {
+        LOG.trace("Called changeLogAnalyticsObjectCollectionRuleCompartment");
+        final ChangeLogAnalyticsObjectCollectionRuleCompartmentRequest interceptedRequest =
+                ChangeLogAnalyticsObjectCollectionRuleCompartmentConverter.interceptRequest(
+                        request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeLogAnalyticsObjectCollectionRuleCompartmentConverter.fromRequest(
+                        client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        Validate.notBlank(
-                request.getLogAnalyticsObjectCollectionRuleId(),
-                "logAnalyticsObjectCollectionRuleId must not be blank");
-        Objects.requireNonNull(
-                request.getChangeLogAnalyticsObjectCollectionRuleCompartmentDetails(),
-                "changeLogAnalyticsObjectCollectionRuleCompartmentDetails is required");
-
-        return clientCall(
-                        request, ChangeLogAnalyticsObjectCollectionRuleCompartmentResponse::builder)
-                .logger(LOG, "changeLogAnalyticsObjectCollectionRuleCompartment")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "ChangeLogAnalyticsObjectCollectionRuleCompartment",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsObjectCollectionRule/ChangeLogAnalyticsObjectCollectionRuleCompartment")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(ChangeLogAnalyticsObjectCollectionRuleCompartmentRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("logAnalyticsObjectCollectionRules")
-                .appendPathParam(request.getLogAnalyticsObjectCollectionRuleId())
-                .appendPathParam("actions")
-                .appendPathParam("changeCompartment")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ChangeLogAnalyticsObjectCollectionRuleCompartmentResponse.Builder
-                                ::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsObjectCollectionRule/ChangeLogAnalyticsObjectCollectionRuleCompartment");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        ChangeLogAnalyticsObjectCollectionRuleCompartmentResponse>
+                transformer =
+                        ChangeLogAnalyticsObjectCollectionRuleCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getChangeLogAnalyticsObjectCollectionRuleCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ChangeScheduledTaskCompartmentResponse changeScheduledTaskCompartment(
             ChangeScheduledTaskCompartmentRequest request) {
+        LOG.trace("Called changeScheduledTaskCompartment");
+        final ChangeScheduledTaskCompartmentRequest interceptedRequest =
+                ChangeScheduledTaskCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeScheduledTaskCompartmentConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        Validate.notBlank(request.getScheduledTaskId(), "scheduledTaskId must not be blank");
-        Objects.requireNonNull(
-                request.getChangeScheduledTaskCompartmentDetails(),
-                "changeScheduledTaskCompartmentDetails is required");
-
-        return clientCall(request, ChangeScheduledTaskCompartmentResponse::builder)
-                .logger(LOG, "changeScheduledTaskCompartment")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "ChangeScheduledTaskCompartment",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/ScheduledTask/ChangeScheduledTaskCompartment")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(ChangeScheduledTaskCompartmentRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("scheduledTasks")
-                .appendPathParam(request.getScheduledTaskId())
-                .appendPathParam("actions")
-                .appendPathParam("changeCompartment")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ChangeScheduledTaskCompartmentResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/ScheduledTask/ChangeScheduledTaskCompartment");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeScheduledTaskCompartmentResponse>
+                transformer =
+                        ChangeScheduledTaskCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getChangeScheduledTaskCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public CleanResponse clean(CleanRequest request) {
+        LOG.trace("Called clean");
+        final CleanRequest interceptedRequest = CleanConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CleanConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        Validate.notBlank(request.getScheduledTaskId(), "scheduledTaskId must not be blank");
-
-        return clientCall(request, CleanResponse::builder)
-                .logger(LOG, "clean")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "Clean",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/ScheduledTask/Clean")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CleanRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("scheduledTasks")
-                .appendPathParam(request.getScheduledTaskId())
-                .appendPathParam("actions")
-                .appendPathParam("clean")
-                .appendQueryParam("timeStart", request.getTimeStart())
-                .appendQueryParam("timeEnd", request.getTimeEnd())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .operationUsesDefaultRetries()
-                .handleResponseHeaderString("opc-request-id", CleanResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/ScheduledTask/Clean");
+        java.util.function.Function<javax.ws.rs.core.Response, CleanResponse> transformer =
+                CleanConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public CompareContentResponse compareContent(CompareContentRequest request) {
+        LOG.trace("Called compareContent");
+        final CompareContentRequest interceptedRequest =
+                CompareContentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CompareContentConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-        Objects.requireNonNull(
-                request.getCompareContentDetails(), "compareContentDetails is required");
-
-        return clientCall(request, CompareContentResponse::builder)
-                .logger(LOG, "compareContent")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "CompareContent",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/QueryDetails/CompareContent")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CompareContentRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("search")
-                .appendPathParam("actions")
-                .appendPathParam("compareContent")
-                .accept("application/json;charset=UTF-8")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.CompareContentResult.class,
-                        CompareContentResponse.Builder::compareContentResult)
-                .handleResponseHeaderString(
-                        "opc-request-id", CompareContentResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/QueryDetails/CompareContent");
+        java.util.function.Function<javax.ws.rs.core.Response, CompareContentResponse> transformer =
+                CompareContentConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCompareContentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public CreateIngestTimeRuleResponse createIngestTimeRule(CreateIngestTimeRuleRequest request) {
+        LOG.trace("Called createIngestTimeRule");
+        final CreateIngestTimeRuleRequest interceptedRequest =
+                CreateIngestTimeRuleConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateIngestTimeRuleConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-        Objects.requireNonNull(
-                request.getCreateIngestTimeRuleDetails(),
-                "createIngestTimeRuleDetails is required");
-
-        return clientCall(request, CreateIngestTimeRuleResponse::builder)
-                .logger(LOG, "createIngestTimeRule")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "CreateIngestTimeRule",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/IngestTimeRule/CreateIngestTimeRule")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreateIngestTimeRuleRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("ingestTimeRules")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.IngestTimeRule.class,
-                        CreateIngestTimeRuleResponse.Builder::ingestTimeRule)
-                .handleResponseHeaderString("etag", CreateIngestTimeRuleResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", CreateIngestTimeRuleResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/IngestTimeRule/CreateIngestTimeRule");
+        java.util.function.Function<javax.ws.rs.core.Response, CreateIngestTimeRuleResponse>
+                transformer =
+                        CreateIngestTimeRuleConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreateIngestTimeRuleDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public CreateLogAnalyticsEmBridgeResponse createLogAnalyticsEmBridge(
             CreateLogAnalyticsEmBridgeRequest request) {
+        LOG.trace("Called createLogAnalyticsEmBridge");
+        final CreateLogAnalyticsEmBridgeRequest interceptedRequest =
+                CreateLogAnalyticsEmBridgeConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateLogAnalyticsEmBridgeConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-        Objects.requireNonNull(
-                request.getCreateLogAnalyticsEmBridgeDetails(),
-                "createLogAnalyticsEmBridgeDetails is required");
-
-        return clientCall(request, CreateLogAnalyticsEmBridgeResponse::builder)
-                .logger(LOG, "createLogAnalyticsEmBridge")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "CreateLogAnalyticsEmBridge",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEmBridge/CreateLogAnalyticsEmBridge")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreateLogAnalyticsEmBridgeRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("logAnalyticsEmBridges")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.LogAnalyticsEmBridge.class,
-                        CreateLogAnalyticsEmBridgeResponse.Builder::logAnalyticsEmBridge)
-                .handleResponseHeaderString(
-                        "etag", CreateLogAnalyticsEmBridgeResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", CreateLogAnalyticsEmBridgeResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEmBridge/CreateLogAnalyticsEmBridge");
+        java.util.function.Function<javax.ws.rs.core.Response, CreateLogAnalyticsEmBridgeResponse>
+                transformer =
+                        CreateLogAnalyticsEmBridgeConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getCreateLogAnalyticsEmBridgeDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public CreateLogAnalyticsEntityResponse createLogAnalyticsEntity(
             CreateLogAnalyticsEntityRequest request) {
+        LOG.trace("Called createLogAnalyticsEntity");
+        final CreateLogAnalyticsEntityRequest interceptedRequest =
+                CreateLogAnalyticsEntityConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateLogAnalyticsEntityConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-        Objects.requireNonNull(
-                request.getCreateLogAnalyticsEntityDetails(),
-                "createLogAnalyticsEntityDetails is required");
-
-        return clientCall(request, CreateLogAnalyticsEntityResponse::builder)
-                .logger(LOG, "createLogAnalyticsEntity")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "CreateLogAnalyticsEntity",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEntity/CreateLogAnalyticsEntity")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreateLogAnalyticsEntityRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("logAnalyticsEntities")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.LogAnalyticsEntity.class,
-                        CreateLogAnalyticsEntityResponse.Builder::logAnalyticsEntity)
-                .handleResponseHeaderString("etag", CreateLogAnalyticsEntityResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", CreateLogAnalyticsEntityResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEntity/CreateLogAnalyticsEntity");
+        java.util.function.Function<javax.ws.rs.core.Response, CreateLogAnalyticsEntityResponse>
+                transformer =
+                        CreateLogAnalyticsEntityConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreateLogAnalyticsEntityDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public CreateLogAnalyticsEntityTypeResponse createLogAnalyticsEntityType(
             CreateLogAnalyticsEntityTypeRequest request) {
+        LOG.trace("Called createLogAnalyticsEntityType");
+        final CreateLogAnalyticsEntityTypeRequest interceptedRequest =
+                CreateLogAnalyticsEntityTypeConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateLogAnalyticsEntityTypeConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-        Objects.requireNonNull(
-                request.getCreateLogAnalyticsEntityTypeDetails(),
-                "createLogAnalyticsEntityTypeDetails is required");
-
-        return clientCall(request, CreateLogAnalyticsEntityTypeResponse::builder)
-                .logger(LOG, "createLogAnalyticsEntityType")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "CreateLogAnalyticsEntityType",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEntityType/CreateLogAnalyticsEntityType")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreateLogAnalyticsEntityTypeRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("logAnalyticsEntityTypes")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        CreateLogAnalyticsEntityTypeResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEntityType/CreateLogAnalyticsEntityType");
+        java.util.function.Function<javax.ws.rs.core.Response, CreateLogAnalyticsEntityTypeResponse>
+                transformer =
+                        CreateLogAnalyticsEntityTypeConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getCreateLogAnalyticsEntityTypeDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public CreateLogAnalyticsLogGroupResponse createLogAnalyticsLogGroup(
             CreateLogAnalyticsLogGroupRequest request) {
+        LOG.trace("Called createLogAnalyticsLogGroup");
+        final CreateLogAnalyticsLogGroupRequest interceptedRequest =
+                CreateLogAnalyticsLogGroupConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateLogAnalyticsLogGroupConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-        Objects.requireNonNull(
-                request.getCreateLogAnalyticsLogGroupDetails(),
-                "createLogAnalyticsLogGroupDetails is required");
-
-        return clientCall(request, CreateLogAnalyticsLogGroupResponse::builder)
-                .logger(LOG, "createLogAnalyticsLogGroup")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "CreateLogAnalyticsLogGroup",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLogGroup/CreateLogAnalyticsLogGroup")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreateLogAnalyticsLogGroupRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("logAnalyticsLogGroups")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.LogAnalyticsLogGroup.class,
-                        CreateLogAnalyticsLogGroupResponse.Builder::logAnalyticsLogGroup)
-                .handleResponseHeaderString(
-                        "etag", CreateLogAnalyticsLogGroupResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", CreateLogAnalyticsLogGroupResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLogGroup/CreateLogAnalyticsLogGroup");
+        java.util.function.Function<javax.ws.rs.core.Response, CreateLogAnalyticsLogGroupResponse>
+                transformer =
+                        CreateLogAnalyticsLogGroupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getCreateLogAnalyticsLogGroupDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public CreateLogAnalyticsObjectCollectionRuleResponse createLogAnalyticsObjectCollectionRule(
             CreateLogAnalyticsObjectCollectionRuleRequest request) {
+        LOG.trace("Called createLogAnalyticsObjectCollectionRule");
+        final CreateLogAnalyticsObjectCollectionRuleRequest interceptedRequest =
+                CreateLogAnalyticsObjectCollectionRuleConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateLogAnalyticsObjectCollectionRuleConverter.fromRequest(
+                        client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-        Objects.requireNonNull(
-                request.getCreateLogAnalyticsObjectCollectionRuleDetails(),
-                "createLogAnalyticsObjectCollectionRuleDetails is required");
-
-        return clientCall(request, CreateLogAnalyticsObjectCollectionRuleResponse::builder)
-                .logger(LOG, "createLogAnalyticsObjectCollectionRule")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "CreateLogAnalyticsObjectCollectionRule",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsObjectCollectionRule/CreateLogAnalyticsObjectCollectionRule")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreateLogAnalyticsObjectCollectionRuleRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("logAnalyticsObjectCollectionRules")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.LogAnalyticsObjectCollectionRule.class,
-                        CreateLogAnalyticsObjectCollectionRuleResponse.Builder
-                                ::logAnalyticsObjectCollectionRule)
-                .handleResponseHeaderString(
-                        "etag", CreateLogAnalyticsObjectCollectionRuleResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        CreateLogAnalyticsObjectCollectionRuleResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsObjectCollectionRule/CreateLogAnalyticsObjectCollectionRule");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, CreateLogAnalyticsObjectCollectionRuleResponse>
+                transformer =
+                        CreateLogAnalyticsObjectCollectionRuleConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getCreateLogAnalyticsObjectCollectionRuleDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public CreateScheduledTaskResponse createScheduledTask(CreateScheduledTaskRequest request) {
+        LOG.trace("Called createScheduledTask");
+        final CreateScheduledTaskRequest interceptedRequest =
+                CreateScheduledTaskConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateScheduledTaskConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-        Objects.requireNonNull(
-                request.getCreateScheduledTaskDetails(), "createScheduledTaskDetails is required");
-
-        return clientCall(request, CreateScheduledTaskResponse::builder)
-                .logger(LOG, "createScheduledTask")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "CreateScheduledTask",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/ScheduledTask/CreateScheduledTask")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreateScheduledTaskRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("scheduledTasks")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.ScheduledTask.class,
-                        CreateScheduledTaskResponse.Builder::scheduledTask)
-                .handleResponseHeaderString(
-                        "opc-request-id", CreateScheduledTaskResponse.Builder::opcRequestId)
-                .handleResponseHeaderString("etag", CreateScheduledTaskResponse.Builder::etag)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/ScheduledTask/CreateScheduledTask");
+        java.util.function.Function<javax.ws.rs.core.Response, CreateScheduledTaskResponse>
+                transformer =
+                        CreateScheduledTaskConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreateScheduledTaskDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public DeleteAssociationsResponse deleteAssociations(DeleteAssociationsRequest request) {
+        LOG.trace("Called deleteAssociations");
+        final DeleteAssociationsRequest interceptedRequest =
+                DeleteAssociationsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteAssociationsConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-        Objects.requireNonNull(
-                request.getDeleteLogAnalyticsAssociationDetails(),
-                "deleteLogAnalyticsAssociationDetails is required");
-
-        return clientCall(request, DeleteAssociationsResponse::builder)
-                .logger(LOG, "deleteAssociations")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "DeleteAssociations",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsAssociation/DeleteAssociations")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(DeleteAssociationsRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("associations")
-                .appendPathParam("actions")
-                .appendPathParam("delete")
-                .accept("application/json;charset=UTF-8")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-work-request-id", DeleteAssociationsResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", DeleteAssociationsResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsAssociation/DeleteAssociations");
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteAssociationsResponse>
+                transformer =
+                        DeleteAssociationsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getDeleteLogAnalyticsAssociationDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public DeleteFieldResponse deleteField(DeleteFieldRequest request) {
+        LOG.trace("Called deleteField");
+        final DeleteFieldRequest interceptedRequest =
+                DeleteFieldConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteFieldConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        Validate.notBlank(request.getFieldName(), "fieldName must not be blank");
-
-        return clientCall(request, DeleteFieldResponse::builder)
-                .logger(LOG, "deleteField")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "DeleteField",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsField/DeleteField")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteFieldRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("fields")
-                .appendPathParam(request.getFieldName())
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("if-match", request.getIfMatch())
-                .operationUsesDefaultRetries()
-                .handleResponseHeaderString(
-                        "opc-request-id", DeleteFieldResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsField/DeleteField");
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteFieldResponse> transformer =
+                DeleteFieldConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public DeleteIngestTimeRuleResponse deleteIngestTimeRule(DeleteIngestTimeRuleRequest request) {
+        LOG.trace("Called deleteIngestTimeRule");
+        final DeleteIngestTimeRuleRequest interceptedRequest =
+                DeleteIngestTimeRuleConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteIngestTimeRuleConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        Validate.notBlank(request.getIngestTimeRuleId(), "ingestTimeRuleId must not be blank");
-
-        return clientCall(request, DeleteIngestTimeRuleResponse::builder)
-                .logger(LOG, "deleteIngestTimeRule")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "DeleteIngestTimeRule",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/IngestTimeRule/DeleteIngestTimeRule")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteIngestTimeRuleRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("ingestTimeRules")
-                .appendPathParam(request.getIngestTimeRuleId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleResponseHeaderString(
-                        "opc-request-id", DeleteIngestTimeRuleResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/IngestTimeRule/DeleteIngestTimeRule");
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteIngestTimeRuleResponse>
+                transformer =
+                        DeleteIngestTimeRuleConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public DeleteLabelResponse deleteLabel(DeleteLabelRequest request) {
+        LOG.trace("Called deleteLabel");
+        final DeleteLabelRequest interceptedRequest =
+                DeleteLabelConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteLabelConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        Validate.notBlank(request.getLabelName(), "labelName must not be blank");
-
-        return clientCall(request, DeleteLabelResponse::builder)
-                .logger(LOG, "deleteLabel")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "DeleteLabel",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLabel/DeleteLabel")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteLabelRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("labels")
-                .appendPathParam(request.getLabelName())
-                .accept("application/json;charset=UTF-8")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("if-match", request.getIfMatch())
-                .operationUsesDefaultRetries()
-                .handleResponseHeaderString(
-                        "opc-request-id", DeleteLabelResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLabel/DeleteLabel");
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteLabelResponse> transformer =
+                DeleteLabelConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public DeleteLogAnalyticsEmBridgeResponse deleteLogAnalyticsEmBridge(
             DeleteLogAnalyticsEmBridgeRequest request) {
+        LOG.trace("Called deleteLogAnalyticsEmBridge");
+        final DeleteLogAnalyticsEmBridgeRequest interceptedRequest =
+                DeleteLogAnalyticsEmBridgeConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteLogAnalyticsEmBridgeConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        Validate.notBlank(
-                request.getLogAnalyticsEmBridgeId(), "logAnalyticsEmBridgeId must not be blank");
-
-        return clientCall(request, DeleteLogAnalyticsEmBridgeResponse::builder)
-                .logger(LOG, "deleteLogAnalyticsEmBridge")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "DeleteLogAnalyticsEmBridge",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEmBridge/DeleteLogAnalyticsEmBridge")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteLogAnalyticsEmBridgeRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("logAnalyticsEmBridges")
-                .appendPathParam(request.getLogAnalyticsEmBridgeId())
-                .appendQueryParam("isDeleteEntities", request.getIsDeleteEntities())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleResponseHeaderString(
-                        "opc-request-id", DeleteLogAnalyticsEmBridgeResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEmBridge/DeleteLogAnalyticsEmBridge");
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteLogAnalyticsEmBridgeResponse>
+                transformer =
+                        DeleteLogAnalyticsEmBridgeConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public DeleteLogAnalyticsEntityResponse deleteLogAnalyticsEntity(
             DeleteLogAnalyticsEntityRequest request) {
+        LOG.trace("Called deleteLogAnalyticsEntity");
+        final DeleteLogAnalyticsEntityRequest interceptedRequest =
+                DeleteLogAnalyticsEntityConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteLogAnalyticsEntityConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        Validate.notBlank(
-                request.getLogAnalyticsEntityId(), "logAnalyticsEntityId must not be blank");
-
-        return clientCall(request, DeleteLogAnalyticsEntityResponse::builder)
-                .logger(LOG, "deleteLogAnalyticsEntity")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "DeleteLogAnalyticsEntity",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEntity/DeleteLogAnalyticsEntity")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteLogAnalyticsEntityRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("logAnalyticsEntities")
-                .appendPathParam(request.getLogAnalyticsEntityId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleResponseHeaderString(
-                        "opc-request-id", DeleteLogAnalyticsEntityResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEntity/DeleteLogAnalyticsEntity");
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteLogAnalyticsEntityResponse>
+                transformer =
+                        DeleteLogAnalyticsEntityConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public DeleteLogAnalyticsEntityTypeResponse deleteLogAnalyticsEntityType(
             DeleteLogAnalyticsEntityTypeRequest request) {
+        LOG.trace("Called deleteLogAnalyticsEntityType");
+        final DeleteLogAnalyticsEntityTypeRequest interceptedRequest =
+                DeleteLogAnalyticsEntityTypeConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteLogAnalyticsEntityTypeConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        Validate.notBlank(request.getEntityTypeName(), "entityTypeName must not be blank");
-
-        return clientCall(request, DeleteLogAnalyticsEntityTypeResponse::builder)
-                .logger(LOG, "deleteLogAnalyticsEntityType")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "DeleteLogAnalyticsEntityType",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEntityType/DeleteLogAnalyticsEntityType")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteLogAnalyticsEntityTypeRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("logAnalyticsEntityTypes")
-                .appendPathParam(request.getEntityTypeName())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        DeleteLogAnalyticsEntityTypeResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEntityType/DeleteLogAnalyticsEntityType");
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteLogAnalyticsEntityTypeResponse>
+                transformer =
+                        DeleteLogAnalyticsEntityTypeConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public DeleteLogAnalyticsLogGroupResponse deleteLogAnalyticsLogGroup(
             DeleteLogAnalyticsLogGroupRequest request) {
+        LOG.trace("Called deleteLogAnalyticsLogGroup");
+        final DeleteLogAnalyticsLogGroupRequest interceptedRequest =
+                DeleteLogAnalyticsLogGroupConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteLogAnalyticsLogGroupConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        Validate.notBlank(
-                request.getLogAnalyticsLogGroupId(), "logAnalyticsLogGroupId must not be blank");
-
-        return clientCall(request, DeleteLogAnalyticsLogGroupResponse::builder)
-                .logger(LOG, "deleteLogAnalyticsLogGroup")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "DeleteLogAnalyticsLogGroup",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLogGroup/DeleteLogAnalyticsLogGroup")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteLogAnalyticsLogGroupRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("logAnalyticsLogGroups")
-                .appendPathParam(request.getLogAnalyticsLogGroupId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleResponseHeaderString(
-                        "opc-request-id", DeleteLogAnalyticsLogGroupResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLogGroup/DeleteLogAnalyticsLogGroup");
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteLogAnalyticsLogGroupResponse>
+                transformer =
+                        DeleteLogAnalyticsLogGroupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public DeleteLogAnalyticsObjectCollectionRuleResponse deleteLogAnalyticsObjectCollectionRule(
             DeleteLogAnalyticsObjectCollectionRuleRequest request) {
+        LOG.trace("Called deleteLogAnalyticsObjectCollectionRule");
+        final DeleteLogAnalyticsObjectCollectionRuleRequest interceptedRequest =
+                DeleteLogAnalyticsObjectCollectionRuleConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteLogAnalyticsObjectCollectionRuleConverter.fromRequest(
+                        client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        Validate.notBlank(
-                request.getLogAnalyticsObjectCollectionRuleId(),
-                "logAnalyticsObjectCollectionRuleId must not be blank");
-
-        return clientCall(request, DeleteLogAnalyticsObjectCollectionRuleResponse::builder)
-                .logger(LOG, "deleteLogAnalyticsObjectCollectionRule")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "DeleteLogAnalyticsObjectCollectionRule",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsObjectCollectionRule/DeleteLogAnalyticsObjectCollectionRule")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteLogAnalyticsObjectCollectionRuleRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("logAnalyticsObjectCollectionRules")
-                .appendPathParam(request.getLogAnalyticsObjectCollectionRuleId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("if-match", request.getIfMatch())
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        DeleteLogAnalyticsObjectCollectionRuleResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsObjectCollectionRule/DeleteLogAnalyticsObjectCollectionRule");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, DeleteLogAnalyticsObjectCollectionRuleResponse>
+                transformer =
+                        DeleteLogAnalyticsObjectCollectionRuleConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public DeleteLookupResponse deleteLookup(DeleteLookupRequest request) {
+        LOG.trace("Called deleteLookup");
+        final DeleteLookupRequest interceptedRequest =
+                DeleteLookupConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteLookupConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        Validate.notBlank(request.getLookupName(), "lookupName must not be blank");
-
-        return clientCall(request, DeleteLookupResponse::builder)
-                .logger(LOG, "deleteLookup")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "DeleteLookup",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLookup/DeleteLookup")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteLookupRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("lookups")
-                .appendPathParam(request.getLookupName())
-                .appendQueryParam("isForce", request.getIsForce())
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("if-match", request.getIfMatch())
-                .operationUsesDefaultRetries()
-                .handleResponseHeaderString(
-                        "opc-work-request-id", DeleteLookupResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", DeleteLookupResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLookup/DeleteLookup");
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteLookupResponse> transformer =
+                DeleteLookupConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public DeleteParserResponse deleteParser(DeleteParserRequest request) {
+        LOG.trace("Called deleteParser");
+        final DeleteParserRequest interceptedRequest =
+                DeleteParserConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteParserConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        Validate.notBlank(request.getParserName(), "parserName must not be blank");
-
-        return clientCall(request, DeleteParserResponse::builder)
-                .logger(LOG, "deleteParser")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "DeleteParser",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsParser/DeleteParser")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteParserRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("parsers")
-                .appendPathParam(request.getParserName())
-                .accept("application/json;charset=UTF-8")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("if-match", request.getIfMatch())
-                .operationUsesDefaultRetries()
-                .handleResponseHeaderString(
-                        "opc-request-id", DeleteParserResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsParser/DeleteParser");
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteParserResponse> transformer =
+                DeleteParserConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public DeleteScheduledTaskResponse deleteScheduledTask(DeleteScheduledTaskRequest request) {
+        LOG.trace("Called deleteScheduledTask");
+        final DeleteScheduledTaskRequest interceptedRequest =
+                DeleteScheduledTaskConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteScheduledTaskConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        Validate.notBlank(request.getScheduledTaskId(), "scheduledTaskId must not be blank");
-
-        return clientCall(request, DeleteScheduledTaskResponse::builder)
-                .logger(LOG, "deleteScheduledTask")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "DeleteScheduledTask",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/ScheduledTask/DeleteScheduledTask")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteScheduledTaskRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("scheduledTasks")
-                .appendPathParam(request.getScheduledTaskId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("if-match", request.getIfMatch())
-                .operationUsesDefaultRetries()
-                .handleResponseHeaderString(
-                        "opc-request-id", DeleteScheduledTaskResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/ScheduledTask/DeleteScheduledTask");
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteScheduledTaskResponse>
+                transformer =
+                        DeleteScheduledTaskConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public DeleteSourceResponse deleteSource(DeleteSourceRequest request) {
+        LOG.trace("Called deleteSource");
+        final DeleteSourceRequest interceptedRequest =
+                DeleteSourceConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteSourceConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        Validate.notBlank(request.getSourceName(), "sourceName must not be blank");
-
-        return clientCall(request, DeleteSourceResponse::builder)
-                .logger(LOG, "deleteSource")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "DeleteSource",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/DeleteSource")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteSourceRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("sources")
-                .appendPathParam(request.getSourceName())
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("if-match", request.getIfMatch())
-                .operationUsesDefaultRetries()
-                .handleResponseHeaderString(
-                        "opc-request-id", DeleteSourceResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/DeleteSource");
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteSourceResponse> transformer =
+                DeleteSourceConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public DeleteUploadResponse deleteUpload(DeleteUploadRequest request) {
+        LOG.trace("Called deleteUpload");
+        final DeleteUploadRequest interceptedRequest =
+                DeleteUploadConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteUploadConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        Validate.notBlank(request.getUploadReference(), "uploadReference must not be blank");
-
-        return clientCall(request, DeleteUploadResponse::builder)
-                .logger(LOG, "deleteUpload")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "DeleteUpload",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Upload/DeleteUpload")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteUploadRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("uploads")
-                .appendPathParam(request.getUploadReference())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleResponseHeaderString(
-                        "opc-request-id", DeleteUploadResponse.Builder::opcRequestId)
-                .handleResponseHeaderLong(
-                        "opc-deleted-log-count", DeleteUploadResponse.Builder::opcDeletedLogCount)
-                .handleResponseHeaderLong(
-                        "opc-deleted-logfile-count",
-                        DeleteUploadResponse.Builder::opcDeletedLogfileCount)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Upload/DeleteUpload");
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteUploadResponse> transformer =
+                DeleteUploadConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public DeleteUploadFileResponse deleteUploadFile(DeleteUploadFileRequest request) {
+        LOG.trace("Called deleteUploadFile");
+        final DeleteUploadFileRequest interceptedRequest =
+                DeleteUploadFileConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteUploadFileConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        Validate.notBlank(request.getUploadReference(), "uploadReference must not be blank");
-
-        Validate.notBlank(request.getFileReference(), "fileReference must not be blank");
-
-        return clientCall(request, DeleteUploadFileResponse::builder)
-                .logger(LOG, "deleteUploadFile")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "DeleteUploadFile",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Upload/DeleteUploadFile")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteUploadFileRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("uploads")
-                .appendPathParam(request.getUploadReference())
-                .appendPathParam("files")
-                .appendPathParam(request.getFileReference())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleResponseHeaderString(
-                        "opc-request-id", DeleteUploadFileResponse.Builder::opcRequestId)
-                .handleResponseHeaderLong(
-                        "opc-deleted-log-count",
-                        DeleteUploadFileResponse.Builder::opcDeletedLogCount)
-                .handleResponseHeaderLong(
-                        "opc-deleted-logfile-count",
-                        DeleteUploadFileResponse.Builder::opcDeletedLogfileCount)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Upload/DeleteUploadFile");
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteUploadFileResponse>
+                transformer =
+                        DeleteUploadFileConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public DeleteUploadWarningResponse deleteUploadWarning(DeleteUploadWarningRequest request) {
+        LOG.trace("Called deleteUploadWarning");
+        final DeleteUploadWarningRequest interceptedRequest =
+                DeleteUploadWarningConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteUploadWarningConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        Validate.notBlank(request.getUploadReference(), "uploadReference must not be blank");
-
-        Validate.notBlank(request.getWarningReference(), "warningReference must not be blank");
-
-        return clientCall(request, DeleteUploadWarningResponse::builder)
-                .logger(LOG, "deleteUploadWarning")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "DeleteUploadWarning",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Upload/DeleteUploadWarning")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteUploadWarningRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("uploads")
-                .appendPathParam(request.getUploadReference())
-                .appendPathParam("warnings")
-                .appendPathParam(request.getWarningReference())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleResponseHeaderString(
-                        "opc-request-id", DeleteUploadWarningResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Upload/DeleteUploadWarning");
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteUploadWarningResponse>
+                transformer =
+                        DeleteUploadWarningConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public DisableArchivingResponse disableArchiving(DisableArchivingRequest request) {
+        LOG.trace("Called disableArchiving");
+        final DisableArchivingRequest interceptedRequest =
+                DisableArchivingConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DisableArchivingConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        return clientCall(request, DisableArchivingResponse::builder)
-                .logger(LOG, "disableArchiving")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "DisableArchiving",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/DisableArchiving")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(DisableArchivingRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("storage")
-                .appendPathParam("actions")
-                .appendPathParam("disableArchiving")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("if-match", request.getIfMatch())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.Success.class,
-                        DisableArchivingResponse.Builder::success)
-                .handleResponseHeaderString(
-                        "opc-request-id", DisableArchivingResponse.Builder::opcRequestId)
-                .handleResponseHeaderString("etag", DisableArchivingResponse.Builder::etag)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/DisableArchiving");
+        java.util.function.Function<javax.ws.rs.core.Response, DisableArchivingResponse>
+                transformer =
+                        DisableArchivingConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public DisableAutoAssociationResponse disableAutoAssociation(
             DisableAutoAssociationRequest request) {
+        LOG.trace("Called disableAutoAssociation");
+        final DisableAutoAssociationRequest interceptedRequest =
+                DisableAutoAssociationConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DisableAutoAssociationConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        Validate.notBlank(request.getSourceName(), "sourceName must not be blank");
-        Objects.requireNonNull(
-                request.getDisableAutoAssociationDetails(),
-                "disableAutoAssociationDetails is required");
-
-        return clientCall(request, DisableAutoAssociationResponse::builder)
-                .logger(LOG, "disableAutoAssociation")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "DisableAutoAssociation",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/DisableAutoAssociation")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(DisableAutoAssociationRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("sources")
-                .appendPathParam(request.getSourceName())
-                .appendPathParam("actions")
-                .appendPathParam("disableAutoAssociation")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        DisableAutoAssociationResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", DisableAutoAssociationResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/DisableAutoAssociation");
+        java.util.function.Function<javax.ws.rs.core.Response, DisableAutoAssociationResponse>
+                transformer =
+                        DisableAutoAssociationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getDisableAutoAssociationDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public DisableIngestTimeRuleResponse disableIngestTimeRule(
             DisableIngestTimeRuleRequest request) {
+        LOG.trace("Called disableIngestTimeRule");
+        final DisableIngestTimeRuleRequest interceptedRequest =
+                DisableIngestTimeRuleConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DisableIngestTimeRuleConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        Validate.notBlank(request.getIngestTimeRuleId(), "ingestTimeRuleId must not be blank");
-
-        return clientCall(request, DisableIngestTimeRuleResponse::builder)
-                .logger(LOG, "disableIngestTimeRule")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "DisableIngestTimeRule",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/IngestTimeRule/DisableIngestTimeRule")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(DisableIngestTimeRuleRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("ingestTimeRules")
-                .appendPathParam(request.getIngestTimeRuleId())
-                .appendPathParam("actions")
-                .appendPathParam("disableIngestTimeRule")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        DisableIngestTimeRuleResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", DisableIngestTimeRuleResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/IngestTimeRule/DisableIngestTimeRule");
+        java.util.function.Function<javax.ws.rs.core.Response, DisableIngestTimeRuleResponse>
+                transformer =
+                        DisableIngestTimeRuleConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public DisableSourceEventTypesResponse disableSourceEventTypes(
             DisableSourceEventTypesRequest request) {
+        LOG.trace("Called disableSourceEventTypes");
+        final DisableSourceEventTypesRequest interceptedRequest =
+                DisableSourceEventTypesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DisableSourceEventTypesConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        Validate.notBlank(request.getSourceName(), "sourceName must not be blank");
-        Objects.requireNonNull(
-                request.getDisableEventTypeDetails(), "disableEventTypeDetails is required");
-
-        return clientCall(request, DisableSourceEventTypesResponse::builder)
-                .logger(LOG, "disableSourceEventTypes")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "DisableSourceEventTypes",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/DisableSourceEventTypes")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(DisableSourceEventTypesRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("sources")
-                .appendPathParam(request.getSourceName())
-                .appendPathParam("actions")
-                .appendPathParam("disableEventTypes")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-request-id", DisableSourceEventTypesResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/DisableSourceEventTypes");
+        java.util.function.Function<javax.ws.rs.core.Response, DisableSourceEventTypesResponse>
+                transformer =
+                        DisableSourceEventTypesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getDisableEventTypeDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public EnableArchivingResponse enableArchiving(EnableArchivingRequest request) {
+        LOG.trace("Called enableArchiving");
+        final EnableArchivingRequest interceptedRequest =
+                EnableArchivingConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                EnableArchivingConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        return clientCall(request, EnableArchivingResponse::builder)
-                .logger(LOG, "enableArchiving")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "EnableArchiving",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/EnableArchiving")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(EnableArchivingRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("storage")
-                .appendPathParam("actions")
-                .appendPathParam("enableArchiving")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("if-match", request.getIfMatch())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.Success.class,
-                        EnableArchivingResponse.Builder::success)
-                .handleResponseHeaderString(
-                        "opc-request-id", EnableArchivingResponse.Builder::opcRequestId)
-                .handleResponseHeaderString("etag", EnableArchivingResponse.Builder::etag)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/EnableArchiving");
+        java.util.function.Function<javax.ws.rs.core.Response, EnableArchivingResponse>
+                transformer =
+                        EnableArchivingConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public EnableAutoAssociationResponse enableAutoAssociation(
             EnableAutoAssociationRequest request) {
+        LOG.trace("Called enableAutoAssociation");
+        final EnableAutoAssociationRequest interceptedRequest =
+                EnableAutoAssociationConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                EnableAutoAssociationConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        Validate.notBlank(request.getSourceName(), "sourceName must not be blank");
-        Objects.requireNonNull(
-                request.getEnableAutoAssociationDetails(),
-                "enableAutoAssociationDetails is required");
-
-        return clientCall(request, EnableAutoAssociationResponse::builder)
-                .logger(LOG, "enableAutoAssociation")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "EnableAutoAssociation",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/EnableAutoAssociation")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(EnableAutoAssociationRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("sources")
-                .appendPathParam(request.getSourceName())
-                .appendPathParam("actions")
-                .appendPathParam("enableAutoAssociation")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        EnableAutoAssociationResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", EnableAutoAssociationResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/EnableAutoAssociation");
+        java.util.function.Function<javax.ws.rs.core.Response, EnableAutoAssociationResponse>
+                transformer =
+                        EnableAutoAssociationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getEnableAutoAssociationDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public EnableIngestTimeRuleResponse enableIngestTimeRule(EnableIngestTimeRuleRequest request) {
+        LOG.trace("Called enableIngestTimeRule");
+        final EnableIngestTimeRuleRequest interceptedRequest =
+                EnableIngestTimeRuleConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                EnableIngestTimeRuleConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        Validate.notBlank(request.getIngestTimeRuleId(), "ingestTimeRuleId must not be blank");
-
-        return clientCall(request, EnableIngestTimeRuleResponse::builder)
-                .logger(LOG, "enableIngestTimeRule")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "EnableIngestTimeRule",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/IngestTimeRule/EnableIngestTimeRule")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(EnableIngestTimeRuleRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("ingestTimeRules")
-                .appendPathParam(request.getIngestTimeRuleId())
-                .appendPathParam("actions")
-                .appendPathParam("enableIngestTimeRule")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        EnableIngestTimeRuleResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", EnableIngestTimeRuleResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/IngestTimeRule/EnableIngestTimeRule");
+        java.util.function.Function<javax.ws.rs.core.Response, EnableIngestTimeRuleResponse>
+                transformer =
+                        EnableIngestTimeRuleConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public EnableSourceEventTypesResponse enableSourceEventTypes(
             EnableSourceEventTypesRequest request) {
+        LOG.trace("Called enableSourceEventTypes");
+        final EnableSourceEventTypesRequest interceptedRequest =
+                EnableSourceEventTypesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                EnableSourceEventTypesConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        Validate.notBlank(request.getSourceName(), "sourceName must not be blank");
-        Objects.requireNonNull(
-                request.getEnableEventTypeDetails(), "enableEventTypeDetails is required");
-
-        return clientCall(request, EnableSourceEventTypesResponse::builder)
-                .logger(LOG, "enableSourceEventTypes")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "EnableSourceEventTypes",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/EnableSourceEventTypes")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(EnableSourceEventTypesRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("sources")
-                .appendPathParam(request.getSourceName())
-                .appendPathParam("actions")
-                .appendPathParam("enableEventTypes")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-request-id", EnableSourceEventTypesResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/EnableSourceEventTypes");
+        java.util.function.Function<javax.ws.rs.core.Response, EnableSourceEventTypesResponse>
+                transformer =
+                        EnableSourceEventTypesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getEnableEventTypeDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public EstimatePurgeDataSizeResponse estimatePurgeDataSize(
             EstimatePurgeDataSizeRequest request) {
+        LOG.trace("Called estimatePurgeDataSize");
+        final EstimatePurgeDataSizeRequest interceptedRequest =
+                EstimatePurgeDataSizeConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                EstimatePurgeDataSizeConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-        Objects.requireNonNull(
-                request.getEstimatePurgeDataSizeDetails(),
-                "estimatePurgeDataSizeDetails is required");
-
-        return clientCall(request, EstimatePurgeDataSizeResponse::builder)
-                .logger(LOG, "estimatePurgeDataSize")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "EstimatePurgeDataSize",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/EstimatePurgeDataSize")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(EstimatePurgeDataSizeRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("storage")
-                .appendPathParam("actions")
-                .appendPathParam("estimatePurgeDataSize")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("if-match", request.getIfMatch())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.EstimatePurgeDataSizeResult.class,
-                        EstimatePurgeDataSizeResponse.Builder::estimatePurgeDataSizeResult)
-                .handleResponseHeaderString(
-                        "opc-request-id", EstimatePurgeDataSizeResponse.Builder::opcRequestId)
-                .handleResponseHeaderString("etag", EstimatePurgeDataSizeResponse.Builder::etag)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/EstimatePurgeDataSize");
+        java.util.function.Function<javax.ws.rs.core.Response, EstimatePurgeDataSizeResponse>
+                transformer =
+                        EstimatePurgeDataSizeConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getEstimatePurgeDataSizeDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public EstimateRecallDataSizeResponse estimateRecallDataSize(
             EstimateRecallDataSizeRequest request) {
+        LOG.trace("Called estimateRecallDataSize");
+        final EstimateRecallDataSizeRequest interceptedRequest =
+                EstimateRecallDataSizeConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                EstimateRecallDataSizeConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-        Objects.requireNonNull(
-                request.getEstimateRecallDataSizeDetails(),
-                "estimateRecallDataSizeDetails is required");
-
-        return clientCall(request, EstimateRecallDataSizeResponse::builder)
-                .logger(LOG, "estimateRecallDataSize")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "EstimateRecallDataSize",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/EstimateRecallDataSize")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(EstimateRecallDataSizeRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("storage")
-                .appendPathParam("actions")
-                .appendPathParam("estimateRecallDataSize")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeResult.class,
-                        EstimateRecallDataSizeResponse.Builder::estimateRecallDataSizeResult)
-                .handleResponseHeaderString(
-                        "opc-request-id", EstimateRecallDataSizeResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/EstimateRecallDataSize");
+        java.util.function.Function<javax.ws.rs.core.Response, EstimateRecallDataSizeResponse>
+                transformer =
+                        EstimateRecallDataSizeConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getEstimateRecallDataSizeDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public EstimateReleaseDataSizeResponse estimateReleaseDataSize(
             EstimateReleaseDataSizeRequest request) {
+        LOG.trace("Called estimateReleaseDataSize");
+        final EstimateReleaseDataSizeRequest interceptedRequest =
+                EstimateReleaseDataSizeConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                EstimateReleaseDataSizeConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-        Objects.requireNonNull(
-                request.getEstimateReleaseDataSizeDetails(),
-                "estimateReleaseDataSizeDetails is required");
-
-        return clientCall(request, EstimateReleaseDataSizeResponse::builder)
-                .logger(LOG, "estimateReleaseDataSize")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "EstimateReleaseDataSize",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/EstimateReleaseDataSize")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(EstimateReleaseDataSizeRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("storage")
-                .appendPathParam("actions")
-                .appendPathParam("estimateReleaseDataSize")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.EstimateReleaseDataSizeResult.class,
-                        EstimateReleaseDataSizeResponse.Builder::estimateReleaseDataSizeResult)
-                .handleResponseHeaderString(
-                        "opc-request-id", EstimateReleaseDataSizeResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/EstimateReleaseDataSize");
+        java.util.function.Function<javax.ws.rs.core.Response, EstimateReleaseDataSizeResponse>
+                transformer =
+                        EstimateReleaseDataSizeConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getEstimateReleaseDataSizeDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ExportCustomContentResponse exportCustomContent(ExportCustomContentRequest request) {
+        LOG.trace("Called exportCustomContent");
+        final ExportCustomContentRequest interceptedRequest =
+                ExportCustomContentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ExportCustomContentConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-        Objects.requireNonNull(
-                request.getExportCustomContentDetails(), "exportCustomContentDetails is required");
-
-        return clientCall(request, ExportCustomContentResponse::builder)
-                .logger(LOG, "exportCustomContent")
-                .serviceDetails("LogAnalytics", "ExportCustomContent", "")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(ExportCustomContentRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("contents")
-                .appendPathParam("actions")
-                .appendPathParam("exportCustomContent")
-                .accept("application/octet-stream")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        java.io.InputStream.class, ExportCustomContentResponse.Builder::inputStream)
-                .handleResponseHeaderString(
-                        "opc-request-id", ExportCustomContentResponse.Builder::opcRequestId)
-                .callSync();
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "LogAnalytics", "ExportCustomContent", ib.getRequestUri().toString(), "");
+        java.util.function.Function<javax.ws.rs.core.Response, ExportCustomContentResponse>
+                transformer =
+                        ExportCustomContentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getExportCustomContentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ExportQueryResultResponse exportQueryResult(ExportQueryResultRequest request) {
+        LOG.trace("Called exportQueryResult");
+        final ExportQueryResultRequest interceptedRequest =
+                ExportQueryResultConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ExportQueryResultConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-        Objects.requireNonNull(request.getExportDetails(), "exportDetails is required");
-
-        return clientCall(request, ExportQueryResultResponse::builder)
-                .logger(LOG, "exportQueryResult")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "ExportQueryResult",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/QueryDetails/ExportQueryResult")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(ExportQueryResultRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("search")
-                .appendPathParam("actions")
-                .appendPathParam("export")
-                .accept("application/octet-stream")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        java.io.InputStream.class, ExportQueryResultResponse.Builder::inputStream)
-                .handleResponseHeaderString(
-                        "opc-request-id", ExportQueryResultResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/QueryDetails/ExportQueryResult");
+        java.util.function.Function<javax.ws.rs.core.Response, ExportQueryResultResponse>
+                transformer =
+                        ExportQueryResultConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getExportDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ExtractStructuredLogFieldPathsResponse extractStructuredLogFieldPaths(
             ExtractStructuredLogFieldPathsRequest request) {
+        LOG.trace("Called extractStructuredLogFieldPaths");
+        final ExtractStructuredLogFieldPathsRequest interceptedRequest =
+                ExtractStructuredLogFieldPathsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ExtractStructuredLogFieldPathsConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-        Objects.requireNonNull(request.getLoganParserDetails(), "loganParserDetails is required");
-
-        return clientCall(request, ExtractStructuredLogFieldPathsResponse::builder)
-                .logger(LOG, "extractStructuredLogFieldPaths")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "ExtractStructuredLogFieldPaths",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsParser/ExtractStructuredLogFieldPaths")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(ExtractStructuredLogFieldPathsRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("parsers")
-                .appendPathParam("actions")
-                .appendPathParam("extractLogFieldPaths")
-                .appendEnumQueryParam("parserType", request.getParserType())
-                .accept("application/json;charset=UTF-8")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.ExtractLogFieldResults.class,
-                        ExtractStructuredLogFieldPathsResponse.Builder::extractLogFieldResults)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ExtractStructuredLogFieldPathsResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsParser/ExtractStructuredLogFieldPaths");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ExtractStructuredLogFieldPathsResponse>
+                transformer =
+                        ExtractStructuredLogFieldPathsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getLoganParserDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ExtractStructuredLogHeaderPathsResponse extractStructuredLogHeaderPaths(
             ExtractStructuredLogHeaderPathsRequest request) {
+        LOG.trace("Called extractStructuredLogHeaderPaths");
+        final ExtractStructuredLogHeaderPathsRequest interceptedRequest =
+                ExtractStructuredLogHeaderPathsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ExtractStructuredLogHeaderPathsConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-        Objects.requireNonNull(request.getLoganParserDetails(), "loganParserDetails is required");
-
-        return clientCall(request, ExtractStructuredLogHeaderPathsResponse::builder)
-                .logger(LOG, "extractStructuredLogHeaderPaths")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "ExtractStructuredLogHeaderPaths",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsParser/ExtractStructuredLogHeaderPaths")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(ExtractStructuredLogHeaderPathsRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("parsers")
-                .appendPathParam("actions")
-                .appendPathParam("extractLogHeaderPaths")
-                .appendEnumQueryParam("parserType", request.getParserType())
-                .accept("application/json;charset=UTF-8")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.ExtractLogHeaderResults.class,
-                        ExtractStructuredLogHeaderPathsResponse.Builder::extractLogHeaderResults)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ExtractStructuredLogHeaderPathsResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsParser/ExtractStructuredLogHeaderPaths");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ExtractStructuredLogHeaderPathsResponse>
+                transformer =
+                        ExtractStructuredLogHeaderPathsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getLoganParserDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public FilterResponse filter(FilterRequest request) {
+        LOG.trace("Called filter");
+        final FilterRequest interceptedRequest = FilterConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                FilterConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-        Objects.requireNonNull(request.getFilterDetails(), "filterDetails is required");
-
-        return clientCall(request, FilterResponse::builder)
-                .logger(LOG, "filter")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "Filter",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/QueryDetails/Filter")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(FilterRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("search")
-                .appendPathParam("actions")
-                .appendPathParam("filter")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.FilterOutput.class,
-                        FilterResponse.Builder::filterOutput)
-                .handleResponseHeaderString("opc-request-id", FilterResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/QueryDetails/Filter");
+        java.util.function.Function<javax.ws.rs.core.Response, FilterResponse> transformer =
+                FilterConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getFilterDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetAssociationSummaryResponse getAssociationSummary(
             GetAssociationSummaryRequest request) {
+        LOG.trace("Called getAssociationSummary");
+        final GetAssociationSummaryRequest interceptedRequest =
+                GetAssociationSummaryConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetAssociationSummaryConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
-
-        return clientCall(request, GetAssociationSummaryResponse::builder)
-                .logger(LOG, "getAssociationSummary")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "GetAssociationSummary",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsAssociation/GetAssociationSummary")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetAssociationSummaryRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("associationSummary")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .accept("application/json;charset=UTF-8")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.AssociationSummaryReport.class,
-                        GetAssociationSummaryResponse.Builder::associationSummaryReport)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetAssociationSummaryResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsAssociation/GetAssociationSummary");
+        java.util.function.Function<javax.ws.rs.core.Response, GetAssociationSummaryResponse>
+                transformer =
+                        GetAssociationSummaryConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetCategoryResponse getCategory(GetCategoryRequest request) {
+        LOG.trace("Called getCategory");
+        final GetCategoryRequest interceptedRequest =
+                GetCategoryConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetCategoryConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        Validate.notBlank(request.getCategoryName(), "categoryName must not be blank");
-
-        return clientCall(request, GetCategoryResponse::builder)
-                .logger(LOG, "getCategory")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "GetCategory",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsCategory/GetCategory")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetCategoryRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("categories")
-                .appendPathParam(request.getCategoryName())
-                .accept("application/json;charset=UTF-8")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.LogAnalyticsCategory.class,
-                        GetCategoryResponse.Builder::logAnalyticsCategory)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetCategoryResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsCategory/GetCategory");
+        java.util.function.Function<javax.ws.rs.core.Response, GetCategoryResponse> transformer =
+                GetCategoryConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetColumnNamesResponse getColumnNames(GetColumnNamesRequest request) {
+        LOG.trace("Called getColumnNames");
+        final GetColumnNamesRequest interceptedRequest =
+                GetColumnNamesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetColumnNamesConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-        Objects.requireNonNull(request.getSqlQuery(), "sqlQuery is required");
-
-        return clientCall(request, GetColumnNamesResponse::builder)
-                .logger(LOG, "getColumnNames")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "GetColumnNames",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/GetColumnNames")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetColumnNamesRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("sources")
-                .appendPathParam("sqlColumnNames")
-                .appendQueryParam("sqlQuery", request.getSqlQuery())
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.ColumnNameCollection.class,
-                        GetColumnNamesResponse.Builder::columnNameCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetColumnNamesResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/GetColumnNames");
+        java.util.function.Function<javax.ws.rs.core.Response, GetColumnNamesResponse> transformer =
+                GetColumnNamesConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetConfigWorkRequestResponse getConfigWorkRequest(GetConfigWorkRequestRequest request) {
+        LOG.trace("Called getConfigWorkRequest");
+        final GetConfigWorkRequestRequest interceptedRequest =
+                GetConfigWorkRequestConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetConfigWorkRequestConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
-
-        return clientCall(request, GetConfigWorkRequestResponse::builder)
-                .logger(LOG, "getConfigWorkRequest")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "GetConfigWorkRequest",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsConfigWorkRequest/GetConfigWorkRequest")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetConfigWorkRequestRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("configWorkRequests")
-                .appendPathParam(request.getWorkRequestId())
-                .accept("application/json;charset=UTF-8")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.LogAnalyticsConfigWorkRequest.class,
-                        GetConfigWorkRequestResponse.Builder::logAnalyticsConfigWorkRequest)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetConfigWorkRequestResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsConfigWorkRequest/GetConfigWorkRequest");
+        java.util.function.Function<javax.ws.rs.core.Response, GetConfigWorkRequestResponse>
+                transformer =
+                        GetConfigWorkRequestConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetFieldResponse getField(GetFieldRequest request) {
+        LOG.trace("Called getField");
+        final GetFieldRequest interceptedRequest = GetFieldConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetFieldConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        Validate.notBlank(request.getFieldName(), "fieldName must not be blank");
-
-        return clientCall(request, GetFieldResponse::builder)
-                .logger(LOG, "getField")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "GetField",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsField/GetField")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetFieldRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("fields")
-                .appendPathParam(request.getFieldName())
-                .accept("application/json;charset=UTF-8")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.LogAnalyticsField.class,
-                        GetFieldResponse.Builder::logAnalyticsField)
-                .handleResponseHeaderString("etag", GetFieldResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetFieldResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsField/GetField");
+        java.util.function.Function<javax.ws.rs.core.Response, GetFieldResponse> transformer =
+                GetFieldConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetFieldsSummaryResponse getFieldsSummary(GetFieldsSummaryRequest request) {
+        LOG.trace("Called getFieldsSummary");
+        final GetFieldsSummaryRequest interceptedRequest =
+                GetFieldsSummaryConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetFieldsSummaryConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        return clientCall(request, GetFieldsSummaryResponse::builder)
-                .logger(LOG, "getFieldsSummary")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "GetFieldsSummary",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsField/GetFieldsSummary")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetFieldsSummaryRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("fieldSummary")
-                .appendQueryParam("isShowDetail", request.getIsShowDetail())
-                .accept("application/json;charset=UTF-8")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.FieldSummaryReport.class,
-                        GetFieldsSummaryResponse.Builder::fieldSummaryReport)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetFieldsSummaryResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsField/GetFieldsSummary");
+        java.util.function.Function<javax.ws.rs.core.Response, GetFieldsSummaryResponse>
+                transformer =
+                        GetFieldsSummaryConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetIngestTimeRuleResponse getIngestTimeRule(GetIngestTimeRuleRequest request) {
+        LOG.trace("Called getIngestTimeRule");
+        final GetIngestTimeRuleRequest interceptedRequest =
+                GetIngestTimeRuleConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetIngestTimeRuleConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        Validate.notBlank(request.getIngestTimeRuleId(), "ingestTimeRuleId must not be blank");
-
-        return clientCall(request, GetIngestTimeRuleResponse::builder)
-                .logger(LOG, "getIngestTimeRule")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "GetIngestTimeRule",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/IngestTimeRule/GetIngestTimeRule")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetIngestTimeRuleRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("ingestTimeRules")
-                .appendPathParam(request.getIngestTimeRuleId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.IngestTimeRule.class,
-                        GetIngestTimeRuleResponse.Builder::ingestTimeRule)
-                .handleResponseHeaderString("etag", GetIngestTimeRuleResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetIngestTimeRuleResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/IngestTimeRule/GetIngestTimeRule");
+        java.util.function.Function<javax.ws.rs.core.Response, GetIngestTimeRuleResponse>
+                transformer =
+                        GetIngestTimeRuleConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetLabelResponse getLabel(GetLabelRequest request) {
+        LOG.trace("Called getLabel");
+        final GetLabelRequest interceptedRequest = GetLabelConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetLabelConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        Validate.notBlank(request.getLabelName(), "labelName must not be blank");
-
-        return clientCall(request, GetLabelResponse::builder)
-                .logger(LOG, "getLabel")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "GetLabel",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLabel/GetLabel")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetLabelRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("labels")
-                .appendPathParam(request.getLabelName())
-                .accept("application/json;charset=UTF-8")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.LogAnalyticsLabel.class,
-                        GetLabelResponse.Builder::logAnalyticsLabel)
-                .handleResponseHeaderString("etag", GetLabelResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetLabelResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLabel/GetLabel");
+        java.util.function.Function<javax.ws.rs.core.Response, GetLabelResponse> transformer =
+                GetLabelConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetLabelSummaryResponse getLabelSummary(GetLabelSummaryRequest request) {
+        LOG.trace("Called getLabelSummary");
+        final GetLabelSummaryRequest interceptedRequest =
+                GetLabelSummaryConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetLabelSummaryConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        return clientCall(request, GetLabelSummaryResponse::builder)
-                .logger(LOG, "getLabelSummary")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "GetLabelSummary",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLabel/GetLabelSummary")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetLabelSummaryRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("labelSummary")
-                .accept("application/json;charset=UTF-8")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.LabelSummaryReport.class,
-                        GetLabelSummaryResponse.Builder::labelSummaryReport)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetLabelSummaryResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLabel/GetLabelSummary");
+        java.util.function.Function<javax.ws.rs.core.Response, GetLabelSummaryResponse>
+                transformer =
+                        GetLabelSummaryConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetLogAnalyticsEmBridgeResponse getLogAnalyticsEmBridge(
             GetLogAnalyticsEmBridgeRequest request) {
+        LOG.trace("Called getLogAnalyticsEmBridge");
+        final GetLogAnalyticsEmBridgeRequest interceptedRequest =
+                GetLogAnalyticsEmBridgeConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetLogAnalyticsEmBridgeConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        Validate.notBlank(
-                request.getLogAnalyticsEmBridgeId(), "logAnalyticsEmBridgeId must not be blank");
-
-        return clientCall(request, GetLogAnalyticsEmBridgeResponse::builder)
-                .logger(LOG, "getLogAnalyticsEmBridge")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "GetLogAnalyticsEmBridge",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEmBridge/GetLogAnalyticsEmBridge")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetLogAnalyticsEmBridgeRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("logAnalyticsEmBridges")
-                .appendPathParam(request.getLogAnalyticsEmBridgeId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.LogAnalyticsEmBridge.class,
-                        GetLogAnalyticsEmBridgeResponse.Builder::logAnalyticsEmBridge)
-                .handleResponseHeaderString("etag", GetLogAnalyticsEmBridgeResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetLogAnalyticsEmBridgeResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEmBridge/GetLogAnalyticsEmBridge");
+        java.util.function.Function<javax.ws.rs.core.Response, GetLogAnalyticsEmBridgeResponse>
+                transformer =
+                        GetLogAnalyticsEmBridgeConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetLogAnalyticsEmBridgeSummaryResponse getLogAnalyticsEmBridgeSummary(
             GetLogAnalyticsEmBridgeSummaryRequest request) {
+        LOG.trace("Called getLogAnalyticsEmBridgeSummary");
+        final GetLogAnalyticsEmBridgeSummaryRequest interceptedRequest =
+                GetLogAnalyticsEmBridgeSummaryConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetLogAnalyticsEmBridgeSummaryConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
-
-        return clientCall(request, GetLogAnalyticsEmBridgeSummaryResponse::builder)
-                .logger(LOG, "getLogAnalyticsEmBridgeSummary")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "GetLogAnalyticsEmBridgeSummary",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEmBridge/GetLogAnalyticsEmBridgeSummary")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetLogAnalyticsEmBridgeSummaryRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("logAnalyticsEmBridges")
-                .appendPathParam("emBridgeSummary")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.LogAnalyticsEmBridgeSummaryReport.class,
-                        GetLogAnalyticsEmBridgeSummaryResponse.Builder
-                                ::logAnalyticsEmBridgeSummaryReport)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        GetLogAnalyticsEmBridgeSummaryResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEmBridge/GetLogAnalyticsEmBridgeSummary");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, GetLogAnalyticsEmBridgeSummaryResponse>
+                transformer =
+                        GetLogAnalyticsEmBridgeSummaryConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetLogAnalyticsEntitiesSummaryResponse getLogAnalyticsEntitiesSummary(
             GetLogAnalyticsEntitiesSummaryRequest request) {
+        LOG.trace("Called getLogAnalyticsEntitiesSummary");
+        final GetLogAnalyticsEntitiesSummaryRequest interceptedRequest =
+                GetLogAnalyticsEntitiesSummaryConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetLogAnalyticsEntitiesSummaryConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
-
-        return clientCall(request, GetLogAnalyticsEntitiesSummaryResponse::builder)
-                .logger(LOG, "getLogAnalyticsEntitiesSummary")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "GetLogAnalyticsEntitiesSummary",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEntity/GetLogAnalyticsEntitiesSummary")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetLogAnalyticsEntitiesSummaryRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("logAnalyticsEntities")
-                .appendPathParam("entitySummary")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.LogAnalyticsEntitySummaryReport.class,
-                        GetLogAnalyticsEntitiesSummaryResponse.Builder
-                                ::logAnalyticsEntitySummaryReport)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        GetLogAnalyticsEntitiesSummaryResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEntity/GetLogAnalyticsEntitiesSummary");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, GetLogAnalyticsEntitiesSummaryResponse>
+                transformer =
+                        GetLogAnalyticsEntitiesSummaryConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetLogAnalyticsEntityResponse getLogAnalyticsEntity(
             GetLogAnalyticsEntityRequest request) {
+        LOG.trace("Called getLogAnalyticsEntity");
+        final GetLogAnalyticsEntityRequest interceptedRequest =
+                GetLogAnalyticsEntityConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetLogAnalyticsEntityConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        Validate.notBlank(
-                request.getLogAnalyticsEntityId(), "logAnalyticsEntityId must not be blank");
-
-        return clientCall(request, GetLogAnalyticsEntityResponse::builder)
-                .logger(LOG, "getLogAnalyticsEntity")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "GetLogAnalyticsEntity",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEntity/GetLogAnalyticsEntity")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetLogAnalyticsEntityRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("logAnalyticsEntities")
-                .appendPathParam(request.getLogAnalyticsEntityId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.LogAnalyticsEntity.class,
-                        GetLogAnalyticsEntityResponse.Builder::logAnalyticsEntity)
-                .handleResponseHeaderString("etag", GetLogAnalyticsEntityResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetLogAnalyticsEntityResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEntity/GetLogAnalyticsEntity");
+        java.util.function.Function<javax.ws.rs.core.Response, GetLogAnalyticsEntityResponse>
+                transformer =
+                        GetLogAnalyticsEntityConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetLogAnalyticsEntityTypeResponse getLogAnalyticsEntityType(
             GetLogAnalyticsEntityTypeRequest request) {
+        LOG.trace("Called getLogAnalyticsEntityType");
+        final GetLogAnalyticsEntityTypeRequest interceptedRequest =
+                GetLogAnalyticsEntityTypeConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetLogAnalyticsEntityTypeConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        Validate.notBlank(request.getEntityTypeName(), "entityTypeName must not be blank");
-
-        return clientCall(request, GetLogAnalyticsEntityTypeResponse::builder)
-                .logger(LOG, "getLogAnalyticsEntityType")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "GetLogAnalyticsEntityType",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEntityType/GetLogAnalyticsEntityType")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetLogAnalyticsEntityTypeRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("logAnalyticsEntityTypes")
-                .appendPathParam(request.getEntityTypeName())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.LogAnalyticsEntityType.class,
-                        GetLogAnalyticsEntityTypeResponse.Builder::logAnalyticsEntityType)
-                .handleResponseHeaderString("etag", GetLogAnalyticsEntityTypeResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetLogAnalyticsEntityTypeResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEntityType/GetLogAnalyticsEntityType");
+        java.util.function.Function<javax.ws.rs.core.Response, GetLogAnalyticsEntityTypeResponse>
+                transformer =
+                        GetLogAnalyticsEntityTypeConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetLogAnalyticsLogGroupResponse getLogAnalyticsLogGroup(
             GetLogAnalyticsLogGroupRequest request) {
+        LOG.trace("Called getLogAnalyticsLogGroup");
+        final GetLogAnalyticsLogGroupRequest interceptedRequest =
+                GetLogAnalyticsLogGroupConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetLogAnalyticsLogGroupConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        Validate.notBlank(
-                request.getLogAnalyticsLogGroupId(), "logAnalyticsLogGroupId must not be blank");
-
-        return clientCall(request, GetLogAnalyticsLogGroupResponse::builder)
-                .logger(LOG, "getLogAnalyticsLogGroup")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "GetLogAnalyticsLogGroup",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLogGroup/GetLogAnalyticsLogGroup")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetLogAnalyticsLogGroupRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("logAnalyticsLogGroups")
-                .appendPathParam(request.getLogAnalyticsLogGroupId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.LogAnalyticsLogGroup.class,
-                        GetLogAnalyticsLogGroupResponse.Builder::logAnalyticsLogGroup)
-                .handleResponseHeaderString("etag", GetLogAnalyticsLogGroupResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetLogAnalyticsLogGroupResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLogGroup/GetLogAnalyticsLogGroup");
+        java.util.function.Function<javax.ws.rs.core.Response, GetLogAnalyticsLogGroupResponse>
+                transformer =
+                        GetLogAnalyticsLogGroupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetLogAnalyticsLogGroupsSummaryResponse getLogAnalyticsLogGroupsSummary(
             GetLogAnalyticsLogGroupsSummaryRequest request) {
+        LOG.trace("Called getLogAnalyticsLogGroupsSummary");
+        final GetLogAnalyticsLogGroupsSummaryRequest interceptedRequest =
+                GetLogAnalyticsLogGroupsSummaryConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetLogAnalyticsLogGroupsSummaryConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
-
-        return clientCall(request, GetLogAnalyticsLogGroupsSummaryResponse::builder)
-                .logger(LOG, "getLogAnalyticsLogGroupsSummary")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "GetLogAnalyticsLogGroupsSummary",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLogGroup/GetLogAnalyticsLogGroupsSummary")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetLogAnalyticsLogGroupsSummaryRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("logAnalyticsLogGroupsSummary")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.LogGroupSummaryReport.class,
-                        GetLogAnalyticsLogGroupsSummaryResponse.Builder::logGroupSummaryReport)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        GetLogAnalyticsLogGroupsSummaryResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLogGroup/GetLogAnalyticsLogGroupsSummary");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, GetLogAnalyticsLogGroupsSummaryResponse>
+                transformer =
+                        GetLogAnalyticsLogGroupsSummaryConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetLogAnalyticsObjectCollectionRuleResponse getLogAnalyticsObjectCollectionRule(
             GetLogAnalyticsObjectCollectionRuleRequest request) {
+        LOG.trace("Called getLogAnalyticsObjectCollectionRule");
+        final GetLogAnalyticsObjectCollectionRuleRequest interceptedRequest =
+                GetLogAnalyticsObjectCollectionRuleConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetLogAnalyticsObjectCollectionRuleConverter.fromRequest(
+                        client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        Validate.notBlank(
-                request.getLogAnalyticsObjectCollectionRuleId(),
-                "logAnalyticsObjectCollectionRuleId must not be blank");
-
-        return clientCall(request, GetLogAnalyticsObjectCollectionRuleResponse::builder)
-                .logger(LOG, "getLogAnalyticsObjectCollectionRule")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "GetLogAnalyticsObjectCollectionRule",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsObjectCollectionRule/GetLogAnalyticsObjectCollectionRule")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetLogAnalyticsObjectCollectionRuleRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("logAnalyticsObjectCollectionRules")
-                .appendPathParam(request.getLogAnalyticsObjectCollectionRuleId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.LogAnalyticsObjectCollectionRule.class,
-                        GetLogAnalyticsObjectCollectionRuleResponse.Builder
-                                ::logAnalyticsObjectCollectionRule)
-                .handleResponseHeaderString(
-                        "etag", GetLogAnalyticsObjectCollectionRuleResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        GetLogAnalyticsObjectCollectionRuleResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsObjectCollectionRule/GetLogAnalyticsObjectCollectionRule");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, GetLogAnalyticsObjectCollectionRuleResponse>
+                transformer =
+                        GetLogAnalyticsObjectCollectionRuleConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetLogSetsCountResponse getLogSetsCount(GetLogSetsCountRequest request) {
+        LOG.trace("Called getLogSetsCount");
+        final GetLogSetsCountRequest interceptedRequest =
+                GetLogSetsCountConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetLogSetsCountConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        return clientCall(request, GetLogSetsCountResponse::builder)
-                .logger(LOG, "getLogSetsCount")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "GetLogSetsCount",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/GetLogSetsCount")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetLogSetsCountRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("storage")
-                .appendPathParam("logSetsCount")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.LogSetsCount.class,
-                        GetLogSetsCountResponse.Builder::logSetsCount)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetLogSetsCountResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/GetLogSetsCount");
+        java.util.function.Function<javax.ws.rs.core.Response, GetLogSetsCountResponse>
+                transformer =
+                        GetLogSetsCountConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetLookupResponse getLookup(GetLookupRequest request) {
+        LOG.trace("Called getLookup");
+        final GetLookupRequest interceptedRequest = GetLookupConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetLookupConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        Validate.notBlank(request.getLookupName(), "lookupName must not be blank");
-
-        return clientCall(request, GetLookupResponse::builder)
-                .logger(LOG, "getLookup")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "GetLookup",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLookup/GetLookup")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetLookupRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("lookups")
-                .appendPathParam(request.getLookupName())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.LogAnalyticsLookup.class,
-                        GetLookupResponse.Builder::logAnalyticsLookup)
-                .handleResponseHeaderString("etag", GetLookupResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetLookupResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLookup/GetLookup");
+        java.util.function.Function<javax.ws.rs.core.Response, GetLookupResponse> transformer =
+                GetLookupConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetLookupSummaryResponse getLookupSummary(GetLookupSummaryRequest request) {
+        LOG.trace("Called getLookupSummary");
+        final GetLookupSummaryRequest interceptedRequest =
+                GetLookupSummaryConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetLookupSummaryConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        return clientCall(request, GetLookupSummaryResponse::builder)
-                .logger(LOG, "getLookupSummary")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "GetLookupSummary",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLookup/GetLookupSummary")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetLookupSummaryRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("lookupSummary")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.LookupSummaryReport.class,
-                        GetLookupSummaryResponse.Builder::lookupSummaryReport)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetLookupSummaryResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLookup/GetLookupSummary");
+        java.util.function.Function<javax.ws.rs.core.Response, GetLookupSummaryResponse>
+                transformer =
+                        GetLookupSummaryConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetNamespaceResponse getNamespace(GetNamespaceRequest request) {
+        LOG.trace("Called getNamespace");
+        final GetNamespaceRequest interceptedRequest =
+                GetNamespaceConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetNamespaceConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        return clientCall(request, GetNamespaceResponse::builder)
-                .logger(LOG, "getNamespace")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "GetNamespace",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Namespace/GetNamespace")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetNamespaceRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.Namespace.class,
-                        GetNamespaceResponse.Builder::namespace)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetNamespaceResponse.Builder::opcRequestId)
-                .handleResponseHeaderString("etag", GetNamespaceResponse.Builder::etag)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Namespace/GetNamespace");
+        java.util.function.Function<javax.ws.rs.core.Response, GetNamespaceResponse> transformer =
+                GetNamespaceConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetParserResponse getParser(GetParserRequest request) {
+        LOG.trace("Called getParser");
+        final GetParserRequest interceptedRequest = GetParserConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetParserConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        Validate.notBlank(request.getParserName(), "parserName must not be blank");
-
-        return clientCall(request, GetParserResponse::builder)
-                .logger(LOG, "getParser")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "GetParser",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsParser/GetParser")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetParserRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("parsers")
-                .appendPathParam(request.getParserName())
-                .accept("application/json;charset=UTF-8")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.LogAnalyticsParser.class,
-                        GetParserResponse.Builder::logAnalyticsParser)
-                .handleResponseHeaderString("etag", GetParserResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetParserResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsParser/GetParser");
+        java.util.function.Function<javax.ws.rs.core.Response, GetParserResponse> transformer =
+                GetParserConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetParserSummaryResponse getParserSummary(GetParserSummaryRequest request) {
+        LOG.trace("Called getParserSummary");
+        final GetParserSummaryRequest interceptedRequest =
+                GetParserSummaryConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetParserSummaryConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        return clientCall(request, GetParserSummaryResponse::builder)
-                .logger(LOG, "getParserSummary")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "GetParserSummary",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsParser/GetParserSummary")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetParserSummaryRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("parsersSummary")
-                .accept("application/json;charset=UTF-8")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.ParserSummaryReport.class,
-                        GetParserSummaryResponse.Builder::parserSummaryReport)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetParserSummaryResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsParser/GetParserSummary");
+        java.util.function.Function<javax.ws.rs.core.Response, GetParserSummaryResponse>
+                transformer =
+                        GetParserSummaryConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetPreferencesResponse getPreferences(GetPreferencesRequest request) {
+        LOG.trace("Called getPreferences");
+        final GetPreferencesRequest interceptedRequest =
+                GetPreferencesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetPreferencesConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        return clientCall(request, GetPreferencesResponse::builder)
-                .logger(LOG, "getPreferences")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "GetPreferences",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsPreference/GetPreferences")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetPreferencesRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("preferences")
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .accept("application/json;charset=UTF-8")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.LogAnalyticsPreferenceCollection.class,
-                        GetPreferencesResponse.Builder::logAnalyticsPreferenceCollection)
-                .handleResponseHeaderString(
-                        "opc-prev-page", GetPreferencesResponse.Builder::opcPrevPage)
-                .handleResponseHeaderString(
-                        "opc-next-page", GetPreferencesResponse.Builder::opcNextPage)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetPreferencesResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsPreference/GetPreferences");
+        java.util.function.Function<javax.ws.rs.core.Response, GetPreferencesResponse> transformer =
+                GetPreferencesConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetQueryResultResponse getQueryResult(GetQueryResultRequest request) {
+        LOG.trace("Called getQueryResult");
+        final GetQueryResultRequest interceptedRequest =
+                GetQueryResultConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetQueryResultConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-        Objects.requireNonNull(request.getWorkRequestId(), "workRequestId is required");
-
-        return clientCall(request, GetQueryResultResponse::builder)
-                .logger(LOG, "getQueryResult")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "GetQueryResult",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/QueryDetails/GetQueryResult")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetQueryResultRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("search")
-                .appendPathParam("actions")
-                .appendPathParam("query")
-                .appendQueryParam("workRequestId", request.getWorkRequestId())
-                .appendQueryParam("page", request.getPage())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("shouldIncludeColumns", request.getShouldIncludeColumns())
-                .appendQueryParam("shouldIncludeFields", request.getShouldIncludeFields())
-                .appendEnumQueryParam("outputMode", request.getOutputMode())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.QueryAggregation.class,
-                        GetQueryResultResponse.Builder::queryAggregation)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetQueryResultResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", GetQueryResultResponse.Builder::opcNextPage)
-                .handleResponseHeaderString(
-                        "opc-prev-page", GetQueryResultResponse.Builder::opcPrevPage)
-                .handleResponseHeaderFloat(
-                        "retry-after", GetQueryResultResponse.Builder::retryAfter)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/QueryDetails/GetQueryResult");
+        java.util.function.Function<javax.ws.rs.core.Response, GetQueryResultResponse> transformer =
+                GetQueryResultConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetQueryWorkRequestResponse getQueryWorkRequest(GetQueryWorkRequestRequest request) {
+        LOG.trace("Called getQueryWorkRequest");
+        final GetQueryWorkRequestRequest interceptedRequest =
+                GetQueryWorkRequestConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetQueryWorkRequestConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
-
-        return clientCall(request, GetQueryWorkRequestResponse::builder)
-                .logger(LOG, "getQueryWorkRequest")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "GetQueryWorkRequest",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/QueryWorkRequest/GetQueryWorkRequest")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetQueryWorkRequestRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("queryWorkRequests")
-                .appendPathParam(request.getWorkRequestId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.QueryWorkRequest.class,
-                        GetQueryWorkRequestResponse.Builder::queryWorkRequest)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetQueryWorkRequestResponse.Builder::opcRequestId)
-                .handleResponseHeaderString("etag", GetQueryWorkRequestResponse.Builder::etag)
-                .handleResponseHeaderFloat(
-                        "retry-after", GetQueryWorkRequestResponse.Builder::retryAfter)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/QueryWorkRequest/GetQueryWorkRequest");
+        java.util.function.Function<javax.ws.rs.core.Response, GetQueryWorkRequestResponse>
+                transformer =
+                        GetQueryWorkRequestConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetRecallCountResponse getRecallCount(GetRecallCountRequest request) {
+        LOG.trace("Called getRecallCount");
+        final GetRecallCountRequest interceptedRequest =
+                GetRecallCountConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetRecallCountConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        return clientCall(request, GetRecallCountResponse::builder)
-                .logger(LOG, "getRecallCount")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "GetRecallCount",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/GetRecallCount")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetRecallCountRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("storage")
-                .appendPathParam("recallCount")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.RecallCount.class,
-                        GetRecallCountResponse.Builder::recallCount)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetRecallCountResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/GetRecallCount");
+        java.util.function.Function<javax.ws.rs.core.Response, GetRecallCountResponse> transformer =
+                GetRecallCountConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetRecalledDataSizeResponse getRecalledDataSize(GetRecalledDataSizeRequest request) {
+        LOG.trace("Called getRecalledDataSize");
+        final GetRecalledDataSizeRequest interceptedRequest =
+                GetRecalledDataSizeConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetRecalledDataSizeConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        return clientCall(request, GetRecalledDataSizeResponse::builder)
-                .logger(LOG, "getRecalledDataSize")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "GetRecalledDataSize",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/GetRecalledDataSize")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetRecalledDataSizeRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("storage")
-                .appendPathParam("recalledDataSize")
-                .appendQueryParam("timeDataStarted", request.getTimeDataStarted())
-                .appendQueryParam("timeDataEnded", request.getTimeDataEnded())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.RecalledDataSize.class,
-                        GetRecalledDataSizeResponse.Builder::recalledDataSize)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetRecalledDataSizeResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", GetRecalledDataSizeResponse.Builder::opcNextPage)
-                .handleResponseHeaderString(
-                        "opc-prev-page", GetRecalledDataSizeResponse.Builder::opcPrevPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/GetRecalledDataSize");
+        java.util.function.Function<javax.ws.rs.core.Response, GetRecalledDataSizeResponse>
+                transformer =
+                        GetRecalledDataSizeConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetRulesSummaryResponse getRulesSummary(GetRulesSummaryRequest request) {
+        LOG.trace("Called getRulesSummary");
+        final GetRulesSummaryRequest interceptedRequest =
+                GetRulesSummaryConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetRulesSummaryConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
-
-        return clientCall(request, GetRulesSummaryResponse::builder)
-                .logger(LOG, "getRulesSummary")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "GetRulesSummary",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Rule/GetRulesSummary")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetRulesSummaryRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("rulesSummary")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .accept("application/json;charset=UTF-8")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.RuleSummaryReport.class,
-                        GetRulesSummaryResponse.Builder::ruleSummaryReport)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetRulesSummaryResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Rule/GetRulesSummary");
+        java.util.function.Function<javax.ws.rs.core.Response, GetRulesSummaryResponse>
+                transformer =
+                        GetRulesSummaryConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetScheduledTaskResponse getScheduledTask(GetScheduledTaskRequest request) {
+        LOG.trace("Called getScheduledTask");
+        final GetScheduledTaskRequest interceptedRequest =
+                GetScheduledTaskConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetScheduledTaskConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        Validate.notBlank(request.getScheduledTaskId(), "scheduledTaskId must not be blank");
-
-        return clientCall(request, GetScheduledTaskResponse::builder)
-                .logger(LOG, "getScheduledTask")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "GetScheduledTask",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/ScheduledTask/GetScheduledTask")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetScheduledTaskRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("scheduledTasks")
-                .appendPathParam(request.getScheduledTaskId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.ScheduledTask.class,
-                        GetScheduledTaskResponse.Builder::scheduledTask)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetScheduledTaskResponse.Builder::opcRequestId)
-                .handleResponseHeaderString("etag", GetScheduledTaskResponse.Builder::etag)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/ScheduledTask/GetScheduledTask");
+        java.util.function.Function<javax.ws.rs.core.Response, GetScheduledTaskResponse>
+                transformer =
+                        GetScheduledTaskConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetSourceResponse getSource(GetSourceRequest request) {
+        LOG.trace("Called getSource");
+        final GetSourceRequest interceptedRequest = GetSourceConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetSourceConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        Validate.notBlank(request.getSourceName(), "sourceName must not be blank");
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
-
-        return clientCall(request, GetSourceResponse::builder)
-                .logger(LOG, "getSource")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "GetSource",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/GetSource")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetSourceRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("sources")
-                .appendPathParam(request.getSourceName())
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .accept("application/json;charset=UTF-8")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.LogAnalyticsSource.class,
-                        GetSourceResponse.Builder::logAnalyticsSource)
-                .handleResponseHeaderString("etag", GetSourceResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetSourceResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/GetSource");
+        java.util.function.Function<javax.ws.rs.core.Response, GetSourceResponse> transformer =
+                GetSourceConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetSourceSummaryResponse getSourceSummary(GetSourceSummaryRequest request) {
+        LOG.trace("Called getSourceSummary");
+        final GetSourceSummaryRequest interceptedRequest =
+                GetSourceSummaryConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetSourceSummaryConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        return clientCall(request, GetSourceSummaryResponse::builder)
-                .logger(LOG, "getSourceSummary")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "GetSourceSummary",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/GetSourceSummary")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetSourceSummaryRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("sourceSummary")
-                .accept("application/json;charset=UTF-8")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.SourceSummaryReport.class,
-                        GetSourceSummaryResponse.Builder::sourceSummaryReport)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetSourceSummaryResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/GetSourceSummary");
+        java.util.function.Function<javax.ws.rs.core.Response, GetSourceSummaryResponse>
+                transformer =
+                        GetSourceSummaryConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetStorageResponse getStorage(GetStorageRequest request) {
+        LOG.trace("Called getStorage");
+        final GetStorageRequest interceptedRequest = GetStorageConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetStorageConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        return clientCall(request, GetStorageResponse::builder)
-                .logger(LOG, "getStorage")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "GetStorage",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/GetStorage")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetStorageRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("storage")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.Storage.class,
-                        GetStorageResponse.Builder::storage)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetStorageResponse.Builder::opcRequestId)
-                .handleResponseHeaderString("etag", GetStorageResponse.Builder::etag)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/GetStorage");
+        java.util.function.Function<javax.ws.rs.core.Response, GetStorageResponse> transformer =
+                GetStorageConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetStorageUsageResponse getStorageUsage(GetStorageUsageRequest request) {
+        LOG.trace("Called getStorageUsage");
+        final GetStorageUsageRequest interceptedRequest =
+                GetStorageUsageConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetStorageUsageConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        return clientCall(request, GetStorageUsageResponse::builder)
-                .logger(LOG, "getStorageUsage")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "GetStorageUsage",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/GetStorageUsage")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetStorageUsageRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("storage")
-                .appendPathParam("usage")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.StorageUsage.class,
-                        GetStorageUsageResponse.Builder::storageUsage)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetStorageUsageResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/GetStorageUsage");
+        java.util.function.Function<javax.ws.rs.core.Response, GetStorageUsageResponse>
+                transformer =
+                        GetStorageUsageConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetStorageWorkRequestResponse getStorageWorkRequest(
             GetStorageWorkRequestRequest request) {
+        LOG.trace("Called getStorageWorkRequest");
+        final GetStorageWorkRequestRequest interceptedRequest =
+                GetStorageWorkRequestConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetStorageWorkRequestConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
-
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        return clientCall(request, GetStorageWorkRequestResponse::builder)
-                .logger(LOG, "getStorageWorkRequest")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "GetStorageWorkRequest",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/GetStorageWorkRequest")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetStorageWorkRequestRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("storageWorkRequests")
-                .appendPathParam(request.getWorkRequestId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.StorageWorkRequest.class,
-                        GetStorageWorkRequestResponse.Builder::storageWorkRequest)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetStorageWorkRequestResponse.Builder::opcRequestId)
-                .handleResponseHeaderString("etag", GetStorageWorkRequestResponse.Builder::etag)
-                .handleResponseHeaderFloat(
-                        "retry-after", GetStorageWorkRequestResponse.Builder::retryAfter)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/GetStorageWorkRequest");
+        java.util.function.Function<javax.ws.rs.core.Response, GetStorageWorkRequestResponse>
+                transformer =
+                        GetStorageWorkRequestConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetUnprocessedDataBucketResponse getUnprocessedDataBucket(
             GetUnprocessedDataBucketRequest request) {
+        LOG.trace("Called getUnprocessedDataBucket");
+        final GetUnprocessedDataBucketRequest interceptedRequest =
+                GetUnprocessedDataBucketConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetUnprocessedDataBucketConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        return clientCall(request, GetUnprocessedDataBucketResponse::builder)
-                .logger(LOG, "getUnprocessedDataBucket")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "GetUnprocessedDataBucket",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Upload/GetUnprocessedDataBucket")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetUnprocessedDataBucketRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("unprocessedDataBucket")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.UnprocessedDataBucket.class,
-                        GetUnprocessedDataBucketResponse.Builder::unprocessedDataBucket)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetUnprocessedDataBucketResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Upload/GetUnprocessedDataBucket");
+        java.util.function.Function<javax.ws.rs.core.Response, GetUnprocessedDataBucketResponse>
+                transformer =
+                        GetUnprocessedDataBucketConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetUploadResponse getUpload(GetUploadRequest request) {
+        LOG.trace("Called getUpload");
+        final GetUploadRequest interceptedRequest = GetUploadConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetUploadConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        Validate.notBlank(request.getUploadReference(), "uploadReference must not be blank");
-
-        return clientCall(request, GetUploadResponse::builder)
-                .logger(LOG, "getUpload")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "GetUpload",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Upload/GetUpload")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetUploadRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("uploads")
-                .appendPathParam(request.getUploadReference())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.Upload.class,
-                        GetUploadResponse.Builder::upload)
-                .handleResponseHeaderString("etag", GetUploadResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetUploadResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Upload/GetUpload");
+        java.util.function.Function<javax.ws.rs.core.Response, GetUploadResponse> transformer =
+                GetUploadConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request) {
+        LOG.trace("Called getWorkRequest");
+        final GetWorkRequestRequest interceptedRequest =
+                GetWorkRequestConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetWorkRequestConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
-
-        return clientCall(request, GetWorkRequestResponse::builder)
-                .logger(LOG, "getWorkRequest")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "GetWorkRequest",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/WorkRequest/GetWorkRequest")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetWorkRequestRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("workRequests")
-                .appendPathParam(request.getWorkRequestId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.WorkRequest.class,
-                        GetWorkRequestResponse.Builder::workRequest)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetWorkRequestResponse.Builder::opcRequestId)
-                .handleResponseHeaderFloat(
-                        "retry-after", GetWorkRequestResponse.Builder::retryAfter)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/WorkRequest/GetWorkRequest");
+        java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse> transformer =
+                GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ImportCustomContentResponse importCustomContent(ImportCustomContentRequest request) {
-
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-        Objects.requireNonNull(
-                request.getImportCustomContentFileBody(),
-                "importCustomContentFileBody is required");
-
-        return clientCall(request, ImportCustomContentResponse::builder)
-                .logger(LOG, "importCustomContent")
-                .serviceDetails(
-                        "LogAnalytics",
-                        "ImportCustomContent",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsImportCustomContent/ImportCustomContent")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(ImportCustomContentRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("contents")
-                .appendPathParam("actions")
-                .appendPathParam("importCustomContent")
-                .appendQueryParam("isOverwrite", request.getIsOverwrite())
-                .accept("application/json;charset=UTF-8")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("expect", request.getExpect())
-                .operationUsesDefaultRetries()
-                .hasBinaryRequestBody()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.LogAnalyticsImportCustomContent.class,
-                        ImportCustomContentResponse.Builder::logAnalyticsImportCustomContent)
-                .handleResponseHeaderString(
-                        "opc-request-id", ImportCustomContentResponse.Builder::opcRequestId)
-                .callSync();
+        LOG.trace("Called importCustomContent");
+        try {
+            final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                    com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                            request.getRetryConfiguration(), retryConfiguration, true);
+            if (request.getRetryConfiguration() != null
+                    || retryConfiguration != null
+                    || shouldRetryBecauseOfWaiterConfiguration(retrier)
+                    || authenticationDetailsProvider
+                            instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+                request =
+                        com.oracle.bmc.retrier.Retriers.wrapBodyInputStreamIfNecessary(
+                                request, ImportCustomContentRequest.builder());
+            }
+            final ImportCustomContentRequest interceptedRequest =
+                    ImportCustomContentConverter.interceptRequest(request);
+            com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                    ImportCustomContentConverter.fromRequest(client, interceptedRequest);
+            com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+            com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+            com.oracle.bmc.ServiceDetails serviceDetails =
+                    new com.oracle.bmc.ServiceDetails(
+                            "LogAnalytics",
+                            "ImportCustomContent",
+                            ib.getRequestUri().toString(),
+                            "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsImportCustomContent/ImportCustomContent");
+            java.util.function.Function<javax.ws.rs.core.Response, ImportCustomContentResponse>
+                    transformer =
+                            ImportCustomContentConverter.fromResponse(
+                                    java.util.Optional.of(serviceDetails));
+            return retrier.execute(
+                    interceptedRequest,
+                    retryRequest -> {
+                        final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                                new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                        authenticationDetailsProvider);
+                        return tokenRefreshRetrier.execute(
+                                retryRequest,
+                                retriedRequest -> {
+                                    try {
+                                        javax.ws.rs.core.Response response =
+                                                client.post(
+                                                        ib,
+                                                        retriedRequest
+                                                                .getImportCustomContentFileBody(),
+                                                        retriedRequest);
+                                        return transformer.apply(response);
+                                    } catch (RuntimeException e) {
+                                        if (interceptedRequest.getRetryConfiguration() != null
+                                                || retryConfiguration != null
+                                                || shouldRetryBecauseOfWaiterConfiguration(retrier)
+                                                || (e instanceof com.oracle.bmc.model.BmcException
+                                                        && tokenRefreshRetrier
+                                                                .getRetryCondition()
+                                                                .shouldBeRetried(
+                                                                        (com.oracle.bmc.model
+                                                                                        .BmcException)
+                                                                                e))) {
+                                            com.oracle.bmc.retrier.Retriers.tryResetStreamForRetry(
+                                                    interceptedRequest
+                                                            .getImportCustomContentFileBody(),
+                                                    true);
+                                        }
+                                        throw e; // rethrow
+                                    }
+                                });
+                    });
+        } finally {
+            com.oracle.bmc.io.internal.KeepOpenInputStream.closeStream(
+                    request.getImportCustomContentFileBody());
+        }
     }
 
     @Override
     public ListAssociableEntitiesResponse listAssociableEntities(
             ListAssociableEntitiesRequest request) {
+        LOG.trace("Called listAssociableEntities");
+        final ListAssociableEntitiesRequest interceptedRequest =
+                ListAssociableEntitiesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListAssociableEntitiesConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        Validate.notBlank(request.getSourceName(), "sourceName must not be blank");
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
-
-        return clientCall(request, ListAssociableEntitiesResponse::builder)
-                .logger(LOG, "listAssociableEntities")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "ListAssociableEntities",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/ListAssociableEntities")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListAssociableEntitiesRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("sources")
-                .appendPathParam(request.getSourceName())
-                .appendPathParam("associableEntities")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendEnumQueryParam("type", request.getType())
-                .appendQueryParam("searchText", request.getSearchText())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .accept("application/json;charset=UTF-8")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.AssociableEntityCollection.class,
-                        ListAssociableEntitiesResponse.Builder::associableEntityCollection)
-                .handleResponseHeaderString(
-                        "opc-prev-page", ListAssociableEntitiesResponse.Builder::opcPrevPage)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListAssociableEntitiesResponse.Builder::opcNextPage)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListAssociableEntitiesResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/ListAssociableEntities");
+        java.util.function.Function<javax.ws.rs.core.Response, ListAssociableEntitiesResponse>
+                transformer =
+                        ListAssociableEntitiesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListAssociatedEntitiesResponse listAssociatedEntities(
             ListAssociatedEntitiesRequest request) {
+        LOG.trace("Called listAssociatedEntities");
+        final ListAssociatedEntitiesRequest interceptedRequest =
+                ListAssociatedEntitiesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListAssociatedEntitiesConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
-
-        return clientCall(request, ListAssociatedEntitiesResponse::builder)
-                .logger(LOG, "listAssociatedEntities")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "ListAssociatedEntities",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsAssociation/ListAssociatedEntities")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListAssociatedEntitiesRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("associatedEntities")
-                .appendQueryParam("entityId", request.getEntityId())
-                .appendQueryParam("entityType", request.getEntityType())
-                .appendQueryParam("entityTypeDisplayName", request.getEntityTypeDisplayName())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .accept("application/json;charset=UTF-8")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.LogAnalyticsAssociatedEntityCollection
-                                .class,
-                        ListAssociatedEntitiesResponse.Builder
-                                ::logAnalyticsAssociatedEntityCollection)
-                .handleResponseHeaderString(
-                        "opc-prev-page", ListAssociatedEntitiesResponse.Builder::opcPrevPage)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListAssociatedEntitiesResponse.Builder::opcNextPage)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListAssociatedEntitiesResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsAssociation/ListAssociatedEntities");
+        java.util.function.Function<javax.ws.rs.core.Response, ListAssociatedEntitiesResponse>
+                transformer =
+                        ListAssociatedEntitiesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListAutoAssociationsResponse listAutoAssociations(ListAutoAssociationsRequest request) {
+        LOG.trace("Called listAutoAssociations");
+        final ListAutoAssociationsRequest interceptedRequest =
+                ListAutoAssociationsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListAutoAssociationsConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        Validate.notBlank(request.getSourceName(), "sourceName must not be blank");
-
-        return clientCall(request, ListAutoAssociationsResponse::builder)
-                .logger(LOG, "listAutoAssociations")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "ListAutoAssociations",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/ListAutoAssociations")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListAutoAssociationsRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("sources")
-                .appendPathParam(request.getSourceName())
-                .appendPathParam("autoAssociations")
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .accept("application/json;charset=UTF-8")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.AutoAssociationCollection.class,
-                        ListAutoAssociationsResponse.Builder::autoAssociationCollection)
-                .handleResponseHeaderString(
-                        "opc-prev-page", ListAutoAssociationsResponse.Builder::opcPrevPage)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListAutoAssociationsResponse.Builder::opcNextPage)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListAutoAssociationsResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/ListAutoAssociations");
+        java.util.function.Function<javax.ws.rs.core.Response, ListAutoAssociationsResponse>
+                transformer =
+                        ListAutoAssociationsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListCategoriesResponse listCategories(ListCategoriesRequest request) {
+        LOG.trace("Called listCategories");
+        final ListCategoriesRequest interceptedRequest =
+                ListCategoriesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListCategoriesConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        return clientCall(request, ListCategoriesResponse::builder)
-                .logger(LOG, "listCategories")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "ListCategories",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsCategory/ListCategories")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListCategoriesRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("categories")
-                .appendQueryParam("categoryType", request.getCategoryType())
-                .appendQueryParam("categoryDisplayText", request.getCategoryDisplayText())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendQueryParam("name", request.getName())
-                .accept("application/json;charset=UTF-8")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.LogAnalyticsCategoryCollection.class,
-                        ListCategoriesResponse.Builder::logAnalyticsCategoryCollection)
-                .handleResponseHeaderString(
-                        "opc-prev-page", ListCategoriesResponse.Builder::opcPrevPage)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListCategoriesResponse.Builder::opcNextPage)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListCategoriesResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsCategory/ListCategories");
+        java.util.function.Function<javax.ws.rs.core.Response, ListCategoriesResponse> transformer =
+                ListCategoriesConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListConfigWorkRequestsResponse listConfigWorkRequests(
             ListConfigWorkRequestsRequest request) {
+        LOG.trace("Called listConfigWorkRequests");
+        final ListConfigWorkRequestsRequest interceptedRequest =
+                ListConfigWorkRequestsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListConfigWorkRequestsConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
-
-        return clientCall(request, ListConfigWorkRequestsResponse::builder)
-                .logger(LOG, "listConfigWorkRequests")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "ListConfigWorkRequests",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsConfigWorkRequest/ListConfigWorkRequests")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListConfigWorkRequestsRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("configWorkRequests")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .accept("application/json;charset=UTF-8")
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.LogAnalyticsConfigWorkRequestCollection
-                                .class,
-                        ListConfigWorkRequestsResponse.Builder
-                                ::logAnalyticsConfigWorkRequestCollection)
-                .handleResponseHeaderString(
-                        "opc-prev-page", ListConfigWorkRequestsResponse.Builder::opcPrevPage)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListConfigWorkRequestsResponse.Builder::opcNextPage)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListConfigWorkRequestsResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsConfigWorkRequest/ListConfigWorkRequests");
+        java.util.function.Function<javax.ws.rs.core.Response, ListConfigWorkRequestsResponse>
+                transformer =
+                        ListConfigWorkRequestsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListEffectivePropertiesResponse listEffectiveProperties(
             ListEffectivePropertiesRequest request) {
+        LOG.trace("Called listEffectiveProperties");
+        final ListEffectivePropertiesRequest interceptedRequest =
+                ListEffectivePropertiesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListEffectivePropertiesConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        return clientCall(request, ListEffectivePropertiesResponse::builder)
-                .logger(LOG, "listEffectiveProperties")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "ListEffectiveProperties",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsProperty/ListEffectiveProperties")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListEffectivePropertiesRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("effectiveProperties")
-                .appendQueryParam("agentId", request.getAgentId())
-                .appendQueryParam("sourceName", request.getSourceName())
-                .appendQueryParam("isIncludePatterns", request.getIsIncludePatterns())
-                .appendQueryParam("entityId", request.getEntityId())
-                .appendQueryParam("patternId", request.getPatternId())
-                .appendQueryParam("name", request.getName())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.EffectivePropertyCollection.class,
-                        ListEffectivePropertiesResponse.Builder::effectivePropertyCollection)
-                .handleResponseHeaderString(
-                        "opc-prev-page", ListEffectivePropertiesResponse.Builder::opcPrevPage)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListEffectivePropertiesResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListEffectivePropertiesResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsProperty/ListEffectiveProperties");
+        java.util.function.Function<javax.ws.rs.core.Response, ListEffectivePropertiesResponse>
+                transformer =
+                        ListEffectivePropertiesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListEncryptionKeyInfoResponse listEncryptionKeyInfo(
             ListEncryptionKeyInfoRequest request) {
+        LOG.trace("Called listEncryptionKeyInfo");
+        final ListEncryptionKeyInfoRequest interceptedRequest =
+                ListEncryptionKeyInfoConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListEncryptionKeyInfoConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        return clientCall(request, ListEncryptionKeyInfoResponse::builder)
-                .logger(LOG, "listEncryptionKeyInfo")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "ListEncryptionKeyInfo",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/ListEncryptionKeyInfo")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListEncryptionKeyInfoRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("storage")
-                .appendPathParam("encryptionKeyInfo")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.EncryptionKeyInfoCollection.class,
-                        ListEncryptionKeyInfoResponse.Builder::encryptionKeyInfoCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListEncryptionKeyInfoResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/ListEncryptionKeyInfo");
+        java.util.function.Function<javax.ws.rs.core.Response, ListEncryptionKeyInfoResponse>
+                transformer =
+                        ListEncryptionKeyInfoConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListEntityAssociationsResponse listEntityAssociations(
             ListEntityAssociationsRequest request) {
+        LOG.trace("Called listEntityAssociations");
+        final ListEntityAssociationsRequest interceptedRequest =
+                ListEntityAssociationsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListEntityAssociationsConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        Validate.notBlank(
-                request.getLogAnalyticsEntityId(), "logAnalyticsEntityId must not be blank");
-
-        return clientCall(request, ListEntityAssociationsResponse::builder)
-                .logger(LOG, "listEntityAssociations")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "ListEntityAssociations",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEntity/ListEntityAssociations")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListEntityAssociationsRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("logAnalyticsEntities")
-                .appendPathParam(request.getLogAnalyticsEntityId())
-                .appendPathParam("entityAssociations")
-                .appendEnumQueryParam(
-                        "directOrAllAssociations", request.getDirectOrAllAssociations())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.LogAnalyticsEntityCollection.class,
-                        ListEntityAssociationsResponse.Builder::logAnalyticsEntityCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListEntityAssociationsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListEntityAssociationsResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEntity/ListEntityAssociations");
+        java.util.function.Function<javax.ws.rs.core.Response, ListEntityAssociationsResponse>
+                transformer =
+                        ListEntityAssociationsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListEntitySourceAssociationsResponse listEntitySourceAssociations(
             ListEntitySourceAssociationsRequest request) {
+        LOG.trace("Called listEntitySourceAssociations");
+        final ListEntitySourceAssociationsRequest interceptedRequest =
+                ListEntitySourceAssociationsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListEntitySourceAssociationsConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
-
-        return clientCall(request, ListEntitySourceAssociationsResponse::builder)
-                .logger(LOG, "listEntitySourceAssociations")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "ListEntitySourceAssociations",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsAssociation/ListEntitySourceAssociations")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListEntitySourceAssociationsRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("entityAssociations")
-                .appendQueryParam("entityId", request.getEntityId())
-                .appendQueryParam("entityType", request.getEntityType())
-                .appendQueryParam("entityTypeDisplayName", request.getEntityTypeDisplayName())
-                .appendEnumQueryParam("lifeCycleState", request.getLifeCycleState())
-                .appendQueryParam("isShowTotal", request.getIsShowTotal())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .accept("application/json;charset=UTF-8")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.LogAnalyticsAssociationCollection.class,
-                        ListEntitySourceAssociationsResponse.Builder
-                                ::logAnalyticsAssociationCollection)
-                .handleResponseHeaderString(
-                        "opc-prev-page", ListEntitySourceAssociationsResponse.Builder::opcPrevPage)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListEntitySourceAssociationsResponse.Builder::opcNextPage)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ListEntitySourceAssociationsResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsAssociation/ListEntitySourceAssociations");
+        java.util.function.Function<javax.ws.rs.core.Response, ListEntitySourceAssociationsResponse>
+                transformer =
+                        ListEntitySourceAssociationsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListFieldsResponse listFields(ListFieldsRequest request) {
+        LOG.trace("Called listFields");
+        final ListFieldsRequest interceptedRequest = ListFieldsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListFieldsConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        return clientCall(request, ListFieldsResponse::builder)
-                .logger(LOG, "listFields")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "ListFields",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsField/ListFields")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListFieldsRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("fields")
-                .appendQueryParam("isMatchAll", request.getIsMatchAll())
-                .appendQueryParam("sourceIds", request.getSourceIds())
-                .appendQueryParam("sourceNames", request.getSourceNames())
-                .appendEnumQueryParam("parserType", request.getParserType())
-                .appendQueryParam("parserIds", request.getParserIds())
-                .appendQueryParam("parserNames", request.getParserNames())
-                .appendQueryParam("isIncludeParser", request.getIsIncludeParser())
-                .appendQueryParam("filter", request.getFilter())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json;charset=UTF-8")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.LogAnalyticsFieldCollection.class,
-                        ListFieldsResponse.Builder::logAnalyticsFieldCollection)
-                .handleResponseHeaderString(
-                        "opc-prev-page", ListFieldsResponse.Builder::opcPrevPage)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListFieldsResponse.Builder::opcNextPage)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListFieldsResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsField/ListFields");
+        java.util.function.Function<javax.ws.rs.core.Response, ListFieldsResponse> transformer =
+                ListFieldsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListIngestTimeRulesResponse listIngestTimeRules(ListIngestTimeRulesRequest request) {
+        LOG.trace("Called listIngestTimeRules");
+        final ListIngestTimeRulesRequest interceptedRequest =
+                ListIngestTimeRulesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListIngestTimeRulesConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
-
-        return clientCall(request, ListIngestTimeRulesResponse::builder)
-                .logger(LOG, "listIngestTimeRules")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "ListIngestTimeRules",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/IngestTimeRule/ListIngestTimeRules")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListIngestTimeRulesRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("ingestTimeRules")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendQueryParam("displayName", request.getDisplayName())
-                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
-                .appendEnumQueryParam("conditionKind", request.getConditionKind())
-                .appendQueryParam("fieldName", request.getFieldName())
-                .appendQueryParam("fieldValue", request.getFieldValue())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.IngestTimeRuleSummaryCollection.class,
-                        ListIngestTimeRulesResponse.Builder::ingestTimeRuleSummaryCollection)
-                .handleResponseHeaderString(
-                        "opc-prev-page", ListIngestTimeRulesResponse.Builder::opcPrevPage)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListIngestTimeRulesResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListIngestTimeRulesResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/IngestTimeRule/ListIngestTimeRules");
+        java.util.function.Function<javax.ws.rs.core.Response, ListIngestTimeRulesResponse>
+                transformer =
+                        ListIngestTimeRulesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListLabelPrioritiesResponse listLabelPriorities(ListLabelPrioritiesRequest request) {
+        LOG.trace("Called listLabelPriorities");
+        final ListLabelPrioritiesRequest interceptedRequest =
+                ListLabelPrioritiesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListLabelPrioritiesConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        return clientCall(request, ListLabelPrioritiesResponse::builder)
-                .logger(LOG, "listLabelPriorities")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "ListLabelPriorities",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLabel/ListLabelPriorities")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListLabelPrioritiesRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("labelPriorities")
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .accept("application/json;charset=UTF-8")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.LabelPriorityCollection.class,
-                        ListLabelPrioritiesResponse.Builder::labelPriorityCollection)
-                .handleResponseHeaderString(
-                        "opc-prev-page", ListLabelPrioritiesResponse.Builder::opcPrevPage)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListLabelPrioritiesResponse.Builder::opcNextPage)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListLabelPrioritiesResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLabel/ListLabelPriorities");
+        java.util.function.Function<javax.ws.rs.core.Response, ListLabelPrioritiesResponse>
+                transformer =
+                        ListLabelPrioritiesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListLabelSourceDetailsResponse listLabelSourceDetails(
             ListLabelSourceDetailsRequest request) {
+        LOG.trace("Called listLabelSourceDetails");
+        final ListLabelSourceDetailsRequest interceptedRequest =
+                ListLabelSourceDetailsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListLabelSourceDetailsConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        return clientCall(request, ListLabelSourceDetailsResponse::builder)
-                .logger(LOG, "listLabelSourceDetails")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "ListLabelSourceDetails",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLabel/ListLabelSourceDetails")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListLabelSourceDetailsRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("labelSourceDetails")
-                .appendQueryParam("labelName", request.getLabelName())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("labelSourceSortBy", request.getLabelSourceSortBy())
-                .accept("application/json;charset=UTF-8")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.LabelSourceCollection.class,
-                        ListLabelSourceDetailsResponse.Builder::labelSourceCollection)
-                .handleResponseHeaderString(
-                        "opc-prev-page", ListLabelSourceDetailsResponse.Builder::opcPrevPage)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListLabelSourceDetailsResponse.Builder::opcNextPage)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListLabelSourceDetailsResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLabel/ListLabelSourceDetails");
+        java.util.function.Function<javax.ws.rs.core.Response, ListLabelSourceDetailsResponse>
+                transformer =
+                        ListLabelSourceDetailsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListLabelsResponse listLabels(ListLabelsRequest request) {
+        LOG.trace("Called listLabels");
+        final ListLabelsRequest interceptedRequest = ListLabelsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListLabelsConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        return clientCall(request, ListLabelsResponse::builder)
-                .logger(LOG, "listLabels")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "ListLabels",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLabel/ListLabels")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListLabelsRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("labels")
-                .appendQueryParam("labelName", request.getLabelName())
-                .appendQueryParam("labelDisplayText", request.getLabelDisplayText())
-                .appendEnumQueryParam("isSystem", request.getIsSystem())
-                .appendEnumQueryParam("labelPriority", request.getLabelPriority())
-                .appendQueryParam("isCountPop", request.getIsCountPop())
-                .appendQueryParam("isAliasPop", request.getIsAliasPop())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("labelSortBy", request.getLabelSortBy())
-                .accept("application/json;charset=UTF-8")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.LogAnalyticsLabelCollection.class,
-                        ListLabelsResponse.Builder::logAnalyticsLabelCollection)
-                .handleResponseHeaderString(
-                        "opc-prev-page", ListLabelsResponse.Builder::opcPrevPage)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListLabelsResponse.Builder::opcNextPage)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListLabelsResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLabel/ListLabels");
+        java.util.function.Function<javax.ws.rs.core.Response, ListLabelsResponse> transformer =
+                ListLabelsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListLogAnalyticsEmBridgesResponse listLogAnalyticsEmBridges(
             ListLogAnalyticsEmBridgesRequest request) {
+        LOG.trace("Called listLogAnalyticsEmBridges");
+        final ListLogAnalyticsEmBridgesRequest interceptedRequest =
+                ListLogAnalyticsEmBridgesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListLogAnalyticsEmBridgesConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
-
-        return clientCall(request, ListLogAnalyticsEmBridgesResponse::builder)
-                .logger(LOG, "listLogAnalyticsEmBridges")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "ListLogAnalyticsEmBridges",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEmBridge/ListLogAnalyticsEmBridges")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListLogAnalyticsEmBridgesRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("logAnalyticsEmBridges")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendQueryParam("displayName", request.getDisplayName())
-                .appendListQueryParam(
-                        "lifecycleState",
-                        request.getLifecycleState(),
-                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
-                .appendQueryParam("lifecycleDetailsContains", request.getLifecycleDetailsContains())
-                .appendListQueryParam(
-                        "importStatus",
-                        request.getImportStatus(),
-                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.LogAnalyticsEmBridgeCollection.class,
-                        ListLogAnalyticsEmBridgesResponse.Builder::logAnalyticsEmBridgeCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListLogAnalyticsEmBridgesResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListLogAnalyticsEmBridgesResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEmBridge/ListLogAnalyticsEmBridges");
+        java.util.function.Function<javax.ws.rs.core.Response, ListLogAnalyticsEmBridgesResponse>
+                transformer =
+                        ListLogAnalyticsEmBridgesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListLogAnalyticsEntitiesResponse listLogAnalyticsEntities(
             ListLogAnalyticsEntitiesRequest request) {
+        LOG.trace("Called listLogAnalyticsEntities");
+        final ListLogAnalyticsEntitiesRequest interceptedRequest =
+                ListLogAnalyticsEntitiesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListLogAnalyticsEntitiesConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
-
-        return clientCall(request, ListLogAnalyticsEntitiesResponse::builder)
-                .logger(LOG, "listLogAnalyticsEntities")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "ListLogAnalyticsEntities",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEntity/ListLogAnalyticsEntities")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListLogAnalyticsEntitiesRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("logAnalyticsEntities")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendQueryParam("name", request.getName())
-                .appendQueryParam("nameContains", request.getNameContains())
-                .appendListQueryParam(
-                        "entityTypeName",
-                        request.getEntityTypeName(),
-                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
-                .appendQueryParam("cloudResourceId", request.getCloudResourceId())
-                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
-                .appendQueryParam("lifecycleDetailsContains", request.getLifecycleDetailsContains())
-                .appendEnumQueryParam(
-                        "isManagementAgentIdNull", request.getIsManagementAgentIdNull())
-                .appendQueryParam("hostname", request.getHostname())
-                .appendQueryParam("hostnameContains", request.getHostnameContains())
-                .appendQueryParam("sourceId", request.getSourceId())
-                .appendListQueryParam(
-                        "creationSourceType",
-                        request.getCreationSourceType(),
-                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
-                .appendQueryParam("creationSourceDetails", request.getCreationSourceDetails())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendListQueryParam(
-                        "metadataEquals",
-                        request.getMetadataEquals(),
-                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.LogAnalyticsEntityCollection.class,
-                        ListLogAnalyticsEntitiesResponse.Builder::logAnalyticsEntityCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListLogAnalyticsEntitiesResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListLogAnalyticsEntitiesResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEntity/ListLogAnalyticsEntities");
+        java.util.function.Function<javax.ws.rs.core.Response, ListLogAnalyticsEntitiesResponse>
+                transformer =
+                        ListLogAnalyticsEntitiesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListLogAnalyticsEntityTopologyResponse listLogAnalyticsEntityTopology(
             ListLogAnalyticsEntityTopologyRequest request) {
+        LOG.trace("Called listLogAnalyticsEntityTopology");
+        final ListLogAnalyticsEntityTopologyRequest interceptedRequest =
+                ListLogAnalyticsEntityTopologyConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListLogAnalyticsEntityTopologyConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        Validate.notBlank(
-                request.getLogAnalyticsEntityId(), "logAnalyticsEntityId must not be blank");
-
-        return clientCall(request, ListLogAnalyticsEntityTopologyResponse::builder)
-                .logger(LOG, "listLogAnalyticsEntityTopology")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "ListLogAnalyticsEntityTopology",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEntitySummary/ListLogAnalyticsEntityTopology")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListLogAnalyticsEntityTopologyRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("logAnalyticsEntities")
-                .appendPathParam(request.getLogAnalyticsEntityId())
-                .appendPathParam("entityTopology")
-                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendListQueryParam(
-                        "metadataEquals",
-                        request.getMetadataEquals(),
-                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.LogAnalyticsEntityTopologyCollection
-                                .class,
-                        ListLogAnalyticsEntityTopologyResponse.Builder
-                                ::logAnalyticsEntityTopologyCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ListLogAnalyticsEntityTopologyResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page",
-                        ListLogAnalyticsEntityTopologyResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEntitySummary/ListLogAnalyticsEntityTopology");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ListLogAnalyticsEntityTopologyResponse>
+                transformer =
+                        ListLogAnalyticsEntityTopologyConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListLogAnalyticsEntityTypesResponse listLogAnalyticsEntityTypes(
             ListLogAnalyticsEntityTypesRequest request) {
+        LOG.trace("Called listLogAnalyticsEntityTypes");
+        final ListLogAnalyticsEntityTypesRequest interceptedRequest =
+                ListLogAnalyticsEntityTypesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListLogAnalyticsEntityTypesConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        return clientCall(request, ListLogAnalyticsEntityTypesResponse::builder)
-                .logger(LOG, "listLogAnalyticsEntityTypes")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "ListLogAnalyticsEntityTypes",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEntityType/ListLogAnalyticsEntityTypes")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListLogAnalyticsEntityTypesRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("logAnalyticsEntityTypes")
-                .appendQueryParam("name", request.getName())
-                .appendQueryParam("nameContains", request.getNameContains())
-                .appendEnumQueryParam("cloudType", request.getCloudType())
-                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.LogAnalyticsEntityTypeCollection.class,
-                        ListLogAnalyticsEntityTypesResponse.Builder
-                                ::logAnalyticsEntityTypeCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListLogAnalyticsEntityTypesResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListLogAnalyticsEntityTypesResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEntityType/ListLogAnalyticsEntityTypes");
+        java.util.function.Function<javax.ws.rs.core.Response, ListLogAnalyticsEntityTypesResponse>
+                transformer =
+                        ListLogAnalyticsEntityTypesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListLogAnalyticsLogGroupsResponse listLogAnalyticsLogGroups(
             ListLogAnalyticsLogGroupsRequest request) {
+        LOG.trace("Called listLogAnalyticsLogGroups");
+        final ListLogAnalyticsLogGroupsRequest interceptedRequest =
+                ListLogAnalyticsLogGroupsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListLogAnalyticsLogGroupsConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
-
-        return clientCall(request, ListLogAnalyticsLogGroupsResponse::builder)
-                .logger(LOG, "listLogAnalyticsLogGroups")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "ListLogAnalyticsLogGroups",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLogGroup/ListLogAnalyticsLogGroups")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListLogAnalyticsLogGroupsRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("logAnalyticsLogGroups")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendQueryParam("displayName", request.getDisplayName())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.LogAnalyticsLogGroupSummaryCollection
-                                .class,
-                        ListLogAnalyticsLogGroupsResponse.Builder
-                                ::logAnalyticsLogGroupSummaryCollection)
-                .handleResponseHeaderString(
-                        "opc-prev-page", ListLogAnalyticsLogGroupsResponse.Builder::opcPrevPage)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListLogAnalyticsLogGroupsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListLogAnalyticsLogGroupsResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLogGroup/ListLogAnalyticsLogGroups");
+        java.util.function.Function<javax.ws.rs.core.Response, ListLogAnalyticsLogGroupsResponse>
+                transformer =
+                        ListLogAnalyticsLogGroupsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListLogAnalyticsObjectCollectionRulesResponse listLogAnalyticsObjectCollectionRules(
             ListLogAnalyticsObjectCollectionRulesRequest request) {
+        LOG.trace("Called listLogAnalyticsObjectCollectionRules");
+        final ListLogAnalyticsObjectCollectionRulesRequest interceptedRequest =
+                ListLogAnalyticsObjectCollectionRulesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListLogAnalyticsObjectCollectionRulesConverter.fromRequest(
+                        client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
-
-        return clientCall(request, ListLogAnalyticsObjectCollectionRulesResponse::builder)
-                .logger(LOG, "listLogAnalyticsObjectCollectionRules")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "ListLogAnalyticsObjectCollectionRules",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsObjectCollectionRule/ListLogAnalyticsObjectCollectionRules")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListLogAnalyticsObjectCollectionRulesRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("logAnalyticsObjectCollectionRules")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendQueryParam("name", request.getName())
-                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.LogAnalyticsObjectCollectionRuleCollection
-                                .class,
-                        ListLogAnalyticsObjectCollectionRulesResponse.Builder
-                                ::logAnalyticsObjectCollectionRuleCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ListLogAnalyticsObjectCollectionRulesResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page",
-                        ListLogAnalyticsObjectCollectionRulesResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsObjectCollectionRule/ListLogAnalyticsObjectCollectionRules");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ListLogAnalyticsObjectCollectionRulesResponse>
+                transformer =
+                        ListLogAnalyticsObjectCollectionRulesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListLogSetsResponse listLogSets(ListLogSetsRequest request) {
+        LOG.trace("Called listLogSets");
+        final ListLogSetsRequest interceptedRequest =
+                ListLogSetsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListLogSetsConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        return clientCall(request, ListLogSetsResponse::builder)
-                .logger(LOG, "listLogSets")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "ListLogSets",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/ListLogSets")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListLogSetsRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("storage")
-                .appendPathParam("logSets")
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendListQueryParam(
-                        "logSetNameContains",
-                        request.getLogSetNameContains(),
-                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.LogSetCollection.class,
-                        ListLogSetsResponse.Builder::logSetCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListLogSetsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListLogSetsResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/ListLogSets");
+        java.util.function.Function<javax.ws.rs.core.Response, ListLogSetsResponse> transformer =
+                ListLogSetsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListLookupsResponse listLookups(ListLookupsRequest request) {
+        LOG.trace("Called listLookups");
+        final ListLookupsRequest interceptedRequest =
+                ListLookupsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListLookupsConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-        Objects.requireNonNull(request.getType(), "type is required");
-
-        return clientCall(request, ListLookupsResponse::builder)
-                .logger(LOG, "listLookups")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "ListLookups",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLookup/ListLookups")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListLookupsRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("lookups")
-                .appendQueryParam("lookupDisplayText", request.getLookupDisplayText())
-                .appendEnumQueryParam("type", request.getType())
-                .appendEnumQueryParam("isSystem", request.getIsSystem())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendEnumQueryParam("status", request.getStatus())
-                .appendQueryParam("categories", request.getCategories())
-                .appendQueryParam("isHideSpecial", request.getIsHideSpecial())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.LogAnalyticsLookupCollection.class,
-                        ListLookupsResponse.Builder::logAnalyticsLookupCollection)
-                .handleResponseHeaderString(
-                        "opc-prev-page", ListLookupsResponse.Builder::opcPrevPage)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListLookupsResponse.Builder::opcNextPage)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListLookupsResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLookup/ListLookups");
+        java.util.function.Function<javax.ws.rs.core.Response, ListLookupsResponse> transformer =
+                ListLookupsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListMetaSourceTypesResponse listMetaSourceTypes(ListMetaSourceTypesRequest request) {
+        LOG.trace("Called listMetaSourceTypes");
+        final ListMetaSourceTypesRequest interceptedRequest =
+                ListMetaSourceTypesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListMetaSourceTypesConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        return clientCall(request, ListMetaSourceTypesResponse::builder)
-                .logger(LOG, "listMetaSourceTypes")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "ListMetaSourceTypes",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/ListMetaSourceTypes")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListMetaSourceTypesRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("sourceMetaTypes")
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .accept("application/json;charset=UTF-8")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.LogAnalyticsMetaSourceTypeCollection
-                                .class,
-                        ListMetaSourceTypesResponse.Builder::logAnalyticsMetaSourceTypeCollection)
-                .handleResponseHeaderString(
-                        "opc-prev-page", ListMetaSourceTypesResponse.Builder::opcPrevPage)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListMetaSourceTypesResponse.Builder::opcNextPage)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListMetaSourceTypesResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/ListMetaSourceTypes");
+        java.util.function.Function<javax.ws.rs.core.Response, ListMetaSourceTypesResponse>
+                transformer =
+                        ListMetaSourceTypesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListNamespacesResponse listNamespaces(ListNamespacesRequest request) {
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+        LOG.trace("Called listNamespaces");
+        final ListNamespacesRequest interceptedRequest =
+                ListNamespacesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListNamespacesConverter.fromRequest(client, interceptedRequest);
 
-        return clientCall(request, ListNamespacesResponse::builder)
-                .logger(LOG, "listNamespaces")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "ListNamespaces",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Namespace/ListNamespaces")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListNamespacesRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.NamespaceCollection.class,
-                        ListNamespacesResponse.Builder::namespaceCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListNamespacesResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Namespace/ListNamespaces");
+        java.util.function.Function<javax.ws.rs.core.Response, ListNamespacesResponse> transformer =
+                ListNamespacesConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListOverlappingRecallsResponse listOverlappingRecalls(
             ListOverlappingRecallsRequest request) {
+        LOG.trace("Called listOverlappingRecalls");
+        final ListOverlappingRecallsRequest interceptedRequest =
+                ListOverlappingRecallsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListOverlappingRecallsConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        return clientCall(request, ListOverlappingRecallsResponse::builder)
-                .logger(LOG, "listOverlappingRecalls")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "ListOverlappingRecalls",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/ListOverlappingRecalls")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListOverlappingRecallsRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("storage")
-                .appendPathParam("overlappingRecalls")
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendQueryParam("timeDataStarted", request.getTimeDataStarted())
-                .appendQueryParam("timeDataEnded", request.getTimeDataEnded())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.OverlappingRecallCollection.class,
-                        ListOverlappingRecallsResponse.Builder::overlappingRecallCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListOverlappingRecallsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListOverlappingRecallsResponse.Builder::opcNextPage)
-                .handleResponseHeaderString(
-                        "opc-prev-page", ListOverlappingRecallsResponse.Builder::opcPrevPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/ListOverlappingRecalls");
+        java.util.function.Function<javax.ws.rs.core.Response, ListOverlappingRecallsResponse>
+                transformer =
+                        ListOverlappingRecallsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListParserFunctionsResponse listParserFunctions(ListParserFunctionsRequest request) {
+        LOG.trace("Called listParserFunctions");
+        final ListParserFunctionsRequest interceptedRequest =
+                ListParserFunctionsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListParserFunctionsConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        return clientCall(request, ListParserFunctionsResponse::builder)
-                .logger(LOG, "listParserFunctions")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "ListParserFunctions",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsParser/ListParserFunctions")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListParserFunctionsRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("parserFunctions")
-                .appendQueryParam("parserName", request.getParserName())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .accept("application/json;charset=UTF-8")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.LogAnalyticsParserFunctionCollection
-                                .class,
-                        ListParserFunctionsResponse.Builder::logAnalyticsParserFunctionCollection)
-                .handleResponseHeaderString(
-                        "opc-prev-page", ListParserFunctionsResponse.Builder::opcPrevPage)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListParserFunctionsResponse.Builder::opcNextPage)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListParserFunctionsResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsParser/ListParserFunctions");
+        java.util.function.Function<javax.ws.rs.core.Response, ListParserFunctionsResponse>
+                transformer =
+                        ListParserFunctionsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListParserMetaPluginsResponse listParserMetaPlugins(
             ListParserMetaPluginsRequest request) {
+        LOG.trace("Called listParserMetaPlugins");
+        final ListParserMetaPluginsRequest interceptedRequest =
+                ListParserMetaPluginsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListParserMetaPluginsConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        return clientCall(request, ListParserMetaPluginsResponse::builder)
-                .logger(LOG, "listParserMetaPlugins")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "ListParserMetaPlugins",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsParser/ListParserMetaPlugins")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListParserMetaPluginsRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("parserMetaPlugins")
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .accept("application/json;charset=UTF-8")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.LogAnalyticsParserMetaPluginCollection
-                                .class,
-                        ListParserMetaPluginsResponse.Builder
-                                ::logAnalyticsParserMetaPluginCollection)
-                .handleResponseHeaderString(
-                        "opc-prev-page", ListParserMetaPluginsResponse.Builder::opcPrevPage)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListParserMetaPluginsResponse.Builder::opcNextPage)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListParserMetaPluginsResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsParser/ListParserMetaPlugins");
+        java.util.function.Function<javax.ws.rs.core.Response, ListParserMetaPluginsResponse>
+                transformer =
+                        ListParserMetaPluginsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListParsersResponse listParsers(ListParsersRequest request) {
+        LOG.trace("Called listParsers");
+        final ListParsersRequest interceptedRequest =
+                ListParsersConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListParsersConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        return clientCall(request, ListParsersResponse::builder)
-                .logger(LOG, "listParsers")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "ListParsers",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsParser/ListParsers")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListParsersRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("parsers")
-                .appendQueryParam("isMatchAll", request.getIsMatchAll())
-                .appendEnumQueryParam("sourceType", request.getSourceType())
-                .appendQueryParam("parserName", request.getParserName())
-                .appendQueryParam("parserDisplayText", request.getParserDisplayText())
-                .appendEnumQueryParam("parserType", request.getParserType())
-                .appendQueryParam("categories", request.getCategories())
-                .appendEnumQueryParam("isSystem", request.getIsSystem())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json;charset=UTF-8")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.LogAnalyticsParserCollection.class,
-                        ListParsersResponse.Builder::logAnalyticsParserCollection)
-                .handleResponseHeaderString(
-                        "opc-prev-page", ListParsersResponse.Builder::opcPrevPage)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListParsersResponse.Builder::opcNextPage)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListParsersResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsParser/ListParsers");
+        java.util.function.Function<javax.ws.rs.core.Response, ListParsersResponse> transformer =
+                ListParsersConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListPropertiesMetadataResponse listPropertiesMetadata(
             ListPropertiesMetadataRequest request) {
+        LOG.trace("Called listPropertiesMetadata");
+        final ListPropertiesMetadataRequest interceptedRequest =
+                ListPropertiesMetadataConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListPropertiesMetadataConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        return clientCall(request, ListPropertiesMetadataResponse::builder)
-                .logger(LOG, "listPropertiesMetadata")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "ListPropertiesMetadata",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsProperty/ListPropertiesMetadata")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListPropertiesMetadataRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("propertiesMetadata")
-                .appendQueryParam("name", request.getName())
-                .appendQueryParam("displayText", request.getDisplayText())
-                .appendQueryParam("level", request.getLevel())
-                .appendQueryParam("constraints", request.getConstraints())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.PropertyMetadataSummaryCollection.class,
-                        ListPropertiesMetadataResponse.Builder::propertyMetadataSummaryCollection)
-                .handleResponseHeaderString(
-                        "opc-prev-page", ListPropertiesMetadataResponse.Builder::opcPrevPage)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListPropertiesMetadataResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListPropertiesMetadataResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsProperty/ListPropertiesMetadata");
+        java.util.function.Function<javax.ws.rs.core.Response, ListPropertiesMetadataResponse>
+                transformer =
+                        ListPropertiesMetadataConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListQueryWorkRequestsResponse listQueryWorkRequests(
             ListQueryWorkRequestsRequest request) {
+        LOG.trace("Called listQueryWorkRequests");
+        final ListQueryWorkRequestsRequest interceptedRequest =
+                ListQueryWorkRequestsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListQueryWorkRequestsConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
-
-        return clientCall(request, ListQueryWorkRequestsResponse::builder)
-                .logger(LOG, "listQueryWorkRequests")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "ListQueryWorkRequests",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/QueryWorkRequest/ListQueryWorkRequests")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListQueryWorkRequestsRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("queryWorkRequests")
-                .appendEnumQueryParam("mode", request.getMode())
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.QueryWorkRequestCollection.class,
-                        ListQueryWorkRequestsResponse.Builder::queryWorkRequestCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListQueryWorkRequestsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListQueryWorkRequestsResponse.Builder::opcNextPage)
-                .handleResponseHeaderString(
-                        "opc-prev-page", ListQueryWorkRequestsResponse.Builder::opcPrevPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/QueryWorkRequest/ListQueryWorkRequests");
+        java.util.function.Function<javax.ws.rs.core.Response, ListQueryWorkRequestsResponse>
+                transformer =
+                        ListQueryWorkRequestsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListRecalledDataResponse listRecalledData(ListRecalledDataRequest request) {
+        LOG.trace("Called listRecalledData");
+        final ListRecalledDataRequest interceptedRequest =
+                ListRecalledDataConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListRecalledDataConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        return clientCall(request, ListRecalledDataResponse::builder)
-                .logger(LOG, "listRecalledData")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "ListRecalledData",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/ListRecalledData")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListRecalledDataRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("storage")
-                .appendPathParam("recalledData")
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendQueryParam(
-                        "timeDataStartedGreaterThanOrEqual",
-                        request.getTimeDataStartedGreaterThanOrEqual())
-                .appendQueryParam("timeDataEndedLessThan", request.getTimeDataEndedLessThan())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.RecalledDataCollection.class,
-                        ListRecalledDataResponse.Builder::recalledDataCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListRecalledDataResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListRecalledDataResponse.Builder::opcNextPage)
-                .handleResponseHeaderString(
-                        "opc-prev-page", ListRecalledDataResponse.Builder::opcPrevPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/ListRecalledData");
+        java.util.function.Function<javax.ws.rs.core.Response, ListRecalledDataResponse>
+                transformer =
+                        ListRecalledDataConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListResourceCategoriesResponse listResourceCategories(
             ListResourceCategoriesRequest request) {
+        LOG.trace("Called listResourceCategories");
+        final ListResourceCategoriesRequest interceptedRequest =
+                ListResourceCategoriesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListResourceCategoriesConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        return clientCall(request, ListResourceCategoriesResponse::builder)
-                .logger(LOG, "listResourceCategories")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "ListResourceCategories",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsCategory/ListResourceCategories")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListResourceCategoriesRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("categories")
-                .appendPathParam("resourceCategories")
-                .appendQueryParam("categories", request.getCategories())
-                .appendQueryParam("resourceTypes", request.getResourceTypes())
-                .appendQueryParam("resourceIds", request.getResourceIds())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .accept("application/json;charset=UTF-8")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.LogAnalyticsResourceCategoryCollection
-                                .class,
-                        ListResourceCategoriesResponse.Builder
-                                ::logAnalyticsResourceCategoryCollection)
-                .handleResponseHeaderString(
-                        "opc-prev-page", ListResourceCategoriesResponse.Builder::opcPrevPage)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListResourceCategoriesResponse.Builder::opcNextPage)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListResourceCategoriesResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsCategory/ListResourceCategories");
+        java.util.function.Function<javax.ws.rs.core.Response, ListResourceCategoriesResponse>
+                transformer =
+                        ListResourceCategoriesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListRulesResponse listRules(ListRulesRequest request) {
+        LOG.trace("Called listRules");
+        final ListRulesRequest interceptedRequest = ListRulesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListRulesConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
-
-        return clientCall(request, ListRulesResponse::builder)
-                .logger(LOG, "listRules")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "ListRules",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Rule/ListRules")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListRulesRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("rules")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendQueryParam("displayName", request.getDisplayName())
-                .appendEnumQueryParam("kind", request.getKind())
-                .appendQueryParam("targetService", request.getTargetService())
-                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.RuleSummaryCollection.class,
-                        ListRulesResponse.Builder::ruleSummaryCollection)
-                .handleResponseHeaderString("opc-prev-page", ListRulesResponse.Builder::opcPrevPage)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListRulesResponse.Builder::opcRequestId)
-                .handleResponseHeaderString("opc-next-page", ListRulesResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Rule/ListRules");
+        java.util.function.Function<javax.ws.rs.core.Response, ListRulesResponse> transformer =
+                ListRulesConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListScheduledTasksResponse listScheduledTasks(ListScheduledTasksRequest request) {
+        LOG.trace("Called listScheduledTasks");
+        final ListScheduledTasksRequest interceptedRequest =
+                ListScheduledTasksConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListScheduledTasksConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-        Objects.requireNonNull(request.getTaskType(), "taskType is required");
-
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
-
-        return clientCall(request, ListScheduledTasksResponse::builder)
-                .logger(LOG, "listScheduledTasks")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "ListScheduledTasks",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/ScheduledTask/ListScheduledTasks")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListScheduledTasksRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("scheduledTasks")
-                .appendEnumQueryParam("taskType", request.getTaskType())
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendQueryParam("displayName", request.getDisplayName())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendQueryParam("savedSearchId", request.getSavedSearchId())
-                .appendQueryParam("displayNameContains", request.getDisplayNameContains())
-                .appendQueryParam("targetService", request.getTargetService())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.ScheduledTaskCollection.class,
-                        ListScheduledTasksResponse.Builder::scheduledTaskCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListScheduledTasksResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListScheduledTasksResponse.Builder::opcNextPage)
-                .handleResponseHeaderString(
-                        "opc-prev-page", ListScheduledTasksResponse.Builder::opcPrevPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/ScheduledTask/ListScheduledTasks");
+        java.util.function.Function<javax.ws.rs.core.Response, ListScheduledTasksResponse>
+                transformer =
+                        ListScheduledTasksConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListSourceAssociationsResponse listSourceAssociations(
             ListSourceAssociationsRequest request) {
+        LOG.trace("Called listSourceAssociations");
+        final ListSourceAssociationsRequest interceptedRequest =
+                ListSourceAssociationsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListSourceAssociationsConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-        Objects.requireNonNull(request.getSourceName(), "sourceName is required");
-
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
-
-        return clientCall(request, ListSourceAssociationsResponse::builder)
-                .logger(LOG, "listSourceAssociations")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "ListSourceAssociations",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsAssociation/ListSourceAssociations")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListSourceAssociationsRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("sourceAssociations")
-                .appendQueryParam("sourceName", request.getSourceName())
-                .appendQueryParam("entityId", request.getEntityId())
-                .appendEnumQueryParam("lifeCycleState", request.getLifeCycleState())
-                .appendQueryParam("isShowTotal", request.getIsShowTotal())
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json;charset=UTF-8")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.LogAnalyticsAssociationCollection.class,
-                        ListSourceAssociationsResponse.Builder::logAnalyticsAssociationCollection)
-                .handleResponseHeaderString(
-                        "opc-prev-page", ListSourceAssociationsResponse.Builder::opcPrevPage)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListSourceAssociationsResponse.Builder::opcNextPage)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListSourceAssociationsResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsAssociation/ListSourceAssociations");
+        java.util.function.Function<javax.ws.rs.core.Response, ListSourceAssociationsResponse>
+                transformer =
+                        ListSourceAssociationsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListSourceEventTypesResponse listSourceEventTypes(ListSourceEventTypesRequest request) {
+        LOG.trace("Called listSourceEventTypes");
+        final ListSourceEventTypesRequest interceptedRequest =
+                ListSourceEventTypesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListSourceEventTypesConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        Validate.notBlank(request.getSourceName(), "sourceName must not be blank");
-
-        return clientCall(request, ListSourceEventTypesResponse::builder)
-                .logger(LOG, "listSourceEventTypes")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "ListSourceEventTypes",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/ListSourceEventTypes")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListSourceEventTypesRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("sources")
-                .appendPathParam(request.getSourceName())
-                .appendPathParam("eventTypes")
-                .appendQueryParam("displayText", request.getDisplayText())
-                .appendEnumQueryParam("isSystem", request.getIsSystem())
-                .appendQueryParam("isEnabled", request.getIsEnabled())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .accept("application/json;charset=UTF-8")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.EventTypeCollection.class,
-                        ListSourceEventTypesResponse.Builder::eventTypeCollection)
-                .handleResponseHeaderString(
-                        "opc-prev-page", ListSourceEventTypesResponse.Builder::opcPrevPage)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListSourceEventTypesResponse.Builder::opcNextPage)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListSourceEventTypesResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/ListSourceEventTypes");
+        java.util.function.Function<javax.ws.rs.core.Response, ListSourceEventTypesResponse>
+                transformer =
+                        ListSourceEventTypesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListSourceExtendedFieldDefinitionsResponse listSourceExtendedFieldDefinitions(
             ListSourceExtendedFieldDefinitionsRequest request) {
+        LOG.trace("Called listSourceExtendedFieldDefinitions");
+        final ListSourceExtendedFieldDefinitionsRequest interceptedRequest =
+                ListSourceExtendedFieldDefinitionsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListSourceExtendedFieldDefinitionsConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        Validate.notBlank(request.getSourceName(), "sourceName must not be blank");
-
-        return clientCall(request, ListSourceExtendedFieldDefinitionsResponse::builder)
-                .logger(LOG, "listSourceExtendedFieldDefinitions")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "ListSourceExtendedFieldDefinitions",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/ListSourceExtendedFieldDefinitions")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListSourceExtendedFieldDefinitionsRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("sources")
-                .appendPathParam(request.getSourceName())
-                .appendPathParam("extendedFieldDefinitions")
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .accept("application/json;charset=UTF-8")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model
-                                .LogAnalyticsSourceExtendedFieldDefinitionCollection.class,
-                        ListSourceExtendedFieldDefinitionsResponse.Builder
-                                ::logAnalyticsSourceExtendedFieldDefinitionCollection)
-                .handleResponseHeaderString(
-                        "opc-prev-page",
-                        ListSourceExtendedFieldDefinitionsResponse.Builder::opcPrevPage)
-                .handleResponseHeaderString(
-                        "opc-next-page",
-                        ListSourceExtendedFieldDefinitionsResponse.Builder::opcNextPage)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ListSourceExtendedFieldDefinitionsResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/ListSourceExtendedFieldDefinitions");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ListSourceExtendedFieldDefinitionsResponse>
+                transformer =
+                        ListSourceExtendedFieldDefinitionsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListSourceLabelOperatorsResponse listSourceLabelOperators(
             ListSourceLabelOperatorsRequest request) {
+        LOG.trace("Called listSourceLabelOperators");
+        final ListSourceLabelOperatorsRequest interceptedRequest =
+                ListSourceLabelOperatorsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListSourceLabelOperatorsConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        return clientCall(request, ListSourceLabelOperatorsResponse::builder)
-                .logger(LOG, "listSourceLabelOperators")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "ListSourceLabelOperators",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/ListSourceLabelOperators")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListSourceLabelOperatorsRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("sourceLabelOperators")
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .accept("application/json;charset=UTF-8")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.LogAnalyticsLabelOperatorCollection.class,
-                        ListSourceLabelOperatorsResponse.Builder
-                                ::logAnalyticsLabelOperatorCollection)
-                .handleResponseHeaderString(
-                        "opc-prev-page", ListSourceLabelOperatorsResponse.Builder::opcPrevPage)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListSourceLabelOperatorsResponse.Builder::opcNextPage)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListSourceLabelOperatorsResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/ListSourceLabelOperators");
+        java.util.function.Function<javax.ws.rs.core.Response, ListSourceLabelOperatorsResponse>
+                transformer =
+                        ListSourceLabelOperatorsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListSourceMetaFunctionsResponse listSourceMetaFunctions(
             ListSourceMetaFunctionsRequest request) {
+        LOG.trace("Called listSourceMetaFunctions");
+        final ListSourceMetaFunctionsRequest interceptedRequest =
+                ListSourceMetaFunctionsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListSourceMetaFunctionsConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        return clientCall(request, ListSourceMetaFunctionsResponse::builder)
-                .logger(LOG, "listSourceMetaFunctions")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "ListSourceMetaFunctions",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/ListSourceMetaFunctions")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListSourceMetaFunctionsRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("sourceMetaFunctions")
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .accept("application/json;charset=UTF-8")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.LogAnalyticsMetaFunctionCollection.class,
-                        ListSourceMetaFunctionsResponse.Builder::logAnalyticsMetaFunctionCollection)
-                .handleResponseHeaderString(
-                        "opc-prev-page", ListSourceMetaFunctionsResponse.Builder::opcPrevPage)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListSourceMetaFunctionsResponse.Builder::opcNextPage)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListSourceMetaFunctionsResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/ListSourceMetaFunctions");
+        java.util.function.Function<javax.ws.rs.core.Response, ListSourceMetaFunctionsResponse>
+                transformer =
+                        ListSourceMetaFunctionsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListSourcePatternsResponse listSourcePatterns(ListSourcePatternsRequest request) {
+        LOG.trace("Called listSourcePatterns");
+        final ListSourcePatternsRequest interceptedRequest =
+                ListSourcePatternsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListSourcePatternsConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        Validate.notBlank(request.getSourceName(), "sourceName must not be blank");
-
-        return clientCall(request, ListSourcePatternsResponse::builder)
-                .logger(LOG, "listSourcePatterns")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "ListSourcePatterns",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/ListSourcePatterns")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListSourcePatternsRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("sources")
-                .appendPathParam(request.getSourceName())
-                .appendPathParam("patterns")
-                .appendQueryParam("isInclude", request.getIsInclude())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .accept("application/json;charset=UTF-8")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.LogAnalyticsSourcePatternCollection.class,
-                        ListSourcePatternsResponse.Builder::logAnalyticsSourcePatternCollection)
-                .handleResponseHeaderString(
-                        "opc-prev-page", ListSourcePatternsResponse.Builder::opcPrevPage)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListSourcePatternsResponse.Builder::opcNextPage)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListSourcePatternsResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/ListSourcePatterns");
+        java.util.function.Function<javax.ws.rs.core.Response, ListSourcePatternsResponse>
+                transformer =
+                        ListSourcePatternsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListSourcesResponse listSources(ListSourcesRequest request) {
+        LOG.trace("Called listSources");
+        final ListSourcesRequest interceptedRequest =
+                ListSourcesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListSourcesConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
-
-        return clientCall(request, ListSourcesResponse::builder)
-                .logger(LOG, "listSources")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "ListSources",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/ListSources")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListSourcesRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("sources")
-                .appendQueryParam("entityType", request.getEntityType())
-                .appendQueryParam("sourceDisplayText", request.getSourceDisplayText())
-                .appendEnumQueryParam("isSystem", request.getIsSystem())
-                .appendQueryParam("isAutoAssociated", request.getIsAutoAssociated())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendQueryParam("name", request.getName())
-                .appendQueryParam("sourceType", request.getSourceType())
-                .appendQueryParam("categories", request.getCategories())
-                .appendQueryParam("isSimplified", request.getIsSimplified())
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .accept("application/json;charset=UTF-8")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.LogAnalyticsSourceCollection.class,
-                        ListSourcesResponse.Builder::logAnalyticsSourceCollection)
-                .handleResponseHeaderString(
-                        "opc-prev-page", ListSourcesResponse.Builder::opcPrevPage)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListSourcesResponse.Builder::opcNextPage)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListSourcesResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/ListSources");
+        java.util.function.Function<javax.ws.rs.core.Response, ListSourcesResponse> transformer =
+                ListSourcesConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListStorageWorkRequestErrorsResponse listStorageWorkRequestErrors(
             ListStorageWorkRequestErrorsRequest request) {
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+        LOG.trace("Called listStorageWorkRequestErrors");
+        final ListStorageWorkRequestErrorsRequest interceptedRequest =
+                ListStorageWorkRequestErrorsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListStorageWorkRequestErrorsConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
-
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        return clientCall(request, ListStorageWorkRequestErrorsResponse::builder)
-                .logger(LOG, "listStorageWorkRequestErrors")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "ListStorageWorkRequestErrors",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/ListStorageWorkRequestErrors")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListStorageWorkRequestErrorsRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("storageWorkRequests")
-                .appendPathParam(request.getWorkRequestId())
-                .appendPathParam("errors")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.WorkRequestErrorCollection.class,
-                        ListStorageWorkRequestErrorsResponse.Builder::workRequestErrorCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ListStorageWorkRequestErrorsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListStorageWorkRequestErrorsResponse.Builder::opcNextPage)
-                .handleResponseHeaderString(
-                        "opc-prev-page", ListStorageWorkRequestErrorsResponse.Builder::opcPrevPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/ListStorageWorkRequestErrors");
+        java.util.function.Function<javax.ws.rs.core.Response, ListStorageWorkRequestErrorsResponse>
+                transformer =
+                        ListStorageWorkRequestErrorsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListStorageWorkRequestsResponse listStorageWorkRequests(
             ListStorageWorkRequestsRequest request) {
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+        LOG.trace("Called listStorageWorkRequests");
+        final ListStorageWorkRequestsRequest interceptedRequest =
+                ListStorageWorkRequestsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListStorageWorkRequestsConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        return clientCall(request, ListStorageWorkRequestsResponse::builder)
-                .logger(LOG, "listStorageWorkRequests")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "ListStorageWorkRequests",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/ListStorageWorkRequests")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListStorageWorkRequestsRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("storageWorkRequests")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendEnumQueryParam("operationType", request.getOperationType())
-                .appendEnumQueryParam("status", request.getStatus())
-                .appendQueryParam("timeStarted", request.getTimeStarted())
-                .appendQueryParam("timeFinished", request.getTimeFinished())
-                .appendQueryParam("policyName", request.getPolicyName())
-                .appendQueryParam("policyId", request.getPolicyId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.StorageWorkRequestCollection.class,
-                        ListStorageWorkRequestsResponse.Builder::storageWorkRequestCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListStorageWorkRequestsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListStorageWorkRequestsResponse.Builder::opcNextPage)
-                .handleResponseHeaderString(
-                        "opc-prev-page", ListStorageWorkRequestsResponse.Builder::opcPrevPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/ListStorageWorkRequests");
+        java.util.function.Function<javax.ws.rs.core.Response, ListStorageWorkRequestsResponse>
+                transformer =
+                        ListStorageWorkRequestsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListSupportedCharEncodingsResponse listSupportedCharEncodings(
             ListSupportedCharEncodingsRequest request) {
+        LOG.trace("Called listSupportedCharEncodings");
+        final ListSupportedCharEncodingsRequest interceptedRequest =
+                ListSupportedCharEncodingsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListSupportedCharEncodingsConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        return clientCall(request, ListSupportedCharEncodingsResponse::builder)
-                .logger(LOG, "listSupportedCharEncodings")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "ListSupportedCharEncodings",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/CharEncodingCollection/ListSupportedCharEncodings")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListSupportedCharEncodingsRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("supportedCharEncodings")
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.CharEncodingCollection.class,
-                        ListSupportedCharEncodingsResponse.Builder::charEncodingCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListSupportedCharEncodingsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListSupportedCharEncodingsResponse.Builder::opcNextPage)
-                .handleResponseHeaderLong(
-                        "opc-total-items",
-                        ListSupportedCharEncodingsResponse.Builder::opcTotalItems)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/CharEncodingCollection/ListSupportedCharEncodings");
+        java.util.function.Function<javax.ws.rs.core.Response, ListSupportedCharEncodingsResponse>
+                transformer =
+                        ListSupportedCharEncodingsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListSupportedTimezonesResponse listSupportedTimezones(
             ListSupportedTimezonesRequest request) {
+        LOG.trace("Called listSupportedTimezones");
+        final ListSupportedTimezonesRequest interceptedRequest =
+                ListSupportedTimezonesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListSupportedTimezonesConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        return clientCall(request, ListSupportedTimezonesResponse::builder)
-                .logger(LOG, "listSupportedTimezones")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "ListSupportedTimezones",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/TimezoneCollection/ListSupportedTimezones")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListSupportedTimezonesRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("supportedTimezones")
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.TimezoneCollection.class,
-                        ListSupportedTimezonesResponse.Builder::timezoneCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListSupportedTimezonesResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListSupportedTimezonesResponse.Builder::opcNextPage)
-                .handleResponseHeaderLong(
-                        "opc-total-items", ListSupportedTimezonesResponse.Builder::opcTotalItems)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/TimezoneCollection/ListSupportedTimezones");
+        java.util.function.Function<javax.ws.rs.core.Response, ListSupportedTimezonesResponse>
+                transformer =
+                        ListSupportedTimezonesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListUploadFilesResponse listUploadFiles(ListUploadFilesRequest request) {
+        LOG.trace("Called listUploadFiles");
+        final ListUploadFilesRequest interceptedRequest =
+                ListUploadFilesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListUploadFilesConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        Validate.notBlank(request.getUploadReference(), "uploadReference must not be blank");
-
-        return clientCall(request, ListUploadFilesResponse::builder)
-                .logger(LOG, "listUploadFiles")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "ListUploadFiles",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Upload/ListUploadFiles")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListUploadFilesRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("uploads")
-                .appendPathParam(request.getUploadReference())
-                .appendPathParam("files")
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendQueryParam("searchStr", request.getSearchStr())
-                .appendListQueryParam(
-                        "status",
-                        request.getStatus(),
-                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.UploadFileCollection.class,
-                        ListUploadFilesResponse.Builder::uploadFileCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListUploadFilesResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListUploadFilesResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Upload/ListUploadFiles");
+        java.util.function.Function<javax.ws.rs.core.Response, ListUploadFilesResponse>
+                transformer =
+                        ListUploadFilesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListUploadWarningsResponse listUploadWarnings(ListUploadWarningsRequest request) {
+        LOG.trace("Called listUploadWarnings");
+        final ListUploadWarningsRequest interceptedRequest =
+                ListUploadWarningsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListUploadWarningsConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        Validate.notBlank(request.getUploadReference(), "uploadReference must not be blank");
-
-        return clientCall(request, ListUploadWarningsResponse::builder)
-                .logger(LOG, "listUploadWarnings")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "ListUploadWarnings",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Upload/ListUploadWarnings")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListUploadWarningsRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("uploads")
-                .appendPathParam(request.getUploadReference())
-                .appendPathParam("warnings")
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.UploadWarningCollection.class,
-                        ListUploadWarningsResponse.Builder::uploadWarningCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListUploadWarningsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListUploadWarningsResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Upload/ListUploadWarnings");
+        java.util.function.Function<javax.ws.rs.core.Response, ListUploadWarningsResponse>
+                transformer =
+                        ListUploadWarningsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListUploadsResponse listUploads(ListUploadsRequest request) {
+        LOG.trace("Called listUploads");
+        final ListUploadsRequest interceptedRequest =
+                ListUploadsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListUploadsConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        return clientCall(request, ListUploadsResponse::builder)
-                .logger(LOG, "listUploads")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "ListUploads",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Upload/ListUploads")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListUploadsRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("uploads")
-                .appendQueryParam("name", request.getName())
-                .appendQueryParam("nameContains", request.getNameContains())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendEnumQueryParam("warningsFilter", request.getWarningsFilter())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.UploadCollection.class,
-                        ListUploadsResponse.Builder::uploadCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListUploadsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListUploadsResponse.Builder::opcNextPage)
-                .handleResponseHeaderLong(
-                        "opc-total-items", ListUploadsResponse.Builder::opcTotalItems)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Upload/ListUploads");
+        java.util.function.Function<javax.ws.rs.core.Response, ListUploadsResponse> transformer =
+                ListUploadsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListWarningsResponse listWarnings(ListWarningsRequest request) {
+        LOG.trace("Called listWarnings");
+        final ListWarningsRequest interceptedRequest =
+                ListWarningsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListWarningsConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
-
-        return clientCall(request, ListWarningsResponse::builder)
-                .logger(LOG, "listWarnings")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "ListWarnings",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsWarning/ListWarnings")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListWarningsRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("warnings")
-                .appendEnumQueryParam("warningState", request.getWarningState())
-                .appendQueryParam("sourceName", request.getSourceName())
-                .appendQueryParam("sourcePattern", request.getSourcePattern())
-                .appendQueryParam("warningMessage", request.getWarningMessage())
-                .appendQueryParam("entityName", request.getEntityName())
-                .appendQueryParam("entityType", request.getEntityType())
-                .appendQueryParam("warningType", request.getWarningType())
-                .appendQueryParam("isNoSource", request.getIsNoSource())
-                .appendQueryParam("startTime", request.getStartTime())
-                .appendQueryParam("endTime", request.getEndTime())
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.LogAnalyticsWarningCollection.class,
-                        ListWarningsResponse.Builder::logAnalyticsWarningCollection)
-                .handleResponseHeaderString(
-                        "opc-prev-page", ListWarningsResponse.Builder::opcPrevPage)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListWarningsResponse.Builder::opcNextPage)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListWarningsResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsWarning/ListWarnings");
+        java.util.function.Function<javax.ws.rs.core.Response, ListWarningsResponse> transformer =
+                ListWarningsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListWorkRequestErrorsResponse listWorkRequestErrors(
             ListWorkRequestErrorsRequest request) {
+        LOG.trace("Called listWorkRequestErrors");
+        final ListWorkRequestErrorsRequest interceptedRequest =
+                ListWorkRequestErrorsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListWorkRequestErrorsConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
-
-        return clientCall(request, ListWorkRequestErrorsResponse::builder)
-                .logger(LOG, "listWorkRequestErrors")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "ListWorkRequestErrors",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/WorkRequestError/ListWorkRequestErrors")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListWorkRequestErrorsRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("workRequests")
-                .appendPathParam(request.getWorkRequestId())
-                .appendPathParam("errors")
-                .appendQueryParam("page", request.getPage())
-                .appendQueryParam("limit", request.getLimit())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.WorkRequestErrorCollection.class,
-                        ListWorkRequestErrorsResponse.Builder::workRequestErrorCollection)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListWorkRequestErrorsResponse.Builder::opcNextPage)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListWorkRequestErrorsResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/WorkRequestError/ListWorkRequestErrors");
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
+                transformer =
+                        ListWorkRequestErrorsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListWorkRequestLogsResponse listWorkRequestLogs(ListWorkRequestLogsRequest request) {
+        LOG.trace("Called listWorkRequestLogs");
+        final ListWorkRequestLogsRequest interceptedRequest =
+                ListWorkRequestLogsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListWorkRequestLogsConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
-
-        return clientCall(request, ListWorkRequestLogsResponse::builder)
-                .logger(LOG, "listWorkRequestLogs")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "ListWorkRequestLogs",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/WorkRequestLog/ListWorkRequestLogs")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListWorkRequestLogsRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("workRequests")
-                .appendPathParam(request.getWorkRequestId())
-                .appendPathParam("logs")
-                .appendQueryParam("page", request.getPage())
-                .appendQueryParam("limit", request.getLimit())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.WorkRequestLogCollection.class,
-                        ListWorkRequestLogsResponse.Builder::workRequestLogCollection)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListWorkRequestLogsResponse.Builder::opcNextPage)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListWorkRequestLogsResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/WorkRequestLog/ListWorkRequestLogs");
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
+                transformer =
+                        ListWorkRequestLogsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request) {
+        LOG.trace("Called listWorkRequests");
+        final ListWorkRequestsRequest interceptedRequest =
+                ListWorkRequestsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListWorkRequestsConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
-
-        return clientCall(request, ListWorkRequestsResponse::builder)
-                .logger(LOG, "listWorkRequests")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "ListWorkRequests",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/WorkRequest/ListWorkRequests")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListWorkRequestsRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("workRequests")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendQueryParam("page", request.getPage())
-                .appendQueryParam("limit", request.getLimit())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.WorkRequestCollection.class,
-                        ListWorkRequestsResponse.Builder::workRequestCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListWorkRequestsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListWorkRequestsResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/WorkRequest/ListWorkRequests");
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
+                transformer =
+                        ListWorkRequestsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public OffboardNamespaceResponse offboardNamespace(OffboardNamespaceRequest request) {
+        LOG.trace("Called offboardNamespace");
+        final OffboardNamespaceRequest interceptedRequest =
+                OffboardNamespaceConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                OffboardNamespaceConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        return clientCall(request, OffboardNamespaceResponse::builder)
-                .logger(LOG, "offboardNamespace")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "OffboardNamespace",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Namespace/OffboardNamespace")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(OffboardNamespaceRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("actions")
-                .appendPathParam("offboard")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .handleResponseHeaderString(
-                        "opc-work-request-id", OffboardNamespaceResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", OffboardNamespaceResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Namespace/OffboardNamespace");
+        java.util.function.Function<javax.ws.rs.core.Response, OffboardNamespaceResponse>
+                transformer =
+                        OffboardNamespaceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public OnboardNamespaceResponse onboardNamespace(OnboardNamespaceRequest request) {
+        LOG.trace("Called onboardNamespace");
+        final OnboardNamespaceRequest interceptedRequest =
+                OnboardNamespaceConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                OnboardNamespaceConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        return clientCall(request, OnboardNamespaceResponse::builder)
-                .logger(LOG, "onboardNamespace")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "OnboardNamespace",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Namespace/OnboardNamespace")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(OnboardNamespaceRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("actions")
-                .appendPathParam("onboard")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleResponseHeaderString(
-                        "opc-work-request-id", OnboardNamespaceResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", OnboardNamespaceResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Namespace/OnboardNamespace");
+        java.util.function.Function<javax.ws.rs.core.Response, OnboardNamespaceResponse>
+                transformer =
+                        OnboardNamespaceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ParseQueryResponse parseQuery(ParseQueryRequest request) {
+        LOG.trace("Called parseQuery");
+        final ParseQueryRequest interceptedRequest = ParseQueryConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ParseQueryConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-        Objects.requireNonNull(request.getParseQueryDetails(), "parseQueryDetails is required");
-
-        return clientCall(request, ParseQueryResponse::builder)
-                .logger(LOG, "parseQuery")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "ParseQuery",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/QueryDetails/ParseQuery")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(ParseQueryRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("search")
-                .appendPathParam("actions")
-                .appendPathParam("parse")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.ParseQueryOutput.class,
-                        ParseQueryResponse.Builder::parseQueryOutput)
-                .handleResponseHeaderString(
-                        "opc-request-id", ParseQueryResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/QueryDetails/ParseQuery");
+        java.util.function.Function<javax.ws.rs.core.Response, ParseQueryResponse> transformer =
+                ParseQueryConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getParseQueryDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public PauseScheduledTaskResponse pauseScheduledTask(PauseScheduledTaskRequest request) {
+        LOG.trace("Called pauseScheduledTask");
+        final PauseScheduledTaskRequest interceptedRequest =
+                PauseScheduledTaskConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                PauseScheduledTaskConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        Validate.notBlank(request.getScheduledTaskId(), "scheduledTaskId must not be blank");
-
-        return clientCall(request, PauseScheduledTaskResponse::builder)
-                .logger(LOG, "pauseScheduledTask")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "PauseScheduledTask",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/ScheduledTask/PauseScheduledTask")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(PauseScheduledTaskRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("scheduledTasks")
-                .appendPathParam(request.getScheduledTaskId())
-                .appendPathParam("actions")
-                .appendPathParam("pause")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.ScheduledTask.class,
-                        PauseScheduledTaskResponse.Builder::scheduledTask)
-                .handleResponseHeaderString(
-                        "opc-request-id", PauseScheduledTaskResponse.Builder::opcRequestId)
-                .handleResponseHeaderString("etag", PauseScheduledTaskResponse.Builder::etag)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/ScheduledTask/PauseScheduledTask");
+        java.util.function.Function<javax.ws.rs.core.Response, PauseScheduledTaskResponse>
+                transformer =
+                        PauseScheduledTaskConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public PurgeStorageDataResponse purgeStorageData(PurgeStorageDataRequest request) {
+        LOG.trace("Called purgeStorageData");
+        final PurgeStorageDataRequest interceptedRequest =
+                PurgeStorageDataConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                PurgeStorageDataConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-        Objects.requireNonNull(
-                request.getPurgeStorageDataDetails(), "purgeStorageDataDetails is required");
-
-        return clientCall(request, PurgeStorageDataResponse::builder)
-                .logger(LOG, "purgeStorageData")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "PurgeStorageData",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/PurgeStorageData")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(PurgeStorageDataRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("storage")
-                .appendPathParam("actions")
-                .appendPathParam("purgeData")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("if-match", request.getIfMatch())
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-request-id", PurgeStorageDataResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-work-request-id", PurgeStorageDataResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString("location", PurgeStorageDataResponse.Builder::location)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/PurgeStorageData");
+        java.util.function.Function<javax.ws.rs.core.Response, PurgeStorageDataResponse>
+                transformer =
+                        PurgeStorageDataConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getPurgeStorageDataDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public PutQueryWorkRequestBackgroundResponse putQueryWorkRequestBackground(
             PutQueryWorkRequestBackgroundRequest request) {
+        LOG.trace("Called putQueryWorkRequestBackground");
+        final PutQueryWorkRequestBackgroundRequest interceptedRequest =
+                PutQueryWorkRequestBackgroundConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                PutQueryWorkRequestBackgroundConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
-
-        return clientCall(request, PutQueryWorkRequestBackgroundResponse::builder)
-                .logger(LOG, "putQueryWorkRequestBackground")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "PutQueryWorkRequestBackground",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/QueryWorkRequest/PutQueryWorkRequestBackground")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(PutQueryWorkRequestBackgroundRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("queryWorkRequests")
-                .appendPathParam(request.getWorkRequestId())
-                .appendPathParam("actions")
-                .appendPathParam("background")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("if-match", request.getIfMatch())
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.QueryWorkRequest.class,
-                        PutQueryWorkRequestBackgroundResponse.Builder::queryWorkRequest)
-                .handleResponseHeaderString(
-                        "etag", PutQueryWorkRequestBackgroundResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        PutQueryWorkRequestBackgroundResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/QueryWorkRequest/PutQueryWorkRequestBackground");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, PutQueryWorkRequestBackgroundResponse>
+                transformer =
+                        PutQueryWorkRequestBackgroundConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.put(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public QueryResponse query(QueryRequest request) {
+        LOG.trace("Called query");
+        final QueryRequest interceptedRequest = QueryConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                QueryConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-        Objects.requireNonNull(request.getQueryDetails(), "queryDetails is required");
-
-        return clientCall(request, QueryResponse::builder)
-                .logger(LOG, "query")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "Query",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/QueryDetails/Query")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(QueryRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("search")
-                .appendPathParam("actions")
-                .appendPathParam("query")
-                .appendQueryParam("page", request.getPage())
-                .appendQueryParam("limit", request.getLimit())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.QueryAggregation.class,
-                        QueryResponse.Builder::queryAggregation)
-                .handleResponseHeaderString("opc-request-id", QueryResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page-id", QueryResponse.Builder::opcNextPageId)
-                .handleResponseHeaderString(
-                        "opc-prev-page-id", QueryResponse.Builder::opcPrevPageId)
-                .handleResponseHeaderString(
-                        "opc-work-request-id", QueryResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString("location", QueryResponse.Builder::location)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/QueryDetails/Query");
+        java.util.function.Function<javax.ws.rs.core.Response, QueryResponse> transformer =
+                QueryConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getQueryDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public RecallArchivedDataResponse recallArchivedData(RecallArchivedDataRequest request) {
+        LOG.trace("Called recallArchivedData");
+        final RecallArchivedDataRequest interceptedRequest =
+                RecallArchivedDataConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RecallArchivedDataConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-        Objects.requireNonNull(
-                request.getRecallArchivedDataDetails(), "recallArchivedDataDetails is required");
-
-        return clientCall(request, RecallArchivedDataResponse::builder)
-                .logger(LOG, "recallArchivedData")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "RecallArchivedData",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/RecallArchivedData")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(RecallArchivedDataRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("storage")
-                .appendPathParam("actions")
-                .appendPathParam("recallArchivedData")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("if-match", request.getIfMatch())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.RecalledDataInfo.class,
-                        RecallArchivedDataResponse.Builder::recalledDataInfo)
-                .handleResponseHeaderString(
-                        "opc-request-id", RecallArchivedDataResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-work-request-id", RecallArchivedDataResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "location", RecallArchivedDataResponse.Builder::location)
-                .handleResponseHeaderString("etag", RecallArchivedDataResponse.Builder::etag)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/RecallArchivedData");
+        java.util.function.Function<javax.ws.rs.core.Response, RecallArchivedDataResponse>
+                transformer =
+                        RecallArchivedDataConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getRecallArchivedDataDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public RegisterLookupResponse registerLookup(RegisterLookupRequest request) {
-
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-        Objects.requireNonNull(request.getType(), "type is required");
-
-        Objects.requireNonNull(
-                request.getRegisterLookupContentFileBody(),
-                "registerLookupContentFileBody is required");
-
-        return clientCall(request, RegisterLookupResponse::builder)
-                .logger(LOG, "registerLookup")
-                .serviceDetails(
-                        "LogAnalytics",
-                        "RegisterLookup",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLookup/RegisterLookup")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(RegisterLookupRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("lookups")
-                .appendPathParam("actions")
-                .appendPathParam("register")
-                .appendQueryParam("name", request.getName())
-                .appendQueryParam("description", request.getDescription())
-                .appendQueryParam("charEncoding", request.getCharEncoding())
-                .appendQueryParam("isHidden", request.getIsHidden())
-                .appendEnumQueryParam("type", request.getType())
-                .accept("application/json;charset=UTF-8")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("expect", request.getExpect())
-                .operationUsesDefaultRetries()
-                .hasBinaryRequestBody()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.LogAnalyticsLookup.class,
-                        RegisterLookupResponse.Builder::logAnalyticsLookup)
-                .handleResponseHeaderString("etag", RegisterLookupResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", RegisterLookupResponse.Builder::opcRequestId)
-                .callSync();
+        LOG.trace("Called registerLookup");
+        try {
+            final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                    com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                            request.getRetryConfiguration(), retryConfiguration, true);
+            if (request.getRetryConfiguration() != null
+                    || retryConfiguration != null
+                    || shouldRetryBecauseOfWaiterConfiguration(retrier)
+                    || authenticationDetailsProvider
+                            instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+                request =
+                        com.oracle.bmc.retrier.Retriers.wrapBodyInputStreamIfNecessary(
+                                request, RegisterLookupRequest.builder());
+            }
+            final RegisterLookupRequest interceptedRequest =
+                    RegisterLookupConverter.interceptRequest(request);
+            com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                    RegisterLookupConverter.fromRequest(client, interceptedRequest);
+            com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+            com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+            com.oracle.bmc.ServiceDetails serviceDetails =
+                    new com.oracle.bmc.ServiceDetails(
+                            "LogAnalytics",
+                            "RegisterLookup",
+                            ib.getRequestUri().toString(),
+                            "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLookup/RegisterLookup");
+            java.util.function.Function<javax.ws.rs.core.Response, RegisterLookupResponse>
+                    transformer =
+                            RegisterLookupConverter.fromResponse(
+                                    java.util.Optional.of(serviceDetails));
+            return retrier.execute(
+                    interceptedRequest,
+                    retryRequest -> {
+                        final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                                new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                        authenticationDetailsProvider);
+                        return tokenRefreshRetrier.execute(
+                                retryRequest,
+                                retriedRequest -> {
+                                    try {
+                                        javax.ws.rs.core.Response response =
+                                                client.post(
+                                                        ib,
+                                                        retriedRequest
+                                                                .getRegisterLookupContentFileBody(),
+                                                        retriedRequest);
+                                        return transformer.apply(response);
+                                    } catch (RuntimeException e) {
+                                        if (interceptedRequest.getRetryConfiguration() != null
+                                                || retryConfiguration != null
+                                                || shouldRetryBecauseOfWaiterConfiguration(retrier)
+                                                || (e instanceof com.oracle.bmc.model.BmcException
+                                                        && tokenRefreshRetrier
+                                                                .getRetryCondition()
+                                                                .shouldBeRetried(
+                                                                        (com.oracle.bmc.model
+                                                                                        .BmcException)
+                                                                                e))) {
+                                            com.oracle.bmc.retrier.Retriers.tryResetStreamForRetry(
+                                                    interceptedRequest
+                                                            .getRegisterLookupContentFileBody(),
+                                                    true);
+                                        }
+                                        throw e; // rethrow
+                                    }
+                                });
+                    });
+        } finally {
+            com.oracle.bmc.io.internal.KeepOpenInputStream.closeStream(
+                    request.getRegisterLookupContentFileBody());
+        }
     }
 
     @Override
     public ReleaseRecalledDataResponse releaseRecalledData(ReleaseRecalledDataRequest request) {
+        LOG.trace("Called releaseRecalledData");
+        final ReleaseRecalledDataRequest interceptedRequest =
+                ReleaseRecalledDataConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ReleaseRecalledDataConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-        Objects.requireNonNull(
-                request.getReleaseRecalledDataDetails(), "releaseRecalledDataDetails is required");
-
-        return clientCall(request, ReleaseRecalledDataResponse::builder)
-                .logger(LOG, "releaseRecalledData")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "ReleaseRecalledData",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/ReleaseRecalledData")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(ReleaseRecalledDataRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("storage")
-                .appendPathParam("actions")
-                .appendPathParam("releaseRecalledData")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("if-match", request.getIfMatch())
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-request-id", ReleaseRecalledDataResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        ReleaseRecalledDataResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "location", ReleaseRecalledDataResponse.Builder::location)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/ReleaseRecalledData");
+        java.util.function.Function<javax.ws.rs.core.Response, ReleaseRecalledDataResponse>
+                transformer =
+                        ReleaseRecalledDataConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getReleaseRecalledDataDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public RemoveEntityAssociationsResponse removeEntityAssociations(
             RemoveEntityAssociationsRequest request) {
+        LOG.trace("Called removeEntityAssociations");
+        final RemoveEntityAssociationsRequest interceptedRequest =
+                RemoveEntityAssociationsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RemoveEntityAssociationsConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        Validate.notBlank(
-                request.getLogAnalyticsEntityId(), "logAnalyticsEntityId must not be blank");
-        Objects.requireNonNull(
-                request.getRemoveEntityAssociationsDetails(),
-                "removeEntityAssociationsDetails is required");
-
-        return clientCall(request, RemoveEntityAssociationsResponse::builder)
-                .logger(LOG, "removeEntityAssociations")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "RemoveEntityAssociations",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEntity/RemoveEntityAssociations")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(RemoveEntityAssociationsRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("logAnalyticsEntities")
-                .appendPathParam(request.getLogAnalyticsEntityId())
-                .appendPathParam("actions")
-                .appendPathParam("removeEntityAssociations")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-request-id", RemoveEntityAssociationsResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEntity/RemoveEntityAssociations");
+        java.util.function.Function<javax.ws.rs.core.Response, RemoveEntityAssociationsResponse>
+                transformer =
+                        RemoveEntityAssociationsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getRemoveEntityAssociationsDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public RemovePreferencesResponse removePreferences(RemovePreferencesRequest request) {
+        LOG.trace("Called removePreferences");
+        final RemovePreferencesRequest interceptedRequest =
+                RemovePreferencesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RemovePreferencesConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-        Objects.requireNonNull(
-                request.getRemovePreferencesDetails(), "removePreferencesDetails is required");
-
-        return clientCall(request, RemovePreferencesResponse::builder)
-                .logger(LOG, "removePreferences")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "RemovePreferences",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsPreference/RemovePreferences")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(RemovePreferencesRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("preferences")
-                .appendPathParam("actions")
-                .appendPathParam("removePreferences")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-request-id", RemovePreferencesResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsPreference/RemovePreferences");
+        java.util.function.Function<javax.ws.rs.core.Response, RemovePreferencesResponse>
+                transformer =
+                        RemovePreferencesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getRemovePreferencesDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public RemoveResourceCategoriesResponse removeResourceCategories(
             RemoveResourceCategoriesRequest request) {
+        LOG.trace("Called removeResourceCategories");
+        final RemoveResourceCategoriesRequest interceptedRequest =
+                RemoveResourceCategoriesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RemoveResourceCategoriesConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-        Objects.requireNonNull(
-                request.getRemoveResourceCategoriesDetails(),
-                "removeResourceCategoriesDetails is required");
-
-        return clientCall(request, RemoveResourceCategoriesResponse::builder)
-                .logger(LOG, "removeResourceCategories")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "RemoveResourceCategories",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsCategory/RemoveResourceCategories")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(RemoveResourceCategoriesRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("categories")
-                .appendPathParam("actions")
-                .appendPathParam("removeResourceCategories")
-                .accept("application/json;charset=UTF-8")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-request-id", RemoveResourceCategoriesResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsCategory/RemoveResourceCategories");
+        java.util.function.Function<javax.ws.rs.core.Response, RemoveResourceCategoriesResponse>
+                transformer =
+                        RemoveResourceCategoriesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getRemoveResourceCategoriesDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public RemoveSourceEventTypesResponse removeSourceEventTypes(
             RemoveSourceEventTypesRequest request) {
+        LOG.trace("Called removeSourceEventTypes");
+        final RemoveSourceEventTypesRequest interceptedRequest =
+                RemoveSourceEventTypesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RemoveSourceEventTypesConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        Validate.notBlank(request.getSourceName(), "sourceName must not be blank");
-        Objects.requireNonNull(
-                request.getRemoveEventTypeDetails(), "removeEventTypeDetails is required");
-
-        return clientCall(request, RemoveSourceEventTypesResponse::builder)
-                .logger(LOG, "removeSourceEventTypes")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "RemoveSourceEventTypes",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/RemoveSourceEventTypes")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(RemoveSourceEventTypesRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("sources")
-                .appendPathParam(request.getSourceName())
-                .appendPathParam("actions")
-                .appendPathParam("removeEventTypes")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-request-id", RemoveSourceEventTypesResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/RemoveSourceEventTypes");
+        java.util.function.Function<javax.ws.rs.core.Response, RemoveSourceEventTypesResponse>
+                transformer =
+                        RemoveSourceEventTypesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getRemoveEventTypeDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ResumeScheduledTaskResponse resumeScheduledTask(ResumeScheduledTaskRequest request) {
+        LOG.trace("Called resumeScheduledTask");
+        final ResumeScheduledTaskRequest interceptedRequest =
+                ResumeScheduledTaskConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ResumeScheduledTaskConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        Validate.notBlank(request.getScheduledTaskId(), "scheduledTaskId must not be blank");
-
-        return clientCall(request, ResumeScheduledTaskResponse::builder)
-                .logger(LOG, "resumeScheduledTask")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "ResumeScheduledTask",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/ScheduledTask/ResumeScheduledTask")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(ResumeScheduledTaskRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("scheduledTasks")
-                .appendPathParam(request.getScheduledTaskId())
-                .appendPathParam("actions")
-                .appendPathParam("resume")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.ScheduledTask.class,
-                        ResumeScheduledTaskResponse.Builder::scheduledTask)
-                .handleResponseHeaderString(
-                        "opc-request-id", ResumeScheduledTaskResponse.Builder::opcRequestId)
-                .handleResponseHeaderString("etag", ResumeScheduledTaskResponse.Builder::etag)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/ScheduledTask/ResumeScheduledTask");
+        java.util.function.Function<javax.ws.rs.core.Response, ResumeScheduledTaskResponse>
+                transformer =
+                        ResumeScheduledTaskConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public RunResponse run(RunRequest request) {
+        LOG.trace("Called run");
+        final RunRequest interceptedRequest = RunConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RunConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        Validate.notBlank(request.getScheduledTaskId(), "scheduledTaskId must not be blank");
-
-        return clientCall(request, RunResponse::builder)
-                .logger(LOG, "run")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "Run",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/ScheduledTask/Run")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(RunRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("scheduledTasks")
-                .appendPathParam(request.getScheduledTaskId())
-                .appendPathParam("actions")
-                .appendPathParam("run")
-                .appendQueryParam("timeStart", request.getTimeStart())
-                .appendQueryParam("timeEnd", request.getTimeEnd())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .handleResponseHeaderString("opc-request-id", RunResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/ScheduledTask/Run");
+        java.util.function.Function<javax.ws.rs.core.Response, RunResponse> transformer =
+                RunConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public SetUnprocessedDataBucketResponse setUnprocessedDataBucket(
             SetUnprocessedDataBucketRequest request) {
+        LOG.trace("Called setUnprocessedDataBucket");
+        final SetUnprocessedDataBucketRequest interceptedRequest =
+                SetUnprocessedDataBucketConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SetUnprocessedDataBucketConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-        Objects.requireNonNull(request.getBucketName(), "bucketName is required");
-
-        return clientCall(request, SetUnprocessedDataBucketResponse::builder)
-                .logger(LOG, "setUnprocessedDataBucket")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "SetUnprocessedDataBucket",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Upload/SetUnprocessedDataBucket")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(SetUnprocessedDataBucketRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("actions")
-                .appendPathParam("setUnprocessedDataBucket")
-                .appendQueryParam("bucketName", request.getBucketName())
-                .appendQueryParam("isEnabled", request.getIsEnabled())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.UnprocessedDataBucket.class,
-                        SetUnprocessedDataBucketResponse.Builder::unprocessedDataBucket)
-                .handleResponseHeaderString(
-                        "opc-request-id", SetUnprocessedDataBucketResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Upload/SetUnprocessedDataBucket");
+        java.util.function.Function<javax.ws.rs.core.Response, SetUnprocessedDataBucketResponse>
+                transformer =
+                        SetUnprocessedDataBucketConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public SuggestResponse suggest(SuggestRequest request) {
+        LOG.trace("Called suggest");
+        final SuggestRequest interceptedRequest = SuggestConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SuggestConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-        Objects.requireNonNull(request.getSuggestDetails(), "suggestDetails is required");
-
-        return clientCall(request, SuggestResponse::builder)
-                .logger(LOG, "suggest")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "Suggest",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/QueryDetails/Suggest")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(SuggestRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("search")
-                .appendPathParam("actions")
-                .appendPathParam("suggest")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.SuggestOutput.class,
-                        SuggestResponse.Builder::suggestOutput)
-                .handleResponseHeaderString("opc-request-id", SuggestResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/QueryDetails/Suggest");
+        java.util.function.Function<javax.ws.rs.core.Response, SuggestResponse> transformer =
+                SuggestConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getSuggestDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public SuppressWarningResponse suppressWarning(SuppressWarningRequest request) {
+        LOG.trace("Called suppressWarning");
+        final SuppressWarningRequest interceptedRequest =
+                SuppressWarningConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SuppressWarningConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-        Objects.requireNonNull(
-                request.getWarningReferenceDetails(), "warningReferenceDetails is required");
-
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
-
-        return clientCall(request, SuppressWarningResponse::builder)
-                .logger(LOG, "suppressWarning")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "SuppressWarning",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsWarning/SuppressWarning")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(SuppressWarningRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("warnings")
-                .appendPathParam("actions")
-                .appendPathParam("suppress")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-request-id", SuppressWarningResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsWarning/SuppressWarning");
+        java.util.function.Function<javax.ws.rs.core.Response, SuppressWarningResponse>
+                transformer =
+                        SuppressWarningConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getWarningReferenceDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public TestParserResponse testParser(TestParserRequest request) {
+        LOG.trace("Called testParser");
+        final TestParserRequest interceptedRequest = TestParserConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                TestParserConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-        Objects.requireNonNull(
-                request.getTestParserPayloadDetails(), "testParserPayloadDetails is required");
-
-        return clientCall(request, TestParserResponse::builder)
-                .logger(LOG, "testParser")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "TestParser",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsParser/TestParser")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(TestParserRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("parsers")
-                .appendPathParam("actions")
-                .appendPathParam("test")
-                .appendEnumQueryParam("scope", request.getScope())
-                .appendQueryParam("reqOriginModule", request.getReqOriginModule())
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.ParserTestResult.class,
-                        TestParserResponse.Builder::parserTestResult)
-                .handleResponseHeaderString(
-                        "opc-request-id", TestParserResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsParser/TestParser");
+        java.util.function.Function<javax.ws.rs.core.Response, TestParserResponse> transformer =
+                TestParserConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getTestParserPayloadDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public UnsuppressWarningResponse unsuppressWarning(UnsuppressWarningRequest request) {
+        LOG.trace("Called unsuppressWarning");
+        final UnsuppressWarningRequest interceptedRequest =
+                UnsuppressWarningConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UnsuppressWarningConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-        Objects.requireNonNull(
-                request.getWarningReferenceDetails(), "warningReferenceDetails is required");
-
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
-
-        return clientCall(request, UnsuppressWarningResponse::builder)
-                .logger(LOG, "unsuppressWarning")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "UnsuppressWarning",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsWarning/UnsuppressWarning")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(UnsuppressWarningRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("warnings")
-                .appendPathParam("actions")
-                .appendPathParam("unsuppress")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-request-id", UnsuppressWarningResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsWarning/UnsuppressWarning");
+        java.util.function.Function<javax.ws.rs.core.Response, UnsuppressWarningResponse>
+                transformer =
+                        UnsuppressWarningConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getWarningReferenceDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public UpdateIngestTimeRuleResponse updateIngestTimeRule(UpdateIngestTimeRuleRequest request) {
+        LOG.trace("Called updateIngestTimeRule");
+        final UpdateIngestTimeRuleRequest interceptedRequest =
+                UpdateIngestTimeRuleConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateIngestTimeRuleConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        Validate.notBlank(request.getIngestTimeRuleId(), "ingestTimeRuleId must not be blank");
-        Objects.requireNonNull(
-                request.getUpdateIngestTimeRuleDetails(),
-                "updateIngestTimeRuleDetails is required");
-
-        return clientCall(request, UpdateIngestTimeRuleResponse::builder)
-                .logger(LOG, "updateIngestTimeRule")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "UpdateIngestTimeRule",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/IngestTimeRule/UpdateIngestTimeRule")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateIngestTimeRuleRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("ingestTimeRules")
-                .appendPathParam(request.getIngestTimeRuleId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.IngestTimeRule.class,
-                        UpdateIngestTimeRuleResponse.Builder::ingestTimeRule)
-                .handleResponseHeaderString("etag", UpdateIngestTimeRuleResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", UpdateIngestTimeRuleResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/IngestTimeRule/UpdateIngestTimeRule");
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateIngestTimeRuleResponse>
+                transformer =
+                        UpdateIngestTimeRuleConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateIngestTimeRuleDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public UpdateLogAnalyticsEmBridgeResponse updateLogAnalyticsEmBridge(
             UpdateLogAnalyticsEmBridgeRequest request) {
+        LOG.trace("Called updateLogAnalyticsEmBridge");
+        final UpdateLogAnalyticsEmBridgeRequest interceptedRequest =
+                UpdateLogAnalyticsEmBridgeConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateLogAnalyticsEmBridgeConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        Validate.notBlank(
-                request.getLogAnalyticsEmBridgeId(), "logAnalyticsEmBridgeId must not be blank");
-        Objects.requireNonNull(
-                request.getUpdateLogAnalyticsEmBridgeDetails(),
-                "updateLogAnalyticsEmBridgeDetails is required");
-
-        return clientCall(request, UpdateLogAnalyticsEmBridgeResponse::builder)
-                .logger(LOG, "updateLogAnalyticsEmBridge")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "UpdateLogAnalyticsEmBridge",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEmBridge/UpdateLogAnalyticsEmBridge")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateLogAnalyticsEmBridgeRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("logAnalyticsEmBridges")
-                .appendPathParam(request.getLogAnalyticsEmBridgeId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.LogAnalyticsEmBridge.class,
-                        UpdateLogAnalyticsEmBridgeResponse.Builder::logAnalyticsEmBridge)
-                .handleResponseHeaderString(
-                        "etag", UpdateLogAnalyticsEmBridgeResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", UpdateLogAnalyticsEmBridgeResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEmBridge/UpdateLogAnalyticsEmBridge");
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateLogAnalyticsEmBridgeResponse>
+                transformer =
+                        UpdateLogAnalyticsEmBridgeConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest
+                                                        .getUpdateLogAnalyticsEmBridgeDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public UpdateLogAnalyticsEntityResponse updateLogAnalyticsEntity(
             UpdateLogAnalyticsEntityRequest request) {
+        LOG.trace("Called updateLogAnalyticsEntity");
+        final UpdateLogAnalyticsEntityRequest interceptedRequest =
+                UpdateLogAnalyticsEntityConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateLogAnalyticsEntityConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        Validate.notBlank(
-                request.getLogAnalyticsEntityId(), "logAnalyticsEntityId must not be blank");
-        Objects.requireNonNull(
-                request.getUpdateLogAnalyticsEntityDetails(),
-                "updateLogAnalyticsEntityDetails is required");
-
-        return clientCall(request, UpdateLogAnalyticsEntityResponse::builder)
-                .logger(LOG, "updateLogAnalyticsEntity")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "UpdateLogAnalyticsEntity",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEntity/UpdateLogAnalyticsEntity")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateLogAnalyticsEntityRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("logAnalyticsEntities")
-                .appendPathParam(request.getLogAnalyticsEntityId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.LogAnalyticsEntity.class,
-                        UpdateLogAnalyticsEntityResponse.Builder::logAnalyticsEntity)
-                .handleResponseHeaderString("etag", UpdateLogAnalyticsEntityResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", UpdateLogAnalyticsEntityResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEntity/UpdateLogAnalyticsEntity");
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateLogAnalyticsEntityResponse>
+                transformer =
+                        UpdateLogAnalyticsEntityConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateLogAnalyticsEntityDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public UpdateLogAnalyticsEntityTypeResponse updateLogAnalyticsEntityType(
             UpdateLogAnalyticsEntityTypeRequest request) {
+        LOG.trace("Called updateLogAnalyticsEntityType");
+        final UpdateLogAnalyticsEntityTypeRequest interceptedRequest =
+                UpdateLogAnalyticsEntityTypeConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateLogAnalyticsEntityTypeConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-        Objects.requireNonNull(
-                request.getUpdateLogAnalyticsEntityTypeDetails(),
-                "updateLogAnalyticsEntityTypeDetails is required");
-
-        Validate.notBlank(request.getEntityTypeName(), "entityTypeName must not be blank");
-
-        return clientCall(request, UpdateLogAnalyticsEntityTypeResponse::builder)
-                .logger(LOG, "updateLogAnalyticsEntityType")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "UpdateLogAnalyticsEntityType",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEntityType/UpdateLogAnalyticsEntityType")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateLogAnalyticsEntityTypeRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("logAnalyticsEntityTypes")
-                .appendPathParam(request.getEntityTypeName())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("if-match", request.getIfMatch())
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        UpdateLogAnalyticsEntityTypeResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEntityType/UpdateLogAnalyticsEntityType");
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateLogAnalyticsEntityTypeResponse>
+                transformer =
+                        UpdateLogAnalyticsEntityTypeConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest
+                                                        .getUpdateLogAnalyticsEntityTypeDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public UpdateLogAnalyticsLogGroupResponse updateLogAnalyticsLogGroup(
             UpdateLogAnalyticsLogGroupRequest request) {
+        LOG.trace("Called updateLogAnalyticsLogGroup");
+        final UpdateLogAnalyticsLogGroupRequest interceptedRequest =
+                UpdateLogAnalyticsLogGroupConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateLogAnalyticsLogGroupConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        Validate.notBlank(
-                request.getLogAnalyticsLogGroupId(), "logAnalyticsLogGroupId must not be blank");
-        Objects.requireNonNull(
-                request.getUpdateLogAnalyticsLogGroupDetails(),
-                "updateLogAnalyticsLogGroupDetails is required");
-
-        return clientCall(request, UpdateLogAnalyticsLogGroupResponse::builder)
-                .logger(LOG, "updateLogAnalyticsLogGroup")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "UpdateLogAnalyticsLogGroup",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLogGroup/UpdateLogAnalyticsLogGroup")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateLogAnalyticsLogGroupRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("logAnalyticsLogGroups")
-                .appendPathParam(request.getLogAnalyticsLogGroupId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.LogAnalyticsLogGroup.class,
-                        UpdateLogAnalyticsLogGroupResponse.Builder::logAnalyticsLogGroup)
-                .handleResponseHeaderString(
-                        "etag", UpdateLogAnalyticsLogGroupResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", UpdateLogAnalyticsLogGroupResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLogGroup/UpdateLogAnalyticsLogGroup");
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateLogAnalyticsLogGroupResponse>
+                transformer =
+                        UpdateLogAnalyticsLogGroupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest
+                                                        .getUpdateLogAnalyticsLogGroupDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public UpdateLogAnalyticsObjectCollectionRuleResponse updateLogAnalyticsObjectCollectionRule(
             UpdateLogAnalyticsObjectCollectionRuleRequest request) {
+        LOG.trace("Called updateLogAnalyticsObjectCollectionRule");
+        final UpdateLogAnalyticsObjectCollectionRuleRequest interceptedRequest =
+                UpdateLogAnalyticsObjectCollectionRuleConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateLogAnalyticsObjectCollectionRuleConverter.fromRequest(
+                        client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        Validate.notBlank(
-                request.getLogAnalyticsObjectCollectionRuleId(),
-                "logAnalyticsObjectCollectionRuleId must not be blank");
-        Objects.requireNonNull(
-                request.getUpdateLogAnalyticsObjectCollectionRuleDetails(),
-                "updateLogAnalyticsObjectCollectionRuleDetails is required");
-
-        return clientCall(request, UpdateLogAnalyticsObjectCollectionRuleResponse::builder)
-                .logger(LOG, "updateLogAnalyticsObjectCollectionRule")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "UpdateLogAnalyticsObjectCollectionRule",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsObjectCollectionRule/UpdateLogAnalyticsObjectCollectionRule")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateLogAnalyticsObjectCollectionRuleRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("logAnalyticsObjectCollectionRules")
-                .appendPathParam(request.getLogAnalyticsObjectCollectionRuleId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.LogAnalyticsObjectCollectionRule.class,
-                        UpdateLogAnalyticsObjectCollectionRuleResponse.Builder
-                                ::logAnalyticsObjectCollectionRule)
-                .handleResponseHeaderString(
-                        "etag", UpdateLogAnalyticsObjectCollectionRuleResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        UpdateLogAnalyticsObjectCollectionRuleResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsObjectCollectionRule/UpdateLogAnalyticsObjectCollectionRule");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, UpdateLogAnalyticsObjectCollectionRuleResponse>
+                transformer =
+                        UpdateLogAnalyticsObjectCollectionRuleConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest
+                                                        .getUpdateLogAnalyticsObjectCollectionRuleDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public UpdateLookupResponse updateLookup(UpdateLookupRequest request) {
+        LOG.trace("Called updateLookup");
+        final UpdateLookupRequest interceptedRequest =
+                UpdateLookupConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateLookupConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        Validate.notBlank(request.getLookupName(), "lookupName must not be blank");
-        Objects.requireNonNull(
-                request.getUpdateLookupMetadataDetails(),
-                "updateLookupMetadataDetails is required");
-
-        return clientCall(request, UpdateLookupResponse::builder)
-                .logger(LOG, "updateLookup")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "UpdateLookup",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLookup/UpdateLookup")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateLookupRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("lookups")
-                .appendPathParam(request.getLookupName())
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("if-match", request.getIfMatch())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.LogAnalyticsLookup.class,
-                        UpdateLookupResponse.Builder::logAnalyticsLookup)
-                .handleResponseHeaderString("etag", UpdateLookupResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", UpdateLookupResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLookup/UpdateLookup");
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateLookupResponse> transformer =
+                UpdateLookupConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateLookupMetadataDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public UpdateLookupDataResponse updateLookupData(UpdateLookupDataRequest request) {
-
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        Validate.notBlank(request.getLookupName(), "lookupName must not be blank");
-        Objects.requireNonNull(
-                request.getUpdateLookupFileBody(), "updateLookupFileBody is required");
-
-        return clientCall(request, UpdateLookupDataResponse::builder)
-                .logger(LOG, "updateLookupData")
-                .serviceDetails(
-                        "LogAnalytics",
-                        "UpdateLookupData",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLookup/UpdateLookupData")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(UpdateLookupDataRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("lookups")
-                .appendPathParam(request.getLookupName())
-                .appendPathParam("actions")
-                .appendPathParam("updateData")
-                .appendQueryParam("isForce", request.getIsForce())
-                .appendQueryParam("charEncoding", request.getCharEncoding())
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("expect", request.getExpect())
-                .operationUsesDefaultRetries()
-                .hasBinaryRequestBody()
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-work-request-id", UpdateLookupDataResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", UpdateLookupDataResponse.Builder::opcRequestId)
-                .callSync();
+        LOG.trace("Called updateLookupData");
+        try {
+            final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                    com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                            request.getRetryConfiguration(), retryConfiguration, true);
+            if (request.getRetryConfiguration() != null
+                    || retryConfiguration != null
+                    || shouldRetryBecauseOfWaiterConfiguration(retrier)
+                    || authenticationDetailsProvider
+                            instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+                request =
+                        com.oracle.bmc.retrier.Retriers.wrapBodyInputStreamIfNecessary(
+                                request, UpdateLookupDataRequest.builder());
+            }
+            final UpdateLookupDataRequest interceptedRequest =
+                    UpdateLookupDataConverter.interceptRequest(request);
+            com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                    UpdateLookupDataConverter.fromRequest(client, interceptedRequest);
+            com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+            com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+            com.oracle.bmc.ServiceDetails serviceDetails =
+                    new com.oracle.bmc.ServiceDetails(
+                            "LogAnalytics",
+                            "UpdateLookupData",
+                            ib.getRequestUri().toString(),
+                            "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLookup/UpdateLookupData");
+            java.util.function.Function<javax.ws.rs.core.Response, UpdateLookupDataResponse>
+                    transformer =
+                            UpdateLookupDataConverter.fromResponse(
+                                    java.util.Optional.of(serviceDetails));
+            return retrier.execute(
+                    interceptedRequest,
+                    retryRequest -> {
+                        final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                                new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                        authenticationDetailsProvider);
+                        return tokenRefreshRetrier.execute(
+                                retryRequest,
+                                retriedRequest -> {
+                                    try {
+                                        javax.ws.rs.core.Response response =
+                                                client.post(
+                                                        ib,
+                                                        retriedRequest.getUpdateLookupFileBody(),
+                                                        retriedRequest);
+                                        return transformer.apply(response);
+                                    } catch (RuntimeException e) {
+                                        if (interceptedRequest.getRetryConfiguration() != null
+                                                || retryConfiguration != null
+                                                || shouldRetryBecauseOfWaiterConfiguration(retrier)
+                                                || (e instanceof com.oracle.bmc.model.BmcException
+                                                        && tokenRefreshRetrier
+                                                                .getRetryCondition()
+                                                                .shouldBeRetried(
+                                                                        (com.oracle.bmc.model
+                                                                                        .BmcException)
+                                                                                e))) {
+                                            com.oracle.bmc.retrier.Retriers.tryResetStreamForRetry(
+                                                    interceptedRequest.getUpdateLookupFileBody(),
+                                                    true);
+                                        }
+                                        throw e; // rethrow
+                                    }
+                                });
+                    });
+        } finally {
+            com.oracle.bmc.io.internal.KeepOpenInputStream.closeStream(
+                    request.getUpdateLookupFileBody());
+        }
     }
 
     @Override
     public UpdatePreferencesResponse updatePreferences(UpdatePreferencesRequest request) {
+        LOG.trace("Called updatePreferences");
+        final UpdatePreferencesRequest interceptedRequest =
+                UpdatePreferencesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdatePreferencesConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-        Objects.requireNonNull(
-                request.getUpdatePreferencesDetails(), "updatePreferencesDetails is required");
-
-        return clientCall(request, UpdatePreferencesResponse::builder)
-                .logger(LOG, "updatePreferences")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "UpdatePreferences",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsPreference/UpdatePreferences")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(UpdatePreferencesRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("preferences")
-                .appendPathParam("actions")
-                .appendPathParam("updatePreferences")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-request-id", UpdatePreferencesResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsPreference/UpdatePreferences");
+        java.util.function.Function<javax.ws.rs.core.Response, UpdatePreferencesResponse>
+                transformer =
+                        UpdatePreferencesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getUpdatePreferencesDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public UpdateResourceCategoriesResponse updateResourceCategories(
             UpdateResourceCategoriesRequest request) {
+        LOG.trace("Called updateResourceCategories");
+        final UpdateResourceCategoriesRequest interceptedRequest =
+                UpdateResourceCategoriesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateResourceCategoriesConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-        Objects.requireNonNull(
-                request.getUpdateResourceCategoriesDetails(),
-                "updateResourceCategoriesDetails is required");
-
-        return clientCall(request, UpdateResourceCategoriesResponse::builder)
-                .logger(LOG, "updateResourceCategories")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "UpdateResourceCategories",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsCategory/UpdateResourceCategories")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(UpdateResourceCategoriesRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("categories")
-                .appendPathParam("actions")
-                .appendPathParam("updateResourceCategories")
-                .accept("application/json;charset=UTF-8")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-request-id", UpdateResourceCategoriesResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsCategory/UpdateResourceCategories");
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateResourceCategoriesResponse>
+                transformer =
+                        UpdateResourceCategoriesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getUpdateResourceCategoriesDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public UpdateScheduledTaskResponse updateScheduledTask(UpdateScheduledTaskRequest request) {
+        LOG.trace("Called updateScheduledTask");
+        final UpdateScheduledTaskRequest interceptedRequest =
+                UpdateScheduledTaskConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateScheduledTaskConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        Validate.notBlank(request.getScheduledTaskId(), "scheduledTaskId must not be blank");
-        Objects.requireNonNull(
-                request.getUpdateScheduledTaskDetails(), "updateScheduledTaskDetails is required");
-
-        return clientCall(request, UpdateScheduledTaskResponse::builder)
-                .logger(LOG, "updateScheduledTask")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "UpdateScheduledTask",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/ScheduledTask/UpdateScheduledTask")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateScheduledTaskRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("scheduledTasks")
-                .appendPathParam(request.getScheduledTaskId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("if-match", request.getIfMatch())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.ScheduledTask.class,
-                        UpdateScheduledTaskResponse.Builder::scheduledTask)
-                .handleResponseHeaderString(
-                        "opc-request-id", UpdateScheduledTaskResponse.Builder::opcRequestId)
-                .handleResponseHeaderString("etag", UpdateScheduledTaskResponse.Builder::etag)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/ScheduledTask/UpdateScheduledTask");
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateScheduledTaskResponse>
+                transformer =
+                        UpdateScheduledTaskConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateScheduledTaskDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public UpdateStorageResponse updateStorage(UpdateStorageRequest request) {
+        LOG.trace("Called updateStorage");
+        final UpdateStorageRequest interceptedRequest =
+                UpdateStorageConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateStorageConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-        Objects.requireNonNull(
-                request.getUpdateStorageDetails(), "updateStorageDetails is required");
-
-        return clientCall(request, UpdateStorageResponse::builder)
-                .logger(LOG, "updateStorage")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "UpdateStorage",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/UpdateStorage")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateStorageRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("storage")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("if-match", request.getIfMatch())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.Storage.class,
-                        UpdateStorageResponse.Builder::storage)
-                .handleResponseHeaderString(
-                        "opc-request-id", UpdateStorageResponse.Builder::opcRequestId)
-                .handleResponseHeaderString("etag", UpdateStorageResponse.Builder::etag)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/UpdateStorage");
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateStorageResponse> transformer =
+                UpdateStorageConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateStorageDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public UploadDiscoveryDataResponse uploadDiscoveryData(UploadDiscoveryDataRequest request) {
+        LOG.trace("Called uploadDiscoveryData");
+        try {
+            final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                    com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                            request.getRetryConfiguration(), retryConfiguration, true);
+            if (request.getRetryConfiguration() != null
+                    || retryConfiguration != null
+                    || shouldRetryBecauseOfWaiterConfiguration(retrier)
+                    || authenticationDetailsProvider
+                            instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+                request =
+                        com.oracle.bmc.retrier.Retriers.wrapBodyInputStreamIfNecessary(
+                                request, UploadDiscoveryDataRequest.builder());
+            }
+            final UploadDiscoveryDataRequest interceptedRequest =
+                    UploadDiscoveryDataConverter.interceptRequest(request);
+            com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                    UploadDiscoveryDataConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-        Objects.requireNonNull(
-                request.getUploadDiscoveryDataDetails(), "uploadDiscoveryDataDetails is required");
-
-        return clientCall(request, UploadDiscoveryDataResponse::builder)
-                .logger(LOG, "uploadDiscoveryData")
-                .serviceDetails(
-                        "LogAnalytics",
-                        "UploadDiscoveryData",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEntity/UploadDiscoveryData")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(UploadDiscoveryDataRequest::builder)
-                .obmcsSigningStrategy(com.oracle.bmc.http.signing.SigningStrategy.EXCLUDE_BODY)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("actions")
-                .appendPathParam("uploadDiscoveryData")
-                .appendEnumQueryParam("discoveryDataType", request.getDiscoveryDataType())
-                .appendQueryParam("logGroupId", request.getLogGroupId())
-                .appendEnumQueryParam("payloadType", request.getPayloadType())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-meta-properties", request.getOpcMetaProperties())
-                .appendHeader("content-type", request.getContentType())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("expect", request.getExpect())
-                .operationUsesDefaultRetries()
-                .hasBinaryRequestBody()
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-request-id", UploadDiscoveryDataResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-object-id", UploadDiscoveryDataResponse.Builder::opcObjectId)
-                .handleResponseHeaderDate(
-                        "timeCreated", UploadDiscoveryDataResponse.Builder::timeCreated)
-                .callSync();
+            ib.property(
+                    com.oracle.bmc.http.internal.AuthnClientFilter.SIGNING_STRATEGY_PROPERTY_NAME,
+                    com.oracle.bmc.http.signing.SigningStrategy.EXCLUDE_BODY);
+            com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+            com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+            com.oracle.bmc.ServiceDetails serviceDetails =
+                    new com.oracle.bmc.ServiceDetails(
+                            "LogAnalytics",
+                            "UploadDiscoveryData",
+                            ib.getRequestUri().toString(),
+                            "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEntity/UploadDiscoveryData");
+            java.util.function.Function<javax.ws.rs.core.Response, UploadDiscoveryDataResponse>
+                    transformer =
+                            UploadDiscoveryDataConverter.fromResponse(
+                                    java.util.Optional.of(serviceDetails));
+            return retrier.execute(
+                    interceptedRequest,
+                    retryRequest -> {
+                        final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                                new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                        authenticationDetailsProvider);
+                        return tokenRefreshRetrier.execute(
+                                retryRequest,
+                                retriedRequest -> {
+                                    try {
+                                        javax.ws.rs.core.Response response =
+                                                client.post(
+                                                        ib,
+                                                        retriedRequest
+                                                                .getUploadDiscoveryDataDetails(),
+                                                        retriedRequest);
+                                        return transformer.apply(response);
+                                    } catch (RuntimeException e) {
+                                        if (interceptedRequest.getRetryConfiguration() != null
+                                                || retryConfiguration != null
+                                                || shouldRetryBecauseOfWaiterConfiguration(retrier)
+                                                || (e instanceof com.oracle.bmc.model.BmcException
+                                                        && tokenRefreshRetrier
+                                                                .getRetryCondition()
+                                                                .shouldBeRetried(
+                                                                        (com.oracle.bmc.model
+                                                                                        .BmcException)
+                                                                                e))) {
+                                            com.oracle.bmc.retrier.Retriers.tryResetStreamForRetry(
+                                                    interceptedRequest
+                                                            .getUploadDiscoveryDataDetails(),
+                                                    true);
+                                        }
+                                        throw e; // rethrow
+                                    }
+                                });
+                    });
+        } finally {
+            com.oracle.bmc.io.internal.KeepOpenInputStream.closeStream(
+                    request.getUploadDiscoveryDataDetails());
+        }
     }
 
     @Override
     public UploadLogEventsFileResponse uploadLogEventsFile(UploadLogEventsFileRequest request) {
+        LOG.trace("Called uploadLogEventsFile");
+        try {
+            final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                    com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                            request.getRetryConfiguration(), retryConfiguration, true);
+            if (request.getRetryConfiguration() != null
+                    || retryConfiguration != null
+                    || shouldRetryBecauseOfWaiterConfiguration(retrier)
+                    || authenticationDetailsProvider
+                            instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+                request =
+                        com.oracle.bmc.retrier.Retriers.wrapBodyInputStreamIfNecessary(
+                                request, UploadLogEventsFileRequest.builder());
+            }
+            final UploadLogEventsFileRequest interceptedRequest =
+                    UploadLogEventsFileConverter.interceptRequest(request);
+            com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                    UploadLogEventsFileConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-        Objects.requireNonNull(request.getLogGroupId(), "logGroupId is required");
-
-        Objects.requireNonNull(
-                request.getUploadLogEventsFileDetails(), "uploadLogEventsFileDetails is required");
-
-        return clientCall(request, UploadLogEventsFileResponse::builder)
-                .logger(LOG, "uploadLogEventsFile")
-                .serviceDetails(
-                        "LogAnalytics",
-                        "UploadLogEventsFile",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Upload/UploadLogEventsFile")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(UploadLogEventsFileRequest::builder)
-                .obmcsSigningStrategy(com.oracle.bmc.http.signing.SigningStrategy.EXCLUDE_BODY)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("actions")
-                .appendPathParam("uploadLogEventsFile")
-                .appendQueryParam("logGroupId", request.getLogGroupId())
-                .appendQueryParam("logSet", request.getLogSet())
-                .appendEnumQueryParam("payloadType", request.getPayloadType())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("content-type", request.getContentType())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-meta-properties", request.getOpcMetaProperties())
-                .appendHeader("expect", request.getExpect())
-                .operationUsesDefaultRetries()
-                .hasBinaryRequestBody()
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-request-id", UploadLogEventsFileResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-object-id", UploadLogEventsFileResponse.Builder::opcObjectId)
-                .handleResponseHeaderDate(
-                        "timeCreated", UploadLogEventsFileResponse.Builder::timeCreated)
-                .callSync();
+            ib.property(
+                    com.oracle.bmc.http.internal.AuthnClientFilter.SIGNING_STRATEGY_PROPERTY_NAME,
+                    com.oracle.bmc.http.signing.SigningStrategy.EXCLUDE_BODY);
+            com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+            com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+            com.oracle.bmc.ServiceDetails serviceDetails =
+                    new com.oracle.bmc.ServiceDetails(
+                            "LogAnalytics",
+                            "UploadLogEventsFile",
+                            ib.getRequestUri().toString(),
+                            "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Upload/UploadLogEventsFile");
+            java.util.function.Function<javax.ws.rs.core.Response, UploadLogEventsFileResponse>
+                    transformer =
+                            UploadLogEventsFileConverter.fromResponse(
+                                    java.util.Optional.of(serviceDetails));
+            return retrier.execute(
+                    interceptedRequest,
+                    retryRequest -> {
+                        final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                                new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                        authenticationDetailsProvider);
+                        return tokenRefreshRetrier.execute(
+                                retryRequest,
+                                retriedRequest -> {
+                                    try {
+                                        javax.ws.rs.core.Response response =
+                                                client.post(
+                                                        ib,
+                                                        retriedRequest
+                                                                .getUploadLogEventsFileDetails(),
+                                                        retriedRequest);
+                                        return transformer.apply(response);
+                                    } catch (RuntimeException e) {
+                                        if (interceptedRequest.getRetryConfiguration() != null
+                                                || retryConfiguration != null
+                                                || shouldRetryBecauseOfWaiterConfiguration(retrier)
+                                                || (e instanceof com.oracle.bmc.model.BmcException
+                                                        && tokenRefreshRetrier
+                                                                .getRetryCondition()
+                                                                .shouldBeRetried(
+                                                                        (com.oracle.bmc.model
+                                                                                        .BmcException)
+                                                                                e))) {
+                                            com.oracle.bmc.retrier.Retriers.tryResetStreamForRetry(
+                                                    interceptedRequest
+                                                            .getUploadLogEventsFileDetails(),
+                                                    true);
+                                        }
+                                        throw e; // rethrow
+                                    }
+                                });
+                    });
+        } finally {
+            com.oracle.bmc.io.internal.KeepOpenInputStream.closeStream(
+                    request.getUploadLogEventsFileDetails());
+        }
     }
 
     @Override
     public UploadLogFileResponse uploadLogFile(UploadLogFileRequest request) {
+        LOG.trace("Called uploadLogFile");
+        try {
+            final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                    com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                            request.getRetryConfiguration(), retryConfiguration, true);
+            if (request.getRetryConfiguration() != null
+                    || retryConfiguration != null
+                    || shouldRetryBecauseOfWaiterConfiguration(retrier)
+                    || authenticationDetailsProvider
+                            instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+                request =
+                        com.oracle.bmc.retrier.Retriers.wrapBodyInputStreamIfNecessary(
+                                request, UploadLogFileRequest.builder());
+            }
+            final UploadLogFileRequest interceptedRequest =
+                    UploadLogFileConverter.interceptRequest(request);
+            com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                    UploadLogFileConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-        Objects.requireNonNull(request.getUploadName(), "uploadName is required");
-
-        Objects.requireNonNull(request.getLogSourceName(), "logSourceName is required");
-
-        Objects.requireNonNull(request.getFilename(), "filename is required");
-
-        Objects.requireNonNull(request.getOpcMetaLoggrpid(), "opcMetaLoggrpid is required");
-
-        Objects.requireNonNull(request.getUploadLogFileBody(), "uploadLogFileBody is required");
-
-        return clientCall(request, UploadLogFileResponse::builder)
-                .logger(LOG, "uploadLogFile")
-                .serviceDetails(
-                        "LogAnalytics",
-                        "UploadLogFile",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Upload/UploadLogFile")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(UploadLogFileRequest::builder)
-                .obmcsSigningStrategy(com.oracle.bmc.http.signing.SigningStrategy.EXCLUDE_BODY)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("actions")
-                .appendPathParam("uploadLogFile")
-                .appendQueryParam("uploadName", request.getUploadName())
-                .appendQueryParam("logSourceName", request.getLogSourceName())
-                .appendQueryParam("entityId", request.getEntityId())
-                .appendQueryParam("timezone", request.getTimezone())
-                .appendQueryParam("charEncoding", request.getCharEncoding())
-                .appendQueryParam("dateFormat", request.getDateFormat())
-                .appendQueryParam("dateYear", request.getDateYear())
-                .appendQueryParam("invalidateCache", request.getInvalidateCache())
-                .appendQueryParam("filename", request.getFilename())
-                .appendQueryParam("logSet", request.getLogSet())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("content-md5", request.getContentMd5())
-                .appendHeader("content-type", request.getContentType())
-                .appendHeader("opc-meta-loggrpid", request.getOpcMetaLoggrpid())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("expect", request.getExpect())
-                .operationUsesDefaultRetries()
-                .hasBinaryRequestBody()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.Upload.class,
-                        UploadLogFileResponse.Builder::upload)
-                .handleResponseHeaderString(
-                        "opc-request-id", UploadLogFileResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-content-md5", UploadLogFileResponse.Builder::opcContentMd5)
-                .handleResponseHeaderString(
-                        "opc-object-id", UploadLogFileResponse.Builder::opcObjectId)
-                .callSync();
+            ib.property(
+                    com.oracle.bmc.http.internal.AuthnClientFilter.SIGNING_STRATEGY_PROPERTY_NAME,
+                    com.oracle.bmc.http.signing.SigningStrategy.EXCLUDE_BODY);
+            com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+            com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+            com.oracle.bmc.ServiceDetails serviceDetails =
+                    new com.oracle.bmc.ServiceDetails(
+                            "LogAnalytics",
+                            "UploadLogFile",
+                            ib.getRequestUri().toString(),
+                            "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Upload/UploadLogFile");
+            java.util.function.Function<javax.ws.rs.core.Response, UploadLogFileResponse>
+                    transformer =
+                            UploadLogFileConverter.fromResponse(
+                                    java.util.Optional.of(serviceDetails));
+            return retrier.execute(
+                    interceptedRequest,
+                    retryRequest -> {
+                        final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                                new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                        authenticationDetailsProvider);
+                        return tokenRefreshRetrier.execute(
+                                retryRequest,
+                                retriedRequest -> {
+                                    try {
+                                        javax.ws.rs.core.Response response =
+                                                client.post(
+                                                        ib,
+                                                        retriedRequest.getUploadLogFileBody(),
+                                                        retriedRequest);
+                                        return transformer.apply(response);
+                                    } catch (RuntimeException e) {
+                                        if (interceptedRequest.getRetryConfiguration() != null
+                                                || retryConfiguration != null
+                                                || shouldRetryBecauseOfWaiterConfiguration(retrier)
+                                                || (e instanceof com.oracle.bmc.model.BmcException
+                                                        && tokenRefreshRetrier
+                                                                .getRetryCondition()
+                                                                .shouldBeRetried(
+                                                                        (com.oracle.bmc.model
+                                                                                        .BmcException)
+                                                                                e))) {
+                                            com.oracle.bmc.retrier.Retriers.tryResetStreamForRetry(
+                                                    interceptedRequest.getUploadLogFileBody(),
+                                                    true);
+                                        }
+                                        throw e; // rethrow
+                                    }
+                                });
+                    });
+        } finally {
+            com.oracle.bmc.io.internal.KeepOpenInputStream.closeStream(
+                    request.getUploadLogFileBody());
+        }
     }
 
     @Override
     public UpsertAssociationsResponse upsertAssociations(UpsertAssociationsRequest request) {
+        LOG.trace("Called upsertAssociations");
+        final UpsertAssociationsRequest interceptedRequest =
+                UpsertAssociationsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpsertAssociationsConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-        Objects.requireNonNull(
-                request.getUpsertLogAnalyticsAssociationDetails(),
-                "upsertLogAnalyticsAssociationDetails is required");
-
-        return clientCall(request, UpsertAssociationsResponse::builder)
-                .logger(LOG, "upsertAssociations")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "UpsertAssociations",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsAssociation/UpsertAssociations")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(UpsertAssociationsRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("associations")
-                .appendPathParam("actions")
-                .appendPathParam("upsert")
-                .appendQueryParam("isFromRepublish", request.getIsFromRepublish())
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-work-request-id", UpsertAssociationsResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", UpsertAssociationsResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsAssociation/UpsertAssociations");
+        java.util.function.Function<javax.ws.rs.core.Response, UpsertAssociationsResponse>
+                transformer =
+                        UpsertAssociationsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getUpsertLogAnalyticsAssociationDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public UpsertFieldResponse upsertField(UpsertFieldRequest request) {
+        LOG.trace("Called upsertField");
+        final UpsertFieldRequest interceptedRequest =
+                UpsertFieldConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpsertFieldConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-        Objects.requireNonNull(
-                request.getUpsertLogAnalyticsFieldDetails(),
-                "upsertLogAnalyticsFieldDetails is required");
-
-        return clientCall(request, UpsertFieldResponse::builder)
-                .logger(LOG, "upsertField")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "UpsertField",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsField/UpsertField")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(UpsertFieldRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("fields")
-                .appendPathParam("actions")
-                .appendPathParam("upsert")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("if-match", request.getIfMatch())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.LogAnalyticsField.class,
-                        UpsertFieldResponse.Builder::logAnalyticsField)
-                .handleResponseHeaderString("etag", UpsertFieldResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", UpsertFieldResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsField/UpsertField");
+        java.util.function.Function<javax.ws.rs.core.Response, UpsertFieldResponse> transformer =
+                UpsertFieldConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getUpsertLogAnalyticsFieldDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public UpsertLabelResponse upsertLabel(UpsertLabelRequest request) {
+        LOG.trace("Called upsertLabel");
+        final UpsertLabelRequest interceptedRequest =
+                UpsertLabelConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpsertLabelConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-        Objects.requireNonNull(
-                request.getUpsertLogAnalyticsLabelDetails(),
-                "upsertLogAnalyticsLabelDetails is required");
-
-        return clientCall(request, UpsertLabelResponse::builder)
-                .logger(LOG, "upsertLabel")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "UpsertLabel",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLabel/UpsertLabel")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(UpsertLabelRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("labels")
-                .appendPathParam("actions")
-                .appendPathParam("upsert")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("if-match", request.getIfMatch())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.LogAnalyticsLabel.class,
-                        UpsertLabelResponse.Builder::logAnalyticsLabel)
-                .handleResponseHeaderString("etag", UpsertLabelResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", UpsertLabelResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLabel/UpsertLabel");
+        java.util.function.Function<javax.ws.rs.core.Response, UpsertLabelResponse> transformer =
+                UpsertLabelConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getUpsertLogAnalyticsLabelDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public UpsertParserResponse upsertParser(UpsertParserRequest request) {
+        LOG.trace("Called upsertParser");
+        final UpsertParserRequest interceptedRequest =
+                UpsertParserConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpsertParserConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-        Objects.requireNonNull(
-                request.getUpsertLogAnalyticsParserDetails(),
-                "upsertLogAnalyticsParserDetails is required");
-
-        return clientCall(request, UpsertParserResponse::builder)
-                .logger(LOG, "upsertParser")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "UpsertParser",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsParser/UpsertParser")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(UpsertParserRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("parsers")
-                .appendPathParam("actions")
-                .appendPathParam("upsert")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("if-match", request.getIfMatch())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.LogAnalyticsParser.class,
-                        UpsertParserResponse.Builder::logAnalyticsParser)
-                .handleResponseHeaderString("etag", UpsertParserResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", UpsertParserResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsParser/UpsertParser");
+        java.util.function.Function<javax.ws.rs.core.Response, UpsertParserResponse> transformer =
+                UpsertParserConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getUpsertLogAnalyticsParserDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public UpsertSourceResponse upsertSource(UpsertSourceRequest request) {
+        LOG.trace("Called upsertSource");
+        final UpsertSourceRequest interceptedRequest =
+                UpsertSourceConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpsertSourceConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-        Objects.requireNonNull(
-                request.getUpsertLogAnalyticsSourceDetails(),
-                "upsertLogAnalyticsSourceDetails is required");
-
-        return clientCall(request, UpsertSourceResponse::builder)
-                .logger(LOG, "upsertSource")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "UpsertSource",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/UpsertSource")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(UpsertSourceRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("sources")
-                .appendPathParam("actions")
-                .appendPathParam("upsert")
-                .appendQueryParam("createLikeSourceId", request.getCreateLikeSourceId())
-                .appendQueryParam("isIncremental", request.getIsIncremental())
-                .appendQueryParam("isIgnoreWarning", request.getIsIgnoreWarning())
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("if-match", request.getIfMatch())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.LogAnalyticsSource.class,
-                        UpsertSourceResponse.Builder::logAnalyticsSource)
-                .handleResponseHeaderString("etag", UpsertSourceResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", UpsertSourceResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/UpsertSource");
+        java.util.function.Function<javax.ws.rs.core.Response, UpsertSourceResponse> transformer =
+                UpsertSourceConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getUpsertLogAnalyticsSourceDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ValidateAssociationParametersResponse validateAssociationParameters(
             ValidateAssociationParametersRequest request) {
+        LOG.trace("Called validateAssociationParameters");
+        final ValidateAssociationParametersRequest interceptedRequest =
+                ValidateAssociationParametersConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ValidateAssociationParametersConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-        Objects.requireNonNull(
-                request.getUpsertLogAnalyticsAssociationDetails(),
-                "upsertLogAnalyticsAssociationDetails is required");
-
-        return clientCall(request, ValidateAssociationParametersResponse::builder)
-                .logger(LOG, "validateAssociationParameters")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "ValidateAssociationParameters",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsAssociation/ValidateAssociationParameters")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(ValidateAssociationParametersRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("associations")
-                .appendPathParam("actions")
-                .appendPathParam("validateParameters")
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.LogAnalyticsAssociationParameterCollection
-                                .class,
-                        ValidateAssociationParametersResponse.Builder
-                                ::logAnalyticsAssociationParameterCollection)
-                .handleResponseHeaderString(
-                        "etag", ValidateAssociationParametersResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ValidateAssociationParametersResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsAssociation/ValidateAssociationParameters");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ValidateAssociationParametersResponse>
+                transformer =
+                        ValidateAssociationParametersConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getUpsertLogAnalyticsAssociationDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ValidateEndpointResponse validateEndpoint(ValidateEndpointRequest request) {
+        LOG.trace("Called validateEndpoint");
+        final ValidateEndpointRequest interceptedRequest =
+                ValidateEndpointConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ValidateEndpointConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-        Objects.requireNonNull(
-                request.getValidateEndpointDetails(), "validateEndpointDetails is required");
-
-        return clientCall(request, ValidateEndpointResponse::builder)
-                .logger(LOG, "validateEndpoint")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "ValidateEndpoint",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/ValidateEndpoint")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(ValidateEndpointRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("sources")
-                .appendPathParam("actions")
-                .appendPathParam("validateEndpoint")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.ValidateEndpointResult.class,
-                        ValidateEndpointResponse.Builder::validateEndpointResult)
-                .handleResponseHeaderString(
-                        "opc-request-id", ValidateEndpointResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/ValidateEndpoint");
+        java.util.function.Function<javax.ws.rs.core.Response, ValidateEndpointResponse>
+                transformer =
+                        ValidateEndpointConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getValidateEndpointDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ValidateFileResponse validateFile(ValidateFileRequest request) {
+        LOG.trace("Called validateFile");
+        final ValidateFileRequest interceptedRequest =
+                ValidateFileConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ValidateFileConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-        Objects.requireNonNull(request.getObjectLocation(), "objectLocation is required");
-
-        Objects.requireNonNull(request.getFilename(), "filename is required");
-
-        return clientCall(request, ValidateFileResponse::builder)
-                .logger(LOG, "validateFile")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "ValidateFile",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Upload/ValidateFile")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(ValidateFileRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("uploads")
-                .appendPathParam("actions")
-                .appendPathParam("validateFile")
-                .appendQueryParam("objectLocation", request.getObjectLocation())
-                .appendQueryParam("filename", request.getFilename())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.FileValidationResponse.class,
-                        ValidateFileResponse.Builder::fileValidationResponse)
-                .handleResponseHeaderString(
-                        "opc-request-id", ValidateFileResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Upload/ValidateFile");
+        java.util.function.Function<javax.ws.rs.core.Response, ValidateFileResponse> transformer =
+                ValidateFileConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ValidateLabelConditionResponse validateLabelCondition(
             ValidateLabelConditionRequest request) {
+        LOG.trace("Called validateLabelCondition");
+        final ValidateLabelConditionRequest interceptedRequest =
+                ValidateLabelConditionConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ValidateLabelConditionConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-        Objects.requireNonNull(
-                request.getValidateLabelConditionDetails(),
-                "validateLabelConditionDetails is required");
-
-        return clientCall(request, ValidateLabelConditionResponse::builder)
-                .logger(LOG, "validateLabelCondition")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "ValidateLabelCondition",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/ValidateLabelCondition")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(ValidateLabelConditionRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("sources")
-                .appendPathParam("actions")
-                .appendPathParam("validateLabelCondition")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.ValidateLabelConditionResult.class,
-                        ValidateLabelConditionResponse.Builder::validateLabelConditionResult)
-                .handleResponseHeaderString(
-                        "opc-request-id", ValidateLabelConditionResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/ValidateLabelCondition");
+        java.util.function.Function<javax.ws.rs.core.Response, ValidateLabelConditionResponse>
+                transformer =
+                        ValidateLabelConditionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getValidateLabelConditionDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ValidateSourceResponse validateSource(ValidateSourceRequest request) {
+        LOG.trace("Called validateSource");
+        final ValidateSourceRequest interceptedRequest =
+                ValidateSourceConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ValidateSourceConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-        Objects.requireNonNull(
-                request.getUpsertLogAnalyticsSourceDetails(),
-                "upsertLogAnalyticsSourceDetails is required");
-
-        return clientCall(request, ValidateSourceResponse::builder)
-                .logger(LOG, "validateSource")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "ValidateSource",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/ValidateSource")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(ValidateSourceRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("sources")
-                .appendPathParam("actions")
-                .appendPathParam("validate")
-                .appendQueryParam("createLikeSourceId", request.getCreateLikeSourceId())
-                .appendQueryParam("isIncremental", request.getIsIncremental())
-                .appendQueryParam("isIgnoreWarning", request.getIsIgnoreWarning())
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.SourceValidateResults.class,
-                        ValidateSourceResponse.Builder::sourceValidateResults)
-                .handleResponseHeaderString(
-                        "opc-request-id", ValidateSourceResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/ValidateSource");
+        java.util.function.Function<javax.ws.rs.core.Response, ValidateSourceResponse> transformer =
+                ValidateSourceConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getUpsertLogAnalyticsSourceDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ValidateSourceExtendedFieldDetailsResponse validateSourceExtendedFieldDetails(
             ValidateSourceExtendedFieldDetailsRequest request) {
+        LOG.trace("Called validateSourceExtendedFieldDetails");
+        final ValidateSourceExtendedFieldDetailsRequest interceptedRequest =
+                ValidateSourceExtendedFieldDetailsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ValidateSourceExtendedFieldDetailsConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-        Objects.requireNonNull(request.getLogAnalyticsSource(), "logAnalyticsSource is required");
-
-        return clientCall(request, ValidateSourceExtendedFieldDetailsResponse::builder)
-                .logger(LOG, "validateSourceExtendedFieldDetails")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "ValidateSourceExtendedFieldDetails",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/ValidateSourceExtendedFieldDetails")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(ValidateSourceExtendedFieldDetailsRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("sources")
-                .appendPathParam("actions")
-                .appendPathParam("validateExtendedFields")
-                .accept("application/json;charset=UTF-8")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.ExtendedFieldsValidationResult.class,
-                        ValidateSourceExtendedFieldDetailsResponse.Builder
-                                ::extendedFieldsValidationResult)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ValidateSourceExtendedFieldDetailsResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/ValidateSourceExtendedFieldDetails");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ValidateSourceExtendedFieldDetailsResponse>
+                transformer =
+                        ValidateSourceExtendedFieldDetailsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getLogAnalyticsSource(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ValidateSourceMappingResponse validateSourceMapping(
             ValidateSourceMappingRequest request) {
+        LOG.trace("Called validateSourceMapping");
+        final ValidateSourceMappingRequest interceptedRequest =
+                ValidateSourceMappingConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ValidateSourceMappingConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-        Objects.requireNonNull(request.getObjectLocation(), "objectLocation is required");
-
-        Objects.requireNonNull(request.getFilename(), "filename is required");
-
-        Objects.requireNonNull(request.getLogSourceName(), "logSourceName is required");
-
-        return clientCall(request, ValidateSourceMappingResponse::builder)
-                .logger(LOG, "validateSourceMapping")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "ValidateSourceMapping",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Upload/ValidateSourceMapping")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(ValidateSourceMappingRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("uploads")
-                .appendPathParam("actions")
-                .appendPathParam("validateSourceMapping")
-                .appendQueryParam("objectLocation", request.getObjectLocation())
-                .appendQueryParam("filename", request.getFilename())
-                .appendQueryParam("logSourceName", request.getLogSourceName())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.SourceMappingResponse.class,
-                        ValidateSourceMappingResponse.Builder::sourceMappingResponse)
-                .handleResponseHeaderString(
-                        "opc-request-id", ValidateSourceMappingResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Upload/ValidateSourceMapping");
+        java.util.function.Function<javax.ws.rs.core.Response, ValidateSourceMappingResponse>
+                transformer =
+                        ValidateSourceMappingConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public VerifyResponse verify(VerifyRequest request) {
+        LOG.trace("Called verify");
+        final VerifyRequest interceptedRequest = VerifyConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                VerifyConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-
-        Validate.notBlank(request.getScheduledTaskId(), "scheduledTaskId must not be blank");
-
-        return clientCall(request, VerifyResponse::builder)
-                .logger(LOG, "verify")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics",
                         "Verify",
-                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/ScheduledTask/Verify")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(VerifyRequest::builder)
-                .basePath("/20200601")
-                .appendPathParam("namespaces")
-                .appendPathParam(request.getNamespaceName())
-                .appendPathParam("scheduledTasks")
-                .appendPathParam(request.getScheduledTaskId())
-                .appendPathParam("actions")
-                .appendPathParam("verify")
-                .appendQueryParam("shouldIncludeResults", request.getShouldIncludeResults())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.loganalytics.model.VerifyOutput.class,
-                        VerifyResponse.Builder::verifyOutput)
-                .handleResponseHeaderString("opc-request-id", VerifyResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/ScheduledTask/Verify");
+        java.util.function.Function<javax.ws.rs.core.Response, VerifyResponse> transformer =
+                VerifyConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
@@ -7136,207 +8333,29 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
         return paginators;
     }
 
-    /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @deprecated Use the {@link #builder() builder} instead.
-     */
-    @Deprecated
-    public LogAnalyticsClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
-        this(builder(), authenticationDetailsProvider, null);
-    }
-
-    /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @deprecated Use the {@link #builder() builder} instead.
-     */
-    @Deprecated
-    public LogAnalyticsClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration) {
-        this(builder().configuration(configuration), authenticationDetailsProvider, null);
-    }
-
-    /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @deprecated Use the {@link #builder() builder} instead.
-     */
-    @Deprecated
-    public LogAnalyticsClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
-        this(
-                builder().configuration(configuration).clientConfigurator(clientConfigurator),
-                authenticationDetailsProvider,
-                null);
-    }
-
-    /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @deprecated Use the {@link #builder() builder} instead.
-     */
-    @Deprecated
-    public LogAnalyticsClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory) {
-        this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory),
-                authenticationDetailsProvider,
-                null);
-    }
-
-    /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @deprecated Use the {@link #builder() builder} instead.
-     */
-    @Deprecated
-    public LogAnalyticsClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators) {
-        this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators),
-                authenticationDetailsProvider,
-                null);
-    }
-
-    /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @param endpoint {@link Builder#endpoint}
-     * @deprecated Use the {@link #builder() builder} instead.
-     */
-    @Deprecated
-    public LogAnalyticsClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint) {
-        this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators)
-                        .endpoint(endpoint),
-                authenticationDetailsProvider,
-                null);
-    }
-
-    /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @param endpoint {@link Builder#endpoint}
-     * @param signingStrategyRequestSignerFactories {@link
-     *     Builder#signingStrategyRequestSignerFactories}
-     * @deprecated Use the {@link #builder() builder} instead.
-     */
-    @Deprecated
-    public LogAnalyticsClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.Map<
-                            com.oracle.bmc.http.signing.SigningStrategy,
-                            com.oracle.bmc.http.signing.RequestSignerFactory>
-                    signingStrategyRequestSignerFactories,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint) {
-        this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators)
-                        .endpoint(endpoint)
-                        .signingStrategyRequestSignerFactories(
-                                signingStrategyRequestSignerFactories),
-                authenticationDetailsProvider,
-                null);
-    }
-
-    /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @param endpoint {@link Builder#endpoint}
-     * @param signingStrategyRequestSignerFactories {@link
-     *     Builder#signingStrategyRequestSignerFactories}
-     * @param executorService {@link Builder#executorService}
-     * @deprecated Use the {@link #builder() builder} instead.
-     */
-    @Deprecated
-    public LogAnalyticsClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.Map<
-                            com.oracle.bmc.http.signing.SigningStrategy,
-                            com.oracle.bmc.http.signing.RequestSignerFactory>
-                    signingStrategyRequestSignerFactories,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint,
-            java.util.concurrent.ExecutorService executorService) {
-        this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators)
-                        .endpoint(endpoint)
-                        .signingStrategyRequestSignerFactories(
-                                signingStrategyRequestSignerFactories),
-                authenticationDetailsProvider,
-                executorService);
+    private static boolean shouldRetryBecauseOfWaiterConfiguration(
+            com.oracle.bmc.retrier.BmcGenericRetrier retrier) {
+        boolean hasTerminationStrategy = false;
+        boolean isMaxAttemptsTerminationStrategy = false;
+        if (retrier.getWaiter() != null && retrier.getWaiter().getWaiterConfiguration() != null) {
+            hasTerminationStrategy =
+                    retrier.getWaiter().getWaiterConfiguration().getTerminationStrategy() != null;
+            if (hasTerminationStrategy) {
+                isMaxAttemptsTerminationStrategy =
+                        retrier.getWaiter().getWaiterConfiguration().getTerminationStrategy()
+                                instanceof com.oracle.bmc.waiter.MaxAttemptsTerminationStrategy;
+            }
+        }
+        final boolean shouldRetry =
+                hasTerminationStrategy
+                        && (!isMaxAttemptsTerminationStrategy
+                                || isMaxAttemptsTerminationStrategy
+                                        && ((com.oracle.bmc.waiter.MaxAttemptsTerminationStrategy)
+                                                                retrier.getWaiter()
+                                                                        .getWaiterConfiguration()
+                                                                        .getTerminationStrategy())
+                                                        .getMaxAttempts()
+                                                > 1);
+        return shouldRetry;
     }
 }

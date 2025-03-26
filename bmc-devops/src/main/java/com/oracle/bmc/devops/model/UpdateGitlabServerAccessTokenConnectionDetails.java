@@ -5,27 +5,27 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * The details for updating a connection of the type {@code GITLAB_SERVER_ACCESS_TOKEN}. This type
- * corresponds to a connection in GitLab self-hosted server that is authenticated with a personal
- * access token. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
+ * The details for updating a connection of the type {@code GITLAB_SERVER_ACCESS_TOKEN}.
+ * This type corresponds to a connection in GitLab self-hosted server that is authenticated with a personal access token.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = UpdateGitlabServerAccessTokenConnectionDetails.Builder.class)
+    builder = UpdateGitlabServerAccessTokenConnectionDetails.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "connectionType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "connectionType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class UpdateGitlabServerAccessTokenConnectionDetails extends UpdateConnectionDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -65,31 +65,33 @@ public final class UpdateGitlabServerAccessTokenConnectionDetails extends Update
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-        /** The OCID of personal access token saved in secret store. */
+        /**
+         * The OCID of personal access token saved in secret store.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("accessToken")
         private String accessToken;
 
         /**
          * The OCID of personal access token saved in secret store.
-         *
          * @param accessToken the value to set
          * @return this builder
-         */
+         **/
         public Builder accessToken(String accessToken) {
             this.accessToken = accessToken;
             this.__explicitlySet__.add("accessToken");
             return this;
         }
-        /** The baseUrl of the hosted GitLabServer. */
+        /**
+         * The baseUrl of the hosted GitLabServer.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("baseUrl")
         private String baseUrl;
 
         /**
          * The baseUrl of the hosted GitLabServer.
-         *
          * @param baseUrl the value to set
          * @return this builder
-         */
+         **/
         public Builder baseUrl(String baseUrl) {
             this.baseUrl = baseUrl;
             this.__explicitlySet__.add("baseUrl");
@@ -151,7 +153,9 @@ public final class UpdateGitlabServerAccessTokenConnectionDetails extends Update
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -175,28 +179,30 @@ public final class UpdateGitlabServerAccessTokenConnectionDetails extends Update
         this.tlsVerifyConfig = tlsVerifyConfig;
     }
 
-    /** The OCID of personal access token saved in secret store. */
+    /**
+     * The OCID of personal access token saved in secret store.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("accessToken")
     private final String accessToken;
 
     /**
      * The OCID of personal access token saved in secret store.
-     *
      * @return the value
-     */
+     **/
     public String getAccessToken() {
         return accessToken;
     }
 
-    /** The baseUrl of the hosted GitLabServer. */
+    /**
+     * The baseUrl of the hosted GitLabServer.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("baseUrl")
     private final String baseUrl;
 
     /**
      * The baseUrl of the hosted GitLabServer.
-     *
      * @return the value
-     */
+     **/
     public String getBaseUrl() {
         return baseUrl;
     }
@@ -215,7 +221,6 @@ public final class UpdateGitlabServerAccessTokenConnectionDetails extends Update
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,29 +5,33 @@
 package com.oracle.bmc.analytics.model;
 
 /**
- * Public endpoint configuration details. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190331")
+ * Public endpoint configuration details.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190331")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = PublicEndpointDetails.Builder.class)
+    builder = PublicEndpointDetails.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "networkEndpointType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "networkEndpointType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class PublicEndpointDetails extends NetworkEndpointDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Source IP addresses or IP address ranges in ingress rules. */
+        /**
+         * Source IP addresses or IP address ranges in ingress rules.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("whitelistedIps")
         private java.util.List<String> whitelistedIps;
 
@@ -36,13 +40,16 @@ public final class PublicEndpointDetails extends NetworkEndpointDetails {
          *
          * @param whitelistedIps the value to set
          * @return this builder
-         */
+         **/
         public Builder whitelistedIps(java.util.List<String> whitelistedIps) {
             this.whitelistedIps = whitelistedIps;
             this.__explicitlySet__.add("whitelistedIps");
             return this;
         }
-        /** Virtual Cloud Networks allowed to access this network endpoint. */
+        /**
+         * Virtual Cloud Networks allowed to access this network endpoint.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("whitelistedVcns")
         private java.util.List<VirtualCloudNetwork> whitelistedVcns;
 
@@ -51,13 +58,16 @@ public final class PublicEndpointDetails extends NetworkEndpointDetails {
          *
          * @param whitelistedVcns the value to set
          * @return this builder
-         */
+         **/
         public Builder whitelistedVcns(java.util.List<VirtualCloudNetwork> whitelistedVcns) {
             this.whitelistedVcns = whitelistedVcns;
             this.__explicitlySet__.add("whitelistedVcns");
             return this;
         }
-        /** Oracle Cloud Services that are allowed to access this Analytics instance. */
+        /**
+         * Oracle Cloud Services that are allowed to access this Analytics instance.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("whitelistedServices")
         private java.util.List<AccessControlServiceType> whitelistedServices;
 
@@ -66,7 +76,7 @@ public final class PublicEndpointDetails extends NetworkEndpointDetails {
          *
          * @param whitelistedServices the value to set
          * @return this builder
-         */
+         **/
         public Builder whitelistedServices(
                 java.util.List<AccessControlServiceType> whitelistedServices) {
             this.whitelistedServices = whitelistedServices;
@@ -102,7 +112,9 @@ public final class PublicEndpointDetails extends NetworkEndpointDetails {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -122,7 +134,10 @@ public final class PublicEndpointDetails extends NetworkEndpointDetails {
         this.whitelistedServices = whitelistedServices;
     }
 
-    /** Source IP addresses or IP address ranges in ingress rules. */
+    /**
+     * Source IP addresses or IP address ranges in ingress rules.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("whitelistedIps")
     private final java.util.List<String> whitelistedIps;
 
@@ -130,12 +145,15 @@ public final class PublicEndpointDetails extends NetworkEndpointDetails {
      * Source IP addresses or IP address ranges in ingress rules.
      *
      * @return the value
-     */
+     **/
     public java.util.List<String> getWhitelistedIps() {
         return whitelistedIps;
     }
 
-    /** Virtual Cloud Networks allowed to access this network endpoint. */
+    /**
+     * Virtual Cloud Networks allowed to access this network endpoint.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("whitelistedVcns")
     private final java.util.List<VirtualCloudNetwork> whitelistedVcns;
 
@@ -143,12 +161,15 @@ public final class PublicEndpointDetails extends NetworkEndpointDetails {
      * Virtual Cloud Networks allowed to access this network endpoint.
      *
      * @return the value
-     */
+     **/
     public java.util.List<VirtualCloudNetwork> getWhitelistedVcns() {
         return whitelistedVcns;
     }
 
-    /** Oracle Cloud Services that are allowed to access this Analytics instance. */
+    /**
+     * Oracle Cloud Services that are allowed to access this Analytics instance.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("whitelistedServices")
     private final java.util.List<AccessControlServiceType> whitelistedServices;
 
@@ -156,7 +177,7 @@ public final class PublicEndpointDetails extends NetworkEndpointDetails {
      * Oracle Cloud Services that are allowed to access this Analytics instance.
      *
      * @return the value
-     */
+     **/
     public java.util.List<AccessControlServiceType> getWhitelistedServices() {
         return whitelistedServices;
     }
@@ -168,7 +189,6 @@ public final class PublicEndpointDetails extends NetworkEndpointDetails {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

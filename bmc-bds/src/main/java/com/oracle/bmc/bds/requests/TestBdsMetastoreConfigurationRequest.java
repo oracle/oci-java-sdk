@@ -6,59 +6,76 @@ package com.oracle.bmc.bds.requests;
 
 import com.oracle.bmc.bds.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/TestBdsMetastoreConfigurationExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * TestBdsMetastoreConfigurationRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/TestBdsMetastoreConfigurationExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use TestBdsMetastoreConfigurationRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
 public class TestBdsMetastoreConfigurationRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.bds.model.TestBdsMetastoreConfigurationDetails> {
 
-    /** The OCID of the cluster. */
+    /**
+     * The OCID of the cluster.
+     */
     private String bdsInstanceId;
 
-    /** The OCID of the cluster. */
+    /**
+     * The OCID of the cluster.
+     */
     public String getBdsInstanceId() {
         return bdsInstanceId;
     }
-    /** The metastore configuration ID */
+    /**
+     * The metastore configuration ID
+     */
     private String metastoreConfigId;
 
-    /** The metastore configuration ID */
+    /**
+     * The metastore configuration ID
+     */
     public String getMetastoreConfigId() {
         return metastoreConfigId;
     }
-    /** Request body for testing BDS metastore configuration. */
+    /**
+     * Request body for testing BDS metastore configuration.
+     */
     private com.oracle.bmc.bds.model.TestBdsMetastoreConfigurationDetails
             testBdsMetastoreConfigurationDetails;
 
-    /** Request body for testing BDS metastore configuration. */
+    /**
+     * Request body for testing BDS metastore configuration.
+     */
     public com.oracle.bmc.bds.model.TestBdsMetastoreConfigurationDetails
             getTestBdsMetastoreConfigurationDetails() {
         return testBdsMetastoreConfigurationDetails;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
      */
     private String ifMatch;
 
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
      */
     public String getIfMatch() {
         return ifMatch;
@@ -66,7 +83,6 @@ public class TestBdsMetastoreConfigurationRequest
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -79,15 +95,17 @@ public class TestBdsMetastoreConfigurationRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     TestBdsMetastoreConfigurationRequest,
                     com.oracle.bmc.bds.model.TestBdsMetastoreConfigurationDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The OCID of the cluster. */
+        /**
+         * The OCID of the cluster.
+         */
         private String bdsInstanceId = null;
 
         /**
          * The OCID of the cluster.
-         *
          * @param bdsInstanceId the value to set
          * @return this builder instance
          */
@@ -96,12 +114,13 @@ public class TestBdsMetastoreConfigurationRequest
             return this;
         }
 
-        /** The metastore configuration ID */
+        /**
+         * The metastore configuration ID
+         */
         private String metastoreConfigId = null;
 
         /**
          * The metastore configuration ID
-         *
          * @param metastoreConfigId the value to set
          * @return this builder instance
          */
@@ -110,13 +129,14 @@ public class TestBdsMetastoreConfigurationRequest
             return this;
         }
 
-        /** Request body for testing BDS metastore configuration. */
+        /**
+         * Request body for testing BDS metastore configuration.
+         */
         private com.oracle.bmc.bds.model.TestBdsMetastoreConfigurationDetails
                 testBdsMetastoreConfigurationDetails = null;
 
         /**
          * Request body for testing BDS metastore configuration.
-         *
          * @param testBdsMetastoreConfigurationDetails the value to set
          * @return this builder instance
          */
@@ -127,12 +147,13 @@ public class TestBdsMetastoreConfigurationRequest
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -142,18 +163,21 @@ public class TestBdsMetastoreConfigurationRequest
         }
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource will be updated or deleted only if the etag you provide
-         * matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
          */
         private String ifMatch = null;
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource will be updated or deleted only if the etag you provide
-         * matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
          *
          * @param ifMatch the value to set
          * @return this builder instance
@@ -165,19 +189,18 @@ public class TestBdsMetastoreConfigurationRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -189,7 +212,6 @@ public class TestBdsMetastoreConfigurationRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(TestBdsMetastoreConfigurationRequest o) {
@@ -206,11 +228,10 @@ public class TestBdsMetastoreConfigurationRequest
         /**
          * Build the instance of TestBdsMetastoreConfigurationRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of TestBdsMetastoreConfigurationRequest
          */
@@ -223,7 +244,6 @@ public class TestBdsMetastoreConfigurationRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -236,8 +256,7 @@ public class TestBdsMetastoreConfigurationRequest
         /**
          * Build the instance of TestBdsMetastoreConfigurationRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of TestBdsMetastoreConfigurationRequest
@@ -251,14 +270,12 @@ public class TestBdsMetastoreConfigurationRequest
             request.opcRequestId = opcRequestId;
             request.ifMatch = ifMatch;
             return request;
-            // new TestBdsMetastoreConfigurationRequest(bdsInstanceId, metastoreConfigId,
-            // testBdsMetastoreConfigurationDetails, opcRequestId, ifMatch);
+            // new TestBdsMetastoreConfigurationRequest(bdsInstanceId, metastoreConfigId, testBdsMetastoreConfigurationDetails, opcRequestId, ifMatch);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -272,7 +289,6 @@ public class TestBdsMetastoreConfigurationRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

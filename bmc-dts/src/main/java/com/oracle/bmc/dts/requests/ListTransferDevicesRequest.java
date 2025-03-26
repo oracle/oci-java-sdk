@@ -6,25 +6,31 @@ package com.oracle.bmc.dts.requests;
 
 import com.oracle.bmc.dts.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dts/ListTransferDevicesExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListTransferDevicesRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dts/ListTransferDevicesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListTransferDevicesRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.017")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.017")
 public class ListTransferDevicesRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** ID of the Transfer Job */
+    /**
+     * ID of the Transfer Job
+     */
     private String id;
 
-    /** ID of the Transfer Job */
+    /**
+     * ID of the Transfer Job
+     */
     public String getId() {
         return id;
     }
-    /** filtering by lifecycleState */
+    /**
+     * filtering by lifecycleState
+     */
     private LifecycleState lifecycleState;
 
-    /** filtering by lifecycleState */
-    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * filtering by lifecycleState
+     **/
+    public enum LifecycleState {
         Preparing("PREPARING"),
         Ready("READY"),
         Packaged("PACKAGED"),
@@ -65,14 +71,20 @@ public class ListTransferDevicesRequest extends com.oracle.bmc.requests.BmcReque
         }
     };
 
-    /** filtering by lifecycleState */
+    /**
+     * filtering by lifecycleState
+     */
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
-    /** filtering by displayName */
+    /**
+     * filtering by displayName
+     */
     private String displayName;
 
-    /** filtering by displayName */
+    /**
+     * filtering by displayName
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -80,15 +92,17 @@ public class ListTransferDevicesRequest extends com.oracle.bmc.requests.BmcReque
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListTransferDevicesRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** ID of the Transfer Job */
+        /**
+         * ID of the Transfer Job
+         */
         private String id = null;
 
         /**
          * ID of the Transfer Job
-         *
          * @param id the value to set
          * @return this builder instance
          */
@@ -97,12 +111,13 @@ public class ListTransferDevicesRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
-        /** filtering by lifecycleState */
+        /**
+         * filtering by lifecycleState
+         */
         private LifecycleState lifecycleState = null;
 
         /**
          * filtering by lifecycleState
-         *
          * @param lifecycleState the value to set
          * @return this builder instance
          */
@@ -111,12 +126,13 @@ public class ListTransferDevicesRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
-        /** filtering by displayName */
+        /**
+         * filtering by displayName
+         */
         private String displayName = null;
 
         /**
          * filtering by displayName
-         *
          * @param displayName the value to set
          * @return this builder instance
          */
@@ -127,19 +143,18 @@ public class ListTransferDevicesRequest extends com.oracle.bmc.requests.BmcReque
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -151,7 +166,6 @@ public class ListTransferDevicesRequest extends com.oracle.bmc.requests.BmcReque
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListTransferDevicesRequest o) {
@@ -166,11 +180,10 @@ public class ListTransferDevicesRequest extends com.oracle.bmc.requests.BmcReque
         /**
          * Build the instance of ListTransferDevicesRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListTransferDevicesRequest
          */
@@ -184,8 +197,7 @@ public class ListTransferDevicesRequest extends com.oracle.bmc.requests.BmcReque
         /**
          * Build the instance of ListTransferDevicesRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListTransferDevicesRequest
@@ -202,7 +214,6 @@ public class ListTransferDevicesRequest extends com.oracle.bmc.requests.BmcReque
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -211,7 +222,6 @@ public class ListTransferDevicesRequest extends com.oracle.bmc.requests.BmcReque
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

@@ -5,48 +5,51 @@
 package com.oracle.bmc.visualbuilder.model;
 
 /**
- * Private endpoint update configuration details. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210601")
+ * Private endpoint update configuration details.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = UpdatePrivateEndpointDetails.Builder.class)
+    builder = UpdatePrivateEndpointDetails.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "networkEndpointType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "networkEndpointType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class UpdatePrivateEndpointDetails extends UpdateNetworkEndpointDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The subnet OCID for the private endpoint. If provided then a new Private Endpoint will be
-         * created and a new Private Endpoint IP may be generated.
-         */
+         * The subnet OCID for the private endpoint. If provided then a new Private Endpoint will be created and a new Private Endpoint IP may be generated.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
         /**
-         * The subnet OCID for the private endpoint. If provided then a new Private Endpoint will be
-         * created and a new Private Endpoint IP may be generated.
+         * The subnet OCID for the private endpoint. If provided then a new Private Endpoint will be created and a new Private Endpoint IP may be generated.
          *
          * @param subnetId the value to set
          * @return this builder
-         */
+         **/
         public Builder subnetId(String subnetId) {
             this.subnetId = subnetId;
             this.__explicitlySet__.add("subnetId");
             return this;
         }
-        /** Network Security Group OCIDs for the Private Endpoint. */
+        /**
+         * Network Security Group OCIDs for the Private Endpoint.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("networkSecurityGroupIds")
         private java.util.List<String> networkSecurityGroupIds;
 
@@ -55,7 +58,7 @@ public final class UpdatePrivateEndpointDetails extends UpdateNetworkEndpointDet
          *
          * @param networkSecurityGroupIds the value to set
          * @return this builder
-         */
+         **/
         public Builder networkSecurityGroupIds(java.util.List<String> networkSecurityGroupIds) {
             this.networkSecurityGroupIds = networkSecurityGroupIds;
             this.__explicitlySet__.add("networkSecurityGroupIds");
@@ -86,7 +89,9 @@ public final class UpdatePrivateEndpointDetails extends UpdateNetworkEndpointDet
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -104,23 +109,25 @@ public final class UpdatePrivateEndpointDetails extends UpdateNetworkEndpointDet
     }
 
     /**
-     * The subnet OCID for the private endpoint. If provided then a new Private Endpoint will be
-     * created and a new Private Endpoint IP may be generated.
-     */
+     * The subnet OCID for the private endpoint. If provided then a new Private Endpoint will be created and a new Private Endpoint IP may be generated.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
     /**
-     * The subnet OCID for the private endpoint. If provided then a new Private Endpoint will be
-     * created and a new Private Endpoint IP may be generated.
+     * The subnet OCID for the private endpoint. If provided then a new Private Endpoint will be created and a new Private Endpoint IP may be generated.
      *
      * @return the value
-     */
+     **/
     public String getSubnetId() {
         return subnetId;
     }
 
-    /** Network Security Group OCIDs for the Private Endpoint. */
+    /**
+     * Network Security Group OCIDs for the Private Endpoint.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("networkSecurityGroupIds")
     private final java.util.List<String> networkSecurityGroupIds;
 
@@ -128,7 +135,7 @@ public final class UpdatePrivateEndpointDetails extends UpdateNetworkEndpointDet
      * Network Security Group OCIDs for the Private Endpoint.
      *
      * @return the value
-     */
+     **/
     public java.util.List<String> getNetworkSecurityGroupIds() {
         return networkSecurityGroupIds;
     }
@@ -140,7 +147,6 @@ public final class UpdatePrivateEndpointDetails extends UpdateNetworkEndpointDet
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

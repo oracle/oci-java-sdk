@@ -4,9 +4,12 @@
  */
 package com.oracle.bmc.databasemigration.model;
 
-/** GoldenGate Extract performance profile */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
-public enum ExtractPerformanceProfile implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * GoldenGate Extract performance profile
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
+public enum ExtractPerformanceProfile {
     Low("LOW"),
     Medium("MEDIUM"),
     High("HIGH"),

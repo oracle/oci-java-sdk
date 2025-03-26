@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.accessgovernancecp.model;
 
-/** The lifecycle state of a GovernanceInstance. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220518")
-public enum InstanceLifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The lifecycle state of a GovernanceInstance.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220518")
+public enum InstanceLifecycleState {
     Creating("CREATING"),
     Active("ACTIVE"),
     Deleting("DELETING"),

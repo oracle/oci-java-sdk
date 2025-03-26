@@ -5,22 +5,19 @@
 package com.oracle.bmc.generativeaiinference.model;
 
 /**
- * Details for the request to embed texts. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20231130")
+ * Details for the request to embed texts.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20231130")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = EmbedTextDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class EmbedTextDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class EmbedTextDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "inputs",
@@ -49,21 +46,16 @@ public final class EmbedTextDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Provide a list of strings or one base64 encoded image with {@code input_type} setting to
-         * {@code IMAGE}. If text embedding, each string can be words, a phrase, or a paragraph. The
-         * maximum length of each string entry in the list is 512 tokens.
-         */
+         * Provide a list of strings or one base64 encoded image with {@code input_type} setting to {@code IMAGE}. If text embedding, each string can be words, a phrase, or a paragraph. The maximum length of each string entry in the list is 512 tokens.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("inputs")
         private java.util.List<String> inputs;
 
         /**
-         * Provide a list of strings or one base64 encoded image with {@code input_type} setting to
-         * {@code IMAGE}. If text embedding, each string can be words, a phrase, or a paragraph. The
-         * maximum length of each string entry in the list is 512 tokens.
-         *
+         * Provide a list of strings or one base64 encoded image with {@code input_type} setting to {@code IMAGE}. If text embedding, each string can be words, a phrase, or a paragraph. The maximum length of each string entry in the list is 512 tokens.
          * @param inputs the value to set
          * @return this builder
-         */
+         **/
         public Builder inputs(java.util.List<String> inputs) {
             this.inputs = inputs;
             this.__explicitlySet__.add("inputs");
@@ -79,19 +71,16 @@ public final class EmbedTextDetails
             return this;
         }
         /**
-         * The OCID of compartment in which to call the Generative AI service to create text
-         * embeddings.
-         */
+         * The OCID of compartment in which to call the Generative AI service to create text embeddings.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The OCID of compartment in which to call the Generative AI service to create text
-         * embeddings.
-         *
+         * The OCID of compartment in which to call the Generative AI service to create text embeddings.
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
@@ -99,50 +88,47 @@ public final class EmbedTextDetails
         }
         /**
          * Whether or not to include the original inputs in the response. Results are index-based.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isEcho")
         private Boolean isEcho;
 
         /**
          * Whether or not to include the original inputs in the response. Results are index-based.
-         *
          * @param isEcho the value to set
          * @return this builder
-         */
+         **/
         public Builder isEcho(Boolean isEcho) {
             this.isEcho = isEcho;
             this.__explicitlySet__.add("isEcho");
             return this;
         }
         /**
-         * For an input that's longer than the maximum token length, specifies which part of the
-         * input text will be truncated.
-         */
+         * For an input that's longer than the maximum token length, specifies which part of the input text will be truncated.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("truncate")
         private Truncate truncate;
 
         /**
-         * For an input that's longer than the maximum token length, specifies which part of the
-         * input text will be truncated.
-         *
+         * For an input that's longer than the maximum token length, specifies which part of the input text will be truncated.
          * @param truncate the value to set
          * @return this builder
-         */
+         **/
         public Builder truncate(Truncate truncate) {
             this.truncate = truncate;
             this.__explicitlySet__.add("truncate");
             return this;
         }
-        /** Specifies the input type. */
+        /**
+         * Specifies the input type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("inputType")
         private InputType inputType;
 
         /**
          * Specifies the input type.
-         *
          * @param inputType the value to set
          * @return this builder
-         */
+         **/
         public Builder inputType(InputType inputType) {
             this.inputType = inputType;
             this.__explicitlySet__.add("inputType");
@@ -191,7 +177,9 @@ public final class EmbedTextDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -201,20 +189,15 @@ public final class EmbedTextDetails
     }
 
     /**
-     * Provide a list of strings or one base64 encoded image with {@code input_type} setting to
-     * {@code IMAGE}. If text embedding, each string can be words, a phrase, or a paragraph. The
-     * maximum length of each string entry in the list is 512 tokens.
-     */
+     * Provide a list of strings or one base64 encoded image with {@code input_type} setting to {@code IMAGE}. If text embedding, each string can be words, a phrase, or a paragraph. The maximum length of each string entry in the list is 512 tokens.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("inputs")
     private final java.util.List<String> inputs;
 
     /**
-     * Provide a list of strings or one base64 encoded image with {@code input_type} setting to
-     * {@code IMAGE}. If text embedding, each string can be words, a phrase, or a paragraph. The
-     * maximum length of each string entry in the list is 512 tokens.
-     *
+     * Provide a list of strings or one base64 encoded image with {@code input_type} setting to {@code IMAGE}. If text embedding, each string can be words, a phrase, or a paragraph. The maximum length of each string entry in the list is 512 tokens.
      * @return the value
-     */
+     **/
     public java.util.List<String> getInputs() {
         return inputs;
     }
@@ -228,37 +211,36 @@ public final class EmbedTextDetails
 
     /**
      * The OCID of compartment in which to call the Generative AI service to create text embeddings.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The OCID of compartment in which to call the Generative AI service to create text embeddings.
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** Whether or not to include the original inputs in the response. Results are index-based. */
+    /**
+     * Whether or not to include the original inputs in the response. Results are index-based.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEcho")
     private final Boolean isEcho;
 
     /**
      * Whether or not to include the original inputs in the response. Results are index-based.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsEcho() {
         return isEcho;
     }
 
     /**
-     * For an input that's longer than the maximum token length, specifies which part of the input
-     * text will be truncated.
-     */
-    public enum Truncate implements com.oracle.bmc.http.internal.BmcEnum {
+     * For an input that's longer than the maximum token length, specifies which part of the input text will be truncated.
+     **/
+    public enum Truncate {
         None("NONE"),
         Start("START"),
         End("END"),
@@ -292,24 +274,23 @@ public final class EmbedTextDetails
         }
     };
     /**
-     * For an input that's longer than the maximum token length, specifies which part of the input
-     * text will be truncated.
-     */
+     * For an input that's longer than the maximum token length, specifies which part of the input text will be truncated.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("truncate")
     private final Truncate truncate;
 
     /**
-     * For an input that's longer than the maximum token length, specifies which part of the input
-     * text will be truncated.
-     *
+     * For an input that's longer than the maximum token length, specifies which part of the input text will be truncated.
      * @return the value
-     */
+     **/
     public Truncate getTruncate() {
         return truncate;
     }
 
-    /** Specifies the input type. */
-    public enum InputType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Specifies the input type.
+     **/
+    public enum InputType {
         SearchDocument("SEARCH_DOCUMENT"),
         SearchQuery("SEARCH_QUERY"),
         Classification("CLASSIFICATION"),
@@ -344,15 +325,16 @@ public final class EmbedTextDetails
             throw new IllegalArgumentException("Invalid InputType: " + key);
         }
     };
-    /** Specifies the input type. */
+    /**
+     * Specifies the input type.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("inputType")
     private final InputType inputType;
 
     /**
      * Specifies the input type.
-     *
      * @return the value
-     */
+     **/
     public InputType getInputType() {
         return inputType;
     }
@@ -364,7 +346,6 @@ public final class EmbedTextDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

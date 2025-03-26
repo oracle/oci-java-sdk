@@ -5,23 +5,21 @@
 package com.oracle.bmc.jms.model;
 
 /**
- * An summary of a announcement on Console Overview page <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
+ * An summary of a announcement on Console Overview page
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = AnnouncementSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class AnnouncementSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = AnnouncementSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class AnnouncementSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"key", "summary", "url", "timeReleased"})
     public AnnouncementSummary(
@@ -35,61 +33,65 @@ public final class AnnouncementSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Unique id of the announcement */
+        /**
+         * Unique id of the announcement
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private Integer key;
 
         /**
          * Unique id of the announcement
-         *
          * @param key the value to set
          * @return this builder
-         */
+         **/
         public Builder key(Integer key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-        /** Summary text of the announcement */
+        /**
+         * Summary text of the announcement
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("summary")
         private String summary;
 
         /**
          * Summary text of the announcement
-         *
          * @param summary the value to set
          * @return this builder
-         */
+         **/
         public Builder summary(String summary) {
             this.summary = summary;
             this.__explicitlySet__.add("summary");
             return this;
         }
-        /** URL to the announcement web page */
+        /**
+         * URL to the announcement web page
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("url")
         private String url;
 
         /**
          * URL to the announcement web page
-         *
          * @param url the value to set
          * @return this builder
-         */
+         **/
         public Builder url(String url) {
             this.url = url;
             this.__explicitlySet__.add("url");
             return this;
         }
-        /** Date time on which the announcement was released */
+        /**
+         * Date time on which the announcement was released
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeReleased")
         private java.util.Date timeReleased;
 
         /**
          * Date time on which the announcement was released
-         *
          * @param timeReleased the value to set
          * @return this builder
-         */
+         **/
         public Builder timeReleased(java.util.Date timeReleased) {
             this.timeReleased = timeReleased;
             this.__explicitlySet__.add("timeReleased");
@@ -126,7 +128,9 @@ public final class AnnouncementSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -135,54 +139,58 @@ public final class AnnouncementSummary
         return new Builder().copy(this);
     }
 
-    /** Unique id of the announcement */
+    /**
+     * Unique id of the announcement
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final Integer key;
 
     /**
      * Unique id of the announcement
-     *
      * @return the value
-     */
+     **/
     public Integer getKey() {
         return key;
     }
 
-    /** Summary text of the announcement */
+    /**
+     * Summary text of the announcement
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("summary")
     private final String summary;
 
     /**
      * Summary text of the announcement
-     *
      * @return the value
-     */
+     **/
     public String getSummary() {
         return summary;
     }
 
-    /** URL to the announcement web page */
+    /**
+     * URL to the announcement web page
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("url")
     private final String url;
 
     /**
      * URL to the announcement web page
-     *
      * @return the value
-     */
+     **/
     public String getUrl() {
         return url;
     }
 
-    /** Date time on which the announcement was released */
+    /**
+     * Date time on which the announcement was released
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeReleased")
     private final java.util.Date timeReleased;
 
     /**
      * Date time on which the announcement was released
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeReleased() {
         return timeReleased;
     }
@@ -194,7 +202,6 @@ public final class AnnouncementSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

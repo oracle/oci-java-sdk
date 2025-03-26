@@ -5,23 +5,22 @@
 package com.oracle.bmc.identitydomains.model;
 
 /**
- * This extension defines attributes related to the Service Providers configuration. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
+ * This extension defines attributes related to the Service Providers configuration.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = AppExtensionSamlServiceProviderApp.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = AppExtensionSamlServiceProviderApp.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class AppExtensionSamlServiceProviderApp
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "metadata",
@@ -113,114 +112,150 @@ public final class AppExtensionSamlServiceProviderApp
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * This attribute represents the metadata of a Security Provider in the Security Assertion
-         * Markup Language protocol.
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: string - uniqueness: none
-         */
+         * This attribute represents the metadata of a Security Provider in the Security Assertion Markup Language protocol.
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("metadata")
         private String metadata;
 
         /**
-         * This attribute represents the metadata of a Security Provider in the Security Assertion
-         * Markup Language protocol.
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: string - uniqueness: none
-         *
+         * This attribute represents the metadata of a Security Provider in the Security Assertion Markup Language protocol.
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param metadata the value to set
          * @return this builder
-         */
+         **/
         public Builder metadata(String metadata) {
             this.metadata = metadata;
             this.__explicitlySet__.add("metadata");
             return this;
         }
         /**
-         * The ID of the Provider. This value corresponds to the entityID from the Service Provider
-         * metadata.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-         * mutability: readWrite - required: false - returned: default - type: string - uniqueness:
-         * none
-         */
+         * The ID of the Provider. This value corresponds to the entityID from the Service Provider metadata.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("partnerProviderId")
         private String partnerProviderId;
 
         /**
-         * The ID of the Provider. This value corresponds to the entityID from the Service Provider
-         * metadata.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-         * mutability: readWrite - required: false - returned: default - type: string - uniqueness:
-         * none
-         *
+         * The ID of the Provider. This value corresponds to the entityID from the Service Provider metadata.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param partnerProviderId the value to set
          * @return this builder
-         */
+         **/
         public Builder partnerProviderId(String partnerProviderId) {
             this.partnerProviderId = partnerProviderId;
             this.__explicitlySet__.add("partnerProviderId");
             return this;
         }
         /**
-         * The pattern of the Provider. This value corresponds to the entityID from the Service
-         * Provider metadata.
-         *
-         * <p>*Added In:** 2202230830
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readWrite - required: false - returned: request - type: string -
-         * uniqueness: none
-         */
+         * The pattern of the Provider. This value corresponds to the entityID from the Service Provider metadata.
+         * <p>
+         **Added In:** 2202230830
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: request
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("partnerProviderPattern")
         private String partnerProviderPattern;
 
         /**
-         * The pattern of the Provider. This value corresponds to the entityID from the Service
-         * Provider metadata.
-         *
-         * <p>*Added In:** 2202230830
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readWrite - required: false - returned: request - type: string -
-         * uniqueness: none
-         *
+         * The pattern of the Provider. This value corresponds to the entityID from the Service Provider metadata.
+         * <p>
+         **Added In:** 2202230830
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: request
+         *  - type: string
+         *  - uniqueness: none
          * @param partnerProviderPattern the value to set
          * @return this builder
-         */
+         **/
         public Builder partnerProviderPattern(String partnerProviderPattern) {
             this.partnerProviderPattern = partnerProviderPattern;
             this.__explicitlySet__.add("partnerProviderPattern");
             return this;
         }
         /**
-         * The alternate Provider ID to be used as the Oracle Identity Cloud Service providerID
-         * (instead of the one in SamlSettings) when interacting with this SP.
-         *
-         * <p>*Added In:** 19.2.1
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-         * mutability: readOnly - required: false - returned: default - type: string - uniqueness:
-         * none
-         */
+         * The alternate Provider ID to be used as the Oracle Identity Cloud Service providerID (instead of the one in SamlSettings) when interacting with this SP.
+         * <p>
+         **Added In:** 19.2.1
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tenantProviderId")
         private String tenantProviderId;
 
         /**
-         * The alternate Provider ID to be used as the Oracle Identity Cloud Service providerID
-         * (instead of the one in SamlSettings) when interacting with this SP.
-         *
-         * <p>*Added In:** 19.2.1
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-         * mutability: readOnly - required: false - returned: default - type: string - uniqueness:
-         * none
-         *
+         * The alternate Provider ID to be used as the Oracle Identity Cloud Service providerID (instead of the one in SamlSettings) when interacting with this SP.
+         * <p>
+         **Added In:** 19.2.1
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param tenantProviderId the value to set
          * @return this builder
-         */
+         **/
         public Builder tenantProviderId(String tenantProviderId) {
             this.tenantProviderId = tenantProviderId;
             this.__explicitlySet__.add("tenantProviderId");
@@ -228,51 +263,71 @@ public final class AppExtensionSamlServiceProviderApp
         }
         /**
          * This attribute represents the Succinct ID.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-         * mutability: readWrite - required: false - returned: default - type: string - uniqueness:
-         * server
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: server
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("succinctId")
         private String succinctId;
 
         /**
          * This attribute represents the Succinct ID.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-         * mutability: readWrite - required: false - returned: default - type: string - uniqueness:
-         * server
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: server
          * @param succinctId the value to set
          * @return this builder
-         */
+         **/
         public Builder succinctId(String succinctId) {
             this.succinctId = succinctId;
             this.__explicitlySet__.add("succinctId");
             return this;
         }
         /**
-         * The attribute represents the URL to which the SAML Assertions will be sent by the SAML
-         * IdP.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readWrite - required: false - returned: default - type: string -
-         * uniqueness: none
-         */
+         * The attribute represents the URL to which the SAML Assertions will be sent by the SAML IdP.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("assertionConsumerUrl")
         private String assertionConsumerUrl;
 
         /**
-         * The attribute represents the URL to which the SAML Assertions will be sent by the SAML
-         * IdP.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readWrite - required: false - returned: default - type: string -
-         * uniqueness: none
-         *
+         * The attribute represents the URL to which the SAML Assertions will be sent by the SAML IdP.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param assertionConsumerUrl the value to set
          * @return this builder
-         */
+         **/
         public Builder assertionConsumerUrl(String assertionConsumerUrl) {
             this.assertionConsumerUrl = assertionConsumerUrl;
             this.__explicitlySet__.add("assertionConsumerUrl");
@@ -280,24 +335,35 @@ public final class AppExtensionSamlServiceProviderApp
         }
         /**
          * The URL to which the partner sends the logout request.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readWrite - required: false - returned: default - type: string -
-         * uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("logoutRequestUrl")
         private String logoutRequestUrl;
 
         /**
          * The URL to which the partner sends the logout request.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readWrite - required: false - returned: default - type: string -
-         * uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param logoutRequestUrl the value to set
          * @return this builder
-         */
+         **/
         public Builder logoutRequestUrl(String logoutRequestUrl) {
             this.logoutRequestUrl = logoutRequestUrl;
             this.__explicitlySet__.add("logoutRequestUrl");
@@ -305,107 +371,139 @@ public final class AppExtensionSamlServiceProviderApp
         }
         /**
          * The URL to which the partner sends the logout response.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readWrite - required: false - returned: default - type: string -
-         * uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("logoutResponseUrl")
         private String logoutResponseUrl;
 
         /**
          * The URL to which the partner sends the logout response.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readWrite - required: false - returned: default - type: string -
-         * uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param logoutResponseUrl the value to set
          * @return this builder
-         */
+         **/
         public Builder logoutResponseUrl(String logoutResponseUrl) {
             this.logoutResponseUrl = logoutResponseUrl;
             this.__explicitlySet__.add("logoutResponseUrl");
             return this;
         }
         /**
-         * This can be any string, but there are a set of standard nameIdFormats. If a nameIdFormat
-         * other than the standard list is chosen, it will be considered a custom nameidformat. The
-         * standard nameidformats include: saml-x509, saml-emailaddress, saml-windowsnamequalifier,
-         * saml-kerberos, saml-persistent, saml-transient, saml-unspecified, saml-none, and
-         * saml-persistent-opaque.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-         * mutability: readWrite - required: false - returned: default - type: string - uniqueness:
-         * none
-         */
+         * This can be any string, but there are a set of standard nameIdFormats. If a nameIdFormat other than the standard list is chosen, it will be considered a custom nameidformat. The standard nameidformats include: saml-x509, saml-emailaddress, saml-windowsnamequalifier, saml-kerberos, saml-persistent, saml-transient, saml-unspecified, saml-none, and saml-persistent-opaque.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nameIdFormat")
         private String nameIdFormat;
 
         /**
-         * This can be any string, but there are a set of standard nameIdFormats. If a nameIdFormat
-         * other than the standard list is chosen, it will be considered a custom nameidformat. The
-         * standard nameidformats include: saml-x509, saml-emailaddress, saml-windowsnamequalifier,
-         * saml-kerberos, saml-persistent, saml-transient, saml-unspecified, saml-none, and
-         * saml-persistent-opaque.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-         * mutability: readWrite - required: false - returned: default - type: string - uniqueness:
-         * none
-         *
+         * This can be any string, but there are a set of standard nameIdFormats. If a nameIdFormat other than the standard list is chosen, it will be considered a custom nameidformat. The standard nameidformats include: saml-x509, saml-emailaddress, saml-windowsnamequalifier, saml-kerberos, saml-persistent, saml-transient, saml-unspecified, saml-none, and saml-persistent-opaque.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param nameIdFormat the value to set
          * @return this builder
-         */
+         **/
         public Builder nameIdFormat(String nameIdFormat) {
             this.nameIdFormat = nameIdFormat;
             this.__explicitlySet__.add("nameIdFormat");
             return this;
         }
         /**
-         * This attribute represents the signing certificate that an App uses to verify the signed
-         * authentication request.
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: string - uniqueness: none
-         */
+         * This attribute represents the signing certificate that an App uses to verify the signed authentication request.
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("signingCertificate")
         private String signingCertificate;
 
         /**
-         * This attribute represents the signing certificate that an App uses to verify the signed
-         * authentication request.
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: string - uniqueness: none
-         *
+         * This attribute represents the signing certificate that an App uses to verify the signed authentication request.
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param signingCertificate the value to set
          * @return this builder
-         */
+         **/
         public Builder signingCertificate(String signingCertificate) {
             this.signingCertificate = signingCertificate;
             this.__explicitlySet__.add("signingCertificate");
             return this;
         }
         /**
-         * This attribute represents the encryption certificate that an App uses to encrypt the
-         * Security Assertion Markup Language (SAML) assertion.
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: string - uniqueness: none
-         */
+         * This attribute represents the encryption certificate that an App uses to encrypt the Security Assertion Markup Language (SAML) assertion.
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("encryptionCertificate")
         private String encryptionCertificate;
 
         /**
-         * This attribute represents the encryption certificate that an App uses to encrypt the
-         * Security Assertion Markup Language (SAML) assertion.
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: string - uniqueness: none
-         *
+         * This attribute represents the encryption certificate that an App uses to encrypt the Security Assertion Markup Language (SAML) assertion.
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param encryptionCertificate the value to set
          * @return this builder
-         */
+         **/
         public Builder encryptionCertificate(String encryptionCertificate) {
             this.encryptionCertificate = encryptionCertificate;
             this.__explicitlySet__.add("encryptionCertificate");
@@ -413,24 +511,35 @@ public final class AppExtensionSamlServiceProviderApp
         }
         /**
          * This attribute indicates the encryption algorithm used to encrypt the SAML assertion.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-         * mutability: readWrite - required: false - returned: default - type: string - uniqueness:
-         * none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("encryptionAlgorithm")
         private EncryptionAlgorithm encryptionAlgorithm;
 
         /**
          * This attribute indicates the encryption algorithm used to encrypt the SAML assertion.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-         * mutability: readWrite - required: false - returned: default - type: string - uniqueness:
-         * none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param encryptionAlgorithm the value to set
          * @return this builder
-         */
+         **/
         public Builder encryptionAlgorithm(EncryptionAlgorithm encryptionAlgorithm) {
             this.encryptionAlgorithm = encryptionAlgorithm;
             this.__explicitlySet__.add("encryptionAlgorithm");
@@ -438,84 +547,109 @@ public final class AppExtensionSamlServiceProviderApp
         }
         /**
          * This attribute indicates the key encryption algorithm.
-         *
-         * <p>*Added In:** 18.4.2
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-         * mutability: readWrite - required: false - returned: default - type: string - uniqueness:
-         * none
-         */
+         * <p>
+         **Added In:** 18.4.2
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("keyEncryptionAlgorithm")
         private KeyEncryptionAlgorithm keyEncryptionAlgorithm;
 
         /**
          * This attribute indicates the key encryption algorithm.
-         *
-         * <p>*Added In:** 18.4.2
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-         * mutability: readWrite - required: false - returned: default - type: string - uniqueness:
-         * none
-         *
+         * <p>
+         **Added In:** 18.4.2
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param keyEncryptionAlgorithm the value to set
          * @return this builder
-         */
+         **/
         public Builder keyEncryptionAlgorithm(KeyEncryptionAlgorithm keyEncryptionAlgorithm) {
             this.keyEncryptionAlgorithm = keyEncryptionAlgorithm;
             this.__explicitlySet__.add("keyEncryptionAlgorithm");
             return this;
         }
         /**
-         * If true, indicates that the system must encrypt the Security Assertion Markup Language
-         * (SAML) assertion.
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: boolean - uniqueness: none
-         */
+         * If true, indicates that the system must encrypt the Security Assertion Markup Language (SAML) assertion.
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("encryptAssertion")
         private Boolean encryptAssertion;
 
         /**
-         * If true, indicates that the system must encrypt the Security Assertion Markup Language
-         * (SAML) assertion.
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: boolean - uniqueness: none
-         *
+         * If true, indicates that the system must encrypt the Security Assertion Markup Language (SAML) assertion.
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
          * @param encryptAssertion the value to set
          * @return this builder
-         */
+         **/
         public Builder encryptAssertion(Boolean encryptAssertion) {
             this.encryptAssertion = encryptAssertion;
             this.__explicitlySet__.add("encryptAssertion");
             return this;
         }
         /**
-         * Indicates which part of the response should be signed. A value of \\"Assertion\\"
-         * indicates that the Assertion should be signed. A value of \\"Response\\" indicates that
-         * the SSO Response should be signed. A value of \\"AssertionAndResponse\\" indicates that
-         * both the Assertion and the SSO Response should be signed.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-         * mutability: readWrite - required: false - returned: default - type: string - uniqueness:
-         * none
-         */
+         * Indicates which part of the response should be signed.  A value of \\"Assertion\\" indicates that the Assertion should be signed.  A value of \\"Response\\" indicates that the SSO Response should be signed. A value of \\"AssertionAndResponse\\" indicates that both the Assertion and the SSO Response should be signed.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("signResponseOrAssertion")
         private SignResponseOrAssertion signResponseOrAssertion;
 
         /**
-         * Indicates which part of the response should be signed. A value of \\"Assertion\\"
-         * indicates that the Assertion should be signed. A value of \\"Response\\" indicates that
-         * the SSO Response should be signed. A value of \\"AssertionAndResponse\\" indicates that
-         * both the Assertion and the SSO Response should be signed.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-         * mutability: readWrite - required: false - returned: default - type: string - uniqueness:
-         * none
-         *
+         * Indicates which part of the response should be signed.  A value of \\"Assertion\\" indicates that the Assertion should be signed.  A value of \\"Response\\" indicates that the SSO Response should be signed. A value of \\"AssertionAndResponse\\" indicates that both the Assertion and the SSO Response should be signed.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param signResponseOrAssertion the value to set
          * @return this builder
-         */
+         **/
         public Builder signResponseOrAssertion(SignResponseOrAssertion signResponseOrAssertion) {
             this.signResponseOrAssertion = signResponseOrAssertion;
             this.__explicitlySet__.add("signResponseOrAssertion");
@@ -523,22 +657,33 @@ public final class AppExtensionSamlServiceProviderApp
         }
         /**
          * If true, then the signing certificate is included in the signature.
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: boolean - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("includeSigningCertInSignature")
         private Boolean includeSigningCertInSignature;
 
         /**
          * If true, then the signing certificate is included in the signature.
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: boolean - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
          * @param includeSigningCertInSignature the value to set
          * @return this builder
-         */
+         **/
         public Builder includeSigningCertInSignature(Boolean includeSigningCertInSignature) {
             this.includeSigningCertInSignature = includeSigningCertInSignature;
             this.__explicitlySet__.add("includeSigningCertInSignature");
@@ -546,24 +691,35 @@ public final class AppExtensionSamlServiceProviderApp
         }
         /**
          * This attribute represents the HTTP binding that would be used while logout.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-         * mutability: readWrite - required: false - returned: default - type: string - uniqueness:
-         * none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("logoutBinding")
         private LogoutBinding logoutBinding;
 
         /**
          * This attribute represents the HTTP binding that would be used while logout.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-         * mutability: readWrite - required: false - returned: default - type: string - uniqueness:
-         * none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param logoutBinding the value to set
          * @return this builder
-         */
+         **/
         public Builder logoutBinding(LogoutBinding logoutBinding) {
             this.logoutBinding = logoutBinding;
             this.__explicitlySet__.add("logoutBinding");
@@ -571,22 +727,33 @@ public final class AppExtensionSamlServiceProviderApp
         }
         /**
          * If true, then the SAML Service supports logout for this App.
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: boolean - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("logoutEnabled")
         private Boolean logoutEnabled;
 
         /**
          * If true, then the SAML Service supports logout for this App.
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: boolean - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
          * @param logoutEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder logoutEnabled(Boolean logoutEnabled) {
             this.logoutEnabled = logoutEnabled;
             this.__explicitlySet__.add("logoutEnabled");
@@ -594,24 +761,35 @@ public final class AppExtensionSamlServiceProviderApp
         }
         /**
          * This attribute represents the algorithm used to hash the signature.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-         * mutability: readWrite - required: false - returned: default - type: string - uniqueness:
-         * none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("signatureHashAlgorithm")
         private SignatureHashAlgorithm signatureHashAlgorithm;
 
         /**
          * This attribute represents the algorithm used to hash the signature.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-         * mutability: readWrite - required: false - returned: default - type: string - uniqueness:
-         * none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param signatureHashAlgorithm the value to set
          * @return this builder
-         */
+         **/
         public Builder signatureHashAlgorithm(SignatureHashAlgorithm signatureHashAlgorithm) {
             this.signatureHashAlgorithm = signatureHashAlgorithm;
             this.__explicitlySet__.add("signatureHashAlgorithm");
@@ -619,28 +797,41 @@ public final class AppExtensionSamlServiceProviderApp
         }
         /**
          * Specifies the preferred federation protocol (SAML2.0 or WS-Fed1.1).
-         *
-         * <p>*Added In:** 18.2.6
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsDefaultValue: SAML2.0 - idcsSearchable:
-         * true - multiValued: false - mutability: readWrite - required: false - returned: default -
-         * type: string - uniqueness: none
-         */
+         * <p>
+         **Added In:** 18.2.6
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsDefaultValue: SAML2.0
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("federationProtocol")
         private FederationProtocol federationProtocol;
 
         /**
          * Specifies the preferred federation protocol (SAML2.0 or WS-Fed1.1).
-         *
-         * <p>*Added In:** 18.2.6
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsDefaultValue: SAML2.0 - idcsSearchable:
-         * true - multiValued: false - mutability: readWrite - required: false - returned: default -
-         * type: string - uniqueness: none
-         *
+         * <p>
+         **Added In:** 18.2.6
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsDefaultValue: SAML2.0
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param federationProtocol the value to set
          * @return this builder
-         */
+         **/
         public Builder federationProtocol(FederationProtocol federationProtocol) {
             this.federationProtocol = federationProtocol;
             this.__explicitlySet__.add("federationProtocol");
@@ -648,30 +839,39 @@ public final class AppExtensionSamlServiceProviderApp
         }
         /**
          * **Deprecated Since: 18.2.2**
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true -
-         * idcsValuePersistedInOtherAttribute: true - multiValued: false - mutability: readWrite -
-         * required: false - returned: default - type: string - uniqueness: none This property
-         * specifies which user attribute is used as the NameID value in the SAML assertion. This
-         * attribute can be constructed by using attributes from the Oracle Identity Cloud Service
-         * Core Users schema.
-         */
+         * <p>
+         **SCIM++ Properties:**
+         * - caseExact: false
+         * - idcsSearchable: true
+         * - idcsValuePersistedInOtherAttribute: true
+         * - multiValued: false
+         * - mutability: readWrite
+         * - required: false
+         * - returned: default
+         * - type: string
+         * - uniqueness: none
+         * This property specifies which user attribute is used as the NameID value in the SAML assertion. This attribute can be constructed by using attributes from the Oracle Identity Cloud Service Core Users schema.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nameIdUserstoreAttribute")
         private String nameIdUserstoreAttribute;
 
         /**
          * **Deprecated Since: 18.2.2**
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true -
-         * idcsValuePersistedInOtherAttribute: true - multiValued: false - mutability: readWrite -
-         * required: false - returned: default - type: string - uniqueness: none This property
-         * specifies which user attribute is used as the NameID value in the SAML assertion. This
-         * attribute can be constructed by using attributes from the Oracle Identity Cloud Service
-         * Core Users schema.
-         *
+         * <p>
+         **SCIM++ Properties:**
+         * - caseExact: false
+         * - idcsSearchable: true
+         * - idcsValuePersistedInOtherAttribute: true
+         * - multiValued: false
+         * - mutability: readWrite
+         * - required: false
+         * - returned: default
+         * - type: string
+         * - uniqueness: none
+         * This property specifies which user attribute is used as the NameID value in the SAML assertion. This attribute can be constructed by using attributes from the Oracle Identity Cloud Service Core Users schema.
          * @param nameIdUserstoreAttribute the value to set
          * @return this builder
-         */
+         **/
         public Builder nameIdUserstoreAttribute(String nameIdUserstoreAttribute) {
             this.nameIdUserstoreAttribute = nameIdUserstoreAttribute;
             this.__explicitlySet__.add("nameIdUserstoreAttribute");
@@ -679,26 +879,37 @@ public final class AppExtensionSamlServiceProviderApp
         }
         /**
          * If enabled, then the SAML Service supports Hok for this App.
-         *
-         * <p>*Added In:** 2101262133
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: boolean - uniqueness: none
-         */
+         * <p>
+         **Added In:** 2101262133
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hokRequired")
         private Boolean hokRequired;
 
         /**
          * If enabled, then the SAML Service supports Hok for this App.
-         *
-         * <p>*Added In:** 2101262133
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: boolean - uniqueness: none
-         *
+         * <p>
+         **Added In:** 2101262133
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
          * @param hokRequired the value to set
          * @return this builder
-         */
+         **/
         public Builder hokRequired(Boolean hokRequired) {
             this.hokRequired = hokRequired;
             this.__explicitlySet__.add("hokRequired");
@@ -706,59 +917,79 @@ public final class AppExtensionSamlServiceProviderApp
         }
         /**
          * Hok Assertion Consumer Service Url
-         *
-         * <p>*Added In:** 2101262133
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readWrite - required: false - returned: default - type: string -
-         * uniqueness: none
-         */
+         * <p>
+         **Added In:** 2101262133
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hokAcsUrl")
         private String hokAcsUrl;
 
         /**
          * Hok Assertion Consumer Service Url
-         *
-         * <p>*Added In:** 2101262133
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readWrite - required: false - returned: default - type: string -
-         * uniqueness: none
-         *
+         * <p>
+         **Added In:** 2101262133
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param hokAcsUrl the value to set
          * @return this builder
-         */
+         **/
         public Builder hokAcsUrl(String hokAcsUrl) {
             this.hokAcsUrl = hokAcsUrl;
             this.__explicitlySet__.add("hokAcsUrl");
             return this;
         }
         /**
-         * Records the notification timestamp for the SP whose signing certificate is about to
-         * expire.
-         *
-         * <p>*Added In:** 2302092332
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readOnly - required: false - returned: default - type: dateTime -
-         * uniqueness: none
-         */
+         * Records the notification timestamp for the SP whose signing certificate is about to expire.
+         * <p>
+         **Added In:** 2302092332
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: dateTime
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lastNotificationSentTime")
         private String lastNotificationSentTime;
 
         /**
-         * Records the notification timestamp for the SP whose signing certificate is about to
-         * expire.
-         *
-         * <p>*Added In:** 2302092332
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readOnly - required: false - returned: default - type: dateTime -
-         * uniqueness: none
-         *
+         * Records the notification timestamp for the SP whose signing certificate is about to expire.
+         * <p>
+         **Added In:** 2302092332
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: dateTime
+         *  - uniqueness: none
          * @param lastNotificationSentTime the value to set
          * @return this builder
-         */
+         **/
         public Builder lastNotificationSentTime(String lastNotificationSentTime) {
             this.lastNotificationSentTime = lastNotificationSentTime;
             this.__explicitlySet__.add("lastNotificationSentTime");
@@ -775,31 +1006,44 @@ public final class AppExtensionSamlServiceProviderApp
             return this;
         }
         /**
-         * Each value of this attribute describes an attribute of User that will be sent in a
-         * Security Assertion Markup Language (SAML) assertion.
-         *
-         * <p>*Deprecated Since: 18.2.2**
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsCompositeKey: [name] - idcsSearchable:
-         * false - idcsValuePersistedInOtherAttribute: true - multiValued: true - mutability:
-         * readWrite - required: false - returned: default - type: complex - uniqueness: none
-         */
+         * Each value of this attribute describes an attribute of User that will be sent in a Security Assertion Markup Language (SAML) assertion.
+         * <p>
+         **Deprecated Since: 18.2.2**
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsCompositeKey: [name]
+         *  - idcsSearchable: false
+         *  - idcsValuePersistedInOtherAttribute: true
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: complex
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("userAssertionAttributes")
         private java.util.List<AppUserAssertionAttributes> userAssertionAttributes;
 
         /**
-         * Each value of this attribute describes an attribute of User that will be sent in a
-         * Security Assertion Markup Language (SAML) assertion.
-         *
-         * <p>*Deprecated Since: 18.2.2**
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsCompositeKey: [name] - idcsSearchable:
-         * false - idcsValuePersistedInOtherAttribute: true - multiValued: true - mutability:
-         * readWrite - required: false - returned: default - type: complex - uniqueness: none
-         *
+         * Each value of this attribute describes an attribute of User that will be sent in a Security Assertion Markup Language (SAML) assertion.
+         * <p>
+         **Deprecated Since: 18.2.2**
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsCompositeKey: [name]
+         *  - idcsSearchable: false
+         *  - idcsValuePersistedInOtherAttribute: true
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: complex
+         *  - uniqueness: none
          * @param userAssertionAttributes the value to set
          * @return this builder
-         */
+         **/
         public Builder userAssertionAttributes(
                 java.util.List<AppUserAssertionAttributes> userAssertionAttributes) {
             this.userAssertionAttributes = userAssertionAttributes;
@@ -807,31 +1051,44 @@ public final class AppExtensionSamlServiceProviderApp
             return this;
         }
         /**
-         * Each value of this attribute describes an attribute of Group that will be sent in a
-         * Security Assertion Markup Language (SAML) assertion.
-         *
-         * <p>*Deprecated Since: 18.2.2**
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsCompositeKey: [name] - idcsSearchable:
-         * false - idcsValuePersistedInOtherAttribute: true - multiValued: true - mutability:
-         * readWrite - required: false - returned: default - type: complex - uniqueness: none
-         */
+         * Each value of this attribute describes an attribute of Group that will be sent in a Security Assertion Markup Language (SAML) assertion.
+         * <p>
+         **Deprecated Since: 18.2.2**
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsCompositeKey: [name]
+         *  - idcsSearchable: false
+         *  - idcsValuePersistedInOtherAttribute: true
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: complex
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("groupAssertionAttributes")
         private java.util.List<AppGroupAssertionAttributes> groupAssertionAttributes;
 
         /**
-         * Each value of this attribute describes an attribute of Group that will be sent in a
-         * Security Assertion Markup Language (SAML) assertion.
-         *
-         * <p>*Deprecated Since: 18.2.2**
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsCompositeKey: [name] - idcsSearchable:
-         * false - idcsValuePersistedInOtherAttribute: true - multiValued: true - mutability:
-         * readWrite - required: false - returned: default - type: complex - uniqueness: none
-         *
+         * Each value of this attribute describes an attribute of Group that will be sent in a Security Assertion Markup Language (SAML) assertion.
+         * <p>
+         **Deprecated Since: 18.2.2**
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsCompositeKey: [name]
+         *  - idcsSearchable: false
+         *  - idcsValuePersistedInOtherAttribute: true
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: complex
+         *  - uniqueness: none
          * @param groupAssertionAttributes the value to set
          * @return this builder
-         */
+         **/
         public Builder groupAssertionAttributes(
                 java.util.List<AppGroupAssertionAttributes> groupAssertionAttributes) {
             this.groupAssertionAttributes = groupAssertionAttributes;
@@ -965,7 +1222,9 @@ public final class AppExtensionSamlServiceProviderApp
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -975,273 +1234,395 @@ public final class AppExtensionSamlServiceProviderApp
     }
 
     /**
-     * This attribute represents the metadata of a Security Provider in the Security Assertion
-     * Markup Language protocol.
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: string - uniqueness: none
-     */
+     * This attribute represents the metadata of a Security Provider in the Security Assertion Markup Language protocol.
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("metadata")
     private final String metadata;
 
     /**
-     * This attribute represents the metadata of a Security Provider in the Security Assertion
-     * Markup Language protocol.
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: string - uniqueness: none
-     *
+     * This attribute represents the metadata of a Security Provider in the Security Assertion Markup Language protocol.
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getMetadata() {
         return metadata;
     }
 
     /**
-     * The ID of the Provider. This value corresponds to the entityID from the Service Provider
-     * metadata.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     */
+     * The ID of the Provider. This value corresponds to the entityID from the Service Provider metadata.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("partnerProviderId")
     private final String partnerProviderId;
 
     /**
-     * The ID of the Provider. This value corresponds to the entityID from the Service Provider
-     * metadata.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     *
+     * The ID of the Provider. This value corresponds to the entityID from the Service Provider metadata.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getPartnerProviderId() {
         return partnerProviderId;
     }
 
     /**
-     * The pattern of the Provider. This value corresponds to the entityID from the Service Provider
-     * metadata.
-     *
-     * <p>*Added In:** 2202230830
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: request - type: string - uniqueness: none
-     */
+     * The pattern of the Provider. This value corresponds to the entityID from the Service Provider metadata.
+     * <p>
+     **Added In:** 2202230830
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: request
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("partnerProviderPattern")
     private final String partnerProviderPattern;
 
     /**
-     * The pattern of the Provider. This value corresponds to the entityID from the Service Provider
-     * metadata.
-     *
-     * <p>*Added In:** 2202230830
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: request - type: string - uniqueness: none
-     *
+     * The pattern of the Provider. This value corresponds to the entityID from the Service Provider metadata.
+     * <p>
+     **Added In:** 2202230830
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: request
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getPartnerProviderPattern() {
         return partnerProviderPattern;
     }
 
     /**
-     * The alternate Provider ID to be used as the Oracle Identity Cloud Service providerID (instead
-     * of the one in SamlSettings) when interacting with this SP.
-     *
-     * <p>*Added In:** 19.2.1
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: string - uniqueness: none
-     */
+     * The alternate Provider ID to be used as the Oracle Identity Cloud Service providerID (instead of the one in SamlSettings) when interacting with this SP.
+     * <p>
+     **Added In:** 19.2.1
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("tenantProviderId")
     private final String tenantProviderId;
 
     /**
-     * The alternate Provider ID to be used as the Oracle Identity Cloud Service providerID (instead
-     * of the one in SamlSettings) when interacting with this SP.
-     *
-     * <p>*Added In:** 19.2.1
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: string - uniqueness: none
-     *
+     * The alternate Provider ID to be used as the Oracle Identity Cloud Service providerID (instead of the one in SamlSettings) when interacting with this SP.
+     * <p>
+     **Added In:** 19.2.1
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getTenantProviderId() {
         return tenantProviderId;
     }
 
     /**
      * This attribute represents the Succinct ID.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness:
-     * server
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: server
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("succinctId")
     private final String succinctId;
 
     /**
      * This attribute represents the Succinct ID.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness:
-     * server
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: server
      * @return the value
-     */
+     **/
     public String getSuccinctId() {
         return succinctId;
     }
 
     /**
      * The attribute represents the URL to which the SAML Assertions will be sent by the SAML IdP.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("assertionConsumerUrl")
     private final String assertionConsumerUrl;
 
     /**
      * The attribute represents the URL to which the SAML Assertions will be sent by the SAML IdP.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getAssertionConsumerUrl() {
         return assertionConsumerUrl;
     }
 
     /**
      * The URL to which the partner sends the logout request.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("logoutRequestUrl")
     private final String logoutRequestUrl;
 
     /**
      * The URL to which the partner sends the logout request.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getLogoutRequestUrl() {
         return logoutRequestUrl;
     }
 
     /**
      * The URL to which the partner sends the logout response.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("logoutResponseUrl")
     private final String logoutResponseUrl;
 
     /**
      * The URL to which the partner sends the logout response.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getLogoutResponseUrl() {
         return logoutResponseUrl;
     }
 
     /**
-     * This can be any string, but there are a set of standard nameIdFormats. If a nameIdFormat
-     * other than the standard list is chosen, it will be considered a custom nameidformat. The
-     * standard nameidformats include: saml-x509, saml-emailaddress, saml-windowsnamequalifier,
-     * saml-kerberos, saml-persistent, saml-transient, saml-unspecified, saml-none, and
-     * saml-persistent-opaque.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     */
+     * This can be any string, but there are a set of standard nameIdFormats. If a nameIdFormat other than the standard list is chosen, it will be considered a custom nameidformat. The standard nameidformats include: saml-x509, saml-emailaddress, saml-windowsnamequalifier, saml-kerberos, saml-persistent, saml-transient, saml-unspecified, saml-none, and saml-persistent-opaque.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("nameIdFormat")
     private final String nameIdFormat;
 
     /**
-     * This can be any string, but there are a set of standard nameIdFormats. If a nameIdFormat
-     * other than the standard list is chosen, it will be considered a custom nameidformat. The
-     * standard nameidformats include: saml-x509, saml-emailaddress, saml-windowsnamequalifier,
-     * saml-kerberos, saml-persistent, saml-transient, saml-unspecified, saml-none, and
-     * saml-persistent-opaque.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     *
+     * This can be any string, but there are a set of standard nameIdFormats. If a nameIdFormat other than the standard list is chosen, it will be considered a custom nameidformat. The standard nameidformats include: saml-x509, saml-emailaddress, saml-windowsnamequalifier, saml-kerberos, saml-persistent, saml-transient, saml-unspecified, saml-none, and saml-persistent-opaque.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getNameIdFormat() {
         return nameIdFormat;
     }
 
     /**
-     * This attribute represents the signing certificate that an App uses to verify the signed
-     * authentication request.
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: string - uniqueness: none
-     */
+     * This attribute represents the signing certificate that an App uses to verify the signed authentication request.
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("signingCertificate")
     private final String signingCertificate;
 
     /**
-     * This attribute represents the signing certificate that an App uses to verify the signed
-     * authentication request.
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: string - uniqueness: none
-     *
+     * This attribute represents the signing certificate that an App uses to verify the signed authentication request.
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getSigningCertificate() {
         return signingCertificate;
     }
 
     /**
-     * This attribute represents the encryption certificate that an App uses to encrypt the Security
-     * Assertion Markup Language (SAML) assertion.
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: string - uniqueness: none
-     */
+     * This attribute represents the encryption certificate that an App uses to encrypt the Security Assertion Markup Language (SAML) assertion.
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("encryptionCertificate")
     private final String encryptionCertificate;
 
     /**
-     * This attribute represents the encryption certificate that an App uses to encrypt the Security
-     * Assertion Markup Language (SAML) assertion.
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: string - uniqueness: none
-     *
+     * This attribute represents the encryption certificate that an App uses to encrypt the Security Assertion Markup Language (SAML) assertion.
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getEncryptionCertificate() {
         return encryptionCertificate;
     }
 
     /**
      * This attribute indicates the encryption algorithm used to encrypt the SAML assertion.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     */
-    public enum EncryptionAlgorithm implements com.oracle.bmc.http.internal.BmcEnum {
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
+    public enum EncryptionAlgorithm {
         _3Des("3DES"),
         Aes128("AES-128"),
         Aes256("AES-256"),
@@ -1251,8 +1632,8 @@ public final class AppExtensionSamlServiceProviderApp
         Aes192Gcm("AES-192-GCM"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -1293,40 +1674,60 @@ public final class AppExtensionSamlServiceProviderApp
     };
     /**
      * This attribute indicates the encryption algorithm used to encrypt the SAML assertion.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("encryptionAlgorithm")
     private final EncryptionAlgorithm encryptionAlgorithm;
 
     /**
      * This attribute indicates the encryption algorithm used to encrypt the SAML assertion.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public EncryptionAlgorithm getEncryptionAlgorithm() {
         return encryptionAlgorithm;
     }
 
     /**
      * This attribute indicates the key encryption algorithm.
-     *
-     * <p>*Added In:** 18.4.2
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     */
-    public enum KeyEncryptionAlgorithm implements com.oracle.bmc.http.internal.BmcEnum {
+     * <p>
+     **Added In:** 18.4.2
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
+    public enum KeyEncryptionAlgorithm {
         RsaV15("RSA-v1.5"),
         RsaOaep("RSA-OAEP"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -1367,69 +1768,95 @@ public final class AppExtensionSamlServiceProviderApp
     };
     /**
      * This attribute indicates the key encryption algorithm.
-     *
-     * <p>*Added In:** 18.4.2
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **Added In:** 18.4.2
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyEncryptionAlgorithm")
     private final KeyEncryptionAlgorithm keyEncryptionAlgorithm;
 
     /**
      * This attribute indicates the key encryption algorithm.
-     *
-     * <p>*Added In:** 18.4.2
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **Added In:** 18.4.2
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public KeyEncryptionAlgorithm getKeyEncryptionAlgorithm() {
         return keyEncryptionAlgorithm;
     }
 
     /**
-     * If true, indicates that the system must encrypt the Security Assertion Markup Language (SAML)
-     * assertion.
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: boolean - uniqueness: none
-     */
+     * If true, indicates that the system must encrypt the Security Assertion Markup Language (SAML) assertion.
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("encryptAssertion")
     private final Boolean encryptAssertion;
 
     /**
-     * If true, indicates that the system must encrypt the Security Assertion Markup Language (SAML)
-     * assertion.
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: boolean - uniqueness: none
-     *
+     * If true, indicates that the system must encrypt the Security Assertion Markup Language (SAML) assertion.
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getEncryptAssertion() {
         return encryptAssertion;
     }
 
     /**
-     * Indicates which part of the response should be signed. A value of \\"Assertion\\" indicates
-     * that the Assertion should be signed. A value of \\"Response\\" indicates that the SSO
-     * Response should be signed. A value of \\"AssertionAndResponse\\" indicates that both the
-     * Assertion and the SSO Response should be signed.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     */
-    public enum SignResponseOrAssertion implements com.oracle.bmc.http.internal.BmcEnum {
+     * Indicates which part of the response should be signed.  A value of \\"Assertion\\" indicates that the Assertion should be signed.  A value of \\"Response\\" indicates that the SSO Response should be signed. A value of \\"AssertionAndResponse\\" indicates that both the Assertion and the SSO Response should be signed.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
+    public enum SignResponseOrAssertion {
         Assertion("Assertion"),
         Response("Response"),
         AssertionAndResponse("AssertionAndResponse"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -1469,66 +1896,91 @@ public final class AppExtensionSamlServiceProviderApp
         }
     };
     /**
-     * Indicates which part of the response should be signed. A value of \\"Assertion\\" indicates
-     * that the Assertion should be signed. A value of \\"Response\\" indicates that the SSO
-     * Response should be signed. A value of \\"AssertionAndResponse\\" indicates that both the
-     * Assertion and the SSO Response should be signed.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     */
+     * Indicates which part of the response should be signed.  A value of \\"Assertion\\" indicates that the Assertion should be signed.  A value of \\"Response\\" indicates that the SSO Response should be signed. A value of \\"AssertionAndResponse\\" indicates that both the Assertion and the SSO Response should be signed.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("signResponseOrAssertion")
     private final SignResponseOrAssertion signResponseOrAssertion;
 
     /**
-     * Indicates which part of the response should be signed. A value of \\"Assertion\\" indicates
-     * that the Assertion should be signed. A value of \\"Response\\" indicates that the SSO
-     * Response should be signed. A value of \\"AssertionAndResponse\\" indicates that both the
-     * Assertion and the SSO Response should be signed.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     *
+     * Indicates which part of the response should be signed.  A value of \\"Assertion\\" indicates that the Assertion should be signed.  A value of \\"Response\\" indicates that the SSO Response should be signed. A value of \\"AssertionAndResponse\\" indicates that both the Assertion and the SSO Response should be signed.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public SignResponseOrAssertion getSignResponseOrAssertion() {
         return signResponseOrAssertion;
     }
 
     /**
      * If true, then the signing certificate is included in the signature.
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: boolean - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("includeSigningCertInSignature")
     private final Boolean includeSigningCertInSignature;
 
     /**
      * If true, then the signing certificate is included in the signature.
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: boolean - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getIncludeSigningCertInSignature() {
         return includeSigningCertInSignature;
     }
 
     /**
      * This attribute represents the HTTP binding that would be used while logout.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     */
-    public enum LogoutBinding implements com.oracle.bmc.http.internal.BmcEnum {
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
+    public enum LogoutBinding {
         Redirect("Redirect"),
         Post("Post"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -1569,59 +2021,90 @@ public final class AppExtensionSamlServiceProviderApp
     };
     /**
      * This attribute represents the HTTP binding that would be used while logout.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("logoutBinding")
     private final LogoutBinding logoutBinding;
 
     /**
      * This attribute represents the HTTP binding that would be used while logout.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public LogoutBinding getLogoutBinding() {
         return logoutBinding;
     }
 
     /**
      * If true, then the SAML Service supports logout for this App.
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: boolean - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("logoutEnabled")
     private final Boolean logoutEnabled;
 
     /**
      * If true, then the SAML Service supports logout for this App.
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: boolean - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getLogoutEnabled() {
         return logoutEnabled;
     }
 
     /**
      * This attribute represents the algorithm used to hash the signature.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     */
-    public enum SignatureHashAlgorithm implements com.oracle.bmc.http.internal.BmcEnum {
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
+    public enum SignatureHashAlgorithm {
         Sha1("SHA-1"),
         Sha256("SHA-256"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -1662,41 +2145,61 @@ public final class AppExtensionSamlServiceProviderApp
     };
     /**
      * This attribute represents the algorithm used to hash the signature.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("signatureHashAlgorithm")
     private final SignatureHashAlgorithm signatureHashAlgorithm;
 
     /**
      * This attribute represents the algorithm used to hash the signature.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public SignatureHashAlgorithm getSignatureHashAlgorithm() {
         return signatureHashAlgorithm;
     }
 
     /**
      * Specifies the preferred federation protocol (SAML2.0 or WS-Fed1.1).
-     *
-     * <p>*Added In:** 18.2.6
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsDefaultValue: SAML2.0 - idcsSearchable: true
-     * - multiValued: false - mutability: readWrite - required: false - returned: default - type:
-     * string - uniqueness: none
-     */
-    public enum FederationProtocol implements com.oracle.bmc.http.internal.BmcEnum {
+     * <p>
+     **Added In:** 18.2.6
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsDefaultValue: SAML2.0
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
+    public enum FederationProtocol {
         Saml20("SAML2.0"),
         WsFed11("WS-Fed1.1"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -1737,131 +2240,190 @@ public final class AppExtensionSamlServiceProviderApp
     };
     /**
      * Specifies the preferred federation protocol (SAML2.0 or WS-Fed1.1).
-     *
-     * <p>*Added In:** 18.2.6
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsDefaultValue: SAML2.0 - idcsSearchable: true
-     * - multiValued: false - mutability: readWrite - required: false - returned: default - type:
-     * string - uniqueness: none
-     */
+     * <p>
+     **Added In:** 18.2.6
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsDefaultValue: SAML2.0
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("federationProtocol")
     private final FederationProtocol federationProtocol;
 
     /**
      * Specifies the preferred federation protocol (SAML2.0 or WS-Fed1.1).
-     *
-     * <p>*Added In:** 18.2.6
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsDefaultValue: SAML2.0 - idcsSearchable: true
-     * - multiValued: false - mutability: readWrite - required: false - returned: default - type:
-     * string - uniqueness: none
-     *
+     * <p>
+     **Added In:** 18.2.6
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsDefaultValue: SAML2.0
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public FederationProtocol getFederationProtocol() {
         return federationProtocol;
     }
 
     /**
      * **Deprecated Since: 18.2.2**
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true -
-     * idcsValuePersistedInOtherAttribute: true - multiValued: false - mutability: readWrite -
-     * required: false - returned: default - type: string - uniqueness: none This property specifies
-     * which user attribute is used as the NameID value in the SAML assertion. This attribute can be
-     * constructed by using attributes from the Oracle Identity Cloud Service Core Users schema.
-     */
+     * <p>
+     **SCIM++ Properties:**
+     * - caseExact: false
+     * - idcsSearchable: true
+     * - idcsValuePersistedInOtherAttribute: true
+     * - multiValued: false
+     * - mutability: readWrite
+     * - required: false
+     * - returned: default
+     * - type: string
+     * - uniqueness: none
+     * This property specifies which user attribute is used as the NameID value in the SAML assertion. This attribute can be constructed by using attributes from the Oracle Identity Cloud Service Core Users schema.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("nameIdUserstoreAttribute")
     private final String nameIdUserstoreAttribute;
 
     /**
      * **Deprecated Since: 18.2.2**
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true -
-     * idcsValuePersistedInOtherAttribute: true - multiValued: false - mutability: readWrite -
-     * required: false - returned: default - type: string - uniqueness: none This property specifies
-     * which user attribute is used as the NameID value in the SAML assertion. This attribute can be
-     * constructed by using attributes from the Oracle Identity Cloud Service Core Users schema.
-     *
+     * <p>
+     **SCIM++ Properties:**
+     * - caseExact: false
+     * - idcsSearchable: true
+     * - idcsValuePersistedInOtherAttribute: true
+     * - multiValued: false
+     * - mutability: readWrite
+     * - required: false
+     * - returned: default
+     * - type: string
+     * - uniqueness: none
+     * This property specifies which user attribute is used as the NameID value in the SAML assertion. This attribute can be constructed by using attributes from the Oracle Identity Cloud Service Core Users schema.
      * @return the value
-     */
+     **/
     public String getNameIdUserstoreAttribute() {
         return nameIdUserstoreAttribute;
     }
 
     /**
      * If enabled, then the SAML Service supports Hok for this App.
-     *
-     * <p>*Added In:** 2101262133
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: boolean - uniqueness: none
-     */
+     * <p>
+     **Added In:** 2101262133
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("hokRequired")
     private final Boolean hokRequired;
 
     /**
      * If enabled, then the SAML Service supports Hok for this App.
-     *
-     * <p>*Added In:** 2101262133
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: boolean - uniqueness: none
-     *
+     * <p>
+     **Added In:** 2101262133
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getHokRequired() {
         return hokRequired;
     }
 
     /**
      * Hok Assertion Consumer Service Url
-     *
-     * <p>*Added In:** 2101262133
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **Added In:** 2101262133
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("hokAcsUrl")
     private final String hokAcsUrl;
 
     /**
      * Hok Assertion Consumer Service Url
-     *
-     * <p>*Added In:** 2101262133
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **Added In:** 2101262133
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getHokAcsUrl() {
         return hokAcsUrl;
     }
 
     /**
      * Records the notification timestamp for the SP whose signing certificate is about to expire.
-     *
-     * <p>*Added In:** 2302092332
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: dateTime - uniqueness:
-     * none
-     */
+     * <p>
+     **Added In:** 2302092332
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: dateTime
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lastNotificationSentTime")
     private final String lastNotificationSentTime;
 
     /**
      * Records the notification timestamp for the SP whose signing certificate is about to expire.
-     *
-     * <p>*Added In:** 2302092332
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: dateTime - uniqueness:
-     * none
-     *
+     * <p>
+     **Added In:** 2302092332
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: dateTime
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getLastNotificationSentTime() {
         return lastNotificationSentTime;
     }
@@ -1874,59 +2436,85 @@ public final class AppExtensionSamlServiceProviderApp
     }
 
     /**
-     * Each value of this attribute describes an attribute of User that will be sent in a Security
-     * Assertion Markup Language (SAML) assertion.
-     *
-     * <p>*Deprecated Since: 18.2.2**
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsCompositeKey: [name] - idcsSearchable:
-     * false - idcsValuePersistedInOtherAttribute: true - multiValued: true - mutability: readWrite
-     * - required: false - returned: default - type: complex - uniqueness: none
-     */
+     * Each value of this attribute describes an attribute of User that will be sent in a Security Assertion Markup Language (SAML) assertion.
+     * <p>
+     **Deprecated Since: 18.2.2**
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsCompositeKey: [name]
+     *  - idcsSearchable: false
+     *  - idcsValuePersistedInOtherAttribute: true
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: complex
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("userAssertionAttributes")
     private final java.util.List<AppUserAssertionAttributes> userAssertionAttributes;
 
     /**
-     * Each value of this attribute describes an attribute of User that will be sent in a Security
-     * Assertion Markup Language (SAML) assertion.
-     *
-     * <p>*Deprecated Since: 18.2.2**
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsCompositeKey: [name] - idcsSearchable:
-     * false - idcsValuePersistedInOtherAttribute: true - multiValued: true - mutability: readWrite
-     * - required: false - returned: default - type: complex - uniqueness: none
-     *
+     * Each value of this attribute describes an attribute of User that will be sent in a Security Assertion Markup Language (SAML) assertion.
+     * <p>
+     **Deprecated Since: 18.2.2**
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsCompositeKey: [name]
+     *  - idcsSearchable: false
+     *  - idcsValuePersistedInOtherAttribute: true
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: complex
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public java.util.List<AppUserAssertionAttributes> getUserAssertionAttributes() {
         return userAssertionAttributes;
     }
 
     /**
-     * Each value of this attribute describes an attribute of Group that will be sent in a Security
-     * Assertion Markup Language (SAML) assertion.
-     *
-     * <p>*Deprecated Since: 18.2.2**
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsCompositeKey: [name] - idcsSearchable:
-     * false - idcsValuePersistedInOtherAttribute: true - multiValued: true - mutability: readWrite
-     * - required: false - returned: default - type: complex - uniqueness: none
-     */
+     * Each value of this attribute describes an attribute of Group that will be sent in a Security Assertion Markup Language (SAML) assertion.
+     * <p>
+     **Deprecated Since: 18.2.2**
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsCompositeKey: [name]
+     *  - idcsSearchable: false
+     *  - idcsValuePersistedInOtherAttribute: true
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: complex
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("groupAssertionAttributes")
     private final java.util.List<AppGroupAssertionAttributes> groupAssertionAttributes;
 
     /**
-     * Each value of this attribute describes an attribute of Group that will be sent in a Security
-     * Assertion Markup Language (SAML) assertion.
-     *
-     * <p>*Deprecated Since: 18.2.2**
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsCompositeKey: [name] - idcsSearchable:
-     * false - idcsValuePersistedInOtherAttribute: true - multiValued: true - mutability: readWrite
-     * - required: false - returned: default - type: complex - uniqueness: none
-     *
+     * Each value of this attribute describes an attribute of Group that will be sent in a Security Assertion Markup Language (SAML) assertion.
+     * <p>
+     **Deprecated Since: 18.2.2**
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsCompositeKey: [name]
+     *  - idcsSearchable: false
+     *  - idcsValuePersistedInOtherAttribute: true
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: complex
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public java.util.List<AppGroupAssertionAttributes> getGroupAssertionAttributes() {
         return groupAssertionAttributes;
     }
@@ -1938,7 +2526,6 @@ public final class AppExtensionSamlServiceProviderApp
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

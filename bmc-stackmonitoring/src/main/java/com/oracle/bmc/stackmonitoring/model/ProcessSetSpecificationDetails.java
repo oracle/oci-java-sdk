@@ -5,23 +5,22 @@
 package com.oracle.bmc.stackmonitoring.model;
 
 /**
- * Details of a single regular expression specification in a Process Set. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
+ * Details of a single regular expression specification in a Process Set.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ProcessSetSpecificationDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = ProcessSetSpecificationDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ProcessSetSpecificationDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "label",
@@ -43,61 +42,65 @@ public final class ProcessSetSpecificationDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Optional label used to identify a single filter. */
+        /**
+         * Optional label used to identify a single filter.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("label")
         private String label;
 
         /**
          * Optional label used to identify a single filter.
-         *
          * @param label the value to set
          * @return this builder
-         */
+         **/
         public Builder label(String label) {
             this.label = label;
             this.__explicitlySet__.add("label");
             return this;
         }
-        /** String literal used for exact matching on process name. */
+        /**
+         * String literal used for exact matching on process name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("processCommand")
         private String processCommand;
 
         /**
          * String literal used for exact matching on process name.
-         *
          * @param processCommand the value to set
          * @return this builder
-         */
+         **/
         public Builder processCommand(String processCommand) {
             this.processCommand = processCommand;
             this.__explicitlySet__.add("processCommand");
             return this;
         }
-        /** String literal used for exact matching on process user. */
+        /**
+         * String literal used for exact matching on process user.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("processUser")
         private String processUser;
 
         /**
          * String literal used for exact matching on process user.
-         *
          * @param processUser the value to set
          * @return this builder
-         */
+         **/
         public Builder processUser(String processUser) {
             this.processUser = processUser;
             this.__explicitlySet__.add("processUser");
             return this;
         }
-        /** Regex pattern matching on process arguments. */
+        /**
+         * Regex pattern matching on process arguments.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("processLineRegexPattern")
         private String processLineRegexPattern;
 
         /**
          * Regex pattern matching on process arguments.
-         *
          * @param processLineRegexPattern the value to set
          * @return this builder
-         */
+         **/
         public Builder processLineRegexPattern(String processLineRegexPattern) {
             this.processLineRegexPattern = processLineRegexPattern;
             this.__explicitlySet__.add("processLineRegexPattern");
@@ -138,7 +141,9 @@ public final class ProcessSetSpecificationDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -147,54 +152,58 @@ public final class ProcessSetSpecificationDetails
         return new Builder().copy(this);
     }
 
-    /** Optional label used to identify a single filter. */
+    /**
+     * Optional label used to identify a single filter.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("label")
     private final String label;
 
     /**
      * Optional label used to identify a single filter.
-     *
      * @return the value
-     */
+     **/
     public String getLabel() {
         return label;
     }
 
-    /** String literal used for exact matching on process name. */
+    /**
+     * String literal used for exact matching on process name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("processCommand")
     private final String processCommand;
 
     /**
      * String literal used for exact matching on process name.
-     *
      * @return the value
-     */
+     **/
     public String getProcessCommand() {
         return processCommand;
     }
 
-    /** String literal used for exact matching on process user. */
+    /**
+     * String literal used for exact matching on process user.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("processUser")
     private final String processUser;
 
     /**
      * String literal used for exact matching on process user.
-     *
      * @return the value
-     */
+     **/
     public String getProcessUser() {
         return processUser;
     }
 
-    /** Regex pattern matching on process arguments. */
+    /**
+     * Regex pattern matching on process arguments.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("processLineRegexPattern")
     private final String processLineRegexPattern;
 
     /**
      * Regex pattern matching on process arguments.
-     *
      * @return the value
-     */
+     **/
     public String getProcessLineRegexPattern() {
         return processLineRegexPattern;
     }
@@ -206,7 +215,6 @@ public final class ProcessSetSpecificationDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

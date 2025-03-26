@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.appmgmtcontrol.model;
 
-/** Possible operation types. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
-public enum OperationType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Possible operation types.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
+public enum OperationType {
     ActivateResourceMonitoringPlugin("ACTIVATE_RESOURCE_MONITORING_PLUGIN"),
     PublishTopProcessesMetrics("PUBLISH_TOP_PROCESSES_METRICS"),
 

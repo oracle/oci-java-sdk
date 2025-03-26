@@ -5,23 +5,23 @@
 package com.oracle.bmc.opsi.model;
 
 /**
- * SQL performance statistics over the selected time window. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+ * SQL performance statistics over the selected time window.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = SqlStatisticsTimeSeriesAggregationCollection.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = SqlStatisticsTimeSeriesAggregationCollection.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class SqlStatisticsTimeSeriesAggregationCollection
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "sqlIdentifier",
@@ -49,7 +49,10 @@ public final class SqlStatisticsTimeSeriesAggregationCollection
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Unique SQL_ID for a SQL Statement. */
+        /**
+         * Unique SQL_ID for a SQL Statement.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sqlIdentifier")
         private String sqlIdentifier;
 
@@ -58,43 +61,48 @@ public final class SqlStatisticsTimeSeriesAggregationCollection
          *
          * @param sqlIdentifier the value to set
          * @return this builder
-         */
+         **/
         public Builder sqlIdentifier(String sqlIdentifier) {
             this.sqlIdentifier = sqlIdentifier;
             this.__explicitlySet__.add("sqlIdentifier");
             return this;
         }
-        /** The start timestamp that was passed into the request. */
+        /**
+         * The start timestamp that was passed into the request.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeIntervalStart")
         private java.util.Date timeIntervalStart;
 
         /**
          * The start timestamp that was passed into the request.
-         *
          * @param timeIntervalStart the value to set
          * @return this builder
-         */
+         **/
         public Builder timeIntervalStart(java.util.Date timeIntervalStart) {
             this.timeIntervalStart = timeIntervalStart;
             this.__explicitlySet__.add("timeIntervalStart");
             return this;
         }
-        /** The end timestamp that was passed into the request. */
+        /**
+         * The end timestamp that was passed into the request.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeIntervalEnd")
         private java.util.Date timeIntervalEnd;
 
         /**
          * The end timestamp that was passed into the request.
-         *
          * @param timeIntervalEnd the value to set
          * @return this builder
-         */
+         **/
         public Builder timeIntervalEnd(java.util.Date timeIntervalEnd) {
             this.timeIntervalEnd = timeIntervalEnd;
             this.__explicitlySet__.add("timeIntervalEnd");
             return this;
         }
-        /** Time duration in milliseconds between data points (one hour or one day). */
+        /**
+         * Time duration in milliseconds between data points (one hour or one day).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("itemDurationInMs")
         private Long itemDurationInMs;
 
@@ -103,37 +111,39 @@ public final class SqlStatisticsTimeSeriesAggregationCollection
          *
          * @param itemDurationInMs the value to set
          * @return this builder
-         */
+         **/
         public Builder itemDurationInMs(Long itemDurationInMs) {
             this.itemDurationInMs = itemDurationInMs;
             this.__explicitlySet__.add("itemDurationInMs");
             return this;
         }
-        /** Array comprising of all the sampling period end timestamps in RFC 3339 format. */
+        /**
+         * Array comprising of all the sampling period end timestamps in RFC 3339 format.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("endTimestamps")
         private java.util.List<java.util.Date> endTimestamps;
 
         /**
          * Array comprising of all the sampling period end timestamps in RFC 3339 format.
-         *
          * @param endTimestamps the value to set
          * @return this builder
-         */
+         **/
         public Builder endTimestamps(java.util.List<java.util.Date> endTimestamps) {
             this.endTimestamps = endTimestamps;
             this.__explicitlySet__.add("endTimestamps");
             return this;
         }
-        /** Array of SQL performance statistics across databases. */
+        /**
+         * Array of SQL performance statistics across databases.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<SqlStatisticsTimeSeriesAggregation> items;
 
         /**
          * Array of SQL performance statistics across databases.
-         *
          * @param items the value to set
          * @return this builder
-         */
+         **/
         public Builder items(java.util.List<SqlStatisticsTimeSeriesAggregation> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -182,7 +192,9 @@ public final class SqlStatisticsTimeSeriesAggregationCollection
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -191,7 +203,10 @@ public final class SqlStatisticsTimeSeriesAggregationCollection
         return new Builder().copy(this);
     }
 
-    /** Unique SQL_ID for a SQL Statement. */
+    /**
+     * Unique SQL_ID for a SQL Statement.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sqlIdentifier")
     private final String sqlIdentifier;
 
@@ -199,38 +214,43 @@ public final class SqlStatisticsTimeSeriesAggregationCollection
      * Unique SQL_ID for a SQL Statement.
      *
      * @return the value
-     */
+     **/
     public String getSqlIdentifier() {
         return sqlIdentifier;
     }
 
-    /** The start timestamp that was passed into the request. */
+    /**
+     * The start timestamp that was passed into the request.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeIntervalStart")
     private final java.util.Date timeIntervalStart;
 
     /**
      * The start timestamp that was passed into the request.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeIntervalStart() {
         return timeIntervalStart;
     }
 
-    /** The end timestamp that was passed into the request. */
+    /**
+     * The end timestamp that was passed into the request.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeIntervalEnd")
     private final java.util.Date timeIntervalEnd;
 
     /**
      * The end timestamp that was passed into the request.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeIntervalEnd() {
         return timeIntervalEnd;
     }
 
-    /** Time duration in milliseconds between data points (one hour or one day). */
+    /**
+     * Time duration in milliseconds between data points (one hour or one day).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("itemDurationInMs")
     private final Long itemDurationInMs;
 
@@ -238,33 +258,35 @@ public final class SqlStatisticsTimeSeriesAggregationCollection
      * Time duration in milliseconds between data points (one hour or one day).
      *
      * @return the value
-     */
+     **/
     public Long getItemDurationInMs() {
         return itemDurationInMs;
     }
 
-    /** Array comprising of all the sampling period end timestamps in RFC 3339 format. */
+    /**
+     * Array comprising of all the sampling period end timestamps in RFC 3339 format.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("endTimestamps")
     private final java.util.List<java.util.Date> endTimestamps;
 
     /**
      * Array comprising of all the sampling period end timestamps in RFC 3339 format.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<java.util.Date> getEndTimestamps() {
         return endTimestamps;
     }
 
-    /** Array of SQL performance statistics across databases. */
+    /**
+     * Array of SQL performance statistics across databases.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<SqlStatisticsTimeSeriesAggregation> items;
 
     /**
      * Array of SQL performance statistics across databases.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<SqlStatisticsTimeSeriesAggregation> getItems() {
         return items;
     }
@@ -276,7 +298,6 @@ public final class SqlStatisticsTimeSeriesAggregationCollection
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

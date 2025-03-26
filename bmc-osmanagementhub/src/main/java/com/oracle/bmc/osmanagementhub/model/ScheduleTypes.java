@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.osmanagementhub.model;
 
-/** The type of scheduling frequency for the job. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
-public enum ScheduleTypes implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The type of scheduling frequency for the job.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+public enum ScheduleTypes {
     Onetime("ONETIME"),
     Recurring("RECURRING"),
 

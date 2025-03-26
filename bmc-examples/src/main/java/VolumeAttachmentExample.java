@@ -59,27 +59,28 @@ import com.oracle.bmc.identity.responses.ListAvailabilityDomainsResponse;
 import java.util.List;
 
 /**
- * This class provides an example of how to perform Volume Attachments in the Java SDK. It shows how
- * to use different types of volume attachments (e.g. iSCSI, paravirtualized and letting the service
- * determine the appropriate attachment type for your instance)
+ * This class provides an example of how to perform Volume Attachments in the Java SDK. It shows how to
+ * use different types of volume attachments (e.g. iSCSI, paravirtualized and letting the service determine
+ * the appropriate attachment type for your instance)
  *
- * <p>In order to demonstrate functionality, this script will create a VCN and subnet, two block
- * volumes and an instance. These will be deleted at the end of the script. . This script also makes
- * some assumptions about the resources it will create:
+ * In order to demonstrate functionality, this script will create a VCN and subnet, two block volumes and an instance.
+ * These will be deleted at the end of the script. . This script also makes some assumptions about
+ * the resources it will create:
  *
  * <ul>
- *   <li>The VCN created by this example will have a display name of java_sdk_vol_example_vcn
- *   <li>The subnet created by this example will have a display name of: java_sdk_vol_example_subnet
- *   <li>The VCN and subnet will have a private IP CIDR block of 10.0.0.0/16
- *   <li>The volumes created will have hardcoded display names of VolumeAttachExample1 and
- *       VolumeAttachExample2
- *   <li>An instance will be created with shape VM.Standard.1.1
- *   <li>The instance will have a display name of VolAttachExampleInstance
- *   <li>The configuration file used by service clients will be sourced from the default location
- *       (~/.oci/config) and the DEFAULT profile will be used
- *   <li>Resources will be created in us-phoenix-1
- *   <li>Resources will be created in the first AD returned from the ListAvailabilityDomains call
- *       <ul>
+ *   <li>The VCN created by this example will have a display name of java_sdk_vol_example_vcn</li>
+ *   <li>The subnet created by this example will have a display name of: java_sdk_vol_example_subnet</li>
+ *   <li>The VCN and subnet will have a private IP CIDR block of 10.0.0.0/16</li>
+ *   <li>The volumes created will have hardcoded display names of VolumeAttachExample1 and VolumeAttachExample2</li>
+ *   <li>An instance will be created with shape VM.Standard.1.1</li>
+ *   <li>The instance will have a display name of VolAttachExampleInstance</li>
+ *   <li>
+ *      The configuration file used by service clients will be sourced from the default
+ *      location (~/.oci/config) and the DEFAULT profile will be used
+ *   </li>
+ *   <li>Resources will be created in us-phoenix-1</li>
+ *   <li>Resources will be created in the first AD returned from the ListAvailabilityDomains call</li>
+ * <ul>
  */
 public class VolumeAttachmentExample {
     private static final String VCN_DISPLAY_NAME = "java_sdk_vol_example_vcn";
@@ -101,11 +102,10 @@ public class VolumeAttachmentExample {
      * The entry point for the example.
      *
      * @param args Arguments to provide to the example. The following arguments are expected:
-     *     <ul>
-     *       <li>The OCID of the compartment where the volumes and associated resources will be
-     *           created
-     *       <li>Optional. The OCID of the KMS key used to generated volume's data encryption key.
-     *     </ul>
+     * <ul>
+     *   <li>The OCID of the compartment where the volumes and associated resources will be created</li>
+     *   <li>Optional. The OCID of the KMS key used to generated volume's data encryption key. </li>
+     * </ul>
      */
     public static void main(String[] args) throws Exception {
         if (args.length != 1) {
@@ -115,24 +115,23 @@ public class VolumeAttachmentExample {
 
         final String compartmentId = args[0];
         final String kmsKeyId = args.length == 1 ? null : args[2];
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
-        // config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
-        // the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
         // line if needed and use ConfigFileReader.parse(CONFIG_LOCATION, CONFIG_PROFILE);
 
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
 
         final AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
-        final BlockstorageClient blockStorageClient =
-                BlockstorageClient.builder().region(Region.US_PHOENIX_1).build(provider);
-        final ComputeClient computeClient =
-                ComputeClient.builder().region(Region.US_PHOENIX_1).build(provider);
-        final VirtualNetworkClient vcnClient =
-                VirtualNetworkClient.builder().region(Region.US_PHOENIX_1).build(provider);
-        final IdentityClient identityClient =
-                IdentityClient.builder().region(Region.US_PHOENIX_1).build(provider);
+        final BlockstorageClient blockStorageClient = new BlockstorageClient(provider);
+        final ComputeClient computeClient = new ComputeClient(provider);
+        final VirtualNetworkClient vcnClient = new VirtualNetworkClient(provider);
+        final IdentityClient identityClient = new IdentityClient(provider);
+
+        blockStorageClient.setRegion(Region.US_PHOENIX_1);
+        computeClient.setRegion(Region.US_PHOENIX_1);
+        vcnClient.setRegion(Region.US_PHOENIX_1);
+        identityClient.setRegion(Region.US_PHOENIX_1);
 
         Vcn vcn = null;
         Subnet subnet = null;
@@ -174,8 +173,7 @@ public class VolumeAttachmentExample {
             final VolumeAttachment paravirtualizedAttachment =
                     attachParavirtualizedVolume(computeClient, volumeTwo, instance);
 
-            // Note here that in the returned results, each record is actually a subtype of
-            // VolumeAttachment corresponding to what type was specified when attaching
+            // Note here that in the returned results, each record is actually a subtype of VolumeAttachment corresponding to what type was specified when attaching
             listVolumeAttachmentsOnInstance(computeClient, instance);
 
             detachVolume(computeClient, paravirtualizedAttachment);
@@ -226,7 +224,9 @@ public class VolumeAttachmentExample {
      * @param compartmentId the compartment in which to create the volume
      * @param availabilityDomain the availability domain in which to create the volume
      * @param displayName the display name of the volume
+     *
      * @return the created volume
+     *
      * @throws Exception if there is an error waiting on the volume to become available
      */
     protected static Volume createVolume(
@@ -293,6 +293,7 @@ public class VolumeAttachmentExample {
      *
      * @param blockStorageClient the client used to communicate with the service
      * @param volume the volume to delete
+     *
      * @throws Exception if there was an error waiting for the volume to be deleted
      */
     protected static void deleteVolume(
@@ -315,9 +316,10 @@ public class VolumeAttachmentExample {
      * @param computeClient the client used to communicate with the service
      * @param volume the volume to attach
      * @param instance the instance to attach the volume to
-     * @return the volume attachment. Note that this is actually an {@link
-     *     com.oracle.bmc.core.models.IScsiVolumeAttachment}, which is a subclass of {@link
-     *     com.oracle.bmc.core.models.VolumeAttachment}
+     *
+     * @return the volume attachment. Note that this is actually an {@link com.oracle.bmc.core.models.IScsiVolumeAttachment}, which is a subclass
+     * of {@link com.oracle.bmc.core.models.VolumeAttachment}
+     *
      * @throws Exception if there was an error waiting for the volume attachment
      */
     protected static VolumeAttachment attachIscsiVolume(
@@ -337,15 +339,15 @@ public class VolumeAttachmentExample {
     }
 
     /**
-     * Attaches a volume to an instance as a paravirtualized volume and waits for the attachment to
-     * complete
+     * Attaches a volume to an instance as a paravirtualized volume and waits for the attachment to complete
      *
      * @param computeClient the client used to communicate with the service
      * @param volume the volume to attach
      * @param instance the instance to attach the volume to
-     * @return the volume attachment. Note that this is actually an {@link
-     *     com.oracle.bmc.core.models.ParavirtualizedVolumeAttachment}, which is a subclass of
-     *     {@link com.oracle.bmc.core.models.VolumeAttachment}
+     *
+     * @return the volume attachment. Note that this is actually an {@link com.oracle.bmc.core.models.ParavirtualizedVolumeAttachment}, which is a subclass
+     * of {@link com.oracle.bmc.core.models.VolumeAttachment}
+     *
      * @throws Exception if there was an error waiting for the volume attachment
      */
     protected static VolumeAttachment attachParavirtualizedVolume(
@@ -361,18 +363,17 @@ public class VolumeAttachmentExample {
     }
 
     /**
-     * Attaches a volume using the given volume attachment details and waits for the attachment to
-     * become available
+     * Attaches a volume using the given volume attachment details and waits for the attachment to become available
      *
      * @param computeClient the client used to communicate with the service
-     * @param attachVolumeDetails the details of the volume attachment. This should be one of the
-     *     subclasses of {@link com.oracle.bmc.core.models.AttachVolumeDetails}
-     * @return the volume attachment. Note that this will be a subclass of {@link
-     *     com.oracle.bmc.core.models.VolumeAttachment}. Which subclass it is will depend on what
-     *     type of {@link com.oracle.bmc.core.models.AttachVolumeDetails} was passed to this method.
-     *     For example if an {@link com.oracle.bmc.core.models.AttachIScsiVolumeDetails} was used
-     *     then the returned {@link com.oracle.bmc.core.models.VolumeAttachment} will be an {@link
-     *     com.oracle.bmc.core.models.IScsiVolumeAttachment}
+     * @param attachVolumeDetails the details of the volume attachment. This should be one of the subclasses of
+     * {@link com.oracle.bmc.core.models.AttachVolumeDetails}
+     *
+     * @return the volume attachment. Note that this will be a subclass of {@link com.oracle.bmc.core.models.VolumeAttachment}. Which
+     * subclass it is will depend on what type of {@link com.oracle.bmc.core.models.AttachVolumeDetails} was passed to this method. For
+     * example if an {@link com.oracle.bmc.core.models.AttachIScsiVolumeDetails} was used then the returned  {@link com.oracle.bmc.core.models.VolumeAttachment}
+     * will be an {@link com.oracle.bmc.core.models.IScsiVolumeAttachment}
+     *
      * @throws Exception if there was an error waiting for the volume attachment
      */
     protected static VolumeAttachment attachVolume(
@@ -412,6 +413,7 @@ public class VolumeAttachmentExample {
      *
      * @param computeClient the client used to communicate with the service
      * @param volumeAttachment the details of the volume to detach
+     *
      * @throws Exception if there was an error waiting for the volume to detach
      */
     protected static void detachVolume(
@@ -467,7 +469,9 @@ public class VolumeAttachmentExample {
      *
      * @param vcnClient the service client to use to create the VCN
      * @param compartmentId the OCID of the compartment where the VCN will be created
+     *
      * @return the created VCN
+     *
      * @throws Exception if there is an error waiting on the VCN to become available to use
      */
     protected static Vcn createVcn(final VirtualNetworkClient vcnClient, final String compartmentId)
@@ -501,6 +505,7 @@ public class VolumeAttachmentExample {
      *
      * @param vcnClient the service client to use to delete the VCN
      * @param vcn the VCN to delete
+     *
      * @throws Exception if there is an error waiting on the VCN to be deleted
      */
     protected static void deleteVcn(final VirtualNetworkClient vcnClient, final Vcn vcn)
@@ -523,7 +528,9 @@ public class VolumeAttachmentExample {
      * @param compartmentId the OCID of the compartment which owns the VCN
      * @param availabilityDomain the availability domain where the subnet will be created
      * @param vcnId the ID of the VCN which will own the subnet
+     *
      * @return the created subnet
+     *
      * @throws Exception if there is an error waiting on the subnet to become available to use
      */
     protected static Subnet createSubnet(
@@ -564,6 +571,7 @@ public class VolumeAttachmentExample {
      *
      * @param vcnClient the service client to use to delete the subnet
      * @param subnet the subnet to delete
+     *
      * @throws Exception if there is an error waiting on the subnet to be deleted
      */
     protected static void deleteSubnet(final VirtualNetworkClient vcnClient, final Subnet subnet)
@@ -584,6 +592,7 @@ public class VolumeAttachmentExample {
      *
      * @param identityClient the client to use to retrieve the availability domains
      * @param compartmentId the OCID of the compartment whose availability domains we're listing
+     *
      * @return a list of all availability domains in a compartment
      */
     protected static List<AvailabilityDomain> getAvailabilityDomains(
@@ -599,16 +608,16 @@ public class VolumeAttachmentExample {
     }
 
     /**
-     * Retrieves an image which is compatible with the given operating system, version and instance
-     * shape
+     * Retrieves an image which is compatible with the given operating system, version and instance shape
      *
      * @param computeClient the client used to communicate with the service
      * @param compartmentId the OCID of the compartment to search
      * @param operatingSystem the target operating system
      * @param operatingSystemVersion the target OS version
      * @param targetShape the target shape
-     * @return an Image which is can be used to launch an instance with the specified operating
-     *     system, version and shape
+     *
+     * @return an Image which is can be used to launch an instance with the specified operating system, version
+     * and shape
      */
     protected static Image getImageForOsAndShape(
             final ComputeClient computeClient,
@@ -653,9 +662,10 @@ public class VolumeAttachmentExample {
      * @param subnet the subnet where the instance will be launched
      * @param compartmentId the OCID of the compartment where the instance will be launched
      * @param displayName the display name of the instance
+     *
      * @return the created instance
-     * @throws Exception if an error was encountered while waiting for the instance to become
-     *     running/available
+     *
+     * @throws Exception if an error was encountered while waiting for the instance to become running/available
      */
     protected static Instance launchInstance(
             final ComputeClient computeClient,
@@ -703,6 +713,7 @@ public class VolumeAttachmentExample {
      *
      * @param computeClient the client used to communicate with the service
      * @param instance the instance to terminate
+     *
      * @throws Exception if an error occurred while waiting for the instance to be terminated
      */
     protected static void terminateInstance(

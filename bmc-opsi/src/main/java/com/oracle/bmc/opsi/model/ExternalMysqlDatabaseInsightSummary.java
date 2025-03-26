@@ -5,25 +5,25 @@
 package com.oracle.bmc.opsi.model;
 
 /**
- * Summary of a database insight resource. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+ * Summary of a database insight resource.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ExternalMysqlDatabaseInsightSummary.Builder.class)
+    builder = ExternalMysqlDatabaseInsightSummary.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "entitySource")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "entitySource"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ExternalMysqlDatabaseInsightSummary extends DatabaseInsightSummary {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -190,55 +190,48 @@ public final class ExternalMysqlDatabaseInsightSummary extends DatabaseInsightSu
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Management Agent
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("agentId")
         private String agentId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Management Agent
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
          * @param agentId the value to set
          * @return this builder
-         */
+         **/
         public Builder agentId(String agentId) {
             this.agentId = agentId;
             this.__explicitlySet__.add("agentId");
             return this;
         }
-        /** OCI database resource type */
+        /**
+         * OCI database resource type
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseResourceType")
         private String databaseResourceType;
 
         /**
          * OCI database resource type
-         *
          * @param databaseResourceType the value to set
          * @return this builder
-         */
+         **/
         public Builder databaseResourceType(String databaseResourceType) {
             this.databaseResourceType = databaseResourceType;
             this.__explicitlySet__.add("databaseResourceType");
             return this;
         }
         /**
-         * The DBM owned database connector
-         * [OCID](https://docs.oracle.com/iaas/database-management/doc/view-connector-details.html)
-         * mapping to the database credentials and connection details.
-         */
+         * The DBM owned database connector [OCID](https://docs.oracle.com/iaas/database-management/doc/view-connector-details.html) mapping to the database credentials and connection details.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseConnectorId")
         private String databaseConnectorId;
 
         /**
-         * The DBM owned database connector
-         * [OCID](https://docs.oracle.com/iaas/database-management/doc/view-connector-details.html)
-         * mapping to the database credentials and connection details.
-         *
+         * The DBM owned database connector [OCID](https://docs.oracle.com/iaas/database-management/doc/view-connector-details.html) mapping to the database credentials and connection details.
          * @param databaseConnectorId the value to set
          * @return this builder
-         */
+         **/
         public Builder databaseConnectorId(String databaseConnectorId) {
             this.databaseConnectorId = databaseConnectorId;
             this.__explicitlySet__.add("databaseConnectorId");
@@ -347,7 +340,9 @@ public final class ExternalMysqlDatabaseInsightSummary extends DatabaseInsightSu
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -404,50 +399,43 @@ public final class ExternalMysqlDatabaseInsightSummary extends DatabaseInsightSu
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Management Agent
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("agentId")
     private final String agentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Management Agent
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
      * @return the value
-     */
+     **/
     public String getAgentId() {
         return agentId;
     }
 
-    /** OCI database resource type */
+    /**
+     * OCI database resource type
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseResourceType")
     private final String databaseResourceType;
 
     /**
      * OCI database resource type
-     *
      * @return the value
-     */
+     **/
     public String getDatabaseResourceType() {
         return databaseResourceType;
     }
 
     /**
-     * The DBM owned database connector
-     * [OCID](https://docs.oracle.com/iaas/database-management/doc/view-connector-details.html)
-     * mapping to the database credentials and connection details.
-     */
+     * The DBM owned database connector [OCID](https://docs.oracle.com/iaas/database-management/doc/view-connector-details.html) mapping to the database credentials and connection details.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseConnectorId")
     private final String databaseConnectorId;
 
     /**
-     * The DBM owned database connector
-     * [OCID](https://docs.oracle.com/iaas/database-management/doc/view-connector-details.html)
-     * mapping to the database credentials and connection details.
-     *
+     * The DBM owned database connector [OCID](https://docs.oracle.com/iaas/database-management/doc/view-connector-details.html) mapping to the database credentials and connection details.
      * @return the value
-     */
+     **/
     public String getDatabaseConnectorId() {
         return databaseConnectorId;
     }
@@ -459,7 +447,6 @@ public final class ExternalMysqlDatabaseInsightSummary extends DatabaseInsightSu
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

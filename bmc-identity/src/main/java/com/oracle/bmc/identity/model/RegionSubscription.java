@@ -5,31 +5,27 @@
 package com.oracle.bmc.identity.model;
 
 /**
- * An object that represents your tenancy's access to a particular region (i.e., a subscription),
- * the status of that access, and whether that region is the home region. For more information, see
- * [Managing Regions](https://docs.oracle.com/iaas/Content/Identity/regions/managingregions.htm).
+ * An object that represents your tenancy's access to a particular region (i.e., a subscription), the status of that
+ * access, and whether that region is the home region. For more information, see [Managing Regions](https://docs.oracle.com/iaas/Content/Identity/regions/managingregions.htm).
+ * <p>
+ * To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
+ * talk to an administrator. If you're an administrator who needs to write policies to give users access,
+ * see [Get Started with Policies](https://docs.oracle.com/iaas/Content/Identity/policiesgs/get-started-with-policies.htm).
  *
- * <p>To use any of the API operations, you must be authorized in an IAM policy. If you're not
- * authorized, talk to an administrator. If you're an administrator who needs to write policies to
- * give users access, see [Get Started with
- * Policies](https://docs.oracle.com/iaas/Content/Identity/policiesgs/get-started-with-policies.htm).
- * <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = RegionSubscription.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class RegionSubscription
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = RegionSubscription.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class RegionSubscription extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"regionKey", "regionName", "status", "isHomeRegion"})
     public RegionSubscription(
@@ -44,80 +40,80 @@ public final class RegionSubscription
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The region's key. See [Regions and Availability
-         * Domains](https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full
-         * list of supported 3-letter region codes.
+         * The region's key. See [Regions and Availability Domains](https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm)
+         * for the full list of supported 3-letter region codes.
+         * <p>
+         * Example: {@code PHX}
          *
-         * <p>Example: {@code PHX}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("regionKey")
         private String regionKey;
 
         /**
-         * The region's key. See [Regions and Availability
-         * Domains](https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full
-         * list of supported 3-letter region codes.
-         *
-         * <p>Example: {@code PHX}
+         * The region's key. See [Regions and Availability Domains](https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm)
+         * for the full list of supported 3-letter region codes.
+         * <p>
+         * Example: {@code PHX}
          *
          * @param regionKey the value to set
          * @return this builder
-         */
+         **/
         public Builder regionKey(String regionKey) {
             this.regionKey = regionKey;
             this.__explicitlySet__.add("regionKey");
             return this;
         }
         /**
-         * The region's name. See [Regions and Availability
-         * Domains](https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full
-         * list of supported region names.
+         * The region's name. See [Regions and Availability Domains](https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm)
+         * for the full list of supported region names.
+         * <p>
+         * Example: {@code us-phoenix-1}
          *
-         * <p>Example: {@code us-phoenix-1}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("regionName")
         private String regionName;
 
         /**
-         * The region's name. See [Regions and Availability
-         * Domains](https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full
-         * list of supported region names.
-         *
-         * <p>Example: {@code us-phoenix-1}
+         * The region's name. See [Regions and Availability Domains](https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm)
+         * for the full list of supported region names.
+         * <p>
+         * Example: {@code us-phoenix-1}
          *
          * @param regionName the value to set
          * @return this builder
-         */
+         **/
         public Builder regionName(String regionName) {
             this.regionName = regionName;
             this.__explicitlySet__.add("regionName");
             return this;
         }
-        /** The region subscription status. */
+        /**
+         * The region subscription status.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
         /**
          * The region subscription status.
-         *
          * @param status the value to set
          * @return this builder
-         */
+         **/
         public Builder status(Status status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-        /** Indicates if the region is the home region or not. */
+        /**
+         * Indicates if the region is the home region or not.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isHomeRegion")
         private Boolean isHomeRegion;
 
         /**
          * Indicates if the region is the home region or not.
-         *
          * @param isHomeRegion the value to set
          * @return this builder
-         */
+         **/
         public Builder isHomeRegion(Boolean isHomeRegion) {
             this.isHomeRegion = isHomeRegion;
             this.__explicitlySet__.add("isHomeRegion");
@@ -155,7 +151,9 @@ public final class RegionSubscription
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -165,59 +163,59 @@ public final class RegionSubscription
     }
 
     /**
-     * The region's key. See [Regions and Availability
-     * Domains](https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list
-     * of supported 3-letter region codes.
+     * The region's key. See [Regions and Availability Domains](https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm)
+     * for the full list of supported 3-letter region codes.
+     * <p>
+     * Example: {@code PHX}
      *
-     * <p>Example: {@code PHX}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("regionKey")
     private final String regionKey;
 
     /**
-     * The region's key. See [Regions and Availability
-     * Domains](https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list
-     * of supported 3-letter region codes.
-     *
-     * <p>Example: {@code PHX}
+     * The region's key. See [Regions and Availability Domains](https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm)
+     * for the full list of supported 3-letter region codes.
+     * <p>
+     * Example: {@code PHX}
      *
      * @return the value
-     */
+     **/
     public String getRegionKey() {
         return regionKey;
     }
 
     /**
-     * The region's name. See [Regions and Availability
-     * Domains](https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list
-     * of supported region names.
+     * The region's name. See [Regions and Availability Domains](https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm)
+     * for the full list of supported region names.
+     * <p>
+     * Example: {@code us-phoenix-1}
      *
-     * <p>Example: {@code us-phoenix-1}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("regionName")
     private final String regionName;
 
     /**
-     * The region's name. See [Regions and Availability
-     * Domains](https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list
-     * of supported region names.
-     *
-     * <p>Example: {@code us-phoenix-1}
+     * The region's name. See [Regions and Availability Domains](https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm)
+     * for the full list of supported region names.
+     * <p>
+     * Example: {@code us-phoenix-1}
      *
      * @return the value
-     */
+     **/
     public String getRegionName() {
         return regionName;
     }
 
-    /** The region subscription status. */
-    public enum Status implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The region subscription status.
+     **/
+    public enum Status {
         Ready("READY"),
         InProgress("IN_PROGRESS"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -255,28 +253,30 @@ public final class RegionSubscription
             return UnknownEnumValue;
         }
     };
-    /** The region subscription status. */
+    /**
+     * The region subscription status.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
     /**
      * The region subscription status.
-     *
      * @return the value
-     */
+     **/
     public Status getStatus() {
         return status;
     }
 
-    /** Indicates if the region is the home region or not. */
+    /**
+     * Indicates if the region is the home region or not.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isHomeRegion")
     private final Boolean isHomeRegion;
 
     /**
      * Indicates if the region is the home region or not.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsHomeRegion() {
         return isHomeRegion;
     }
@@ -288,7 +288,6 @@ public final class RegionSubscription
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

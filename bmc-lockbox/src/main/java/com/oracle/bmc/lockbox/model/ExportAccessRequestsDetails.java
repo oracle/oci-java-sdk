@@ -5,23 +5,22 @@
 package com.oracle.bmc.lockbox.model;
 
 /**
- * Details for generating report of Access Requests to export action <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220126")
+ * Details for generating report of Access Requests to export action
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220126")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ExportAccessRequestsDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = ExportAccessRequestsDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ExportAccessRequestsDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"lockboxId", "timeCreatedAfter", "timeCreatedBefore"})
     public ExportAccessRequestsDetails(
@@ -35,57 +34,48 @@ public final class ExportAccessRequestsDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The unique identifier (OCID) of the lockbox box that the access request is associated
-         * with which is immutable.
-         */
+         * The unique identifier (OCID) of the lockbox box that the access request is associated with which is immutable.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lockboxId")
         private String lockboxId;
 
         /**
-         * The unique identifier (OCID) of the lockbox box that the access request is associated
-         * with which is immutable.
-         *
+         * The unique identifier (OCID) of the lockbox box that the access request is associated with which is immutable.
          * @param lockboxId the value to set
          * @return this builder
-         */
+         **/
         public Builder lockboxId(String lockboxId) {
             this.lockboxId = lockboxId;
             this.__explicitlySet__.add("lockboxId");
             return this;
         }
         /**
-         * Date and time after which access requests were created, as described in [RFC
-         * 3339](https://tools.ietf.org/rfc/rfc3339)
-         */
+         * Date and time after which access requests were created, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339)
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreatedAfter")
         private java.util.Date timeCreatedAfter;
 
         /**
-         * Date and time after which access requests were created, as described in [RFC
-         * 3339](https://tools.ietf.org/rfc/rfc3339)
-         *
+         * Date and time after which access requests were created, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339)
          * @param timeCreatedAfter the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreatedAfter(java.util.Date timeCreatedAfter) {
             this.timeCreatedAfter = timeCreatedAfter;
             this.__explicitlySet__.add("timeCreatedAfter");
             return this;
         }
         /**
-         * Date and time before which access requests were created, as described in [RFC
-         * 3339](https://tools.ietf.org/rfc/rfc3339)s
-         */
+         * Date and time before which access requests were created, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339)s
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreatedBefore")
         private java.util.Date timeCreatedBefore;
 
         /**
-         * Date and time before which access requests were created, as described in [RFC
-         * 3339](https://tools.ietf.org/rfc/rfc3339)s
-         *
+         * Date and time before which access requests were created, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339)s
          * @param timeCreatedBefore the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreatedBefore(java.util.Date timeCreatedBefore) {
             this.timeCreatedBefore = timeCreatedBefore;
             this.__explicitlySet__.add("timeCreatedBefore");
@@ -120,7 +110,9 @@ public final class ExportAccessRequestsDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -130,52 +122,43 @@ public final class ExportAccessRequestsDetails
     }
 
     /**
-     * The unique identifier (OCID) of the lockbox box that the access request is associated with
-     * which is immutable.
-     */
+     * The unique identifier (OCID) of the lockbox box that the access request is associated with which is immutable.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lockboxId")
     private final String lockboxId;
 
     /**
-     * The unique identifier (OCID) of the lockbox box that the access request is associated with
-     * which is immutable.
-     *
+     * The unique identifier (OCID) of the lockbox box that the access request is associated with which is immutable.
      * @return the value
-     */
+     **/
     public String getLockboxId() {
         return lockboxId;
     }
 
     /**
-     * Date and time after which access requests were created, as described in [RFC
-     * 3339](https://tools.ietf.org/rfc/rfc3339)
-     */
+     * Date and time after which access requests were created, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339)
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreatedAfter")
     private final java.util.Date timeCreatedAfter;
 
     /**
-     * Date and time after which access requests were created, as described in [RFC
-     * 3339](https://tools.ietf.org/rfc/rfc3339)
-     *
+     * Date and time after which access requests were created, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339)
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreatedAfter() {
         return timeCreatedAfter;
     }
 
     /**
-     * Date and time before which access requests were created, as described in [RFC
-     * 3339](https://tools.ietf.org/rfc/rfc3339)s
-     */
+     * Date and time before which access requests were created, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339)s
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreatedBefore")
     private final java.util.Date timeCreatedBefore;
 
     /**
-     * Date and time before which access requests were created, as described in [RFC
-     * 3339](https://tools.ietf.org/rfc/rfc3339)s
-     *
+     * Date and time before which access requests were created, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339)s
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreatedBefore() {
         return timeCreatedBefore;
     }
@@ -187,7 +170,6 @@ public final class ExportAccessRequestsDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

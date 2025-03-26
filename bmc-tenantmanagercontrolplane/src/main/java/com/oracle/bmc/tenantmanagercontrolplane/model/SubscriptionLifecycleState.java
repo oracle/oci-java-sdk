@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.tenantmanagercontrolplane.model;
 
-/** The current lifecycle state of the OCS subscription. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230401")
-public enum SubscriptionLifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The current lifecycle state of the OCS subscription.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230401")
+public enum SubscriptionLifecycleState {
     NeedsAttention("NEEDS_ATTENTION"),
     Active("ACTIVE"),
     Inactive("INACTIVE"),

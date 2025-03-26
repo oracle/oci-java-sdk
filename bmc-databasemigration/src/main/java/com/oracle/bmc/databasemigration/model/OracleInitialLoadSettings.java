@@ -5,23 +5,22 @@
 package com.oracle.bmc.databasemigration.model;
 
 /**
- * Optional settings for Data Pump Export and Import jobs <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
+ * Optional settings for Data Pump Export and Import jobs
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = OracleInitialLoadSettings.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = OracleInitialLoadSettings.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class OracleInitialLoadSettings
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "dataPumpParameters",
@@ -85,22 +84,26 @@ public final class OracleInitialLoadSettings
             this.__explicitlySet__.add("importDirectoryObject");
             return this;
         }
-        /** Oracle Job Mode */
+        /**
+         * Oracle Job Mode
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("jobMode")
         private JobModeOracle jobMode;
 
         /**
          * Oracle Job Mode
-         *
          * @param jobMode the value to set
          * @return this builder
-         */
+         **/
         public Builder jobMode(JobModeOracle jobMode) {
             this.jobMode = jobMode;
             this.__explicitlySet__.add("jobMode");
             return this;
         }
-        /** Defines remapping to be applied to objects as they are processed. */
+        /**
+         * Defines remapping to be applied to objects as they are processed.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("metadataRemaps")
         private java.util.List<MetadataRemap> metadataRemaps;
 
@@ -109,7 +112,7 @@ public final class OracleInitialLoadSettings
          *
          * @param metadataRemaps the value to set
          * @return this builder
-         */
+         **/
         public Builder metadataRemaps(java.util.List<MetadataRemap> metadataRemaps) {
             this.metadataRemaps = metadataRemaps;
             this.__explicitlySet__.add("metadataRemaps");
@@ -158,7 +161,9 @@ public final class OracleInitialLoadSettings
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -195,20 +200,24 @@ public final class OracleInitialLoadSettings
         return importDirectoryObject;
     }
 
-    /** Oracle Job Mode */
+    /**
+     * Oracle Job Mode
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("jobMode")
     private final JobModeOracle jobMode;
 
     /**
      * Oracle Job Mode
-     *
      * @return the value
-     */
+     **/
     public JobModeOracle getJobMode() {
         return jobMode;
     }
 
-    /** Defines remapping to be applied to objects as they are processed. */
+    /**
+     * Defines remapping to be applied to objects as they are processed.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("metadataRemaps")
     private final java.util.List<MetadataRemap> metadataRemaps;
 
@@ -216,7 +225,7 @@ public final class OracleInitialLoadSettings
      * Defines remapping to be applied to objects as they are processed.
      *
      * @return the value
-     */
+     **/
     public java.util.List<MetadataRemap> getMetadataRemaps() {
         return metadataRemaps;
     }
@@ -228,7 +237,6 @@ public final class OracleInitialLoadSettings
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

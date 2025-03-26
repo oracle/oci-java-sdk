@@ -6,52 +6,55 @@ package com.oracle.bmc.datasafe.requests;
 
 import com.oracle.bmc.datasafe.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListSecurityAssessmentsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * ListSecurityAssessmentsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListSecurityAssessmentsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListSecurityAssessmentsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 public class ListSecurityAssessmentsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** A filter to return only resources that match the specified compartment OCID. */
+    /**
+     * A filter to return only resources that match the specified compartment OCID.
+     */
     private String compartmentId;
 
-    /** A filter to return only resources that match the specified compartment OCID. */
+    /**
+     * A filter to return only resources that match the specified compartment OCID.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
     /**
-     * Default is false. When set to true, the hierarchy of compartments is traversed and all
-     * compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel'
-     * setting.
+     * Default is false.
+     * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
+     *
      */
     private Boolean compartmentIdInSubtree;
 
     /**
-     * Default is false. When set to true, the hierarchy of compartments is traversed and all
-     * compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel'
-     * setting.
+     * Default is false.
+     * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
+     *
      */
     public Boolean getCompartmentIdInSubtree() {
         return compartmentIdInSubtree;
     }
     /**
-     * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE
-     * returns only those compartments for which the user has INSPECT permissions directly or
-     * indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED
-     * permissions are checked and no partial results are displayed.
+     * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED.
+     * Setting this to ACCESSIBLE returns only those compartments for which the
+     * user has INSPECT permissions directly or indirectly (permissions can be on a
+     * resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
+     *
      */
     private AccessLevel accessLevel;
 
     /**
-     * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE
-     * returns only those compartments for which the user has INSPECT permissions directly or
-     * indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED
-     * permissions are checked and no partial results are displayed.
-     */
-    public enum AccessLevel implements com.oracle.bmc.http.internal.BmcEnum {
+     * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED.
+     * Setting this to ACCESSIBLE returns only those compartments for which the
+     * user has INSPECT permissions directly or indirectly (permissions can be on a
+     * resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
+     *
+     **/
+    public enum AccessLevel {
         Restricted("RESTRICTED"),
         Accessible("ACCESSIBLE"),
         ;
@@ -85,26 +88,37 @@ public class ListSecurityAssessmentsRequest
     };
 
     /**
-     * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE
-     * returns only those compartments for which the user has INSPECT permissions directly or
-     * indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED
-     * permissions are checked and no partial results are displayed.
+     * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED.
+     * Setting this to ACCESSIBLE returns only those compartments for which the
+     * user has INSPECT permissions directly or indirectly (permissions can be on a
+     * resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
+     *
      */
     public AccessLevel getAccessLevel() {
         return accessLevel;
     }
-    /** A filter to return only resources that match the specified display name. */
+    /**
+     * A filter to return only resources that match the specified display name.
+     *
+     */
     private String displayName;
 
-    /** A filter to return only resources that match the specified display name. */
+    /**
+     * A filter to return only resources that match the specified display name.
+     *
+     */
     public String getDisplayName() {
         return displayName;
     }
-    /** A filter to return only items that match the specified security assessment type. */
+    /**
+     * A filter to return only items that match the specified security assessment type.
+     */
     private Type type;
 
-    /** A filter to return only items that match the specified security assessment type. */
-    public enum Type implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * A filter to return only items that match the specified security assessment type.
+     **/
+    public enum Type {
         Latest("LATEST"),
         Saved("SAVED"),
         SaveSchedule("SAVE_SCHEDULE"),
@@ -139,29 +153,45 @@ public class ListSecurityAssessmentsRequest
         }
     };
 
-    /** A filter to return only items that match the specified security assessment type. */
+    /**
+     * A filter to return only items that match the specified security assessment type.
+     */
     public Type getType() {
         return type;
     }
-    /** The OCID of the security assessment of type SAVE_SCHEDULE. */
+    /**
+     * The OCID of the security assessment of type SAVE_SCHEDULE.
+     */
     private String scheduleAssessmentId;
 
-    /** The OCID of the security assessment of type SAVE_SCHEDULE. */
+    /**
+     * The OCID of the security assessment of type SAVE_SCHEDULE.
+     */
     public String getScheduleAssessmentId() {
         return scheduleAssessmentId;
     }
-    /** A filter to return only security assessments of type save schedule. */
+    /**
+     * A filter to return only security assessments of type save schedule.
+     *
+     */
     private Boolean isScheduleAssessment;
 
-    /** A filter to return only security assessments of type save schedule. */
+    /**
+     * A filter to return only security assessments of type save schedule.
+     *
+     */
     public Boolean getIsScheduleAssessment() {
         return isScheduleAssessment;
     }
-    /** A filter to return only security asessments that were created by either user or system. */
+    /**
+     * A filter to return only security asessments that were created by either user or system.
+     */
     private TriggeredBy triggeredBy;
 
-    /** A filter to return only security asessments that were created by either user or system. */
-    public enum TriggeredBy implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * A filter to return only security asessments that were created by either user or system.
+     **/
+    public enum TriggeredBy {
         User("USER"),
         System("SYSTEM"),
         ;
@@ -194,22 +224,32 @@ public class ListSecurityAssessmentsRequest
         }
     };
 
-    /** A filter to return only security asessments that were created by either user or system. */
+    /**
+     * A filter to return only security asessments that were created by either user or system.
+     */
     public TriggeredBy getTriggeredBy() {
         return triggeredBy;
     }
-    /** A filter to return only items related to a specific target OCID. */
+    /**
+     * A filter to return only items related to a specific target OCID.
+     */
     private String targetId;
 
-    /** A filter to return only items related to a specific target OCID. */
+    /**
+     * A filter to return only items related to a specific target OCID.
+     */
     public String getTargetId() {
         return targetId;
     }
-    /** The sort order to use, either ascending (ASC) or descending (DESC). */
+    /**
+     * The sort order to use, either ascending (ASC) or descending (DESC).
+     */
     private SortOrder sortOrder;
 
-    /** The sort order to use, either ascending (ASC) or descending (DESC). */
-    public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The sort order to use, either ascending (ASC) or descending (DESC).
+     **/
+    public enum SortOrder {
         Asc("ASC"),
         Desc("DESC"),
         ;
@@ -242,28 +282,34 @@ public class ListSecurityAssessmentsRequest
         }
     };
 
-    /** The sort order to use, either ascending (ASC) or descending (DESC). */
+    /**
+     * The sort order to use, either ascending (ASC) or descending (DESC).
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
-    /** A filter to return only the security assessments that are set as a baseline. */
+    /**
+     * A filter to return only the security assessments that are set as a baseline.
+     */
     private Boolean isBaseline;
 
-    /** A filter to return only the security assessments that are set as a baseline. */
+    /**
+     * A filter to return only the security assessments that are set as a baseline.
+     */
     public Boolean getIsBaseline() {
         return isBaseline;
     }
     /**
-     * The field to sort by. You can specify only one sort order(sortOrder). The default order for
-     * timeCreated is descending.
+     * The field to sort by. You can specify only one sort order(sortOrder). The default order for timeCreated is descending.
+     *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. You can specify only one sort order(sortOrder). The default order for
-     * timeCreated is descending.
-     */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+     * The field to sort by. You can specify only one sort order(sortOrder). The default order for timeCreated is descending.
+     *
+     **/
+    public enum SortBy {
         TimeCreated("timeCreated"),
         DisplayName("displayName"),
         ;
@@ -297,97 +343,97 @@ public class ListSecurityAssessmentsRequest
     };
 
     /**
-     * The field to sort by. You can specify only one sort order(sortOrder). The default order for
-     * timeCreated is descending.
+     * The field to sort by. You can specify only one sort order(sortOrder). The default order for timeCreated is descending.
+     *
      */
     public SortBy getSortBy() {
         return sortBy;
     }
     /**
-     * A filter to return only the resources that were created after the specified date and time, as
-     * defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Using
-     * TimeCreatedGreaterThanOrEqualToQueryParam parameter retrieves all resources created after
-     * that date.
+     * A filter to return only the resources that were created after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * Using TimeCreatedGreaterThanOrEqualToQueryParam parameter retrieves all resources created after that date.
+     * <p>
+     **Example:** 2016-12-19T16:39:57.600Z
      *
-     * <p>*Example:** 2016-12-19T16:39:57.600Z
      */
     private java.util.Date timeCreatedGreaterThanOrEqualTo;
 
     /**
-     * A filter to return only the resources that were created after the specified date and time, as
-     * defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Using
-     * TimeCreatedGreaterThanOrEqualToQueryParam parameter retrieves all resources created after
-     * that date.
+     * A filter to return only the resources that were created after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * Using TimeCreatedGreaterThanOrEqualToQueryParam parameter retrieves all resources created after that date.
+     * <p>
+     **Example:** 2016-12-19T16:39:57.600Z
      *
-     * <p>*Example:** 2016-12-19T16:39:57.600Z
      */
     public java.util.Date getTimeCreatedGreaterThanOrEqualTo() {
         return timeCreatedGreaterThanOrEqualTo;
     }
     /**
-     * Search for resources that were created before a specific date. Specifying this parameter
-     * corresponding {@code timeCreatedLessThan} parameter will retrieve all resources created
-     * before the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined
-     * by RFC 3339.
+     * Search for resources that were created before a specific date.
+     * Specifying this parameter corresponding {@code timeCreatedLessThan}
+     * parameter will retrieve all resources created before the
+     * specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as
+     * defined by RFC 3339.
+     * <p>
+     **Example:** 2016-12-19T16:39:57.600Z
      *
-     * <p>*Example:** 2016-12-19T16:39:57.600Z
      */
     private java.util.Date timeCreatedLessThan;
 
     /**
-     * Search for resources that were created before a specific date. Specifying this parameter
-     * corresponding {@code timeCreatedLessThan} parameter will retrieve all resources created
-     * before the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined
-     * by RFC 3339.
+     * Search for resources that were created before a specific date.
+     * Specifying this parameter corresponding {@code timeCreatedLessThan}
+     * parameter will retrieve all resources created before the
+     * specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as
+     * defined by RFC 3339.
+     * <p>
+     **Example:** 2016-12-19T16:39:57.600Z
      *
-     * <p>*Example:** 2016-12-19T16:39:57.600Z
      */
     public java.util.Date getTimeCreatedLessThan() {
         return timeCreatedLessThan;
     }
-    /** Unique identifier for the request. */
+    /**
+     * Unique identifier for the request.
+     */
     private String opcRequestId;
 
-    /** Unique identifier for the request. */
+    /**
+     * Unique identifier for the request.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * For list pagination. The maximum number of items to return per page in a paginated "List"
-     * call. For details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private Integer limit;
 
     /**
-     * For list pagination. The maximum number of items to return per page in a paginated "List"
-     * call. For details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * For list pagination. The page token representing the page at which to start retrieving
-     * results. It is usually retrieved from a previous "List" call. For details about how
-     * pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String page;
 
     /**
-     * For list pagination. The page token representing the page at which to start retrieving
-     * results. It is usually retrieved from a previous "List" call. For details about how
-     * pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public String getPage() {
         return page;
     }
-    /** A filter to return only resources that match the specified lifecycle state. */
+    /**
+     * A filter to return only resources that match the specified lifecycle state.
+     */
     private com.oracle.bmc.datasafe.model.SecurityAssessmentLifecycleState lifecycleState;
 
-    /** A filter to return only resources that match the specified lifecycle state. */
+    /**
+     * A filter to return only resources that match the specified lifecycle state.
+     */
     public com.oracle.bmc.datasafe.model.SecurityAssessmentLifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -395,15 +441,17 @@ public class ListSecurityAssessmentsRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListSecurityAssessmentsRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** A filter to return only resources that match the specified compartment OCID. */
+        /**
+         * A filter to return only resources that match the specified compartment OCID.
+         */
         private String compartmentId = null;
 
         /**
          * A filter to return only resources that match the specified compartment OCID.
-         *
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -413,16 +461,15 @@ public class ListSecurityAssessmentsRequest
         }
 
         /**
-         * Default is false. When set to true, the hierarchy of compartments is traversed and all
-         * compartments and subcompartments in the tenancy are returned. Depends on the
-         * 'accessLevel' setting.
+         * Default is false.
+         * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
+         *
          */
         private Boolean compartmentIdInSubtree = null;
 
         /**
-         * Default is false. When set to true, the hierarchy of compartments is traversed and all
-         * compartments and subcompartments in the tenancy are returned. Depends on the
-         * 'accessLevel' setting.
+         * Default is false.
+         * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
          *
          * @param compartmentIdInSubtree the value to set
          * @return this builder instance
@@ -433,18 +480,19 @@ public class ListSecurityAssessmentsRequest
         }
 
         /**
-         * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to
-         * ACCESSIBLE returns only those compartments for which the user has INSPECT permissions
-         * directly or indirectly (permissions can be on a resource in a subcompartment). When set
-         * to RESTRICTED permissions are checked and no partial results are displayed.
+         * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED.
+         * Setting this to ACCESSIBLE returns only those compartments for which the
+         * user has INSPECT permissions directly or indirectly (permissions can be on a
+         * resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
+         *
          */
         private AccessLevel accessLevel = null;
 
         /**
-         * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to
-         * ACCESSIBLE returns only those compartments for which the user has INSPECT permissions
-         * directly or indirectly (permissions can be on a resource in a subcompartment). When set
-         * to RESTRICTED permissions are checked and no partial results are displayed.
+         * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED.
+         * Setting this to ACCESSIBLE returns only those compartments for which the
+         * user has INSPECT permissions directly or indirectly (permissions can be on a
+         * resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
          *
          * @param accessLevel the value to set
          * @return this builder instance
@@ -454,7 +502,10 @@ public class ListSecurityAssessmentsRequest
             return this;
         }
 
-        /** A filter to return only resources that match the specified display name. */
+        /**
+         * A filter to return only resources that match the specified display name.
+         *
+         */
         private String displayName = null;
 
         /**
@@ -468,12 +519,13 @@ public class ListSecurityAssessmentsRequest
             return this;
         }
 
-        /** A filter to return only items that match the specified security assessment type. */
+        /**
+         * A filter to return only items that match the specified security assessment type.
+         */
         private Type type = null;
 
         /**
          * A filter to return only items that match the specified security assessment type.
-         *
          * @param type the value to set
          * @return this builder instance
          */
@@ -482,12 +534,13 @@ public class ListSecurityAssessmentsRequest
             return this;
         }
 
-        /** The OCID of the security assessment of type SAVE_SCHEDULE. */
+        /**
+         * The OCID of the security assessment of type SAVE_SCHEDULE.
+         */
         private String scheduleAssessmentId = null;
 
         /**
          * The OCID of the security assessment of type SAVE_SCHEDULE.
-         *
          * @param scheduleAssessmentId the value to set
          * @return this builder instance
          */
@@ -496,7 +549,10 @@ public class ListSecurityAssessmentsRequest
             return this;
         }
 
-        /** A filter to return only security assessments of type save schedule. */
+        /**
+         * A filter to return only security assessments of type save schedule.
+         *
+         */
         private Boolean isScheduleAssessment = null;
 
         /**
@@ -517,7 +573,6 @@ public class ListSecurityAssessmentsRequest
 
         /**
          * A filter to return only security asessments that were created by either user or system.
-         *
          * @param triggeredBy the value to set
          * @return this builder instance
          */
@@ -526,12 +581,13 @@ public class ListSecurityAssessmentsRequest
             return this;
         }
 
-        /** A filter to return only items related to a specific target OCID. */
+        /**
+         * A filter to return only items related to a specific target OCID.
+         */
         private String targetId = null;
 
         /**
          * A filter to return only items related to a specific target OCID.
-         *
          * @param targetId the value to set
          * @return this builder instance
          */
@@ -540,12 +596,13 @@ public class ListSecurityAssessmentsRequest
             return this;
         }
 
-        /** The sort order to use, either ascending (ASC) or descending (DESC). */
+        /**
+         * The sort order to use, either ascending (ASC) or descending (DESC).
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either ascending (ASC) or descending (DESC).
-         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -554,12 +611,13 @@ public class ListSecurityAssessmentsRequest
             return this;
         }
 
-        /** A filter to return only the security assessments that are set as a baseline. */
+        /**
+         * A filter to return only the security assessments that are set as a baseline.
+         */
         private Boolean isBaseline = null;
 
         /**
          * A filter to return only the security assessments that are set as a baseline.
-         *
          * @param isBaseline the value to set
          * @return this builder instance
          */
@@ -569,14 +627,13 @@ public class ListSecurityAssessmentsRequest
         }
 
         /**
-         * The field to sort by. You can specify only one sort order(sortOrder). The default order
-         * for timeCreated is descending.
+         * The field to sort by. You can specify only one sort order(sortOrder). The default order for timeCreated is descending.
+         *
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. You can specify only one sort order(sortOrder). The default order
-         * for timeCreated is descending.
+         * The field to sort by. You can specify only one sort order(sortOrder). The default order for timeCreated is descending.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -587,22 +644,19 @@ public class ListSecurityAssessmentsRequest
         }
 
         /**
-         * A filter to return only the resources that were created after the specified date and
-         * time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Using
-         * TimeCreatedGreaterThanOrEqualToQueryParam parameter retrieves all resources created after
-         * that date.
+         * A filter to return only the resources that were created after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * Using TimeCreatedGreaterThanOrEqualToQueryParam parameter retrieves all resources created after that date.
+         * <p>
+         **Example:** 2016-12-19T16:39:57.600Z
          *
-         * <p>*Example:** 2016-12-19T16:39:57.600Z
          */
         private java.util.Date timeCreatedGreaterThanOrEqualTo = null;
 
         /**
-         * A filter to return only the resources that were created after the specified date and
-         * time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Using
-         * TimeCreatedGreaterThanOrEqualToQueryParam parameter retrieves all resources created after
-         * that date.
-         *
-         * <p>*Example:** 2016-12-19T16:39:57.600Z
+         * A filter to return only the resources that were created after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * Using TimeCreatedGreaterThanOrEqualToQueryParam parameter retrieves all resources created after that date.
+         * <p>
+         **Example:** 2016-12-19T16:39:57.600Z
          *
          * @param timeCreatedGreaterThanOrEqualTo the value to set
          * @return this builder instance
@@ -614,22 +668,25 @@ public class ListSecurityAssessmentsRequest
         }
 
         /**
-         * Search for resources that were created before a specific date. Specifying this parameter
-         * corresponding {@code timeCreatedLessThan} parameter will retrieve all resources created
-         * before the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as
+         * Search for resources that were created before a specific date.
+         * Specifying this parameter corresponding {@code timeCreatedLessThan}
+         * parameter will retrieve all resources created before the
+         * specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as
          * defined by RFC 3339.
+         * <p>
+         **Example:** 2016-12-19T16:39:57.600Z
          *
-         * <p>*Example:** 2016-12-19T16:39:57.600Z
          */
         private java.util.Date timeCreatedLessThan = null;
 
         /**
-         * Search for resources that were created before a specific date. Specifying this parameter
-         * corresponding {@code timeCreatedLessThan} parameter will retrieve all resources created
-         * before the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as
+         * Search for resources that were created before a specific date.
+         * Specifying this parameter corresponding {@code timeCreatedLessThan}
+         * parameter will retrieve all resources created before the
+         * specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as
          * defined by RFC 3339.
-         *
-         * <p>*Example:** 2016-12-19T16:39:57.600Z
+         * <p>
+         **Example:** 2016-12-19T16:39:57.600Z
          *
          * @param timeCreatedLessThan the value to set
          * @return this builder instance
@@ -639,12 +696,13 @@ public class ListSecurityAssessmentsRequest
             return this;
         }
 
-        /** Unique identifier for the request. */
+        /**
+         * Unique identifier for the request.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -654,17 +712,12 @@ public class ListSecurityAssessmentsRequest
         }
 
         /**
-         * For list pagination. The maximum number of items to return per page in a paginated "List"
-         * call. For details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private Integer limit = null;
 
         /**
-         * For list pagination. The maximum number of items to return per page in a paginated "List"
-         * call. For details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
-         *
+         * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          * @param limit the value to set
          * @return this builder instance
          */
@@ -674,19 +727,12 @@ public class ListSecurityAssessmentsRequest
         }
 
         /**
-         * For list pagination. The page token representing the page at which to start retrieving
-         * results. It is usually retrieved from a previous "List" call. For details about how
-         * pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String page = null;
 
         /**
-         * For list pagination. The page token representing the page at which to start retrieving
-         * results. It is usually retrieved from a previous "List" call. For details about how
-         * pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
-         *
+         * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          * @param page the value to set
          * @return this builder instance
          */
@@ -695,13 +741,14 @@ public class ListSecurityAssessmentsRequest
             return this;
         }
 
-        /** A filter to return only resources that match the specified lifecycle state. */
+        /**
+         * A filter to return only resources that match the specified lifecycle state.
+         */
         private com.oracle.bmc.datasafe.model.SecurityAssessmentLifecycleState lifecycleState =
                 null;
 
         /**
          * A filter to return only resources that match the specified lifecycle state.
-         *
          * @param lifecycleState the value to set
          * @return this builder instance
          */
@@ -713,19 +760,18 @@ public class ListSecurityAssessmentsRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -737,7 +783,6 @@ public class ListSecurityAssessmentsRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListSecurityAssessmentsRequest o) {
@@ -767,11 +812,10 @@ public class ListSecurityAssessmentsRequest
         /**
          * Build the instance of ListSecurityAssessmentsRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListSecurityAssessmentsRequest
          */
@@ -785,8 +829,7 @@ public class ListSecurityAssessmentsRequest
         /**
          * Build the instance of ListSecurityAssessmentsRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListSecurityAssessmentsRequest
@@ -812,17 +855,12 @@ public class ListSecurityAssessmentsRequest
             request.page = page;
             request.lifecycleState = lifecycleState;
             return request;
-            // new ListSecurityAssessmentsRequest(compartmentId, compartmentIdInSubtree,
-            // accessLevel, displayName, type, scheduleAssessmentId, isScheduleAssessment,
-            // triggeredBy, targetId, sortOrder, isBaseline, sortBy,
-            // timeCreatedGreaterThanOrEqualTo, timeCreatedLessThan, opcRequestId, limit, page,
-            // lifecycleState);
+            // new ListSecurityAssessmentsRequest(compartmentId, compartmentIdInSubtree, accessLevel, displayName, type, scheduleAssessmentId, isScheduleAssessment, triggeredBy, targetId, sortOrder, isBaseline, sortBy, timeCreatedGreaterThanOrEqualTo, timeCreatedLessThan, opcRequestId, limit, page, lifecycleState);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -849,7 +887,6 @@ public class ListSecurityAssessmentsRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

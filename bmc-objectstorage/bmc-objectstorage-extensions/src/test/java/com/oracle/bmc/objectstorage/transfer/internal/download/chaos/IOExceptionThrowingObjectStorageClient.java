@@ -30,9 +30,9 @@ public interface IOExceptionThrowingObjectStorageClient extends ObjectStorage {
     // proxy class
 
     /**
-     * Implemented as proxy/invocation handler, so we don't have to add more and more methods that
-     * just client to the inner {@link ObjectStorage} instance. This will continue to work, even as
-     * new methods are added to the interface.
+     * Implemented as proxy/invocation handler, so we don't have to add more and more methods that just
+     * client to the inner {@link ObjectStorage} instance.
+     * This will continue to work, even as new methods are added to the interface.
      */
     class Handler implements InvocationHandler {
         private final ObjectStorage client;
@@ -42,8 +42,7 @@ public interface IOExceptionThrowingObjectStorageClient extends ObjectStorage {
          * Create an {@link ObjectStorage} client that throws IOExceptions for testing.
          *
          * @param client {@link ObjectStorage} client
-         * @param throwBasedOnBytesRead predicate that returns true if an exception should be
-         *     thrown, based on the number of bytes read
+         * @param throwBasedOnBytesRead predicate that returns true if an exception should be thrown, based on the number of bytes read
          */
         public Handler(ObjectStorage client, Predicate<Long> throwBasedOnBytesRead) {
             this.client = client;
