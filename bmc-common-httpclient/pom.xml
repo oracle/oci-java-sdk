@@ -4,7 +4,7 @@
   <parent>
     <groupId>com.oracle.oci.sdk</groupId>
     <artifactId>oci-java-sdk</artifactId>
-    <version>3.62.0</version>
+    <version>3.62.1</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
@@ -12,6 +12,32 @@
   <name>Oracle Cloud Infrastructure SDK - Common HTTP client</name>
   <description>This project contains the HTTP client API of the SDK used for Oracle Cloud Infrastructure</description>
   <url>https://docs.oracle.com/iaas/Content/API/SDKDocs/javasdk.htm</url>
+  <properties>
+    <maven-surefire-plugin.argLine>--illegal-access=warn
+      --add-opens=java.base/java.io=ALL-UNNAMED
+      --add-opens=java.base/java.lang=ALL-UNNAMED
+      --add-opens=java.base/java.lang.reflect=ALL-UNNAMED
+      --add-opens=java.base/java.net=ALL-UNNAMED
+      --add-opens=java.base/java.time=ALL-UNNAMED
+      --add-opens=java.base/java.security.cert=ALL-UNNAMED
+      --add-opens=java.base/java.util=ALL-UNNAMED
+      --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+      --add-opens=java.base/sun.security.rsa=ALL-UNNAMED
+      --add-opens=java.base/sun.security.x509=ALL-UNNAMED
+    </maven-surefire-plugin.argLine>
+  </properties>
+  
+  <profiles>
+    <profile>
+      <id>jdk-8-only</id>
+      <activation>
+        <jdk>1.8</jdk>
+      </activation>
+      <properties>
+        <maven-surefire-plugin.argLine></maven-surefire-plugin.argLine>
+      </properties>
+    </profile>
+  </profiles>
   <build>
     <!-- Substitutes maven properties into the SDK properties -->
     <resources>

@@ -67,6 +67,22 @@ public interface Config extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
+     * Fast importing configuration items to a destination APM domain ID.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmconfig/CopyConfigurationExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CopyConfiguration
+     *     API.
+     */
+    CopyConfigurationResponse copyConfiguration(CopyConfigurationRequest request);
+
+    /**
      * Creates a new configuration item.
      *
      * @param request The request object containing the details to send
@@ -97,6 +113,22 @@ public interface Config extends AutoCloseable {
     DeleteConfigResponse deleteConfig(DeleteConfigRequest request);
 
     /**
+     * Exports configurations for the whole domain by domainId.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmconfig/ExportConfigurationExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ExportConfiguration
+     *     API.
+     */
+    ExportConfigurationResponse exportConfiguration(ExportConfigurationRequest request);
+
+    /**
      * Gets the configuration item identified by the OCID.
      *
      * @param request The request object containing the details to send
@@ -110,6 +142,22 @@ public interface Config extends AutoCloseable {
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetConfig API.
      */
     GetConfigResponse getConfig(GetConfigRequest request);
+
+    /**
+     * Import configurations Item(s) with its dependencies into a destination domain.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmconfig/ImportConfigurationExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ImportConfiguration
+     *     API.
+     */
+    ImportConfigurationResponse importConfiguration(ImportConfigurationRequest request);
 
     /**
      * Returns all configuration items, which can optionally be filtered by configuration type.

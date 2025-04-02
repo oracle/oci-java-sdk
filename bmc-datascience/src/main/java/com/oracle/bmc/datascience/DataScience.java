@@ -227,6 +227,79 @@ public interface DataScience extends AutoCloseable {
     ChangeJobRunCompartmentResponse changeJobRunCompartment(ChangeJobRunCompartmentRequest request);
 
     /**
+     * Moves a MlApplication resource from one compartment identifier to another. When provided,
+     * If-Match is checked against ETag values of the resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/ChangeMlApplicationCompartmentExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ChangeMlApplicationCompartment API.
+     */
+    ChangeMlApplicationCompartmentResponse changeMlApplicationCompartment(
+            ChangeMlApplicationCompartmentRequest request);
+
+    /**
+     * Moves a MlApplicationImplementation resource from one compartment identifier to another. When
+     * provided, If-Match is checked against ETag values of the resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/ChangeMlApplicationImplementationCompartmentExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ChangeMlApplicationImplementationCompartment API.
+     */
+    ChangeMlApplicationImplementationCompartmentResponse
+            changeMlApplicationImplementationCompartment(
+                    ChangeMlApplicationImplementationCompartmentRequest request);
+
+    /**
+     * Moves a MlApplicationInstance resource from one compartment identifier to another. When
+     * provided, If-Match is checked against ETag values of the resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/ChangeMlApplicationInstanceCompartmentExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ChangeMlApplicationInstanceCompartment API.
+     */
+    ChangeMlApplicationInstanceCompartmentResponse changeMlApplicationInstanceCompartment(
+            ChangeMlApplicationInstanceCompartmentRequest request);
+
+    /**
+     * Moves a MlApplicationInstanceView resource from one compartment identifier to another. When
+     * provided, If-Match is checked against ETag values of the resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/ChangeMlApplicationInstanceViewCompartmentExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ChangeMlApplicationInstanceViewCompartment API.
+     */
+    ChangeMlApplicationInstanceViewCompartmentResponse changeMlApplicationInstanceViewCompartment(
+            ChangeMlApplicationInstanceViewCompartmentRequest request);
+
+    /**
      * Moves a model resource into a different compartment.
      *
      * @param request The request object containing the details to send
@@ -457,6 +530,56 @@ public interface DataScience extends AutoCloseable {
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateJobRun API.
      */
     CreateJobRunResponse createJobRun(CreateJobRunRequest request);
+
+    /**
+     * Creates a new MlApplication.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/CreateMlApplicationExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateMlApplication
+     *     API.
+     */
+    CreateMlApplicationResponse createMlApplication(CreateMlApplicationRequest request);
+
+    /**
+     * Creates a new MlApplicationImplementation.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/CreateMlApplicationImplementationExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     CreateMlApplicationImplementation API.
+     */
+    CreateMlApplicationImplementationResponse createMlApplicationImplementation(
+            CreateMlApplicationImplementationRequest request);
+
+    /**
+     * Creates a new MlApplicationInstance.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/CreateMlApplicationInstanceExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     CreateMlApplicationInstance API.
+     */
+    CreateMlApplicationInstanceResponse createMlApplicationInstance(
+            CreateMlApplicationInstanceRequest request);
 
     /**
      * Creates a new model.
@@ -898,6 +1021,56 @@ public interface DataScience extends AutoCloseable {
     DeleteJobRunResponse deleteJobRun(DeleteJobRunRequest request);
 
     /**
+     * Deletes a MlApplication resource by identifier
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/DeleteMlApplicationExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteMlApplication
+     *     API.
+     */
+    DeleteMlApplicationResponse deleteMlApplication(DeleteMlApplicationRequest request);
+
+    /**
+     * Deletes a MlApplicationImplementation resource by identifier
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/DeleteMlApplicationImplementationExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     DeleteMlApplicationImplementation API.
+     */
+    DeleteMlApplicationImplementationResponse deleteMlApplicationImplementation(
+            DeleteMlApplicationImplementationRequest request);
+
+    /**
+     * Deletes a MlApplicationInstance resource by identifier
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/DeleteMlApplicationInstanceExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     DeleteMlApplicationInstance API.
+     */
+    DeleteMlApplicationInstanceResponse deleteMlApplicationInstance(
+            DeleteMlApplicationInstanceRequest request);
+
+    /**
      * Deletes the specified model.
      *
      * @param request The request object containing the details to send
@@ -1058,6 +1231,40 @@ public interface DataScience extends AutoCloseable {
     DeleteScheduleResponse deleteSchedule(DeleteScheduleRequest request);
 
     /**
+     * Disable trigger of given name for given ML Application Instance View flow
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/DisableMlApplicationInstanceViewTriggerExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     DisableMlApplicationInstanceViewTrigger API.
+     */
+    DisableMlApplicationInstanceViewTriggerResponse disableMlApplicationInstanceViewTrigger(
+            DisableMlApplicationInstanceViewTriggerRequest request);
+
+    /**
+     * Enable trigger of given name for given ML Application Instance View flow
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/EnableMlApplicationInstanceViewTriggerExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     EnableMlApplicationInstanceViewTrigger API.
+     */
+    EnableMlApplicationInstanceViewTriggerResponse enableMlApplicationInstanceViewTrigger(
+            EnableMlApplicationInstanceViewTriggerRequest request);
+
+    /**
      * Export model artifact from source to the service bucket
      *
      * @param request The request object containing the details to send
@@ -1135,6 +1342,124 @@ public interface DataScience extends AutoCloseable {
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetJobRun API.
      */
     GetJobRunResponse getJobRun(GetJobRunRequest request);
+
+    /**
+     * Gets a MlApplication by identifier
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/GetMlApplicationExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetMlApplication
+     *     API.
+     */
+    GetMlApplicationResponse getMlApplication(GetMlApplicationRequest request);
+
+    /**
+     * Retrieves ML Application package for MlApplicationImplementationVersion with given id.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/GetMlApplicationHistoricalPackageContentExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GetMlApplicationHistoricalPackageContent API.
+     */
+    GetMlApplicationHistoricalPackageContentResponse getMlApplicationHistoricalPackageContent(
+            GetMlApplicationHistoricalPackageContentRequest request);
+
+    /**
+     * Gets a MlApplicationImplementation by identifier
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/GetMlApplicationImplementationExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GetMlApplicationImplementation API.
+     */
+    GetMlApplicationImplementationResponse getMlApplicationImplementation(
+            GetMlApplicationImplementationRequest request);
+
+    /**
+     * Gets a MlApplicationImplementationVersion by identifier
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/GetMlApplicationImplementationVersionExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GetMlApplicationImplementationVersion API.
+     */
+    GetMlApplicationImplementationVersionResponse getMlApplicationImplementationVersion(
+            GetMlApplicationImplementationVersionRequest request);
+
+    /**
+     * Gets a MlApplicationInstance by identifier
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/GetMlApplicationInstanceExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GetMlApplicationInstance API.
+     */
+    GetMlApplicationInstanceResponse getMlApplicationInstance(
+            GetMlApplicationInstanceRequest request);
+
+    /**
+     * Gets a MlApplicationInstanceView by identifier
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/GetMlApplicationInstanceViewExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GetMlApplicationInstanceView API.
+     */
+    GetMlApplicationInstanceViewResponse getMlApplicationInstanceView(
+            GetMlApplicationInstanceViewRequest request);
+
+    /**
+     * Retrieves last ML Application package uploaded for given ML Application Implementation
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/GetMlApplicationPackageContentExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GetMlApplicationPackageContent API.
+     */
+    GetMlApplicationPackageContentResponse getMlApplicationPackageContent(
+            GetMlApplicationPackageContentRequest request);
 
     /**
      * Gets the specified model's information.
@@ -1552,6 +1877,90 @@ public interface DataScience extends AutoCloseable {
     ListJobsResponse listJobs(ListJobsRequest request);
 
     /**
+     * Returns a list of MlApplicationImplementationVersions.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/ListMlApplicationImplementationVersionsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListMlApplicationImplementationVersions API.
+     */
+    ListMlApplicationImplementationVersionsResponse listMlApplicationImplementationVersions(
+            ListMlApplicationImplementationVersionsRequest request);
+
+    /**
+     * Returns a list of MlApplicationImplementations.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/ListMlApplicationImplementationsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListMlApplicationImplementations API.
+     */
+    ListMlApplicationImplementationsResponse listMlApplicationImplementations(
+            ListMlApplicationImplementationsRequest request);
+
+    /**
+     * Returns a list of MlApplicationInstanceViews.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/ListMlApplicationInstanceViewsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListMlApplicationInstanceViews API.
+     */
+    ListMlApplicationInstanceViewsResponse listMlApplicationInstanceViews(
+            ListMlApplicationInstanceViewsRequest request);
+
+    /**
+     * Returns a list of MlApplicationsInstances.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/ListMlApplicationInstancesExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListMlApplicationInstances API.
+     */
+    ListMlApplicationInstancesResponse listMlApplicationInstances(
+            ListMlApplicationInstancesRequest request);
+
+    /**
+     * Returns a list of MlApplications.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/ListMlApplicationsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListMlApplications
+     *     API.
+     */
+    ListMlApplicationsResponse listMlApplications(ListMlApplicationsRequest request);
+
+    /**
      * Lists the valid model deployment shapes.
      *
      * @param request The request object containing the details to send
@@ -1761,6 +2170,72 @@ public interface DataScience extends AutoCloseable {
     ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
 
     /**
+     * Upload ML Application Package
+     *
+     * <p>Note: This operation consumes a stream.
+     *
+     * <p>If the stream supports {@link java.io.InputStream#mark(int)} and {@link
+     * java.io.InputStream#reset()}, when a retry is necessary, the stream is reset so it starts at
+     * the beginning (or whatever the stream's position was at the time this operation is called}.
+     *
+     * <p>Note this means that if the caller has used {@link java.io.InputStream#mark(int)} before,
+     * then the mark will not be the same anymore after this operation, and a subsequent call to
+     * {@link java.io.InputStream#reset()} by the caller will reset the stream not to the caller's
+     * mark, but to the position the stream was in when this operation was called.
+     *
+     * <p>If the stream is a {@link java.io.FileInputStream}, and the stream's {@link
+     * java.nio.channels.FileChannel} position can be changed (like for a regular file), the stream
+     * will be wrapped in such a way that it does provide support for {@link
+     * java.io.InputStream#mark(int)} and {@link java.io.InputStream#reset()}. Then the same
+     * procedure as above is followed. If the stream's {@link java.nio.channels.FileChannel}
+     * position cannot be changed (like for a named pipe), then the stream's contents will be
+     * buffered in memory, as described below.
+     *
+     * <p>If the stream does not support {@link java.io.InputStream#mark(int)} and {@link
+     * java.io.InputStream#reset()}, then the stream is wrapped in a {@link
+     * java.io.BufferedInputStream}, which means the entire contents may be buffered in memory. Then
+     * the same procedure as above is followed.
+     *
+     * <p>The contents of the stream, except when the stream is a {@link java.io.FileInputStream}
+     * whose {@link java.nio.channels.FileChannel} position can be changed, should be less than 2
+     * GiB in size if retries are used. This is because streams 2 GiB in size or larger do no
+     * guarantee that mark-and-reset can be performed. If the stream is larger, do not use built-in
+     * retries and manage retries yourself.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/PutMlApplicationPackageExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     PutMlApplicationPackage API.
+     */
+    PutMlApplicationPackageResponse putMlApplicationPackage(PutMlApplicationPackageRequest request);
+
+    /**
+     * Provider can initiate recovery of the resource only if MlApplicationInstanceView is in one of
+     * the recoverable sub-states (RECOVERABLE_PROVIDER_ISSUE, RECOVERABLE_SERVICE_ISSUE). Provider
+     * should investigate (using MlApplicationInstanceView lifecycleDetails, relevant logs and
+     * metrics) and fix the issue before the recovery is initiated.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/RecoverMlApplicationInstanceViewExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     RecoverMlApplicationInstanceView API.
+     */
+    RecoverMlApplicationInstanceViewResponse recoverMlApplicationInstanceView(
+            RecoverMlApplicationInstanceViewRequest request);
+
+    /**
      * Registers model artifact reference metadata
      *
      * @param request The request object containing the details to send
@@ -1793,6 +2268,40 @@ public interface DataScience extends AutoCloseable {
      */
     RestoreArchivedModelArtifactResponse restoreArchivedModelArtifact(
             RestoreArchivedModelArtifactRequest request);
+
+    /**
+     * Trigger ML Application Instance flow if possible
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/TriggerMlApplicationInstanceFlowExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     TriggerMlApplicationInstanceFlow API.
+     */
+    TriggerMlApplicationInstanceFlowResponse triggerMlApplicationInstanceFlow(
+            TriggerMlApplicationInstanceFlowRequest request);
+
+    /**
+     * Trigger ML Application Instance View flow if possible
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/TriggerMlApplicationInstanceViewFlowExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     TriggerMlApplicationInstanceViewFlow API.
+     */
+    TriggerMlApplicationInstanceViewFlowResponse triggerMlApplicationInstanceViewFlow(
+            TriggerMlApplicationInstanceViewFlowRequest request);
 
     /**
      * Updates a private endpoint using a `privateEndpointId`. If changes to a private endpoint
@@ -1842,6 +2351,90 @@ public interface DataScience extends AutoCloseable {
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateJobRun API.
      */
     UpdateJobRunResponse updateJobRun(UpdateJobRunRequest request);
+
+    /**
+     * Updates the MlApplication
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/UpdateMlApplicationExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateMlApplication
+     *     API.
+     */
+    UpdateMlApplicationResponse updateMlApplication(UpdateMlApplicationRequest request);
+
+    /**
+     * Updates the MlApplicationImplementation
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/UpdateMlApplicationImplementationExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     UpdateMlApplicationImplementation API.
+     */
+    UpdateMlApplicationImplementationResponse updateMlApplicationImplementation(
+            UpdateMlApplicationImplementationRequest request);
+
+    /**
+     * Updates the MlApplicationImplementationVersion
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/UpdateMlApplicationImplementationVersionExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     UpdateMlApplicationImplementationVersion API.
+     */
+    UpdateMlApplicationImplementationVersionResponse updateMlApplicationImplementationVersion(
+            UpdateMlApplicationImplementationVersionRequest request);
+
+    /**
+     * Updates the MlApplicationInstance
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/UpdateMlApplicationInstanceExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     UpdateMlApplicationInstance API.
+     */
+    UpdateMlApplicationInstanceResponse updateMlApplicationInstance(
+            UpdateMlApplicationInstanceRequest request);
+
+    /**
+     * Updates the MlApplicationInstanceView
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/UpdateMlApplicationInstanceViewExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     UpdateMlApplicationInstanceView API.
+     */
+    UpdateMlApplicationInstanceViewResponse updateMlApplicationInstanceView(
+            UpdateMlApplicationInstanceViewRequest request);
 
     /**
      * Updates the properties of a model. You can update the `displayName`, `description`,

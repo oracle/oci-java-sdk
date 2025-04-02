@@ -4906,6 +4906,12 @@
   },
   {
     "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.opsi.model.OperationsInsightsWarehouse$ComputeModel",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
     "name": "com.oracle.bmc.opsi.model.OperationsInsightsWarehouseLifecycleState",
     "allDeclaredFields": true,
     "allDeclaredMethods": true

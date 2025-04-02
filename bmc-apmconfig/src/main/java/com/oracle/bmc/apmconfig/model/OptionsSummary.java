@@ -98,6 +98,15 @@ public final class OptionsSummary extends ConfigSummary {
             this.__explicitlySet__.add("definedTags");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
+            return this;
+        }
         /** The name by which a configuration entity is displayed to the end user. */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
@@ -173,6 +182,7 @@ public final class OptionsSummary extends ConfigSummary {
                             this.etag,
                             this.freeformTags,
                             this.definedTags,
+                            this.systemTags,
                             this.displayName,
                             this.options,
                             this.group,
@@ -209,6 +219,9 @@ public final class OptionsSummary extends ConfigSummary {
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
             }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
+            }
             if (model.wasPropertyExplicitlySet("displayName")) {
                 this.displayName(model.getDisplayName());
             }
@@ -244,11 +257,21 @@ public final class OptionsSummary extends ConfigSummary {
             String etag,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
             String displayName,
             Object options,
             String group,
             String description) {
-        super(id, timeCreated, timeUpdated, createdBy, updatedBy, etag, freeformTags, definedTags);
+        super(
+                id,
+                timeCreated,
+                timeUpdated,
+                createdBy,
+                updatedBy,
+                etag,
+                freeformTags,
+                definedTags,
+                systemTags);
         this.displayName = displayName;
         this.options = options;
         this.group = group;
