@@ -88,6 +88,43 @@ public class ConfigClient extends com.oracle.bmc.http.internal.BaseSyncClient im
     }
 
     @Override
+    public CopyConfigurationResponse copyConfiguration(CopyConfigurationRequest request) {
+        Objects.requireNonNull(
+                request.getCopyConfigurationDetails(), "copyConfigurationDetails is required");
+
+        Objects.requireNonNull(request.getApmDomainId(), "apmDomainId is required");
+
+        Objects.requireNonNull(request.getApmTargetDomainId(), "apmTargetDomainId is required");
+
+        return clientCall(request, CopyConfigurationResponse::builder)
+                .logger(LOG, "copyConfiguration")
+                .serviceDetails(
+                        "Config",
+                        "CopyConfiguration",
+                        "https://docs.oracle.com/iaas/api/#/en/apm-config/20210201/ExportConfigurationDetails/CopyConfiguration")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CopyConfigurationRequest::builder)
+                .basePath("/20210201")
+                .appendPathParam("actions")
+                .appendPathParam("copyConfiguration")
+                .appendQueryParam("apmDomainId", request.getApmDomainId())
+                .appendQueryParam("apmTargetDomainId", request.getApmTargetDomainId())
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.apmconfig.model.ImportConfigurationFailedItemsCollection
+                                .class,
+                        CopyConfigurationResponse.Builder::importConfigurationFailedItemsCollection)
+                .handleResponseHeaderString("etag", CopyConfigurationResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CopyConfigurationResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public CreateConfigResponse createConfig(CreateConfigRequest request) {
         Objects.requireNonNull(request.getApmDomainId(), "apmDomainId is required");
 
@@ -147,6 +184,39 @@ public class ConfigClient extends com.oracle.bmc.http.internal.BaseSyncClient im
     }
 
     @Override
+    public ExportConfigurationResponse exportConfiguration(ExportConfigurationRequest request) {
+        Objects.requireNonNull(
+                request.getExportConfigurationDetails(), "exportConfigurationDetails is required");
+
+        Objects.requireNonNull(request.getApmDomainId(), "apmDomainId is required");
+
+        return clientCall(request, ExportConfigurationResponse::builder)
+                .logger(LOG, "exportConfiguration")
+                .serviceDetails(
+                        "Config",
+                        "ExportConfiguration",
+                        "https://docs.oracle.com/iaas/api/#/en/apm-config/20210201/ExportConfigurationDetails/ExportConfiguration")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ExportConfigurationRequest::builder)
+                .basePath("/20210201")
+                .appendPathParam("actions")
+                .appendPathParam("exportConfiguration")
+                .appendQueryParam("apmDomainId", request.getApmDomainId())
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.apmconfig.model.ExportConfigurationResponseDetails.class,
+                        ExportConfigurationResponse.Builder::exportConfigurationResponseDetails)
+                .handleResponseHeaderString("etag", ExportConfigurationResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", ExportConfigurationResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public GetConfigResponse getConfig(GetConfigRequest request) {
         Objects.requireNonNull(request.getApmDomainId(), "apmDomainId is required");
 
@@ -173,6 +243,41 @@ public class ConfigClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .handleResponseHeaderString("etag", GetConfigResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetConfigResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ImportConfigurationResponse importConfiguration(ImportConfigurationRequest request) {
+        Objects.requireNonNull(
+                request.getImportConfigurationDetails(), "importConfigurationDetails is required");
+
+        Objects.requireNonNull(request.getApmDomainId(), "apmDomainId is required");
+
+        return clientCall(request, ImportConfigurationResponse::builder)
+                .logger(LOG, "importConfiguration")
+                .serviceDetails(
+                        "Config",
+                        "ImportConfiguration",
+                        "https://docs.oracle.com/iaas/api/#/en/apm-config/20210201/ImportConfigurationDetails/ImportConfiguration")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ImportConfigurationRequest::builder)
+                .basePath("/20210201")
+                .appendPathParam("actions")
+                .appendPathParam("importConfiguration")
+                .appendQueryParam("apmDomainId", request.getApmDomainId())
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.apmconfig.model.ImportConfigurationFailedItemsCollection
+                                .class,
+                        ImportConfigurationResponse.Builder
+                                ::importConfigurationFailedItemsCollection)
+                .handleResponseHeaderString("etag", ImportConfigurationResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", ImportConfigurationResponse.Builder::opcRequestId)
                 .callSync();
     }
 

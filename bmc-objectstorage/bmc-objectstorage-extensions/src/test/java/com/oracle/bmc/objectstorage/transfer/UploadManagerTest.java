@@ -13,6 +13,7 @@ import com.oracle.bmc.http.client.Serializer;
 import com.oracle.bmc.http.signing.RequestSigner;
 import com.oracle.bmc.http.signing.RequestSignerFactory;
 import com.oracle.bmc.http.signing.SigningStrategy;
+import org.powermock.core.classloader.annotations.PowerMockIgnore;
 import com.oracle.bmc.model.BmcException;
 import com.oracle.bmc.objectstorage.ObjectStorage;
 import com.oracle.bmc.objectstorage.ObjectStorageClient;
@@ -79,6 +80,7 @@ import static org.mockito.Mockito.when;
 
 @RunWith(PowerMockRunner.class)
 @PrepareForTest({Serializer.class})
+@PowerMockIgnore({"jdk.internal.reflect.*"})
 public class UploadManagerTest {
     private static final String CONTENT =
             StringUtils.repeat("a", (int) (20 * MultipartUtils.MiB)); // 20 MiB

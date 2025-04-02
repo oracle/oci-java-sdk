@@ -3,6 +3,13 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 3.62.1 - 2025-04-02
+### Added
+- Support for the Lustre File service
+- Support for machine learning applications in the Data Science service
+- Support for action endpoints to export and import configurations in the Application Performance Monitoring service
+- Support for ECPU (Elastic Compute Unit) compute model based warehouses in the Operations insights service
+
 ## 3.62.0 - 2025-03-25
 ### Added 
 - Support for agent platforms and Retrieval Augmented Generation (RAG) agents in the Generative AI Agent service 

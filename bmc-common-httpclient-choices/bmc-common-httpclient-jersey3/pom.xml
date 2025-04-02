@@ -4,7 +4,7 @@
   <parent>
     <groupId>com.oracle.oci.sdk</groupId>
     <artifactId>oci-java-sdk-common-httpclient-choices</artifactId>
-    <version>3.62.0</version>
+    <version>3.62.1</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
@@ -17,8 +17,31 @@
     <jersey3.version>3.0.8</jersey3.version>
     <jakarta9.ws.rs-api.version>3.0.0</jakarta9.ws.rs-api.version>
     <jakarta9.annotations.version>2.1.1</jakarta9.annotations.version>
+    <maven-surefire-plugin.argLine>--illegal-access=warn
+      --add-opens=java.base/java.io=ALL-UNNAMED
+      --add-opens=java.base/java.lang=ALL-UNNAMED
+      --add-opens=java.base/java.lang.reflect=ALL-UNNAMED
+      --add-opens=java.base/java.net=ALL-UNNAMED
+      --add-opens=java.base/java.time=ALL-UNNAMED
+      --add-opens=java.base/java.security.cert=ALL-UNNAMED
+      --add-opens=java.base/java.util=ALL-UNNAMED
+      --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+      --add-opens=java.base/sun.security.rsa=ALL-UNNAMED
+      --add-opens=java.base/sun.security.x509=ALL-UNNAMED
+    </maven-surefire-plugin.argLine>
   </properties>
 
+  <profiles>
+    <profile>
+      <id>jdk-8-only</id>
+      <activation>
+        <jdk>1.8</jdk>
+      </activation>
+      <properties>
+        <maven-surefire-plugin.argLine></maven-surefire-plugin.argLine>
+      </properties>
+    </profile>
+  </profiles>
 
   <build>
     <!-- Substitutes maven properties into the SDK properties -->
@@ -70,7 +93,7 @@
       <dependency>
         <groupId>com.oracle.oci.sdk</groupId>
         <artifactId>oci-java-sdk-addons-apache-configurator-jersey3</artifactId>
-        <version>3.62.0</version>
+        <version>3.62.1</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
@@ -79,7 +102,7 @@
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-common-httpclient</artifactId>
-      <version>3.62.0</version>
+      <version>3.62.1</version>
     </dependency>
     <dependency>
       <groupId>jakarta.ws.rs</groupId>

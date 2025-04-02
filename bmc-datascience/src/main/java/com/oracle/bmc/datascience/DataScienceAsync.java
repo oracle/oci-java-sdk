@@ -224,6 +224,82 @@ public interface DataScienceAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Moves a MlApplication resource from one compartment identifier to another. When provided,
+     * If-Match is checked against ETag values of the resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeMlApplicationCompartmentResponse>
+            changeMlApplicationCompartment(
+                    ChangeMlApplicationCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeMlApplicationCompartmentRequest,
+                                    ChangeMlApplicationCompartmentResponse>
+                            handler);
+
+    /**
+     * Moves a MlApplicationImplementation resource from one compartment identifier to another. When
+     * provided, If-Match is checked against ETag values of the resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeMlApplicationImplementationCompartmentResponse>
+            changeMlApplicationImplementationCompartment(
+                    ChangeMlApplicationImplementationCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeMlApplicationImplementationCompartmentRequest,
+                                    ChangeMlApplicationImplementationCompartmentResponse>
+                            handler);
+
+    /**
+     * Moves a MlApplicationInstance resource from one compartment identifier to another. When
+     * provided, If-Match is checked against ETag values of the resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeMlApplicationInstanceCompartmentResponse>
+            changeMlApplicationInstanceCompartment(
+                    ChangeMlApplicationInstanceCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeMlApplicationInstanceCompartmentRequest,
+                                    ChangeMlApplicationInstanceCompartmentResponse>
+                            handler);
+
+    /**
+     * Moves a MlApplicationInstanceView resource from one compartment identifier to another. When
+     * provided, If-Match is checked against ETag values of the resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeMlApplicationInstanceViewCompartmentResponse>
+            changeMlApplicationInstanceViewCompartment(
+                    ChangeMlApplicationInstanceViewCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeMlApplicationInstanceViewCompartmentRequest,
+                                    ChangeMlApplicationInstanceViewCompartmentResponse>
+                            handler);
+
+    /**
      * Moves a model resource into a different compartment.
      *
      * @param request The request object containing the details to send
@@ -423,6 +499,56 @@ public interface DataScienceAsync extends AutoCloseable {
     java.util.concurrent.Future<CreateJobRunResponse> createJobRun(
             CreateJobRunRequest request,
             com.oracle.bmc.responses.AsyncHandler<CreateJobRunRequest, CreateJobRunResponse>
+                    handler);
+
+    /**
+     * Creates a new MlApplication.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateMlApplicationResponse> createMlApplication(
+            CreateMlApplicationRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateMlApplicationRequest, CreateMlApplicationResponse>
+                    handler);
+
+    /**
+     * Creates a new MlApplicationImplementation.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateMlApplicationImplementationResponse>
+            createMlApplicationImplementation(
+                    CreateMlApplicationImplementationRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    CreateMlApplicationImplementationRequest,
+                                    CreateMlApplicationImplementationResponse>
+                            handler);
+
+    /**
+     * Creates a new MlApplicationInstance.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateMlApplicationInstanceResponse> createMlApplicationInstance(
+            CreateMlApplicationInstanceRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateMlApplicationInstanceRequest, CreateMlApplicationInstanceResponse>
                     handler);
 
     /**
@@ -743,6 +869,56 @@ public interface DataScienceAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Deletes a MlApplication resource by identifier
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteMlApplicationResponse> deleteMlApplication(
+            DeleteMlApplicationRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteMlApplicationRequest, DeleteMlApplicationResponse>
+                    handler);
+
+    /**
+     * Deletes a MlApplicationImplementation resource by identifier
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteMlApplicationImplementationResponse>
+            deleteMlApplicationImplementation(
+                    DeleteMlApplicationImplementationRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteMlApplicationImplementationRequest,
+                                    DeleteMlApplicationImplementationResponse>
+                            handler);
+
+    /**
+     * Deletes a MlApplicationInstance resource by identifier
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteMlApplicationInstanceResponse> deleteMlApplicationInstance(
+            DeleteMlApplicationInstanceRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteMlApplicationInstanceRequest, DeleteMlApplicationInstanceResponse>
+                    handler);
+
+    /**
      * Deletes the specified model.
      *
      * @param request The request object containing the details to send
@@ -904,6 +1080,42 @@ public interface DataScienceAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Disable trigger of given name for given ML Application Instance View flow
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DisableMlApplicationInstanceViewTriggerResponse>
+            disableMlApplicationInstanceViewTrigger(
+                    DisableMlApplicationInstanceViewTriggerRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    DisableMlApplicationInstanceViewTriggerRequest,
+                                    DisableMlApplicationInstanceViewTriggerResponse>
+                            handler);
+
+    /**
+     * Enable trigger of given name for given ML Application Instance View flow
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<EnableMlApplicationInstanceViewTriggerResponse>
+            enableMlApplicationInstanceViewTrigger(
+                    EnableMlApplicationInstanceViewTriggerRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    EnableMlApplicationInstanceViewTriggerRequest,
+                                    EnableMlApplicationInstanceViewTriggerResponse>
+                            handler);
+
+    /**
      * Export model artifact from source to the service bucket
      *
      * @param request The request object containing the details to send
@@ -980,6 +1192,126 @@ public interface DataScienceAsync extends AutoCloseable {
     java.util.concurrent.Future<GetJobRunResponse> getJobRun(
             GetJobRunRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetJobRunRequest, GetJobRunResponse> handler);
+
+    /**
+     * Gets a MlApplication by identifier
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetMlApplicationResponse> getMlApplication(
+            GetMlApplicationRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetMlApplicationRequest, GetMlApplicationResponse>
+                    handler);
+
+    /**
+     * Retrieves ML Application package for MlApplicationImplementationVersion with given id.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetMlApplicationHistoricalPackageContentResponse>
+            getMlApplicationHistoricalPackageContent(
+                    GetMlApplicationHistoricalPackageContentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GetMlApplicationHistoricalPackageContentRequest,
+                                    GetMlApplicationHistoricalPackageContentResponse>
+                            handler);
+
+    /**
+     * Gets a MlApplicationImplementation by identifier
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetMlApplicationImplementationResponse>
+            getMlApplicationImplementation(
+                    GetMlApplicationImplementationRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GetMlApplicationImplementationRequest,
+                                    GetMlApplicationImplementationResponse>
+                            handler);
+
+    /**
+     * Gets a MlApplicationImplementationVersion by identifier
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetMlApplicationImplementationVersionResponse>
+            getMlApplicationImplementationVersion(
+                    GetMlApplicationImplementationVersionRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GetMlApplicationImplementationVersionRequest,
+                                    GetMlApplicationImplementationVersionResponse>
+                            handler);
+
+    /**
+     * Gets a MlApplicationInstance by identifier
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetMlApplicationInstanceResponse> getMlApplicationInstance(
+            GetMlApplicationInstanceRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetMlApplicationInstanceRequest, GetMlApplicationInstanceResponse>
+                    handler);
+
+    /**
+     * Gets a MlApplicationInstanceView by identifier
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetMlApplicationInstanceViewResponse> getMlApplicationInstanceView(
+            GetMlApplicationInstanceViewRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetMlApplicationInstanceViewRequest,
+                            GetMlApplicationInstanceViewResponse>
+                    handler);
+
+    /**
+     * Retrieves last ML Application package uploaded for given ML Application Implementation
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetMlApplicationPackageContentResponse>
+            getMlApplicationPackageContent(
+                    GetMlApplicationPackageContentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GetMlApplicationPackageContentRequest,
+                                    GetMlApplicationPackageContentResponse>
+                            handler);
 
     /**
      * Gets the specified model's information.
@@ -1393,6 +1725,92 @@ public interface DataScienceAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<ListJobsRequest, ListJobsResponse> handler);
 
     /**
+     * Returns a list of MlApplicationImplementationVersions.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListMlApplicationImplementationVersionsResponse>
+            listMlApplicationImplementationVersions(
+                    ListMlApplicationImplementationVersionsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListMlApplicationImplementationVersionsRequest,
+                                    ListMlApplicationImplementationVersionsResponse>
+                            handler);
+
+    /**
+     * Returns a list of MlApplicationImplementations.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListMlApplicationImplementationsResponse>
+            listMlApplicationImplementations(
+                    ListMlApplicationImplementationsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListMlApplicationImplementationsRequest,
+                                    ListMlApplicationImplementationsResponse>
+                            handler);
+
+    /**
+     * Returns a list of MlApplicationInstanceViews.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListMlApplicationInstanceViewsResponse>
+            listMlApplicationInstanceViews(
+                    ListMlApplicationInstanceViewsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListMlApplicationInstanceViewsRequest,
+                                    ListMlApplicationInstanceViewsResponse>
+                            handler);
+
+    /**
+     * Returns a list of MlApplicationsInstances.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListMlApplicationInstancesResponse> listMlApplicationInstances(
+            ListMlApplicationInstancesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListMlApplicationInstancesRequest, ListMlApplicationInstancesResponse>
+                    handler);
+
+    /**
+     * Returns a list of MlApplications.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListMlApplicationsResponse> listMlApplications(
+            ListMlApplicationsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListMlApplicationsRequest, ListMlApplicationsResponse>
+                    handler);
+
+    /**
      * Lists the valid model deployment shapes.
      *
      * @param request The request object containing the details to send
@@ -1597,6 +2015,43 @@ public interface DataScienceAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Upload ML Application Package
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<PutMlApplicationPackageResponse> putMlApplicationPackage(
+            PutMlApplicationPackageRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            PutMlApplicationPackageRequest, PutMlApplicationPackageResponse>
+                    handler);
+
+    /**
+     * Provider can initiate recovery of the resource only if MlApplicationInstanceView is in one of
+     * the recoverable sub-states (RECOVERABLE_PROVIDER_ISSUE, RECOVERABLE_SERVICE_ISSUE). Provider
+     * should investigate (using MlApplicationInstanceView lifecycleDetails, relevant logs and
+     * metrics) and fix the issue before the recovery is initiated.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<RecoverMlApplicationInstanceViewResponse>
+            recoverMlApplicationInstanceView(
+                    RecoverMlApplicationInstanceViewRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    RecoverMlApplicationInstanceViewRequest,
+                                    RecoverMlApplicationInstanceViewResponse>
+                            handler);
+
+    /**
      * Registers model artifact reference metadata
      *
      * @param request The request object containing the details to send
@@ -1630,6 +2085,42 @@ public interface DataScienceAsync extends AutoCloseable {
                             RestoreArchivedModelArtifactRequest,
                             RestoreArchivedModelArtifactResponse>
                     handler);
+
+    /**
+     * Trigger ML Application Instance flow if possible
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<TriggerMlApplicationInstanceFlowResponse>
+            triggerMlApplicationInstanceFlow(
+                    TriggerMlApplicationInstanceFlowRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    TriggerMlApplicationInstanceFlowRequest,
+                                    TriggerMlApplicationInstanceFlowResponse>
+                            handler);
+
+    /**
+     * Trigger ML Application Instance View flow if possible
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<TriggerMlApplicationInstanceViewFlowResponse>
+            triggerMlApplicationInstanceViewFlow(
+                    TriggerMlApplicationInstanceViewFlowRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    TriggerMlApplicationInstanceViewFlowRequest,
+                                    TriggerMlApplicationInstanceViewFlowResponse>
+                            handler);
 
     /**
      * Updates a private endpoint using a `privateEndpointId`. If changes to a private endpoint
@@ -1679,6 +2170,92 @@ public interface DataScienceAsync extends AutoCloseable {
             UpdateJobRunRequest request,
             com.oracle.bmc.responses.AsyncHandler<UpdateJobRunRequest, UpdateJobRunResponse>
                     handler);
+
+    /**
+     * Updates the MlApplication
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateMlApplicationResponse> updateMlApplication(
+            UpdateMlApplicationRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateMlApplicationRequest, UpdateMlApplicationResponse>
+                    handler);
+
+    /**
+     * Updates the MlApplicationImplementation
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateMlApplicationImplementationResponse>
+            updateMlApplicationImplementation(
+                    UpdateMlApplicationImplementationRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateMlApplicationImplementationRequest,
+                                    UpdateMlApplicationImplementationResponse>
+                            handler);
+
+    /**
+     * Updates the MlApplicationImplementationVersion
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateMlApplicationImplementationVersionResponse>
+            updateMlApplicationImplementationVersion(
+                    UpdateMlApplicationImplementationVersionRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateMlApplicationImplementationVersionRequest,
+                                    UpdateMlApplicationImplementationVersionResponse>
+                            handler);
+
+    /**
+     * Updates the MlApplicationInstance
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateMlApplicationInstanceResponse> updateMlApplicationInstance(
+            UpdateMlApplicationInstanceRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateMlApplicationInstanceRequest, UpdateMlApplicationInstanceResponse>
+                    handler);
+
+    /**
+     * Updates the MlApplicationInstanceView
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateMlApplicationInstanceViewResponse>
+            updateMlApplicationInstanceView(
+                    UpdateMlApplicationInstanceViewRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateMlApplicationInstanceViewRequest,
+                                    UpdateMlApplicationInstanceViewResponse>
+                            handler);
 
     /**
      * Updates the properties of a model. You can update the `displayName`, `description`,

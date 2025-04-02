@@ -71,7 +71,7 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
             LOG.warn(
                     com.oracle.bmc.util.StreamUtils.getStreamWarningMessage(
                             "DataScienceClient",
-                            "getJobArtifactContent,getModelArtifactContent,getModelCustomMetadatumArtifactContent,getModelDefinedMetadatumArtifactContent,getStepArtifactContent"));
+                            "getJobArtifactContent,getMlApplicationHistoricalPackageContent,getMlApplicationPackageContent,getModelArtifactContent,getModelCustomMetadatumArtifactContent,getModelDefinedMetadatumArtifactContent,getStepArtifactContent"));
         }
     }
 
@@ -449,6 +449,160 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", ChangeJobRunCompartmentResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ChangeMlApplicationCompartmentResponse changeMlApplicationCompartment(
+            ChangeMlApplicationCompartmentRequest request) {
+
+        Validate.notBlank(request.getMlApplicationId(), "mlApplicationId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeMlApplicationCompartmentDetails(),
+                "changeMlApplicationCompartmentDetails is required");
+
+        return clientCall(request, ChangeMlApplicationCompartmentResponse::builder)
+                .logger(LOG, "changeMlApplicationCompartment")
+                .serviceDetails(
+                        "DataScience",
+                        "ChangeMlApplicationCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/MlApplication/ChangeMlApplicationCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeMlApplicationCompartmentRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("mlApplications")
+                .appendPathParam(request.getMlApplicationId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeMlApplicationCompartmentResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ChangeMlApplicationImplementationCompartmentResponse
+            changeMlApplicationImplementationCompartment(
+                    ChangeMlApplicationImplementationCompartmentRequest request) {
+
+        Validate.notBlank(
+                request.getMlApplicationImplementationId(),
+                "mlApplicationImplementationId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeMlApplicationImplementationCompartmentDetails(),
+                "changeMlApplicationImplementationCompartmentDetails is required");
+
+        return clientCall(request, ChangeMlApplicationImplementationCompartmentResponse::builder)
+                .logger(LOG, "changeMlApplicationImplementationCompartment")
+                .serviceDetails(
+                        "DataScience",
+                        "ChangeMlApplicationImplementationCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/MlApplicationImplementation/ChangeMlApplicationImplementationCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeMlApplicationImplementationCompartmentRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("mlApplicationImplementations")
+                .appendPathParam(request.getMlApplicationImplementationId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeMlApplicationImplementationCompartmentResponse.Builder
+                                ::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeMlApplicationImplementationCompartmentResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ChangeMlApplicationInstanceCompartmentResponse changeMlApplicationInstanceCompartment(
+            ChangeMlApplicationInstanceCompartmentRequest request) {
+
+        Validate.notBlank(
+                request.getMlApplicationInstanceId(), "mlApplicationInstanceId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeMlApplicationInstanceCompartmentDetails(),
+                "changeMlApplicationInstanceCompartmentDetails is required");
+
+        return clientCall(request, ChangeMlApplicationInstanceCompartmentResponse::builder)
+                .logger(LOG, "changeMlApplicationInstanceCompartment")
+                .serviceDetails(
+                        "DataScience",
+                        "ChangeMlApplicationInstanceCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/MlApplicationInstance/ChangeMlApplicationInstanceCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeMlApplicationInstanceCompartmentRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("mlApplicationInstances")
+                .appendPathParam(request.getMlApplicationInstanceId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeMlApplicationInstanceCompartmentResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeMlApplicationInstanceCompartmentResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ChangeMlApplicationInstanceViewCompartmentResponse
+            changeMlApplicationInstanceViewCompartment(
+                    ChangeMlApplicationInstanceViewCompartmentRequest request) {
+
+        Validate.notBlank(
+                request.getMlApplicationInstanceViewId(),
+                "mlApplicationInstanceViewId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeMlApplicationInstanceViewCompartmentDetails(),
+                "changeMlApplicationInstanceViewCompartmentDetails is required");
+
+        return clientCall(request, ChangeMlApplicationInstanceViewCompartmentResponse::builder)
+                .logger(LOG, "changeMlApplicationInstanceViewCompartment")
+                .serviceDetails(
+                        "DataScience",
+                        "ChangeMlApplicationInstanceViewCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/MlApplicationInstanceView/ChangeMlApplicationInstanceViewCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeMlApplicationInstanceViewCompartmentRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("mlApplicationInstanceViews")
+                .appendPathParam(request.getMlApplicationInstanceViewId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeMlApplicationInstanceViewCompartmentResponse.Builder
+                                ::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeMlApplicationInstanceViewCompartmentResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -838,6 +992,109 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .handleResponseHeaderString("etag", CreateJobRunResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateJobRunResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public CreateMlApplicationResponse createMlApplication(CreateMlApplicationRequest request) {
+        Objects.requireNonNull(
+                request.getCreateMlApplicationDetails(), "createMlApplicationDetails is required");
+
+        return clientCall(request, CreateMlApplicationResponse::builder)
+                .logger(LOG, "createMlApplication")
+                .serviceDetails(
+                        "DataScience",
+                        "CreateMlApplication",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/MlApplication/CreateMlApplication")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateMlApplicationRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("mlApplications")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.datascience.model.MlApplication.class,
+                        CreateMlApplicationResponse.Builder::mlApplication)
+                .handleResponseHeaderString("etag", CreateMlApplicationResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateMlApplicationResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public CreateMlApplicationImplementationResponse createMlApplicationImplementation(
+            CreateMlApplicationImplementationRequest request) {
+        Objects.requireNonNull(
+                request.getCreateMlApplicationImplementationDetails(),
+                "createMlApplicationImplementationDetails is required");
+
+        return clientCall(request, CreateMlApplicationImplementationResponse::builder)
+                .logger(LOG, "createMlApplicationImplementation")
+                .serviceDetails(
+                        "DataScience",
+                        "CreateMlApplicationImplementation",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/MlApplicationImplementation/CreateMlApplicationImplementation")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateMlApplicationImplementationRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("mlApplicationImplementations")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.datascience.model.MlApplicationImplementation.class,
+                        CreateMlApplicationImplementationResponse.Builder
+                                ::mlApplicationImplementation)
+                .handleResponseHeaderString(
+                        "etag", CreateMlApplicationImplementationResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        CreateMlApplicationImplementationResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public CreateMlApplicationInstanceResponse createMlApplicationInstance(
+            CreateMlApplicationInstanceRequest request) {
+        Objects.requireNonNull(
+                request.getCreateMlApplicationInstanceDetails(),
+                "createMlApplicationInstanceDetails is required");
+
+        return clientCall(request, CreateMlApplicationInstanceResponse::builder)
+                .logger(LOG, "createMlApplicationInstance")
+                .serviceDetails(
+                        "DataScience",
+                        "CreateMlApplicationInstance",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/MlApplicationInstance/CreateMlApplicationInstance")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateMlApplicationInstanceRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("mlApplicationInstances")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.datascience.model.MlApplicationInstance.class,
+                        CreateMlApplicationInstanceResponse.Builder::mlApplicationInstance)
+                .handleResponseHeaderString(
+                        "etag", CreateMlApplicationInstanceResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "location", CreateMlApplicationInstanceResponse.Builder::location)
+                .handleResponseHeaderString(
+                        "content-location",
+                        CreateMlApplicationInstanceResponse.Builder::contentLocation)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateMlApplicationInstanceResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateMlApplicationInstanceResponse.Builder::opcWorkRequestId)
                 .callSync();
     }
 
@@ -1488,6 +1745,93 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
     }
 
     @Override
+    public DeleteMlApplicationResponse deleteMlApplication(DeleteMlApplicationRequest request) {
+
+        Validate.notBlank(request.getMlApplicationId(), "mlApplicationId must not be blank");
+
+        return clientCall(request, DeleteMlApplicationResponse::builder)
+                .logger(LOG, "deleteMlApplication")
+                .serviceDetails(
+                        "DataScience",
+                        "DeleteMlApplication",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/MlApplication/DeleteMlApplication")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteMlApplicationRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("mlApplications")
+                .appendPathParam(request.getMlApplicationId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteMlApplicationResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteMlApplicationImplementationResponse deleteMlApplicationImplementation(
+            DeleteMlApplicationImplementationRequest request) {
+
+        Validate.notBlank(
+                request.getMlApplicationImplementationId(),
+                "mlApplicationImplementationId must not be blank");
+
+        return clientCall(request, DeleteMlApplicationImplementationResponse::builder)
+                .logger(LOG, "deleteMlApplicationImplementation")
+                .serviceDetails(
+                        "DataScience",
+                        "DeleteMlApplicationImplementation",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/MlApplicationImplementation/DeleteMlApplicationImplementation")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteMlApplicationImplementationRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("mlApplicationImplementations")
+                .appendPathParam(request.getMlApplicationImplementationId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteMlApplicationImplementationResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DeleteMlApplicationImplementationResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteMlApplicationInstanceResponse deleteMlApplicationInstance(
+            DeleteMlApplicationInstanceRequest request) {
+
+        Validate.notBlank(
+                request.getMlApplicationInstanceId(), "mlApplicationInstanceId must not be blank");
+
+        return clientCall(request, DeleteMlApplicationInstanceResponse::builder)
+                .logger(LOG, "deleteMlApplicationInstance")
+                .serviceDetails(
+                        "DataScience",
+                        "DeleteMlApplicationInstance",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/MlApplicationInstance/DeleteMlApplicationInstance")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteMlApplicationInstanceRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("mlApplicationInstances")
+                .appendPathParam(request.getMlApplicationInstanceId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteMlApplicationInstanceResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteMlApplicationInstanceResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public DeleteModelResponse deleteModel(DeleteModelRequest request) {
 
         Validate.notBlank(request.getModelId(), "modelId must not be blank");
@@ -1772,6 +2116,90 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
     }
 
     @Override
+    public DisableMlApplicationInstanceViewTriggerResponse disableMlApplicationInstanceViewTrigger(
+            DisableMlApplicationInstanceViewTriggerRequest request) {
+        Objects.requireNonNull(
+                request.getDisableMlApplicationInstanceViewTriggerDetails(),
+                "disableMlApplicationInstanceViewTriggerDetails is required");
+
+        Validate.notBlank(
+                request.getMlApplicationInstanceViewId(),
+                "mlApplicationInstanceViewId must not be blank");
+
+        return clientCall(request, DisableMlApplicationInstanceViewTriggerResponse::builder)
+                .logger(LOG, "disableMlApplicationInstanceViewTrigger")
+                .serviceDetails(
+                        "DataScience",
+                        "DisableMlApplicationInstanceViewTrigger",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/MlApplicationInstanceView/DisableMlApplicationInstanceViewTrigger")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(DisableMlApplicationInstanceViewTriggerRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("mlApplicationInstanceViews")
+                .appendPathParam(request.getMlApplicationInstanceViewId())
+                .appendPathParam("actions")
+                .appendPathParam("disableTrigger")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.datascience.model.MlApplicationInstanceView.class,
+                        DisableMlApplicationInstanceViewTriggerResponse.Builder
+                                ::mlApplicationInstanceView)
+                .handleResponseHeaderString(
+                        "etag", DisableMlApplicationInstanceViewTriggerResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DisableMlApplicationInstanceViewTriggerResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public EnableMlApplicationInstanceViewTriggerResponse enableMlApplicationInstanceViewTrigger(
+            EnableMlApplicationInstanceViewTriggerRequest request) {
+        Objects.requireNonNull(
+                request.getEnableMlApplicationInstanceViewTriggerDetails(),
+                "enableMlApplicationInstanceViewTriggerDetails is required");
+
+        Validate.notBlank(
+                request.getMlApplicationInstanceViewId(),
+                "mlApplicationInstanceViewId must not be blank");
+
+        return clientCall(request, EnableMlApplicationInstanceViewTriggerResponse::builder)
+                .logger(LOG, "enableMlApplicationInstanceViewTrigger")
+                .serviceDetails(
+                        "DataScience",
+                        "EnableMlApplicationInstanceViewTrigger",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/MlApplicationInstanceView/EnableMlApplicationInstanceViewTrigger")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(EnableMlApplicationInstanceViewTriggerRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("mlApplicationInstanceViews")
+                .appendPathParam(request.getMlApplicationInstanceViewId())
+                .appendPathParam("actions")
+                .appendPathParam("enableTrigger")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.datascience.model.MlApplicationInstanceView.class,
+                        EnableMlApplicationInstanceViewTriggerResponse.Builder
+                                ::mlApplicationInstanceView)
+                .handleResponseHeaderString(
+                        "etag", EnableMlApplicationInstanceViewTriggerResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        EnableMlApplicationInstanceViewTriggerResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public ExportModelArtifactResponse exportModelArtifact(ExportModelArtifactRequest request) {
 
         Validate.notBlank(request.getModelId(), "modelId must not be blank");
@@ -1929,6 +2357,236 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .handleResponseHeaderString("etag", GetJobRunResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetJobRunResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetMlApplicationResponse getMlApplication(GetMlApplicationRequest request) {
+
+        Validate.notBlank(request.getMlApplicationId(), "mlApplicationId must not be blank");
+
+        return clientCall(request, GetMlApplicationResponse::builder)
+                .logger(LOG, "getMlApplication")
+                .serviceDetails(
+                        "DataScience",
+                        "GetMlApplication",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/MlApplication/GetMlApplication")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetMlApplicationRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("mlApplications")
+                .appendPathParam(request.getMlApplicationId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.datascience.model.MlApplication.class,
+                        GetMlApplicationResponse.Builder::mlApplication)
+                .handleResponseHeaderString("etag", GetMlApplicationResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetMlApplicationResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetMlApplicationHistoricalPackageContentResponse
+            getMlApplicationHistoricalPackageContent(
+                    GetMlApplicationHistoricalPackageContentRequest request) {
+
+        Validate.notBlank(
+                request.getMlApplicationImplementationVersionId(),
+                "mlApplicationImplementationVersionId must not be blank");
+
+        return clientCall(request, GetMlApplicationHistoricalPackageContentResponse::builder)
+                .logger(LOG, "getMlApplicationHistoricalPackageContent")
+                .serviceDetails(
+                        "DataScience",
+                        "GetMlApplicationHistoricalPackageContent",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/MlApplicationImplementationVersion/GetMlApplicationHistoricalPackageContent")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetMlApplicationHistoricalPackageContentRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("mlApplicationImplementationVersions")
+                .appendPathParam(request.getMlApplicationImplementationVersionId())
+                .appendPathParam("mlApplicationHistoricalPackage")
+                .appendPathParam("content")
+                .accept("application/octet-stream")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        java.io.InputStream.class,
+                        GetMlApplicationHistoricalPackageContentResponse.Builder::inputStream)
+                .handleResponseHeaderString(
+                        "etag", GetMlApplicationHistoricalPackageContentResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetMlApplicationHistoricalPackageContentResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetMlApplicationImplementationResponse getMlApplicationImplementation(
+            GetMlApplicationImplementationRequest request) {
+
+        Validate.notBlank(
+                request.getMlApplicationImplementationId(),
+                "mlApplicationImplementationId must not be blank");
+
+        return clientCall(request, GetMlApplicationImplementationResponse::builder)
+                .logger(LOG, "getMlApplicationImplementation")
+                .serviceDetails(
+                        "DataScience",
+                        "GetMlApplicationImplementation",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/MlApplicationImplementation/GetMlApplicationImplementation")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetMlApplicationImplementationRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("mlApplicationImplementations")
+                .appendPathParam(request.getMlApplicationImplementationId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.datascience.model.MlApplicationImplementation.class,
+                        GetMlApplicationImplementationResponse.Builder::mlApplicationImplementation)
+                .handleResponseHeaderString(
+                        "etag", GetMlApplicationImplementationResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetMlApplicationImplementationResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetMlApplicationImplementationVersionResponse getMlApplicationImplementationVersion(
+            GetMlApplicationImplementationVersionRequest request) {
+
+        Validate.notBlank(
+                request.getMlApplicationImplementationVersionId(),
+                "mlApplicationImplementationVersionId must not be blank");
+
+        return clientCall(request, GetMlApplicationImplementationVersionResponse::builder)
+                .logger(LOG, "getMlApplicationImplementationVersion")
+                .serviceDetails(
+                        "DataScience",
+                        "GetMlApplicationImplementationVersion",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/MlApplicationImplementationVersion/GetMlApplicationImplementationVersion")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetMlApplicationImplementationVersionRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("mlApplicationImplementationVersions")
+                .appendPathParam(request.getMlApplicationImplementationVersionId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.datascience.model.MlApplicationImplementationVersion.class,
+                        GetMlApplicationImplementationVersionResponse.Builder
+                                ::mlApplicationImplementationVersion)
+                .handleResponseHeaderString(
+                        "etag", GetMlApplicationImplementationVersionResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetMlApplicationImplementationVersionResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetMlApplicationInstanceResponse getMlApplicationInstance(
+            GetMlApplicationInstanceRequest request) {
+
+        Validate.notBlank(
+                request.getMlApplicationInstanceId(), "mlApplicationInstanceId must not be blank");
+
+        return clientCall(request, GetMlApplicationInstanceResponse::builder)
+                .logger(LOG, "getMlApplicationInstance")
+                .serviceDetails(
+                        "DataScience",
+                        "GetMlApplicationInstance",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/MlApplicationInstance/GetMlApplicationInstance")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetMlApplicationInstanceRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("mlApplicationInstances")
+                .appendPathParam(request.getMlApplicationInstanceId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.datascience.model.MlApplicationInstance.class,
+                        GetMlApplicationInstanceResponse.Builder::mlApplicationInstance)
+                .handleResponseHeaderString("etag", GetMlApplicationInstanceResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetMlApplicationInstanceResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetMlApplicationInstanceViewResponse getMlApplicationInstanceView(
+            GetMlApplicationInstanceViewRequest request) {
+
+        Validate.notBlank(
+                request.getMlApplicationInstanceViewId(),
+                "mlApplicationInstanceViewId must not be blank");
+
+        return clientCall(request, GetMlApplicationInstanceViewResponse::builder)
+                .logger(LOG, "getMlApplicationInstanceView")
+                .serviceDetails(
+                        "DataScience",
+                        "GetMlApplicationInstanceView",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/MlApplicationInstanceView/GetMlApplicationInstanceView")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetMlApplicationInstanceViewRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("mlApplicationInstanceViews")
+                .appendPathParam(request.getMlApplicationInstanceViewId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.datascience.model.MlApplicationInstanceView.class,
+                        GetMlApplicationInstanceViewResponse.Builder::mlApplicationInstanceView)
+                .handleResponseHeaderString(
+                        "etag", GetMlApplicationInstanceViewResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetMlApplicationInstanceViewResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetMlApplicationPackageContentResponse getMlApplicationPackageContent(
+            GetMlApplicationPackageContentRequest request) {
+
+        Validate.notBlank(
+                request.getMlApplicationImplementationId(),
+                "mlApplicationImplementationId must not be blank");
+
+        return clientCall(request, GetMlApplicationPackageContentResponse::builder)
+                .logger(LOG, "getMlApplicationPackageContent")
+                .serviceDetails(
+                        "DataScience",
+                        "GetMlApplicationPackageContent",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/MlApplicationImplementation/GetMlApplicationPackageContent")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetMlApplicationPackageContentRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("mlApplicationImplementations")
+                .appendPathParam(request.getMlApplicationImplementationId())
+                .appendPathParam("mlApplicationPackage")
+                .appendPathParam("content")
+                .accept("application/octet-stream")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        java.io.InputStream.class,
+                        GetMlApplicationPackageContentResponse.Builder::inputStream)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetMlApplicationPackageContentResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-ml-app-package-args",
+                        GetMlApplicationPackageContentResponse.Builder::opcMlAppPackageArgs)
                 .callSync();
     }
 
@@ -2857,6 +3515,203 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
     }
 
     @Override
+    public ListMlApplicationImplementationVersionsResponse listMlApplicationImplementationVersions(
+            ListMlApplicationImplementationVersionsRequest request) {
+        Objects.requireNonNull(
+                request.getMlApplicationImplementationId(),
+                "mlApplicationImplementationId is required");
+
+        return clientCall(request, ListMlApplicationImplementationVersionsResponse::builder)
+                .logger(LOG, "listMlApplicationImplementationVersions")
+                .serviceDetails(
+                        "DataScience",
+                        "ListMlApplicationImplementationVersions",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/MlApplicationImplementationVersion/ListMlApplicationImplementationVersions")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListMlApplicationImplementationVersionsRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("mlApplicationImplementationVersions")
+                .appendQueryParam(
+                        "mlApplicationImplementationId", request.getMlApplicationImplementationId())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.datascience.model
+                                .MlApplicationImplementationVersionCollection.class,
+                        ListMlApplicationImplementationVersionsResponse.Builder
+                                ::mlApplicationImplementationVersionCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListMlApplicationImplementationVersionsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListMlApplicationImplementationVersionsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListMlApplicationImplementationsResponse listMlApplicationImplementations(
+            ListMlApplicationImplementationsRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListMlApplicationImplementationsResponse::builder)
+                .logger(LOG, "listMlApplicationImplementations")
+                .serviceDetails(
+                        "DataScience",
+                        "ListMlApplicationImplementations",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/MlApplicationImplementation/ListMlApplicationImplementations")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListMlApplicationImplementationsRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("mlApplicationImplementations")
+                .appendQueryParam(
+                        "mlApplicationImplementationId", request.getMlApplicationImplementationId())
+                .appendQueryParam("name", request.getName())
+                .appendQueryParam("mlApplicationId", request.getMlApplicationId())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.datascience.model.MlApplicationImplementationCollection
+                                .class,
+                        ListMlApplicationImplementationsResponse.Builder
+                                ::mlApplicationImplementationCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListMlApplicationImplementationsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListMlApplicationImplementationsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListMlApplicationInstanceViewsResponse listMlApplicationInstanceViews(
+            ListMlApplicationInstanceViewsRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListMlApplicationInstanceViewsResponse::builder)
+                .logger(LOG, "listMlApplicationInstanceViews")
+                .serviceDetails(
+                        "DataScience",
+                        "ListMlApplicationInstanceViews",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/MlApplicationInstanceView/ListMlApplicationInstanceViews")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListMlApplicationInstanceViewsRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("mlApplicationInstanceViews")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("mlApplicationId", request.getMlApplicationId())
+                .appendQueryParam(
+                        "mlApplicationImplementationId", request.getMlApplicationImplementationId())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.datascience.model.MlApplicationInstanceViewCollection.class,
+                        ListMlApplicationInstanceViewsResponse.Builder
+                                ::mlApplicationInstanceViewCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListMlApplicationInstanceViewsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListMlApplicationInstanceViewsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListMlApplicationInstancesResponse listMlApplicationInstances(
+            ListMlApplicationInstancesRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListMlApplicationInstancesResponse::builder)
+                .logger(LOG, "listMlApplicationInstances")
+                .serviceDetails(
+                        "DataScience",
+                        "ListMlApplicationInstances",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/MlApplicationInstance/ListMlApplicationInstances")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListMlApplicationInstancesRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("mlApplicationInstances")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("mlApplicationId", request.getMlApplicationId())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.datascience.model.MlApplicationInstanceCollection.class,
+                        ListMlApplicationInstancesResponse.Builder::mlApplicationInstanceCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListMlApplicationInstancesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListMlApplicationInstancesResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListMlApplicationsResponse listMlApplications(ListMlApplicationsRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListMlApplicationsResponse::builder)
+                .logger(LOG, "listMlApplications")
+                .serviceDetails(
+                        "DataScience",
+                        "ListMlApplications",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/MlApplication/ListMlApplications")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListMlApplicationsRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("mlApplications")
+                .appendQueryParam("mlApplicationId", request.getMlApplicationId())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
+                .appendQueryParam("name", request.getName())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.datascience.model.MlApplicationCollection.class,
+                        ListMlApplicationsResponse.Builder::mlApplicationCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListMlApplicationsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListMlApplicationsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
     public ListModelDeploymentShapesResponse listModelDeploymentShapes(
             ListModelDeploymentShapesRequest request) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
@@ -3341,6 +4196,80 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
     }
 
     @Override
+    public PutMlApplicationPackageResponse putMlApplicationPackage(
+            PutMlApplicationPackageRequest request) {
+
+        Validate.notBlank(
+                request.getMlApplicationImplementationId(),
+                "mlApplicationImplementationId must not be blank");
+        Objects.requireNonNull(
+                request.getPutMlApplicationPackage(), "putMlApplicationPackage is required");
+
+        return clientCall(request, PutMlApplicationPackageResponse::builder)
+                .logger(LOG, "putMlApplicationPackage")
+                .serviceDetails(
+                        "DataScience",
+                        "PutMlApplicationPackage",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/MlApplicationImplementation/PutMlApplicationPackage")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(PutMlApplicationPackageRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("mlApplicationImplementations")
+                .appendPathParam(request.getMlApplicationImplementationId())
+                .appendPathParam("mlApplicationPackage")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("content-length", request.getContentLength())
+                .appendHeader("content-disposition", request.getContentDisposition())
+                .appendHeader("opc-ml-app-package-args", request.getOpcMlAppPackageArgs())
+                .operationUsesDefaultRetries()
+                .hasBinaryRequestBody()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        PutMlApplicationPackageResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", PutMlApplicationPackageResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public RecoverMlApplicationInstanceViewResponse recoverMlApplicationInstanceView(
+            RecoverMlApplicationInstanceViewRequest request) {
+
+        Validate.notBlank(
+                request.getMlApplicationInstanceViewId(),
+                "mlApplicationInstanceViewId must not be blank");
+
+        return clientCall(request, RecoverMlApplicationInstanceViewResponse::builder)
+                .logger(LOG, "recoverMlApplicationInstanceView")
+                .serviceDetails(
+                        "DataScience",
+                        "RecoverMlApplicationInstanceView",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/MlApplicationInstanceView/RecoverMlApplicationInstanceView")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RecoverMlApplicationInstanceViewRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("mlApplicationInstanceViews")
+                .appendPathParam(request.getMlApplicationInstanceViewId())
+                .appendPathParam("actions")
+                .appendPathParam("recover")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        RecoverMlApplicationInstanceViewResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        RecoverMlApplicationInstanceViewResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public RegisterModelArtifactReferenceResponse registerModelArtifactReference(
             RegisterModelArtifactReferenceRequest request) {
         Objects.requireNonNull(
@@ -3406,6 +4335,81 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .handleResponseHeaderString(
                         "opc-request-id",
                         RestoreArchivedModelArtifactResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public TriggerMlApplicationInstanceFlowResponse triggerMlApplicationInstanceFlow(
+            TriggerMlApplicationInstanceFlowRequest request) {
+        Objects.requireNonNull(
+                request.getTriggerMlApplicationInstanceFlowDetails(),
+                "triggerMlApplicationInstanceFlowDetails is required");
+
+        Validate.notBlank(
+                request.getMlApplicationInstanceId(), "mlApplicationInstanceId must not be blank");
+
+        return clientCall(request, TriggerMlApplicationInstanceFlowResponse::builder)
+                .logger(LOG, "triggerMlApplicationInstanceFlow")
+                .serviceDetails(
+                        "DataScience",
+                        "TriggerMlApplicationInstanceFlow",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/MlApplicationInstance/TriggerMlApplicationInstanceFlow")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(TriggerMlApplicationInstanceFlowRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("mlApplicationInstances")
+                .appendPathParam(request.getMlApplicationInstanceId())
+                .appendPathParam("actions")
+                .appendPathParam("trigger")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        TriggerMlApplicationInstanceFlowResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        TriggerMlApplicationInstanceFlowResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public TriggerMlApplicationInstanceViewFlowResponse triggerMlApplicationInstanceViewFlow(
+            TriggerMlApplicationInstanceViewFlowRequest request) {
+        Objects.requireNonNull(
+                request.getTriggerMlApplicationInstanceViewFlowDetails(),
+                "triggerMlApplicationInstanceViewFlowDetails is required");
+
+        Validate.notBlank(
+                request.getMlApplicationInstanceViewId(),
+                "mlApplicationInstanceViewId must not be blank");
+
+        return clientCall(request, TriggerMlApplicationInstanceViewFlowResponse::builder)
+                .logger(LOG, "triggerMlApplicationInstanceViewFlow")
+                .serviceDetails(
+                        "DataScience",
+                        "TriggerMlApplicationInstanceViewFlow",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/MlApplicationInstanceView/TriggerMlApplicationInstanceViewFlow")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(TriggerMlApplicationInstanceViewFlowRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("mlApplicationInstanceViews")
+                .appendPathParam(request.getMlApplicationInstanceViewId())
+                .appendPathParam("actions")
+                .appendPathParam("trigger")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        TriggerMlApplicationInstanceViewFlowResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        TriggerMlApplicationInstanceViewFlowResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -3508,6 +4512,185 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .handleResponseHeaderString("etag", UpdateJobRunResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateJobRunResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateMlApplicationResponse updateMlApplication(UpdateMlApplicationRequest request) {
+
+        Validate.notBlank(request.getMlApplicationId(), "mlApplicationId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateMlApplicationDetails(), "updateMlApplicationDetails is required");
+
+        return clientCall(request, UpdateMlApplicationResponse::builder)
+                .logger(LOG, "updateMlApplication")
+                .serviceDetails(
+                        "DataScience",
+                        "UpdateMlApplication",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/MlApplication/UpdateMlApplication")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateMlApplicationRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("mlApplications")
+                .appendPathParam(request.getMlApplicationId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.datascience.model.MlApplication.class,
+                        UpdateMlApplicationResponse.Builder::mlApplication)
+                .handleResponseHeaderString("etag", UpdateMlApplicationResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateMlApplicationResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateMlApplicationImplementationResponse updateMlApplicationImplementation(
+            UpdateMlApplicationImplementationRequest request) {
+
+        Validate.notBlank(
+                request.getMlApplicationImplementationId(),
+                "mlApplicationImplementationId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateMlApplicationImplementationDetails(),
+                "updateMlApplicationImplementationDetails is required");
+
+        return clientCall(request, UpdateMlApplicationImplementationResponse::builder)
+                .logger(LOG, "updateMlApplicationImplementation")
+                .serviceDetails(
+                        "DataScience",
+                        "UpdateMlApplicationImplementation",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/MlApplicationImplementation/UpdateMlApplicationImplementation")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateMlApplicationImplementationRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("mlApplicationImplementations")
+                .appendPathParam(request.getMlApplicationImplementationId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateMlApplicationImplementationResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        UpdateMlApplicationImplementationResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateMlApplicationImplementationVersionResponse
+            updateMlApplicationImplementationVersion(
+                    UpdateMlApplicationImplementationVersionRequest request) {
+
+        Validate.notBlank(
+                request.getMlApplicationImplementationVersionId(),
+                "mlApplicationImplementationVersionId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateMlApplicationImplementationVersionDetails(),
+                "updateMlApplicationImplementationVersionDetails is required");
+
+        return clientCall(request, UpdateMlApplicationImplementationVersionResponse::builder)
+                .logger(LOG, "updateMlApplicationImplementationVersion")
+                .serviceDetails(
+                        "DataScience",
+                        "UpdateMlApplicationImplementationVersion",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/MlApplicationImplementationVersion/UpdateMlApplicationImplementationVersion")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateMlApplicationImplementationVersionRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("mlApplicationImplementationVersions")
+                .appendPathParam(request.getMlApplicationImplementationVersionId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.datascience.model.MlApplicationImplementationVersion.class,
+                        UpdateMlApplicationImplementationVersionResponse.Builder
+                                ::mlApplicationImplementationVersion)
+                .handleResponseHeaderString(
+                        "etag", UpdateMlApplicationImplementationVersionResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        UpdateMlApplicationImplementationVersionResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateMlApplicationInstanceResponse updateMlApplicationInstance(
+            UpdateMlApplicationInstanceRequest request) {
+
+        Validate.notBlank(
+                request.getMlApplicationInstanceId(), "mlApplicationInstanceId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateMlApplicationInstanceDetails(),
+                "updateMlApplicationInstanceDetails is required");
+
+        return clientCall(request, UpdateMlApplicationInstanceResponse::builder)
+                .logger(LOG, "updateMlApplicationInstance")
+                .serviceDetails(
+                        "DataScience",
+                        "UpdateMlApplicationInstance",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/MlApplicationInstance/UpdateMlApplicationInstance")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateMlApplicationInstanceRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("mlApplicationInstances")
+                .appendPathParam(request.getMlApplicationInstanceId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateMlApplicationInstanceResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateMlApplicationInstanceResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateMlApplicationInstanceViewResponse updateMlApplicationInstanceView(
+            UpdateMlApplicationInstanceViewRequest request) {
+
+        Validate.notBlank(
+                request.getMlApplicationInstanceViewId(),
+                "mlApplicationInstanceViewId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateMlApplicationInstanceViewDetails(),
+                "updateMlApplicationInstanceViewDetails is required");
+
+        return clientCall(request, UpdateMlApplicationInstanceViewResponse::builder)
+                .logger(LOG, "updateMlApplicationInstanceView")
+                .serviceDetails(
+                        "DataScience",
+                        "UpdateMlApplicationInstanceView",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/MlApplicationInstanceView/UpdateMlApplicationInstanceView")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateMlApplicationInstanceViewRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("mlApplicationInstanceViews")
+                .appendPathParam(request.getMlApplicationInstanceViewId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.datascience.model.MlApplicationInstanceView.class,
+                        UpdateMlApplicationInstanceViewResponse.Builder::mlApplicationInstanceView)
+                .handleResponseHeaderString(
+                        "etag", UpdateMlApplicationInstanceViewResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        UpdateMlApplicationInstanceViewResponse.Builder::opcRequestId)
                 .callSync();
     }
 
