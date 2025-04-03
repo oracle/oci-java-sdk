@@ -1816,7 +1816,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - In `com.oracle.bmc.responses.BmcResponse`, the collection used for headers was changed from `javax.ws.rs.core.MultivaluedMap` to `Map<String, List<String>>`, to decouple the implementation from the choice of the HTTP client.
 - Circuit breakers
   - The circuit breaker interface has been renamed from `com.oracle.bmc.circuitbreaker.JaxRsCircuitBreaker` to `com.oracle.bmc.circuitbreaker.OciCircuitBreaker`
-    - Examples of affectede code:
+    - Examples of affected code:
       - `com.oracle.bmc.circuitbreaker.CircuitBreakerFactory`: Return type of method `public com.oracle.bmc.circuitbreaker.JaxRsCircuitBreaker build(com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration)` has been changed to `com.oracle.bmc.circuitbreaker.OciCircuitBreaker`
   - Instead of using the constructor of `com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration`, use the builder. The constructor is not public anymore.
   - Some constants in `com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration` have been removed, if you need them, replace them with the actual values:
@@ -3118,7 +3118,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - Support for specifying a key store when creating autonomous container databases in the Database service
 
 ### Fixed
-- Fixed a potential data curruption problem for binary data upload with `RefreshableOnNotAuthenticatedProvider`. We recommend that you update to this version `1.25.2` or later. For details, see https://github.com/oracle/oci-java-sdk/issues/255
+- Fixed a potential data corruption problem for binary data upload with `RefreshableOnNotAuthenticatedProvider`. We recommend that you update to this version `1.25.2` or later. For details, see https://github.com/oracle/oci-java-sdk/issues/255
 
 ## 1.25.1 - 2020-10-20
 ### Added
@@ -3317,7 +3317,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 
 ### Breaking Changes
-- Data type for paramater `dataStorageSizeInTBs` changed from `Integer` to `Double` in the Database service
+- Data type for parameter `dataStorageSizeInTBs` changed from `Integer` to `Double` in the Database service
 - Enum `LifecycleState` has removed the state `Offline` and added `Disconnected` in the Database service
 
 ## 1.17.5 - 2020-06-02
