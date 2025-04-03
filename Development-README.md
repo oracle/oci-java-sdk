@@ -6,7 +6,7 @@
 - `dev` - Compile, reformat code and update licenses.
 - `dev` with `-Ddev.profile.skip.javadoc=false` - Compile, reformat code and update licenses, generate Javadoc.
 - `quick` - Only check for compilation errors, no Javadoc or tests.
-- `jdk-17-and-above` - This profile is automatically used when JDK 17 or higher is detected. No Jacdoc generated and tests failures should be ignored. See the [Java 17 test failures](#Java17TestFailures) section in [Known Development Issues](#KnownDevelopmentIssues).
+- `jdk-17-and-above` - This profile is automatically used when JDK 17 or higher is detected. No Javadoc generated and tests failures should be ignored. See the [Java 17 test failures](#Java17TestFailures) section in [Known Development Issues](#KnownDevelopmentIssues).
 
 ### Usage
 To run a maven build with the `dev` profile and generate Javadoc, use
@@ -48,4 +48,4 @@ The following tests should report errors:
  - RequestSignerImplTest
  - UploadManagerTest
 
-Test failures beyond these may be test failures that come from implemented changes. To run these tests sucessfully, use JDK 8 for now.
+Test failures beyond these may be test failures that come from implemented changes. To run these tests successfully, use JDK 8 for now.
