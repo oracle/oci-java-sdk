@@ -95,14 +95,7 @@ public class SourceDetails extends com.oracle.bmc.http.client.internal.Explicitl
         Monitoring("monitoring"),
         Streaming("streaming"),
         Plugin("plugin"),
-
-        /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
-         */
-        UnknownEnumValue(null);
-
-        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Kind.class);
+        ;
 
         private final String value;
         private static java.util.Map<String, Kind> map;
@@ -110,9 +103,7 @@ public class SourceDetails extends com.oracle.bmc.http.client.internal.Explicitl
         static {
             map = new java.util.HashMap<>();
             for (Kind v : Kind.values()) {
-                if (v != UnknownEnumValue) {
-                    map.put(v.getValue(), v);
-                }
+                map.put(v.getValue(), v);
             }
         }
 
@@ -130,9 +121,7 @@ public class SourceDetails extends com.oracle.bmc.http.client.internal.Explicitl
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            LOG.warn(
-                    "Received unknown value '{}' for enum 'Kind', returning UnknownEnumValue", key);
-            return UnknownEnumValue;
+            throw new IllegalArgumentException("Invalid Kind: " + key);
         }
     };
 }

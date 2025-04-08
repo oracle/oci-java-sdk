@@ -37,6 +37,7 @@ public final class UpdateDeploymentDetails
         "fqdn",
         "cpuCoreCount",
         "isAutoScalingEnabled",
+        "placements",
         "oggData",
         "maintenanceWindow",
         "maintenanceConfiguration",
@@ -56,6 +57,7 @@ public final class UpdateDeploymentDetails
             String fqdn,
             Integer cpuCoreCount,
             Boolean isAutoScalingEnabled,
+            java.util.List<DeploymentPlacementDetails> placements,
             UpdateOggDeploymentDetails oggData,
             UpdateMaintenanceWindowDetails maintenanceWindow,
             UpdateMaintenanceConfigurationDetails maintenanceConfiguration,
@@ -74,6 +76,7 @@ public final class UpdateDeploymentDetails
         this.fqdn = fqdn;
         this.cpuCoreCount = cpuCoreCount;
         this.isAutoScalingEnabled = isAutoScalingEnabled;
+        this.placements = placements;
         this.oggData = oggData;
         this.maintenanceWindow = maintenanceWindow;
         this.maintenanceConfiguration = maintenanceConfiguration;
@@ -318,6 +321,21 @@ public final class UpdateDeploymentDetails
             this.__explicitlySet__.add("isAutoScalingEnabled");
             return this;
         }
+        /** An array of local peers of deployment */
+        @com.fasterxml.jackson.annotation.JsonProperty("placements")
+        private java.util.List<DeploymentPlacementDetails> placements;
+
+        /**
+         * An array of local peers of deployment
+         *
+         * @param placements the value to set
+         * @return this builder
+         */
+        public Builder placements(java.util.List<DeploymentPlacementDetails> placements) {
+            this.placements = placements;
+            this.__explicitlySet__.add("placements");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("oggData")
         private UpdateOggDeploymentDetails oggData;
@@ -375,6 +393,7 @@ public final class UpdateDeploymentDetails
                             this.fqdn,
                             this.cpuCoreCount,
                             this.isAutoScalingEnabled,
+                            this.placements,
                             this.oggData,
                             this.maintenanceWindow,
                             this.maintenanceConfiguration,
@@ -425,6 +444,9 @@ public final class UpdateDeploymentDetails
             }
             if (model.wasPropertyExplicitlySet("isAutoScalingEnabled")) {
                 this.isAutoScalingEnabled(model.getIsAutoScalingEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("placements")) {
+                this.placements(model.getPlacements());
             }
             if (model.wasPropertyExplicitlySet("oggData")) {
                 this.oggData(model.getOggData());
@@ -658,6 +680,19 @@ public final class UpdateDeploymentDetails
         return isAutoScalingEnabled;
     }
 
+    /** An array of local peers of deployment */
+    @com.fasterxml.jackson.annotation.JsonProperty("placements")
+    private final java.util.List<DeploymentPlacementDetails> placements;
+
+    /**
+     * An array of local peers of deployment
+     *
+     * @return the value
+     */
+    public java.util.List<DeploymentPlacementDetails> getPlacements() {
+        return placements;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("oggData")
     private final UpdateOggDeploymentDetails oggData;
 
@@ -714,6 +749,7 @@ public final class UpdateDeploymentDetails
         sb.append(", fqdn=").append(String.valueOf(this.fqdn));
         sb.append(", cpuCoreCount=").append(String.valueOf(this.cpuCoreCount));
         sb.append(", isAutoScalingEnabled=").append(String.valueOf(this.isAutoScalingEnabled));
+        sb.append(", placements=").append(String.valueOf(this.placements));
         sb.append(", oggData=").append(String.valueOf(this.oggData));
         sb.append(", maintenanceWindow=").append(String.valueOf(this.maintenanceWindow));
         sb.append(", maintenanceConfiguration=")
@@ -746,6 +782,7 @@ public final class UpdateDeploymentDetails
                 && java.util.Objects.equals(this.fqdn, other.fqdn)
                 && java.util.Objects.equals(this.cpuCoreCount, other.cpuCoreCount)
                 && java.util.Objects.equals(this.isAutoScalingEnabled, other.isAutoScalingEnabled)
+                && java.util.Objects.equals(this.placements, other.placements)
                 && java.util.Objects.equals(this.oggData, other.oggData)
                 && java.util.Objects.equals(this.maintenanceWindow, other.maintenanceWindow)
                 && java.util.Objects.equals(
@@ -781,6 +818,7 @@ public final class UpdateDeploymentDetails
                         + (this.isAutoScalingEnabled == null
                                 ? 43
                                 : this.isAutoScalingEnabled.hashCode());
+        result = (result * PRIME) + (this.placements == null ? 43 : this.placements.hashCode());
         result = (result * PRIME) + (this.oggData == null ? 43 : this.oggData.hashCode());
         result =
                 (result * PRIME)

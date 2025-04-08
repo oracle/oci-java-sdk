@@ -25,16 +25,19 @@ public final class ProcessOptions
     @java.beans.ConstructorProperties({
         "initialDataLoad",
         "replicateSchemaChange",
-        "shouldRestartOnFailure"
+        "shouldRestartOnFailure",
+        "startUsingDefaultMapping"
     })
     public ProcessOptions(
             InitialDataLoad initialDataLoad,
             ReplicateSchemaChange replicateSchemaChange,
-            ShouldRestartOnFailure shouldRestartOnFailure) {
+            ShouldRestartOnFailure shouldRestartOnFailure,
+            StartUsingDefaultMapping startUsingDefaultMapping) {
         super();
         this.initialDataLoad = initialDataLoad;
         this.replicateSchemaChange = replicateSchemaChange;
         this.shouldRestartOnFailure = shouldRestartOnFailure;
+        this.startUsingDefaultMapping = startUsingDefaultMapping;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -76,6 +79,25 @@ public final class ProcessOptions
             this.__explicitlySet__.add("shouldRestartOnFailure");
             return this;
         }
+        /**
+         * If ENABLED, then the pipeline is started as part of pipeline creation. It uses default
+         * mapping. This option applies when creating or updating a pipeline.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("startUsingDefaultMapping")
+        private StartUsingDefaultMapping startUsingDefaultMapping;
+
+        /**
+         * If ENABLED, then the pipeline is started as part of pipeline creation. It uses default
+         * mapping. This option applies when creating or updating a pipeline.
+         *
+         * @param startUsingDefaultMapping the value to set
+         * @return this builder
+         */
+        public Builder startUsingDefaultMapping(StartUsingDefaultMapping startUsingDefaultMapping) {
+            this.startUsingDefaultMapping = startUsingDefaultMapping;
+            this.__explicitlySet__.add("startUsingDefaultMapping");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -85,7 +107,8 @@ public final class ProcessOptions
                     new ProcessOptions(
                             this.initialDataLoad,
                             this.replicateSchemaChange,
-                            this.shouldRestartOnFailure);
+                            this.shouldRestartOnFailure,
+                            this.startUsingDefaultMapping);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -102,6 +125,9 @@ public final class ProcessOptions
             }
             if (model.wasPropertyExplicitlySet("shouldRestartOnFailure")) {
                 this.shouldRestartOnFailure(model.getShouldRestartOnFailure());
+            }
+            if (model.wasPropertyExplicitlySet("startUsingDefaultMapping")) {
+                this.startUsingDefaultMapping(model.getStartUsingDefaultMapping());
             }
             return this;
         }
@@ -196,6 +222,72 @@ public final class ProcessOptions
         return shouldRestartOnFailure;
     }
 
+    /**
+     * If ENABLED, then the pipeline is started as part of pipeline creation. It uses default
+     * mapping. This option applies when creating or updating a pipeline.
+     */
+    public enum StartUsingDefaultMapping implements com.oracle.bmc.http.internal.BmcEnum {
+        Enabled("ENABLED"),
+        Disabled("DISABLED"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(StartUsingDefaultMapping.class);
+
+        private final String value;
+        private static java.util.Map<String, StartUsingDefaultMapping> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (StartUsingDefaultMapping v : StartUsingDefaultMapping.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        StartUsingDefaultMapping(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static StartUsingDefaultMapping create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'StartUsingDefaultMapping', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * If ENABLED, then the pipeline is started as part of pipeline creation. It uses default
+     * mapping. This option applies when creating or updating a pipeline.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("startUsingDefaultMapping")
+    private final StartUsingDefaultMapping startUsingDefaultMapping;
+
+    /**
+     * If ENABLED, then the pipeline is started as part of pipeline creation. It uses default
+     * mapping. This option applies when creating or updating a pipeline.
+     *
+     * @return the value
+     */
+    public StartUsingDefaultMapping getStartUsingDefaultMapping() {
+        return startUsingDefaultMapping;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -214,6 +306,8 @@ public final class ProcessOptions
         sb.append("initialDataLoad=").append(String.valueOf(this.initialDataLoad));
         sb.append(", replicateSchemaChange=").append(String.valueOf(this.replicateSchemaChange));
         sb.append(", shouldRestartOnFailure=").append(String.valueOf(this.shouldRestartOnFailure));
+        sb.append(", startUsingDefaultMapping=")
+                .append(String.valueOf(this.startUsingDefaultMapping));
         sb.append(")");
         return sb.toString();
     }
@@ -232,6 +326,8 @@ public final class ProcessOptions
                 && java.util.Objects.equals(this.replicateSchemaChange, other.replicateSchemaChange)
                 && java.util.Objects.equals(
                         this.shouldRestartOnFailure, other.shouldRestartOnFailure)
+                && java.util.Objects.equals(
+                        this.startUsingDefaultMapping, other.startUsingDefaultMapping)
                 && super.equals(other);
     }
 
@@ -252,6 +348,11 @@ public final class ProcessOptions
                         + (this.shouldRestartOnFailure == null
                                 ? 43
                                 : this.shouldRestartOnFailure.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.startUsingDefaultMapping == null
+                                ? 43
+                                : this.startUsingDefaultMapping.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

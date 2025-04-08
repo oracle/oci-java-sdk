@@ -770,6 +770,125 @@ public class GoldenGatePaginators {
 
     /**
      * Creates a new iterable which will iterate over the responses received from the
+     * listDeploymentPeers operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListDeploymentPeersResponse> listDeploymentPeersResponseIterator(
+            final ListDeploymentPeersRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListDeploymentPeersRequest.Builder,
+                ListDeploymentPeersRequest,
+                ListDeploymentPeersResponse>(
+                new java.util.function.Supplier<ListDeploymentPeersRequest.Builder>() {
+                    @Override
+                    public ListDeploymentPeersRequest.Builder get() {
+                        return ListDeploymentPeersRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListDeploymentPeersResponse, String>() {
+                    @Override
+                    public String apply(ListDeploymentPeersResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListDeploymentPeersRequest.Builder>,
+                        ListDeploymentPeersRequest>() {
+                    @Override
+                    public ListDeploymentPeersRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListDeploymentPeersRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListDeploymentPeersRequest, ListDeploymentPeersResponse>() {
+                    @Override
+                    public ListDeploymentPeersResponse apply(ListDeploymentPeersRequest request) {
+                        return client.listDeploymentPeers(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.goldengate.model.DeploymentPeerSummary} objects contained in responses from
+     * the listDeploymentPeers operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.goldengate.model.DeploymentPeerSummary} objects contained in responses
+     *     received from the service.
+     */
+    public Iterable<com.oracle.bmc.goldengate.model.DeploymentPeerSummary>
+            listDeploymentPeersRecordIterator(final ListDeploymentPeersRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListDeploymentPeersRequest.Builder,
+                ListDeploymentPeersRequest,
+                ListDeploymentPeersResponse,
+                com.oracle.bmc.goldengate.model.DeploymentPeerSummary>(
+                new java.util.function.Supplier<ListDeploymentPeersRequest.Builder>() {
+                    @Override
+                    public ListDeploymentPeersRequest.Builder get() {
+                        return ListDeploymentPeersRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListDeploymentPeersResponse, String>() {
+                    @Override
+                    public String apply(ListDeploymentPeersResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListDeploymentPeersRequest.Builder>,
+                        ListDeploymentPeersRequest>() {
+                    @Override
+                    public ListDeploymentPeersRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListDeploymentPeersRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListDeploymentPeersRequest, ListDeploymentPeersResponse>() {
+                    @Override
+                    public ListDeploymentPeersResponse apply(ListDeploymentPeersRequest request) {
+                        return client.listDeploymentPeers(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListDeploymentPeersResponse,
+                        java.util.List<com.oracle.bmc.goldengate.model.DeploymentPeerSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.goldengate.model.DeploymentPeerSummary>
+                            apply(ListDeploymentPeersResponse response) {
+                        return response.getDeploymentPeerCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
      * listDeploymentTypes operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation

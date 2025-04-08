@@ -27,6 +27,12 @@ public final class Deployment extends com.oracle.bmc.http.client.internal.Explic
         "displayName",
         "description",
         "compartmentId",
+        "availabilityDomain",
+        "faultDomain",
+        "deploymentRole",
+        "timeRoleChanged",
+        "sourceDeploymentId",
+        "placements",
         "deploymentBackupId",
         "timeCreated",
         "timeUpdated",
@@ -75,6 +81,12 @@ public final class Deployment extends com.oracle.bmc.http.client.internal.Explic
             String displayName,
             String description,
             String compartmentId,
+            String availabilityDomain,
+            String faultDomain,
+            DeploymentRole deploymentRole,
+            java.util.Date timeRoleChanged,
+            String sourceDeploymentId,
+            java.util.List<DeploymentPlacementInfo> placements,
             String deploymentBackupId,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
@@ -122,6 +134,12 @@ public final class Deployment extends com.oracle.bmc.http.client.internal.Explic
         this.displayName = displayName;
         this.description = description;
         this.compartmentId = compartmentId;
+        this.availabilityDomain = availabilityDomain;
+        this.faultDomain = faultDomain;
+        this.deploymentRole = deploymentRole;
+        this.timeRoleChanged = timeRoleChanged;
+        this.sourceDeploymentId = sourceDeploymentId;
+        this.placements = placements;
         this.deploymentBackupId = deploymentBackupId;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
@@ -234,6 +252,104 @@ public final class Deployment extends com.oracle.bmc.http.client.internal.Explic
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
+            return this;
+        }
+        /** The availability domain of a placement. */
+        @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
+        private String availabilityDomain;
+
+        /**
+         * The availability domain of a placement.
+         *
+         * @param availabilityDomain the value to set
+         * @return this builder
+         */
+        public Builder availabilityDomain(String availabilityDomain) {
+            this.availabilityDomain = availabilityDomain;
+            this.__explicitlySet__.add("availabilityDomain");
+            return this;
+        }
+        /** The fault domain of a placement. */
+        @com.fasterxml.jackson.annotation.JsonProperty("faultDomain")
+        private String faultDomain;
+
+        /**
+         * The fault domain of a placement.
+         *
+         * @param faultDomain the value to set
+         * @return this builder
+         */
+        public Builder faultDomain(String faultDomain) {
+            this.faultDomain = faultDomain;
+            this.__explicitlySet__.add("faultDomain");
+            return this;
+        }
+        /** The type of the deployment role. */
+        @com.fasterxml.jackson.annotation.JsonProperty("deploymentRole")
+        private DeploymentRole deploymentRole;
+
+        /**
+         * The type of the deployment role.
+         *
+         * @param deploymentRole the value to set
+         * @return this builder
+         */
+        public Builder deploymentRole(DeploymentRole deploymentRole) {
+            this.deploymentRole = deploymentRole;
+            this.__explicitlySet__.add("deploymentRole");
+            return this;
+        }
+        /**
+         * The time of the last role change. The format is defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("timeRoleChanged")
+        private java.util.Date timeRoleChanged;
+
+        /**
+         * The time of the last role change. The format is defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+         *
+         * @param timeRoleChanged the value to set
+         * @return this builder
+         */
+        public Builder timeRoleChanged(java.util.Date timeRoleChanged) {
+            this.timeRoleChanged = timeRoleChanged;
+            this.__explicitlySet__.add("timeRoleChanged");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * deployment being referenced.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("sourceDeploymentId")
+        private String sourceDeploymentId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * deployment being referenced.
+         *
+         * @param sourceDeploymentId the value to set
+         * @return this builder
+         */
+        public Builder sourceDeploymentId(String sourceDeploymentId) {
+            this.sourceDeploymentId = sourceDeploymentId;
+            this.__explicitlySet__.add("sourceDeploymentId");
+            return this;
+        }
+        /** An array of local peers of deployment */
+        @com.fasterxml.jackson.annotation.JsonProperty("placements")
+        private java.util.List<DeploymentPlacementInfo> placements;
+
+        /**
+         * An array of local peers of deployment
+         *
+         * @param placements the value to set
+         * @return this builder
+         */
+        public Builder placements(java.util.List<DeploymentPlacementInfo> placements) {
+            this.placements = placements;
+            this.__explicitlySet__.add("placements");
             return this;
         }
         /**
@@ -987,6 +1103,12 @@ public final class Deployment extends com.oracle.bmc.http.client.internal.Explic
                             this.displayName,
                             this.description,
                             this.compartmentId,
+                            this.availabilityDomain,
+                            this.faultDomain,
+                            this.deploymentRole,
+                            this.timeRoleChanged,
+                            this.sourceDeploymentId,
+                            this.placements,
                             this.deploymentBackupId,
                             this.timeCreated,
                             this.timeUpdated,
@@ -1048,6 +1170,24 @@ public final class Deployment extends com.oracle.bmc.http.client.internal.Explic
             }
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("availabilityDomain")) {
+                this.availabilityDomain(model.getAvailabilityDomain());
+            }
+            if (model.wasPropertyExplicitlySet("faultDomain")) {
+                this.faultDomain(model.getFaultDomain());
+            }
+            if (model.wasPropertyExplicitlySet("deploymentRole")) {
+                this.deploymentRole(model.getDeploymentRole());
+            }
+            if (model.wasPropertyExplicitlySet("timeRoleChanged")) {
+                this.timeRoleChanged(model.getTimeRoleChanged());
+            }
+            if (model.wasPropertyExplicitlySet("sourceDeploymentId")) {
+                this.sourceDeploymentId(model.getSourceDeploymentId());
+            }
+            if (model.wasPropertyExplicitlySet("placements")) {
+                this.placements(model.getPlacements());
             }
             if (model.wasPropertyExplicitlySet("deploymentBackupId")) {
                 this.deploymentBackupId(model.getDeploymentBackupId());
@@ -1247,6 +1387,92 @@ public final class Deployment extends com.oracle.bmc.http.client.internal.Explic
      */
     public String getCompartmentId() {
         return compartmentId;
+    }
+
+    /** The availability domain of a placement. */
+    @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
+    private final String availabilityDomain;
+
+    /**
+     * The availability domain of a placement.
+     *
+     * @return the value
+     */
+    public String getAvailabilityDomain() {
+        return availabilityDomain;
+    }
+
+    /** The fault domain of a placement. */
+    @com.fasterxml.jackson.annotation.JsonProperty("faultDomain")
+    private final String faultDomain;
+
+    /**
+     * The fault domain of a placement.
+     *
+     * @return the value
+     */
+    public String getFaultDomain() {
+        return faultDomain;
+    }
+
+    /** The type of the deployment role. */
+    @com.fasterxml.jackson.annotation.JsonProperty("deploymentRole")
+    private final DeploymentRole deploymentRole;
+
+    /**
+     * The type of the deployment role.
+     *
+     * @return the value
+     */
+    public DeploymentRole getDeploymentRole() {
+        return deploymentRole;
+    }
+
+    /**
+     * The time of the last role change. The format is defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("timeRoleChanged")
+    private final java.util.Date timeRoleChanged;
+
+    /**
+     * The time of the last role change. The format is defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+     *
+     * @return the value
+     */
+    public java.util.Date getTimeRoleChanged() {
+        return timeRoleChanged;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * deployment being referenced.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("sourceDeploymentId")
+    private final String sourceDeploymentId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * deployment being referenced.
+     *
+     * @return the value
+     */
+    public String getSourceDeploymentId() {
+        return sourceDeploymentId;
+    }
+
+    /** An array of local peers of deployment */
+    @com.fasterxml.jackson.annotation.JsonProperty("placements")
+    private final java.util.List<DeploymentPlacementInfo> placements;
+
+    /**
+     * An array of local peers of deployment
+     *
+     * @return the value
+     */
+    public java.util.List<DeploymentPlacementInfo> getPlacements() {
+        return placements;
     }
 
     /**
@@ -1920,6 +2146,12 @@ public final class Deployment extends com.oracle.bmc.http.client.internal.Explic
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", availabilityDomain=").append(String.valueOf(this.availabilityDomain));
+        sb.append(", faultDomain=").append(String.valueOf(this.faultDomain));
+        sb.append(", deploymentRole=").append(String.valueOf(this.deploymentRole));
+        sb.append(", timeRoleChanged=").append(String.valueOf(this.timeRoleChanged));
+        sb.append(", sourceDeploymentId=").append(String.valueOf(this.sourceDeploymentId));
+        sb.append(", placements=").append(String.valueOf(this.placements));
         sb.append(", deploymentBackupId=").append(String.valueOf(this.deploymentBackupId));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
@@ -1989,6 +2221,12 @@ public final class Deployment extends com.oracle.bmc.http.client.internal.Explic
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
+                && java.util.Objects.equals(this.faultDomain, other.faultDomain)
+                && java.util.Objects.equals(this.deploymentRole, other.deploymentRole)
+                && java.util.Objects.equals(this.timeRoleChanged, other.timeRoleChanged)
+                && java.util.Objects.equals(this.sourceDeploymentId, other.sourceDeploymentId)
+                && java.util.Objects.equals(this.placements, other.placements)
                 && java.util.Objects.equals(this.deploymentBackupId, other.deploymentBackupId)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
@@ -2054,6 +2292,24 @@ public final class Deployment extends com.oracle.bmc.http.client.internal.Explic
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.availabilityDomain == null
+                                ? 43
+                                : this.availabilityDomain.hashCode());
+        result = (result * PRIME) + (this.faultDomain == null ? 43 : this.faultDomain.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.deploymentRole == null ? 43 : this.deploymentRole.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeRoleChanged == null ? 43 : this.timeRoleChanged.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sourceDeploymentId == null
+                                ? 43
+                                : this.sourceDeploymentId.hashCode());
+        result = (result * PRIME) + (this.placements == null ? 43 : this.placements.hashCode());
         result =
                 (result * PRIME)
                         + (this.deploymentBackupId == null

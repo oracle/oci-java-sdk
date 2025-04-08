@@ -51,9 +51,9 @@ public final class ServiceConnector
             LifecycleState lifecycleState,
             String lifecycleDetails,
             String lifecyleDetails,
-            SourceDetails source,
-            java.util.List<TaskDetails> tasks,
-            TargetDetails target,
+            SourceDetailsResponse source,
+            java.util.List<TaskDetailsResponse> tasks,
+            TargetDetailsResponse target,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags) {
@@ -246,16 +246,16 @@ public final class ServiceConnector
         }
 
         @com.fasterxml.jackson.annotation.JsonProperty("source")
-        private SourceDetails source;
+        private SourceDetailsResponse source;
 
-        public Builder source(SourceDetails source) {
+        public Builder source(SourceDetailsResponse source) {
             this.source = source;
             this.__explicitlySet__.add("source");
             return this;
         }
         /** The list of tasks. */
         @com.fasterxml.jackson.annotation.JsonProperty("tasks")
-        private java.util.List<TaskDetails> tasks;
+        private java.util.List<TaskDetailsResponse> tasks;
 
         /**
          * The list of tasks.
@@ -263,16 +263,16 @@ public final class ServiceConnector
          * @param tasks the value to set
          * @return this builder
          */
-        public Builder tasks(java.util.List<TaskDetails> tasks) {
+        public Builder tasks(java.util.List<TaskDetailsResponse> tasks) {
             this.tasks = tasks;
             this.__explicitlySet__.add("tasks");
             return this;
         }
 
         @com.fasterxml.jackson.annotation.JsonProperty("target")
-        private TargetDetails target;
+        private TargetDetailsResponse target;
 
-        public Builder target(TargetDetails target) {
+        public Builder target(TargetDetailsResponse target) {
             this.target = target;
             this.__explicitlySet__.add("target");
             return this;
@@ -579,29 +579,29 @@ public final class ServiceConnector
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("source")
-    private final SourceDetails source;
+    private final SourceDetailsResponse source;
 
-    public SourceDetails getSource() {
+    public SourceDetailsResponse getSource() {
         return source;
     }
 
     /** The list of tasks. */
     @com.fasterxml.jackson.annotation.JsonProperty("tasks")
-    private final java.util.List<TaskDetails> tasks;
+    private final java.util.List<TaskDetailsResponse> tasks;
 
     /**
      * The list of tasks.
      *
      * @return the value
      */
-    public java.util.List<TaskDetails> getTasks() {
+    public java.util.List<TaskDetailsResponse> getTasks() {
         return tasks;
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("target")
-    private final TargetDetails target;
+    private final TargetDetailsResponse target;
 
-    public TargetDetails getTarget() {
+    public TargetDetailsResponse getTarget() {
         return target;
     }
 

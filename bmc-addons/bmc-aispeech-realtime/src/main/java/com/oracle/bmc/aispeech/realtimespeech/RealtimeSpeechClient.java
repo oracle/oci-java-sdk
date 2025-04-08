@@ -17,12 +17,14 @@ import com.oracle.bmc.aispeech.model.RealtimeMessageError;
 import com.oracle.bmc.aispeech.model.RealtimeMessageResult;
 import com.oracle.bmc.aispeech.model.RealtimeMessageSendFinalResult;
 import com.oracle.bmc.aispeech.model.RealtimeParameters;
+import com.oracle.bmc.aispeech.model.RealtimeParameters.Punctuation;
 import com.oracle.bmc.auth.BasicAuthenticationDetailsProvider;
 import com.oracle.bmc.http.signing.DefaultRequestSigner;
 import com.oracle.bmc.http.signing.RequestSigner;
 import com.oracle.bmc.serialization.jackson.JacksonSerializer;
 import com.oracle.bmc.util.VisibleForTesting;
 import com.oracle.bmc.util.internal.StringUtils;
+import org.apache.http.client.utils.URIBuilder;
 import org.eclipse.jetty.websocket.api.Session;
 import org.eclipse.jetty.websocket.api.annotations.OnWebSocketClose;
 import org.eclipse.jetty.websocket.api.annotations.OnWebSocketConnect;
@@ -33,9 +35,9 @@ import org.eclipse.jetty.websocket.client.ClientUpgradeRequest;
 import org.eclipse.jetty.websocket.client.WebSocketClient;
 
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.net.ConnectException;
 import java.net.URI;
-import java.net.URLEncoder;
 import java.nio.ByteBuffer;
 import java.util.HashMap;
 import java.util.List;
@@ -72,7 +74,20 @@ public class RealtimeSpeechClient {
                     .addFilter("explicitlySetFilter", SimpleBeanPropertyFilter.serializeAll());
 
     private final ObjectMapper objectMapper =
-            JacksonSerializer.getDefaultObjectMapper().setFilterProvider(filters);
+            JacksonSerializer.getDefaultObjectMapper().copy().setFilterProvider(filters);
+
+    private static final String shoudIgnoreInvalidCustomizationsParamString =
+            "shouldIgnoreInvalidCustomizations";
+    private static final String isAckEnabledParamString = "isAckEnabled";
+    private static final String encodingParamString = "encoding";
+    private static final String partialSilenceThresholdInMsParamString =
+            "partialSilenceThresholdInMs";
+    private static final String finalSilenceThresholdInMsParamString = "finalSilenceThresholdInMs";
+    private static final String stabilizePartialResultsParamString = "stabilizePartialResults";
+    private static final String languageCodeParamString = "languageCode";
+    private static final String modelDomainParamString = "modelDomain";
+    private static final String punctuationParamString = "punctuation";
+    private static final String customizationsParamString = "customizations";
 
     /**
      * Constructor.
@@ -267,64 +282,72 @@ public class RealtimeSpeechClient {
 
             final String customizationsJson =
                     objectMapper.writeValueAsString(parameters.getCustomizations());
-            String queryParameter = "";
+
+            final URIBuilder queryParameterStringBuilder =
+                    new URIBuilder(realtimeSpeechEndpoint + "/ws/transcribe/stream");
+
             if (parameters.getIsAckEnabled() != null) {
-                queryParameter +=
-                        "isAckEnabled=" + (parameters.getIsAckEnabled() ? "true" : "false") + "&";
+                queryParameterStringBuilder.addParameter(
+                        isAckEnabledParamString, parameters.getIsAckEnabled().toString());
             }
+
+            if (parameters.getEncoding() != null && !parameters.getEncoding().isEmpty()) {
+                queryParameterStringBuilder.addParameter(
+                        encodingParamString, parameters.getEncoding());
+            }
+
             if (parameters.getShouldIgnoreInvalidCustomizations() != null) {
-                queryParameter +=
-                        "shouldIgnoreInvalidCustomizations="
-                                + (parameters.getShouldIgnoreInvalidCustomizations()
-                                        ? "true"
-                                        : "false")
-                                + "&";
+                queryParameterStringBuilder.addParameter(
+                        shoudIgnoreInvalidCustomizationsParamString,
+                        parameters.getShouldIgnoreInvalidCustomizations().toString());
             }
+
             if (parameters.getPartialSilenceThresholdInMs() != null) {
-                queryParameter +=
-                        "partialSilenceThresholdInMs="
-                                + parameters.getPartialSilenceThresholdInMs()
-                                + "&";
+                queryParameterStringBuilder.addParameter(
+                        partialSilenceThresholdInMsParamString,
+                        parameters.getPartialSilenceThresholdInMs().toString());
             }
+
             if (parameters.getFinalSilenceThresholdInMs() != null) {
-                queryParameter +=
-                        "finalSilenceThresholdInMs="
-                                + parameters.getFinalSilenceThresholdInMs()
-                                + "&";
+                queryParameterStringBuilder.addParameter(
+                        finalSilenceThresholdInMsParamString,
+                        parameters.getFinalSilenceThresholdInMs().toString());
             }
+
             if (parameters.getStabilizePartialResults() != null) {
-                queryParameter +=
-                        "stabilizePartialResults="
-                                + parameters.getStabilizePartialResults().getValue()
-                                + "&";
+                queryParameterStringBuilder.addParameter(
+                        stabilizePartialResultsParamString,
+                        parameters.getStabilizePartialResults().getValue());
             }
+
             if (parameters.getLanguageCode() != null) {
-                queryParameter += "languageCode=" + parameters.getLanguageCode() + "&";
+                queryParameterStringBuilder.addParameter(
+                        languageCodeParamString, parameters.getLanguageCode());
             }
+
             if (parameters.getModelDomain() != null) {
-                queryParameter += "modelDomain=" + parameters.getModelDomain().getValue() + "&";
+                queryParameterStringBuilder.addParameter(
+                        modelDomainParamString, parameters.getModelDomain().getValue());
             }
+
+            if (parameters.getPunctuation() != null
+                    && !parameters.getPunctuation().equals(Punctuation.None)) {
+                queryParameterStringBuilder.addParameter(
+                        punctuationParamString, parameters.getPunctuation().getValue());
+            }
+
             if (parameters.getCustomizations() != null
                     && !parameters.getCustomizations().isEmpty()) {
-                queryParameter +=
-                        "customizations=" + URLEncoder.encode(customizationsJson, "UTF-8");
+                queryParameterStringBuilder.addParameter(
+                        customizationsParamString, customizationsJson);
             }
-            if (queryParameter.length() > 0
-                    && queryParameter.charAt(queryParameter.length() - 1) == '&') {
-                queryParameter = queryParameter.substring(0, queryParameter.length() - 1);
-            }
-            // The server should contain ws or wss
-            destUri =
-                    new URI(
-                            realtimeSpeechEndpoint
-                                    + "/ws/transcribe/stream?"
-                                    + queryParameter); // TODO
+
+            destUri = queryParameterStringBuilder.build();
 
             LOG.info("Connecting to {} \n", destUri);
 
             final ClientUpgradeRequest request = new ClientUpgradeRequest();
-            LOG.info("Content-Type: {}", parameters.getEncoding());
-            request.setHeader("Content-Type", parameters.getEncoding());
+            LOG.debug("Content-Type: {}", parameters.getEncoding());
 
             if (!webSocketClient.isStarted()) {
                 LOG.info("Client not started, starting it now");
@@ -333,6 +356,10 @@ public class RealtimeSpeechClient {
 
             this.session =
                     webSocketClient.connect(this, destUri, request).get(10, TimeUnit.SECONDS);
+        } catch (UnsupportedEncodingException e) {
+            status = Status.ERROR;
+            LOG.error("Unable to construct the request {}", e);
+            throw new RealtimeSpeechConnectException(e);
         } catch (Exception e) {
             status = Status.ERROR;
             LOG.error("Open connection exception {}", e);
