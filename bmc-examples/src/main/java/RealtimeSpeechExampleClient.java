@@ -31,11 +31,15 @@ public class RealtimeSpeechExampleClient implements RealtimeSpeechClientListener
     private static final String DEFAULT_REALTIME_SPEECH_ENDPOINT = "<endpoint>";
     private static final String DEFAULT_COMPARTMENT = "<compartmentId>";
     private static final String LANGUAGE_CODE = "en-US";
-    private static final String MODEL_DOMAIN = "GENERIC";
-    private static final String STABILIZE_PARTIAL_RESULTS = "NONE";
+    private static final RealtimeParameters.ModelDomain MODEL_DOMAIN =
+            RealtimeParameters.ModelDomain.Generic;
+    private static final RealtimeParameters.StabilizePartialResults STABILIZE_PARTIAL_RESULTS =
+            RealtimeParameters.StabilizePartialResults.None;
     private static final String ENCODING = "audio/raw;rate=16000";
     private static final int PARTIAL_SILENCE_THRESHOLD = 0;
     private static final int FINAL_SILENCE_THRESHOLD = 2000;
+    private static final RealtimeParameters.Punctuation PUNCTUATION =
+            RealtimeParameters.Punctuation.None;
     private static final boolean SHOULD_IGNORE_CUSTOMIZATION_LOAD_ERRORS = false;
 
     // Settings to be sent to the microphone work loop
@@ -222,11 +226,12 @@ public class RealtimeSpeechExampleClient implements RealtimeSpeechClientListener
                             .webSocketClient(client)
                             .build();
 
-            // Map<String, String> freeformTags = new HashMap<String, String>();
-            // freeformTags.put("sampleTag", "sampleTagValue");
-
             final CustomizationInference customizationInference =
-                    CustomizationInference.builder().customizationId("<customizationId>").build();
+                    CustomizationInference.builder()
+                            .customizationId(
+                                    "ocid1.aispeechcustomization.oc1.phx.customizationOcid")
+                            .compartmentId("ocid1.compartment.oc1..compartmentOcid")
+                            .build();
 
             List<CustomizationInference> customizationInferenceList = new ArrayList<>();
 
@@ -241,11 +246,10 @@ public class RealtimeSpeechExampleClient implements RealtimeSpeechClientListener
                             .shouldIgnoreInvalidCustomizations(
                                     SHOULD_IGNORE_CUSTOMIZATION_LOAD_ERRORS)
                             .languageCode(LANGUAGE_CODE) // Could be one
-                            .modelDomain(RealtimeParameters.ModelDomain.create(MODEL_DOMAIN))
+                            .modelDomain(MODEL_DOMAIN)
+                            .punctuation(PUNCTUATION)
                             .encoding(ENCODING)
-                            .stabilizePartialResults(
-                                    RealtimeParameters.StabilizePartialResults.create(
-                                            STABILIZE_PARTIAL_RESULTS))
+                            .stabilizePartialResults(STABILIZE_PARTIAL_RESULTS)
                             // .customizations(customizationInferenceList)
                             .build();
 

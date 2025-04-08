@@ -29,6 +29,10 @@ public final class CreateDeploymentDetails
         "environmentType",
         "description",
         "compartmentId",
+        "sourceDeploymentId",
+        "availabilityDomain",
+        "faultDomain",
+        "placements",
         "freeformTags",
         "definedTags",
         "locks",
@@ -52,6 +56,10 @@ public final class CreateDeploymentDetails
             EnvironmentType environmentType,
             String description,
             String compartmentId,
+            String sourceDeploymentId,
+            String availabilityDomain,
+            String faultDomain,
+            java.util.List<DeploymentPlacementDetails> placements,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.List<AddResourceLockDetails> locks,
@@ -74,6 +82,10 @@ public final class CreateDeploymentDetails
         this.environmentType = environmentType;
         this.description = description;
         this.compartmentId = compartmentId;
+        this.sourceDeploymentId = sourceDeploymentId;
+        this.availabilityDomain = availabilityDomain;
+        this.faultDomain = faultDomain;
+        this.placements = placements;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.locks = locks;
@@ -175,6 +187,70 @@ public final class CreateDeploymentDetails
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * deployment being referenced.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("sourceDeploymentId")
+        private String sourceDeploymentId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * deployment being referenced.
+         *
+         * @param sourceDeploymentId the value to set
+         * @return this builder
+         */
+        public Builder sourceDeploymentId(String sourceDeploymentId) {
+            this.sourceDeploymentId = sourceDeploymentId;
+            this.__explicitlySet__.add("sourceDeploymentId");
+            return this;
+        }
+        /** The availability domain of a placement. */
+        @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
+        private String availabilityDomain;
+
+        /**
+         * The availability domain of a placement.
+         *
+         * @param availabilityDomain the value to set
+         * @return this builder
+         */
+        public Builder availabilityDomain(String availabilityDomain) {
+            this.availabilityDomain = availabilityDomain;
+            this.__explicitlySet__.add("availabilityDomain");
+            return this;
+        }
+        /** The fault domain of a placement. */
+        @com.fasterxml.jackson.annotation.JsonProperty("faultDomain")
+        private String faultDomain;
+
+        /**
+         * The fault domain of a placement.
+         *
+         * @param faultDomain the value to set
+         * @return this builder
+         */
+        public Builder faultDomain(String faultDomain) {
+            this.faultDomain = faultDomain;
+            this.__explicitlySet__.add("faultDomain");
+            return this;
+        }
+        /** An array of local peers of deployment */
+        @com.fasterxml.jackson.annotation.JsonProperty("placements")
+        private java.util.List<DeploymentPlacementDetails> placements;
+
+        /**
+         * An array of local peers of deployment
+         *
+         * @param placements the value to set
+         * @return this builder
+         */
+        public Builder placements(java.util.List<DeploymentPlacementDetails> placements) {
+            this.placements = placements;
+            this.__explicitlySet__.add("placements");
             return this;
         }
         /**
@@ -453,6 +529,10 @@ public final class CreateDeploymentDetails
                             this.environmentType,
                             this.description,
                             this.compartmentId,
+                            this.sourceDeploymentId,
+                            this.availabilityDomain,
+                            this.faultDomain,
+                            this.placements,
                             this.freeformTags,
                             this.definedTags,
                             this.locks,
@@ -491,6 +571,18 @@ public final class CreateDeploymentDetails
             }
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("sourceDeploymentId")) {
+                this.sourceDeploymentId(model.getSourceDeploymentId());
+            }
+            if (model.wasPropertyExplicitlySet("availabilityDomain")) {
+                this.availabilityDomain(model.getAvailabilityDomain());
+            }
+            if (model.wasPropertyExplicitlySet("faultDomain")) {
+                this.faultDomain(model.getFaultDomain());
+            }
+            if (model.wasPropertyExplicitlySet("placements")) {
+                this.placements(model.getPlacements());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -622,6 +714,62 @@ public final class CreateDeploymentDetails
      */
     public String getCompartmentId() {
         return compartmentId;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * deployment being referenced.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("sourceDeploymentId")
+    private final String sourceDeploymentId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * deployment being referenced.
+     *
+     * @return the value
+     */
+    public String getSourceDeploymentId() {
+        return sourceDeploymentId;
+    }
+
+    /** The availability domain of a placement. */
+    @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
+    private final String availabilityDomain;
+
+    /**
+     * The availability domain of a placement.
+     *
+     * @return the value
+     */
+    public String getAvailabilityDomain() {
+        return availabilityDomain;
+    }
+
+    /** The fault domain of a placement. */
+    @com.fasterxml.jackson.annotation.JsonProperty("faultDomain")
+    private final String faultDomain;
+
+    /**
+     * The fault domain of a placement.
+     *
+     * @return the value
+     */
+    public String getFaultDomain() {
+        return faultDomain;
+    }
+
+    /** An array of local peers of deployment */
+    @com.fasterxml.jackson.annotation.JsonProperty("placements")
+    private final java.util.List<DeploymentPlacementDetails> placements;
+
+    /**
+     * An array of local peers of deployment
+     *
+     * @return the value
+     */
+    public java.util.List<DeploymentPlacementDetails> getPlacements() {
+        return placements;
     }
 
     /**
@@ -874,6 +1022,10 @@ public final class CreateDeploymentDetails
         sb.append(", environmentType=").append(String.valueOf(this.environmentType));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", sourceDeploymentId=").append(String.valueOf(this.sourceDeploymentId));
+        sb.append(", availabilityDomain=").append(String.valueOf(this.availabilityDomain));
+        sb.append(", faultDomain=").append(String.valueOf(this.faultDomain));
+        sb.append(", placements=").append(String.valueOf(this.placements));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", locks=").append(String.valueOf(this.locks));
@@ -910,6 +1062,10 @@ public final class CreateDeploymentDetails
                 && java.util.Objects.equals(this.environmentType, other.environmentType)
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.sourceDeploymentId, other.sourceDeploymentId)
+                && java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
+                && java.util.Objects.equals(this.faultDomain, other.faultDomain)
+                && java.util.Objects.equals(this.placements, other.placements)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.locks, other.locks)
@@ -943,6 +1099,18 @@ public final class CreateDeploymentDetails
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sourceDeploymentId == null
+                                ? 43
+                                : this.sourceDeploymentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.availabilityDomain == null
+                                ? 43
+                                : this.availabilityDomain.hashCode());
+        result = (result * PRIME) + (this.faultDomain == null ? 43 : this.faultDomain.hashCode());
+        result = (result * PRIME) + (this.placements == null ? 43 : this.placements.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.locks == null ? 43 : this.locks.hashCode());

@@ -11,6 +11,7 @@ public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
     Updating("UPDATING"),
     Active("ACTIVE"),
     Inactive("INACTIVE"),
+    NeedsAttention("NEEDS_ATTENTION"),
     Deleting("DELETING"),
     Deleted("DELETED"),
     Failed("FAILED"),

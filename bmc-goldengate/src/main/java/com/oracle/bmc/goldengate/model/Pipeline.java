@@ -40,6 +40,7 @@ public class Pipeline extends com.oracle.bmc.http.client.internal.ExplicitlySetB
         "isAutoScalingEnabled",
         "sourceConnectionDetails",
         "targetConnectionDetails",
+        "pipelineDiagnosticData",
         "freeformTags",
         "definedTags",
         "systemTags",
@@ -60,6 +61,7 @@ public class Pipeline extends com.oracle.bmc.http.client.internal.ExplicitlySetB
             Boolean isAutoScalingEnabled,
             SourcePipelineConnectionDetails sourceConnectionDetails,
             TargetPipelineConnectionDetails targetConnectionDetails,
+            PipelineDiagnosticData pipelineDiagnosticData,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags,
@@ -79,6 +81,7 @@ public class Pipeline extends com.oracle.bmc.http.client.internal.ExplicitlySetB
         this.isAutoScalingEnabled = isAutoScalingEnabled;
         this.sourceConnectionDetails = sourceConnectionDetails;
         this.targetConnectionDetails = targetConnectionDetails;
+        this.pipelineDiagnosticData = pipelineDiagnosticData;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
@@ -201,6 +204,13 @@ public class Pipeline extends com.oracle.bmc.http.client.internal.ExplicitlySetB
 
     public TargetPipelineConnectionDetails getTargetConnectionDetails() {
         return targetConnectionDetails;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("pipelineDiagnosticData")
+    private final PipelineDiagnosticData pipelineDiagnosticData;
+
+    public PipelineDiagnosticData getPipelineDiagnosticData() {
+        return pipelineDiagnosticData;
     }
 
     /**
@@ -435,6 +445,7 @@ public class Pipeline extends com.oracle.bmc.http.client.internal.ExplicitlySetB
                 .append(String.valueOf(this.sourceConnectionDetails));
         sb.append(", targetConnectionDetails=")
                 .append(String.valueOf(this.targetConnectionDetails));
+        sb.append(", pipelineDiagnosticData=").append(String.valueOf(this.pipelineDiagnosticData));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
@@ -469,6 +480,8 @@ public class Pipeline extends com.oracle.bmc.http.client.internal.ExplicitlySetB
                         this.sourceConnectionDetails, other.sourceConnectionDetails)
                 && java.util.Objects.equals(
                         this.targetConnectionDetails, other.targetConnectionDetails)
+                && java.util.Objects.equals(
+                        this.pipelineDiagnosticData, other.pipelineDiagnosticData)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
@@ -508,6 +521,11 @@ public class Pipeline extends com.oracle.bmc.http.client.internal.ExplicitlySetB
                         + (this.targetConnectionDetails == null
                                 ? 43
                                 : this.targetConnectionDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.pipelineDiagnosticData == null
+                                ? 43
+                                : this.pipelineDiagnosticData.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());

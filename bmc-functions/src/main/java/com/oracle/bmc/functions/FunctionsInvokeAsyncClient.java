@@ -148,6 +148,7 @@ public class FunctionsInvokeAsyncClient extends com.oracle.bmc.http.internal.Bas
                 .appendEnumHeader("fn-intent", request.getFnIntent())
                 .appendEnumHeader("fn-invoke-type", request.getFnInvokeType())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("is-dry-run", request.getIsDryRun())
                 .hasBinaryRequestBody()
                 .hasBody()
                 .handleBody(java.io.InputStream.class, InvokeFunctionResponse.Builder::inputStream)

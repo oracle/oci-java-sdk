@@ -92,6 +92,23 @@ public interface GoldenGateAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Adds a new local peer to the deployment, this will add the given placement to deployment
+     * placement attribute. When provided, If-Match is checked against ETag values of the resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<AddDeploymentLocalPeerResponse> addDeploymentLocalPeer(
+            AddDeploymentLocalPeerRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            AddDeploymentLocalPeerRequest, AddDeploymentLocalPeerResponse>
+                    handler);
+
+    /**
      * Adds a lock to a Deployment resource.
      *
      * @param request The request object containing the details to send
@@ -274,6 +291,22 @@ public interface GoldenGateAsync extends AutoCloseable {
             CollectDeploymentDiagnosticRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             CollectDeploymentDiagnosticRequest, CollectDeploymentDiagnosticResponse>
+                    handler);
+
+    /**
+     * Collects diagnostics for the pipeline
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CollectPipelineDiagnosticResponse> collectPipelineDiagnostic(
+            CollectPipelineDiagnosticRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CollectPipelineDiagnosticRequest, CollectPipelineDiagnosticResponse>
                     handler);
 
     /**
@@ -813,6 +846,22 @@ public interface GoldenGateAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Lists the local and remote peers in a deployment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListDeploymentPeersResponse> listDeploymentPeers(
+            ListDeploymentPeersRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListDeploymentPeersRequest, ListDeploymentPeersResponse>
+                    handler);
+
+    /**
      * Returns an array of DeploymentTypeDescriptor
      *
      * @param request The request object containing the details to send
@@ -928,7 +977,7 @@ public interface GoldenGateAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Retrieves a Pipeline's running replication process's status like extracts/replicats.
+     * Retrieves a Pipeline's running replication process's status like Capture/Apply.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -1136,6 +1185,24 @@ public interface GoldenGateAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Removes a local peer of the deployment, this will remove the given placement entry from the
+     * deployment placement attribute. When provided, If-Match is checked against ETag values of the
+     * resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<RemoveDeploymentLocalPeerResponse> removeDeploymentLocalPeer(
+            RemoveDeploymentLocalPeerRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            RemoveDeploymentLocalPeerRequest, RemoveDeploymentLocalPeerResponse>
+                    handler);
+
+    /**
      * Removes a lock from a Deployment resource.
      *
      * @param request The request object containing the details to send
@@ -1276,6 +1343,24 @@ public interface GoldenGateAsync extends AutoCloseable {
     java.util.concurrent.Future<StopPipelineResponse> stopPipeline(
             StopPipelineRequest request,
             com.oracle.bmc.responses.AsyncHandler<StopPipelineRequest, StopPipelineResponse>
+                    handler);
+
+    /**
+     * Switchover to the selected standby peer, which can be a local placement or a standby
+     * deployment in different region. When provided, If-Match is checked against ETag values of the
+     * resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<SwitchoverDeploymentPeerResponse> switchoverDeploymentPeer(
+            SwitchoverDeploymentPeerRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            SwitchoverDeploymentPeerRequest, SwitchoverDeploymentPeerResponse>
                     handler);
 
     /**

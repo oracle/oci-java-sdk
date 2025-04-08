@@ -3,6 +3,22 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 3.63.0 - 2025-04-08
+### Added 
+- Support for connector source and targets with private endpoints in the Resource Scheduler service 
+- Support for Cross Region Replication(XRR) for external key managers in the Key Management service 
+- Support for dry run of function invocation in the Functions service 
+- Support for collecting diagnostics for ZeroETL pipelines in the GoldenGate service 
+- Support for adding, removing and switchover to local peers of deployment in different availability and fault domains within in the same region in the GoldenGate service 
+- Support for creating standby deployments in the GoldenGate service    
+
+### Breaking Changes 
+- Return type of method `public com.oracle.bmc.sch.model.SourceDetails getSource()` in the model `com.oracle.bmc.sch.model.ServiceConnector` has been changed to `com.oracle.bmc.sch.model.SourceDetailsResponse` in the Resource Scheduler service 
+- Return type of method `public com.oracle.bmc.sch.model.TargetDetails getTarget()` has been changed to `com.oracle.bmc.sch.model.TargetDetailsResponse` in the model `com.oracle.bmc.sch.model.ServiceConnector` in the Resource Scheduler service 
+- Removed field `UnknownEnumValue` in the enum `Kind` in model `com.oracle.bmc.sch.model.SourceDetails` in the Resource Scheduler service 
+- Removed field `UnknownEnumValue` in the enum `Kind` in model `com.oracle.bmc.sch.model.TargetDetails` in the Resource Scheduler service 
+- Removed field `UnknownEnumValue` in the enum `Kind` in the model `com.oracle.bmc.sch.model.TaskDetails` in the Resource Scheduler service
+
 ## 3.62.1 - 2025-04-02
 ### Added
 - Support for the Lustre File service

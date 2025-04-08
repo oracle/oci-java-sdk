@@ -133,6 +133,7 @@ public class FunctionsInvokeClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendEnumHeader("fn-intent", request.getFnIntent())
                 .appendEnumHeader("fn-invoke-type", request.getFnInvokeType())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("is-dry-run", request.getIsDryRun())
                 .hasBinaryRequestBody()
                 .hasBody()
                 .handleBody(java.io.InputStream.class, InvokeFunctionResponse.Builder::inputStream)

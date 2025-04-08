@@ -109,6 +109,15 @@ public final class ZeroEtlPipeline extends Pipeline {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("pipelineDiagnosticData")
+        private PipelineDiagnosticData pipelineDiagnosticData;
+
+        public Builder pipelineDiagnosticData(PipelineDiagnosticData pipelineDiagnosticData) {
+            this.pipelineDiagnosticData = pipelineDiagnosticData;
+            this.__explicitlySet__.add("pipelineDiagnosticData");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -251,6 +260,7 @@ public final class ZeroEtlPipeline extends Pipeline {
                             this.isAutoScalingEnabled,
                             this.sourceConnectionDetails,
                             this.targetConnectionDetails,
+                            this.pipelineDiagnosticData,
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags,
@@ -297,6 +307,9 @@ public final class ZeroEtlPipeline extends Pipeline {
             }
             if (model.wasPropertyExplicitlySet("targetConnectionDetails")) {
                 this.targetConnectionDetails(model.getTargetConnectionDetails());
+            }
+            if (model.wasPropertyExplicitlySet("pipelineDiagnosticData")) {
+                this.pipelineDiagnosticData(model.getPipelineDiagnosticData());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -358,6 +371,7 @@ public final class ZeroEtlPipeline extends Pipeline {
             Boolean isAutoScalingEnabled,
             SourcePipelineConnectionDetails sourceConnectionDetails,
             TargetPipelineConnectionDetails targetConnectionDetails,
+            PipelineDiagnosticData pipelineDiagnosticData,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags,
@@ -380,6 +394,7 @@ public final class ZeroEtlPipeline extends Pipeline {
                 isAutoScalingEnabled,
                 sourceConnectionDetails,
                 targetConnectionDetails,
+                pipelineDiagnosticData,
                 freeformTags,
                 definedTags,
                 systemTags,

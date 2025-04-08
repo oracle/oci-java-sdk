@@ -169,6 +169,44 @@ public class GoldenGateAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
     }
 
     @Override
+    public java.util.concurrent.Future<AddDeploymentLocalPeerResponse> addDeploymentLocalPeer(
+            AddDeploymentLocalPeerRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            AddDeploymentLocalPeerRequest, AddDeploymentLocalPeerResponse>
+                    handler) {
+
+        Validate.notBlank(request.getDeploymentId(), "deploymentId must not be blank");
+        Objects.requireNonNull(
+                request.getAddDeploymentLocalPeerDetails(),
+                "addDeploymentLocalPeerDetails is required");
+
+        return clientCall(request, AddDeploymentLocalPeerResponse::builder)
+                .logger(LOG, "addDeploymentLocalPeer")
+                .serviceDetails(
+                        "GoldenGate",
+                        "AddDeploymentLocalPeer",
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Deployment/AddDeploymentLocalPeer")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AddDeploymentLocalPeerRequest::builder)
+                .basePath("/20200407")
+                .appendPathParam("deployments")
+                .appendPathParam(request.getDeploymentId())
+                .appendPathParam("actions")
+                .appendPathParam("addLocalPeer")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        AddDeploymentLocalPeerResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", AddDeploymentLocalPeerResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<AddDeploymentLockResponse> addDeploymentLock(
             AddDeploymentLockRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -563,6 +601,44 @@ public class GoldenGateAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
                         CollectDeploymentDiagnosticResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", CollectDeploymentDiagnosticResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CollectPipelineDiagnosticResponse> collectPipelineDiagnostic(
+            CollectPipelineDiagnosticRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CollectPipelineDiagnosticRequest, CollectPipelineDiagnosticResponse>
+                    handler) {
+
+        Validate.notBlank(request.getPipelineId(), "pipelineId must not be blank");
+        Objects.requireNonNull(
+                request.getCollectPipelineDiagnosticDetails(),
+                "collectPipelineDiagnosticDetails is required");
+
+        return clientCall(request, CollectPipelineDiagnosticResponse::builder)
+                .logger(LOG, "collectPipelineDiagnostic")
+                .serviceDetails(
+                        "GoldenGate",
+                        "CollectPipelineDiagnostic",
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Pipeline/CollectPipelineDiagnostic")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CollectPipelineDiagnosticRequest::builder)
+                .basePath("/20200407")
+                .appendPathParam("pipelines")
+                .appendPathParam(request.getPipelineId())
+                .appendPathParam("actions")
+                .appendPathParam("collectDiagnostics")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CollectPipelineDiagnosticResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", CollectPipelineDiagnosticResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -1775,6 +1851,45 @@ public class GoldenGateAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
     }
 
     @Override
+    public java.util.concurrent.Future<ListDeploymentPeersResponse> listDeploymentPeers(
+            ListDeploymentPeersRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListDeploymentPeersRequest, ListDeploymentPeersResponse>
+                    handler) {
+
+        Validate.notBlank(request.getDeploymentId(), "deploymentId must not be blank");
+
+        return clientCall(request, ListDeploymentPeersResponse::builder)
+                .logger(LOG, "listDeploymentPeers")
+                .serviceDetails(
+                        "GoldenGate",
+                        "ListDeploymentPeers",
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DeploymentPeerSummary/ListDeploymentPeers")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListDeploymentPeersRequest::builder)
+                .basePath("/20200407")
+                .appendPathParam("deployments")
+                .appendPathParam(request.getDeploymentId())
+                .appendPathParam("peers")
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.goldengate.model.DeploymentPeerCollection.class,
+                        ListDeploymentPeersResponse.Builder::deploymentPeerCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListDeploymentPeersResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListDeploymentPeersResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ListDeploymentTypesResponse> listDeploymentTypes(
             ListDeploymentTypesRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -2530,6 +2645,44 @@ public class GoldenGateAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
     }
 
     @Override
+    public java.util.concurrent.Future<RemoveDeploymentLocalPeerResponse> removeDeploymentLocalPeer(
+            RemoveDeploymentLocalPeerRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            RemoveDeploymentLocalPeerRequest, RemoveDeploymentLocalPeerResponse>
+                    handler) {
+
+        Validate.notBlank(request.getDeploymentId(), "deploymentId must not be blank");
+        Objects.requireNonNull(
+                request.getRemoveDeploymentLocalPeerDetails(),
+                "removeDeploymentLocalPeerDetails is required");
+
+        return clientCall(request, RemoveDeploymentLocalPeerResponse::builder)
+                .logger(LOG, "removeDeploymentLocalPeer")
+                .serviceDetails(
+                        "GoldenGate",
+                        "RemoveDeploymentLocalPeer",
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Deployment/RemoveDeploymentLocalPeer")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RemoveDeploymentLocalPeerRequest::builder)
+                .basePath("/20200407")
+                .appendPathParam("deployments")
+                .appendPathParam(request.getDeploymentId())
+                .appendPathParam("actions")
+                .appendPathParam("removeLocalPeer")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        RemoveDeploymentLocalPeerResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", RemoveDeploymentLocalPeerResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<RemoveDeploymentLockResponse> removeDeploymentLock(
             RemoveDeploymentLockRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -2864,6 +3017,44 @@ public class GoldenGateAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
                         "opc-work-request-id", StopPipelineResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", StopPipelineResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SwitchoverDeploymentPeerResponse> switchoverDeploymentPeer(
+            SwitchoverDeploymentPeerRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            SwitchoverDeploymentPeerRequest, SwitchoverDeploymentPeerResponse>
+                    handler) {
+
+        Validate.notBlank(request.getDeploymentId(), "deploymentId must not be blank");
+        Objects.requireNonNull(
+                request.getSwitchoverDeploymentPeerDetails(),
+                "switchoverDeploymentPeerDetails is required");
+
+        return clientCall(request, SwitchoverDeploymentPeerResponse::builder)
+                .logger(LOG, "switchoverDeploymentPeer")
+                .serviceDetails(
+                        "GoldenGate",
+                        "SwitchoverDeploymentPeer",
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Deployment/SwitchoverDeploymentPeer")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(SwitchoverDeploymentPeerRequest::builder)
+                .basePath("/20200407")
+                .appendPathParam("deployments")
+                .appendPathParam(request.getDeploymentId())
+                .appendPathParam("actions")
+                .appendPathParam("switchover")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        SwitchoverDeploymentPeerResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", SwitchoverDeploymentPeerResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
