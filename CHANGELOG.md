@@ -3,6 +3,12 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 3.63.1 - 2025-04-15
+### Added 
+- Support for applying guardrails, enabling content moderation and detection of Prompt Injection and Personally Identifiable Information (PII) in the Generative AI Inference service 
+- Support for providing customer contacts for operational notifications in the Database service   ## Fixed 
+- Fixed field shadowing in `ResourcePrincipalsV3FederationClient`, which could cause inconsistent token management
+
 ## 3.63.0 - 2025-04-08
 ### Added 
 - Support for connector source and targets with private endpoints in the Resource Scheduler service 

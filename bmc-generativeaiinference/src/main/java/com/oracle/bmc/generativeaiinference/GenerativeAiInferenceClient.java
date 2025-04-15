@@ -87,6 +87,35 @@ public class GenerativeAiInferenceClient extends com.oracle.bmc.http.internal.Ba
     }
 
     @Override
+    public ApplyGuardrailsResponse applyGuardrails(ApplyGuardrailsRequest request) {
+        Objects.requireNonNull(
+                request.getApplyGuardrailsDetails(), "applyGuardrailsDetails is required");
+
+        return clientCall(request, ApplyGuardrailsResponse::builder)
+                .logger(LOG, "applyGuardrails")
+                .serviceDetails(
+                        "GenerativeAiInference",
+                        "ApplyGuardrails",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai-inference/20231130/ApplyGuardrailsResult/ApplyGuardrails")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ApplyGuardrailsRequest::builder)
+                .basePath("/20231130")
+                .appendPathParam("actions")
+                .appendPathParam("applyGuardrails")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.generativeaiinference.model.ApplyGuardrailsResult.class,
+                        ApplyGuardrailsResponse.Builder::applyGuardrailsResult)
+                .handleResponseHeaderString(
+                        "opc-request-id", ApplyGuardrailsResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public ChatResponse chat(ChatRequest request) {
         Objects.requireNonNull(request.getChatDetails(), "chatDetails is required");
 

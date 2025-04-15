@@ -93,6 +93,23 @@ public interface GenerativeAiInference extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
+     * Applies guardrails to the input text, including content moderation, PII detection, and prompt
+     * injection protection.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeaiinference/ApplyGuardrailsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ApplyGuardrails
+     *     API.
+     */
+    ApplyGuardrailsResponse applyGuardrails(ApplyGuardrailsRequest request);
+
+    /**
      * Creates a response for the given conversation.
      *
      * @param request The request object containing the details to send

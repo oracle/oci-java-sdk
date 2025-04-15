@@ -39,7 +39,6 @@ public class ResourcePrincipalsV3FederationClient extends AbstractFederationClie
     private final ResourcePrincipalAuthenticationDetailsProvider leafAuthDetailsProvider;
     private final String resourcePrincipalTokenUrl;
     private final String resourcePrincipalSessionTokenEndpoint;
-    private volatile SecurityTokenAdapter securityTokenAdapter = null;
     private final String OPC_PARENT_RPT_URL_HEADER = "opc-parent-rpt-url";
 
     /**

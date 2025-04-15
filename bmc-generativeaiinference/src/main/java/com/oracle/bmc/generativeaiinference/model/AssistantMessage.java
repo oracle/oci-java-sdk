@@ -5,7 +5,10 @@
 package com.oracle.bmc.generativeaiinference.model;
 
 /**
- * Represents a single instance of assistant message. <br>
+ * Represents a single instance of assistant message.
+ *
+ * <p>Note: When responding to a tool call, set {@code content} to {@code null} (not {@code ""}).
+ * This ensures the model correctly processes tool call messages in multi-step interactions. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a

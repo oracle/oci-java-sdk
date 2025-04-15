@@ -97,6 +97,38 @@ public class GenerativeAiInferenceAsyncClient extends com.oracle.bmc.http.intern
     }
 
     @Override
+    public java.util.concurrent.Future<ApplyGuardrailsResponse> applyGuardrails(
+            ApplyGuardrailsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ApplyGuardrailsRequest, ApplyGuardrailsResponse>
+                    handler) {
+        Objects.requireNonNull(
+                request.getApplyGuardrailsDetails(), "applyGuardrailsDetails is required");
+
+        return clientCall(request, ApplyGuardrailsResponse::builder)
+                .logger(LOG, "applyGuardrails")
+                .serviceDetails(
+                        "GenerativeAiInference",
+                        "ApplyGuardrails",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai-inference/20231130/ApplyGuardrailsResult/ApplyGuardrails")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ApplyGuardrailsRequest::builder)
+                .basePath("/20231130")
+                .appendPathParam("actions")
+                .appendPathParam("applyGuardrails")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.generativeaiinference.model.ApplyGuardrailsResult.class,
+                        ApplyGuardrailsResponse.Builder::applyGuardrailsResult)
+                .handleResponseHeaderString(
+                        "opc-request-id", ApplyGuardrailsResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ChatResponse> chat(
             ChatRequest request,
             final com.oracle.bmc.responses.AsyncHandler<ChatRequest, ChatResponse> handler) {
