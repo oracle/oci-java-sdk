@@ -510,6 +510,35 @@ public final class CohereChatRequest extends BaseChatRequest {
             this.__explicitlySet__.add("citationQuality");
             return this;
         }
+        /**
+         * Used to select the safety instruction inserted into the prompt. When selected CONTEXTUAL
+         * mode, It is appropriate for wide-ranging interactions with fewer constraints on output
+         * while maintaining core protections by rejecting harmful or illegal suggestions. When
+         * selected STRICT mode, it aims to avoid all sensitive topics, such as violent or sexual
+         * acts and profanity. When selected OFF, the safety instruction will be omitted. Note: This
+         * parameter is only compatible with models Command R 08-2024, Command R+ 08-2024 and newer.
+         * Also, command-r7b-12-2024 only supports "CONTEXTUAL" and "STRICT" modes.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("safetyMode")
+        private SafetyMode safetyMode;
+
+        /**
+         * Used to select the safety instruction inserted into the prompt. When selected CONTEXTUAL
+         * mode, It is appropriate for wide-ranging interactions with fewer constraints on output
+         * while maintaining core protections by rejecting harmful or illegal suggestions. When
+         * selected STRICT mode, it aims to avoid all sensitive topics, such as violent or sexual
+         * acts and profanity. When selected OFF, the safety instruction will be omitted. Note: This
+         * parameter is only compatible with models Command R 08-2024, Command R+ 08-2024 and newer.
+         * Also, command-r7b-12-2024 only supports "CONTEXTUAL" and "STRICT" modes.
+         *
+         * @param safetyMode the value to set
+         * @return this builder
+         */
+        public Builder safetyMode(SafetyMode safetyMode) {
+            this.safetyMode = safetyMode;
+            this.__explicitlySet__.add("safetyMode");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -539,7 +568,8 @@ public final class CohereChatRequest extends BaseChatRequest {
                             this.isForceSingleStep,
                             this.stopSequences,
                             this.isRawPrompting,
-                            this.citationQuality);
+                            this.citationQuality,
+                            this.safetyMode);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -617,6 +647,9 @@ public final class CohereChatRequest extends BaseChatRequest {
             if (model.wasPropertyExplicitlySet("citationQuality")) {
                 this.citationQuality(model.getCitationQuality());
             }
+            if (model.wasPropertyExplicitlySet("safetyMode")) {
+                this.safetyMode(model.getSafetyMode());
+            }
             return this;
         }
     }
@@ -654,7 +687,8 @@ public final class CohereChatRequest extends BaseChatRequest {
             Boolean isForceSingleStep,
             java.util.List<String> stopSequences,
             Boolean isRawPrompting,
-            CitationQuality citationQuality) {
+            CitationQuality citationQuality,
+            SafetyMode safetyMode) {
         super();
         this.message = message;
         this.chatHistory = chatHistory;
@@ -679,6 +713,7 @@ public final class CohereChatRequest extends BaseChatRequest {
         this.stopSequences = stopSequences;
         this.isRawPrompting = isRawPrompting;
         this.citationQuality = citationQuality;
+        this.safetyMode = safetyMode;
     }
 
     /** The text that the user inputs for the model to respond to. */
@@ -1183,6 +1218,75 @@ public final class CohereChatRequest extends BaseChatRequest {
         return citationQuality;
     }
 
+    /**
+     * Used to select the safety instruction inserted into the prompt. When selected CONTEXTUAL
+     * mode, It is appropriate for wide-ranging interactions with fewer constraints on output while
+     * maintaining core protections by rejecting harmful or illegal suggestions. When selected
+     * STRICT mode, it aims to avoid all sensitive topics, such as violent or sexual acts and
+     * profanity. When selected OFF, the safety instruction will be omitted. Note: This parameter is
+     * only compatible with models Command R 08-2024, Command R+ 08-2024 and newer. Also,
+     * command-r7b-12-2024 only supports "CONTEXTUAL" and "STRICT" modes.
+     */
+    public enum SafetyMode implements com.oracle.bmc.http.internal.BmcEnum {
+        Contextual("CONTEXTUAL"),
+        Strict("STRICT"),
+        Off("OFF"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, SafetyMode> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (SafetyMode v : SafetyMode.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        SafetyMode(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static SafetyMode create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid SafetyMode: " + key);
+        }
+    };
+    /**
+     * Used to select the safety instruction inserted into the prompt. When selected CONTEXTUAL
+     * mode, It is appropriate for wide-ranging interactions with fewer constraints on output while
+     * maintaining core protections by rejecting harmful or illegal suggestions. When selected
+     * STRICT mode, it aims to avoid all sensitive topics, such as violent or sexual acts and
+     * profanity. When selected OFF, the safety instruction will be omitted. Note: This parameter is
+     * only compatible with models Command R 08-2024, Command R+ 08-2024 and newer. Also,
+     * command-r7b-12-2024 only supports "CONTEXTUAL" and "STRICT" modes.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("safetyMode")
+    private final SafetyMode safetyMode;
+
+    /**
+     * Used to select the safety instruction inserted into the prompt. When selected CONTEXTUAL
+     * mode, It is appropriate for wide-ranging interactions with fewer constraints on output while
+     * maintaining core protections by rejecting harmful or illegal suggestions. When selected
+     * STRICT mode, it aims to avoid all sensitive topics, such as violent or sexual acts and
+     * profanity. When selected OFF, the safety instruction will be omitted. Note: This parameter is
+     * only compatible with models Command R 08-2024, Command R+ 08-2024 and newer. Also,
+     * command-r7b-12-2024 only supports "CONTEXTUAL" and "STRICT" modes.
+     *
+     * @return the value
+     */
+    public SafetyMode getSafetyMode() {
+        return safetyMode;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1221,6 +1325,7 @@ public final class CohereChatRequest extends BaseChatRequest {
         sb.append(", stopSequences=").append(String.valueOf(this.stopSequences));
         sb.append(", isRawPrompting=").append(String.valueOf(this.isRawPrompting));
         sb.append(", citationQuality=").append(String.valueOf(this.citationQuality));
+        sb.append(", safetyMode=").append(String.valueOf(this.safetyMode));
         sb.append(")");
         return sb.toString();
     }
@@ -1258,6 +1363,7 @@ public final class CohereChatRequest extends BaseChatRequest {
                 && java.util.Objects.equals(this.stopSequences, other.stopSequences)
                 && java.util.Objects.equals(this.isRawPrompting, other.isRawPrompting)
                 && java.util.Objects.equals(this.citationQuality, other.citationQuality)
+                && java.util.Objects.equals(this.safetyMode, other.safetyMode)
                 && super.equals(other);
     }
 
@@ -1312,6 +1418,7 @@ public final class CohereChatRequest extends BaseChatRequest {
         result =
                 (result * PRIME)
                         + (this.citationQuality == null ? 43 : this.citationQuality.hashCode());
+        result = (result * PRIME) + (this.safetyMode == null ? 43 : this.safetyMode.hashCode());
         return result;
     }
 }

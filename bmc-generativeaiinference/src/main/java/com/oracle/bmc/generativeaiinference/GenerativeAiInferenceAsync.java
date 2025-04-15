@@ -90,6 +90,22 @@ public interface GenerativeAiInferenceAsync extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
+     * Applies guardrails to the input text, including content moderation, PII detection, and prompt
+     * injection protection.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ApplyGuardrailsResponse> applyGuardrails(
+            ApplyGuardrailsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ApplyGuardrailsRequest, ApplyGuardrailsResponse>
+                    handler);
+
+    /**
      * Creates a response for the given conversation.
      *
      * @param request The request object containing the details to send

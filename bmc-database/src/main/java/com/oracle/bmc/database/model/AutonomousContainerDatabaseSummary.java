@@ -30,6 +30,7 @@ public final class AutonomousContainerDatabaseSummary
         "id",
         "compartmentId",
         "displayName",
+        "customerContacts",
         "dbUniqueName",
         "dbName",
         "serviceLevelAgreementType",
@@ -89,6 +90,7 @@ public final class AutonomousContainerDatabaseSummary
             String id,
             String compartmentId,
             String displayName,
+            java.util.List<CustomerContact> customerContacts,
             String dbUniqueName,
             String dbName,
             ServiceLevelAgreementType serviceLevelAgreementType,
@@ -148,6 +150,7 @@ public final class AutonomousContainerDatabaseSummary
         this.id = id;
         this.compartmentId = compartmentId;
         this.displayName = displayName;
+        this.customerContacts = customerContacts;
         this.dbUniqueName = dbUniqueName;
         this.dbName = dbName;
         this.serviceLevelAgreementType = serviceLevelAgreementType;
@@ -250,6 +253,21 @@ public final class AutonomousContainerDatabaseSummary
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
+            return this;
+        }
+        /** Customer Contacts. Setting this to an empty list removes all customer contacts. */
+        @com.fasterxml.jackson.annotation.JsonProperty("customerContacts")
+        private java.util.List<CustomerContact> customerContacts;
+
+        /**
+         * Customer Contacts. Setting this to an empty list removes all customer contacts.
+         *
+         * @param customerContacts the value to set
+         * @return this builder
+         */
+        public Builder customerContacts(java.util.List<CustomerContact> customerContacts) {
+            this.customerContacts = customerContacts;
+            this.__explicitlySet__.add("customerContacts");
             return this;
         }
         /**
@@ -1235,6 +1253,7 @@ public final class AutonomousContainerDatabaseSummary
                             this.id,
                             this.compartmentId,
                             this.displayName,
+                            this.customerContacts,
                             this.dbUniqueName,
                             this.dbName,
                             this.serviceLevelAgreementType,
@@ -1305,6 +1324,9 @@ public final class AutonomousContainerDatabaseSummary
             }
             if (model.wasPropertyExplicitlySet("displayName")) {
                 this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("customerContacts")) {
+                this.customerContacts(model.getCustomerContacts());
             }
             if (model.wasPropertyExplicitlySet("dbUniqueName")) {
                 this.dbUniqueName(model.getDbUniqueName());
@@ -1521,6 +1543,19 @@ public final class AutonomousContainerDatabaseSummary
      */
     public String getDisplayName() {
         return displayName;
+    }
+
+    /** Customer Contacts. Setting this to an empty list removes all customer contacts. */
+    @com.fasterxml.jackson.annotation.JsonProperty("customerContacts")
+    private final java.util.List<CustomerContact> customerContacts;
+
+    /**
+     * Customer Contacts. Setting this to an empty list removes all customer contacts.
+     *
+     * @return the value
+     */
+    public java.util.List<CustomerContact> getCustomerContacts() {
+        return customerContacts;
     }
 
     /**
@@ -2833,6 +2868,7 @@ public final class AutonomousContainerDatabaseSummary
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", customerContacts=").append(String.valueOf(this.customerContacts));
         sb.append(", dbUniqueName=").append(String.valueOf(this.dbUniqueName));
         sb.append(", dbName=").append(String.valueOf(this.dbName));
         sb.append(", serviceLevelAgreementType=")
@@ -2915,6 +2951,7 @@ public final class AutonomousContainerDatabaseSummary
         return java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.customerContacts, other.customerContacts)
                 && java.util.Objects.equals(this.dbUniqueName, other.dbUniqueName)
                 && java.util.Objects.equals(this.dbName, other.dbName)
                 && java.util.Objects.equals(
@@ -2996,6 +3033,9 @@ public final class AutonomousContainerDatabaseSummary
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.customerContacts == null ? 43 : this.customerContacts.hashCode());
         result = (result * PRIME) + (this.dbUniqueName == null ? 43 : this.dbUniqueName.hashCode());
         result = (result * PRIME) + (this.dbName == null ? 43 : this.dbName.hashCode());
         result =

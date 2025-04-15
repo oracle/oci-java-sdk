@@ -52,7 +52,7 @@ public abstract class AbstractFederationClient
 
     protected final SessionKeySupplier sessionKeySupplier;
 
-    private volatile SecurityTokenAdapter securityTokenAdapter = null;
+    protected volatile SecurityTokenAdapter securityTokenAdapter = null;
 
     protected final ClientConfigurator clientConfigurator;
     protected final List<ClientConfigurator> additionalClientConfigurator;
