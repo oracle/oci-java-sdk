@@ -114,6 +114,7 @@ public class DrgAttachmentNetworkDetails
         IpsecTunnel("IPSEC_TUNNEL"),
         VirtualCircuit("VIRTUAL_CIRCUIT"),
         RemotePeeringConnection("REMOTE_PEERING_CONNECTION"),
+        Loopback("LOOPBACK"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by
