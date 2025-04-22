@@ -33,6 +33,19 @@ public class GetClusterRequest extends com.oracle.bmc.requests.BmcRequest<java.l
     public String getOpcRequestId() {
         return opcRequestId;
     }
+    /**
+     * Boolean value to determine if the OpenIdConnectAuth configuration file should be displayed
+     * for the provided cluster.
+     */
+    private Boolean shouldIncludeOidcConfigFile;
+
+    /**
+     * Boolean value to determine if the OpenIdConnectAuth configuration file should be displayed
+     * for the provided cluster.
+     */
+    public Boolean getShouldIncludeOidcConfigFile() {
+        return shouldIncludeOidcConfigFile;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -73,6 +86,24 @@ public class GetClusterRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         }
 
         /**
+         * Boolean value to determine if the OpenIdConnectAuth configuration file should be
+         * displayed for the provided cluster.
+         */
+        private Boolean shouldIncludeOidcConfigFile = null;
+
+        /**
+         * Boolean value to determine if the OpenIdConnectAuth configuration file should be
+         * displayed for the provided cluster.
+         *
+         * @param shouldIncludeOidcConfigFile the value to set
+         * @return this builder instance
+         */
+        public Builder shouldIncludeOidcConfigFile(Boolean shouldIncludeOidcConfigFile) {
+            this.shouldIncludeOidcConfigFile = shouldIncludeOidcConfigFile;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          *
          * @param invocationCallback the invocation callback to be set for the request
@@ -104,6 +135,7 @@ public class GetClusterRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         public Builder copy(GetClusterRequest o) {
             clusterId(o.getClusterId());
             opcRequestId(o.getOpcRequestId());
+            shouldIncludeOidcConfigFile(o.getShouldIncludeOidcConfigFile());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -140,8 +172,9 @@ public class GetClusterRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             GetClusterRequest request = new GetClusterRequest();
             request.clusterId = clusterId;
             request.opcRequestId = opcRequestId;
+            request.shouldIncludeOidcConfigFile = shouldIncludeOidcConfigFile;
             return request;
-            // new GetClusterRequest(clusterId, opcRequestId);
+            // new GetClusterRequest(clusterId, opcRequestId, shouldIncludeOidcConfigFile);
         }
     }
 
@@ -151,7 +184,10 @@ public class GetClusterRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
-        return new Builder().clusterId(clusterId).opcRequestId(opcRequestId);
+        return new Builder()
+                .clusterId(clusterId)
+                .opcRequestId(opcRequestId)
+                .shouldIncludeOidcConfigFile(shouldIncludeOidcConfigFile);
     }
 
     /**
@@ -170,6 +206,8 @@ public class GetClusterRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         sb.append("super=").append(super.toString());
         sb.append(",clusterId=").append(String.valueOf(this.clusterId));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",shouldIncludeOidcConfigFile=")
+                .append(String.valueOf(this.shouldIncludeOidcConfigFile));
         sb.append(")");
         return sb.toString();
     }
@@ -186,7 +224,9 @@ public class GetClusterRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         GetClusterRequest other = (GetClusterRequest) o;
         return super.equals(o)
                 && java.util.Objects.equals(this.clusterId, other.clusterId)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(
+                        this.shouldIncludeOidcConfigFile, other.shouldIncludeOidcConfigFile);
     }
 
     @Override
@@ -195,6 +235,11 @@ public class GetClusterRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         int result = super.hashCode();
         result = (result * PRIME) + (this.clusterId == null ? 43 : this.clusterId.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.shouldIncludeOidcConfigFile == null
+                                ? 43
+                                : this.shouldIncludeOidcConfigFile.hashCode());
         return result;
     }
 }

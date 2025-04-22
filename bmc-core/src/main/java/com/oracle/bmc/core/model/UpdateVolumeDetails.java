@@ -31,7 +31,8 @@ public final class UpdateVolumeDetails
         "sizeInGBs",
         "isAutoTuneEnabled",
         "blockVolumeReplicas",
-        "autotunePolicies"
+        "autotunePolicies",
+        "isReservationsEnabled"
     })
     public UpdateVolumeDetails(
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
@@ -41,7 +42,8 @@ public final class UpdateVolumeDetails
             Long sizeInGBs,
             Boolean isAutoTuneEnabled,
             java.util.List<BlockVolumeReplicaDetails> blockVolumeReplicas,
-            java.util.List<AutotunePolicy> autotunePolicies) {
+            java.util.List<AutotunePolicy> autotunePolicies,
+            Boolean isReservationsEnabled) {
         super();
         this.definedTags = definedTags;
         this.displayName = displayName;
@@ -51,6 +53,7 @@ public final class UpdateVolumeDetails
         this.isAutoTuneEnabled = isAutoTuneEnabled;
         this.blockVolumeReplicas = blockVolumeReplicas;
         this.autotunePolicies = autotunePolicies;
+        this.isReservationsEnabled = isReservationsEnabled;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -245,6 +248,25 @@ public final class UpdateVolumeDetails
             this.__explicitlySet__.add("autotunePolicies");
             return this;
         }
+        /**
+         * Reservations-enabled is a boolean field that allows to enable PR (Persistent Reservation)
+         * on a volume.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isReservationsEnabled")
+        private Boolean isReservationsEnabled;
+
+        /**
+         * Reservations-enabled is a boolean field that allows to enable PR (Persistent Reservation)
+         * on a volume.
+         *
+         * @param isReservationsEnabled the value to set
+         * @return this builder
+         */
+        public Builder isReservationsEnabled(Boolean isReservationsEnabled) {
+            this.isReservationsEnabled = isReservationsEnabled;
+            this.__explicitlySet__.add("isReservationsEnabled");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -259,7 +281,8 @@ public final class UpdateVolumeDetails
                             this.sizeInGBs,
                             this.isAutoTuneEnabled,
                             this.blockVolumeReplicas,
-                            this.autotunePolicies);
+                            this.autotunePolicies,
+                            this.isReservationsEnabled);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -291,6 +314,9 @@ public final class UpdateVolumeDetails
             }
             if (model.wasPropertyExplicitlySet("autotunePolicies")) {
                 this.autotunePolicies(model.getAutotunePolicies());
+            }
+            if (model.wasPropertyExplicitlySet("isReservationsEnabled")) {
+                this.isReservationsEnabled(model.getIsReservationsEnabled());
             }
             return this;
         }
@@ -477,6 +503,23 @@ public final class UpdateVolumeDetails
         return autotunePolicies;
     }
 
+    /**
+     * Reservations-enabled is a boolean field that allows to enable PR (Persistent Reservation) on
+     * a volume.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isReservationsEnabled")
+    private final Boolean isReservationsEnabled;
+
+    /**
+     * Reservations-enabled is a boolean field that allows to enable PR (Persistent Reservation) on
+     * a volume.
+     *
+     * @return the value
+     */
+    public Boolean getIsReservationsEnabled() {
+        return isReservationsEnabled;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -500,6 +543,7 @@ public final class UpdateVolumeDetails
         sb.append(", isAutoTuneEnabled=").append(String.valueOf(this.isAutoTuneEnabled));
         sb.append(", blockVolumeReplicas=").append(String.valueOf(this.blockVolumeReplicas));
         sb.append(", autotunePolicies=").append(String.valueOf(this.autotunePolicies));
+        sb.append(", isReservationsEnabled=").append(String.valueOf(this.isReservationsEnabled));
         sb.append(")");
         return sb.toString();
     }
@@ -522,6 +566,7 @@ public final class UpdateVolumeDetails
                 && java.util.Objects.equals(this.isAutoTuneEnabled, other.isAutoTuneEnabled)
                 && java.util.Objects.equals(this.blockVolumeReplicas, other.blockVolumeReplicas)
                 && java.util.Objects.equals(this.autotunePolicies, other.autotunePolicies)
+                && java.util.Objects.equals(this.isReservationsEnabled, other.isReservationsEnabled)
                 && super.equals(other);
     }
 
@@ -545,6 +590,11 @@ public final class UpdateVolumeDetails
         result =
                 (result * PRIME)
                         + (this.autotunePolicies == null ? 43 : this.autotunePolicies.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isReservationsEnabled == null
+                                ? 43
+                                : this.isReservationsEnabled.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

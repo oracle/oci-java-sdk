@@ -632,6 +632,8 @@ public class ContainerEngineClient extends com.oracle.bmc.http.internal.BaseSync
                 .basePath("/20180222")
                 .appendPathParam("clusters")
                 .appendPathParam(request.getClusterId())
+                .appendQueryParam(
+                        "shouldIncludeOidcConfigFile", request.getShouldIncludeOidcConfigFile())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
@@ -1325,6 +1327,82 @@ public class ContainerEngineClient extends com.oracle.bmc.http.internal.BaseSync
                         "opc-next-page", ListWorkloadMappingsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListWorkloadMappingsResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public RebootClusterNodeResponse rebootClusterNode(RebootClusterNodeRequest request) {
+
+        Validate.notBlank(request.getClusterId(), "clusterId must not be blank");
+
+        Validate.notBlank(request.getNodeId(), "nodeId must not be blank");
+        Objects.requireNonNull(
+                request.getRebootClusterNodeDetails(), "rebootClusterNodeDetails is required");
+
+        return clientCall(request, RebootClusterNodeResponse::builder)
+                .logger(LOG, "rebootClusterNode")
+                .serviceDetails(
+                        "ContainerEngine",
+                        "RebootClusterNode",
+                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/Cluster/RebootClusterNode")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RebootClusterNodeRequest::builder)
+                .basePath("/20180222")
+                .appendPathParam("clusters")
+                .appendPathParam(request.getClusterId())
+                .appendPathParam("nodes")
+                .appendPathParam(request.getNodeId())
+                .appendPathParam("actions")
+                .appendPathParam("reboot")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", RebootClusterNodeResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", RebootClusterNodeResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ReplaceBootVolumeClusterNodeResponse replaceBootVolumeClusterNode(
+            ReplaceBootVolumeClusterNodeRequest request) {
+
+        Validate.notBlank(request.getClusterId(), "clusterId must not be blank");
+
+        Validate.notBlank(request.getNodeId(), "nodeId must not be blank");
+        Objects.requireNonNull(
+                request.getReplaceBootVolumeClusterNodeDetails(),
+                "replaceBootVolumeClusterNodeDetails is required");
+
+        return clientCall(request, ReplaceBootVolumeClusterNodeResponse::builder)
+                .logger(LOG, "replaceBootVolumeClusterNode")
+                .serviceDetails(
+                        "ContainerEngine",
+                        "ReplaceBootVolumeClusterNode",
+                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/Cluster/ReplaceBootVolumeClusterNode")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ReplaceBootVolumeClusterNodeRequest::builder)
+                .basePath("/20180222")
+                .appendPathParam("clusters")
+                .appendPathParam(request.getClusterId())
+                .appendPathParam("nodes")
+                .appendPathParam(request.getNodeId())
+                .appendPathParam("actions")
+                .appendPathParam("replaceBootVolume")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ReplaceBootVolumeClusterNodeResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ReplaceBootVolumeClusterNodeResponse.Builder::opcRequestId)
                 .callSync();
     }
 

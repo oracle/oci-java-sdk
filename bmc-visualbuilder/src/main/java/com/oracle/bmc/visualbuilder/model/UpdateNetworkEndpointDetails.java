@@ -25,6 +25,9 @@ package com.oracle.bmc.visualbuilder.model;
         defaultImpl = UpdateNetworkEndpointDetails.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = UpdatePublicEndpointDetails.class,
+            name = "PUBLIC"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = UpdatePrivateEndpointDetails.class,
             name = "PRIVATE")
 })

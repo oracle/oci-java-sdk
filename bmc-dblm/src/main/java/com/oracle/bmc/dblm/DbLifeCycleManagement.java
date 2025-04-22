@@ -80,6 +80,22 @@ public interface DbLifeCycleManagement extends AutoCloseable {
     CreateVulnerabilityScanResponse createVulnerabilityScan(CreateVulnerabilityScanRequest request);
 
     /**
+     * Overview of Patch Management.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dblm/GetPatchManagementExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPatchManagement
+     *     API.
+     */
+    GetPatchManagementResponse getPatchManagement(GetPatchManagementRequest request);
+
+    /**
      * Gets a Vulnerability
      *
      * @param request The request object containing the details to send
@@ -142,6 +158,21 @@ public interface DbLifeCycleManagement extends AutoCloseable {
      */
     ListAggregatedVulnerabilityDataResponse listAggregatedVulnerabilityData(
             ListAggregatedVulnerabilityDataRequest request);
+
+    /**
+     * Gets the list of databases
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dblm/ListDatabasesExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDatabases API.
+     */
+    ListDatabasesResponse listDatabases(ListDatabasesRequest request);
 
     /**
      * List of notifications

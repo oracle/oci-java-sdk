@@ -25,6 +25,8 @@ public enum WorkRequestOperationType implements com.oracle.bmc.http.internal.Bmc
     UpdateAddon("UPDATE_ADDON"),
     DisableAddon("DISABLE_ADDON"),
     ReconcileAddon("RECONCILE_ADDON"),
+    ClusterNodeReboot("CLUSTER_NODE_REBOOT"),
+    ClusterNodeReplaceBootVolume("CLUSTER_NODE_REPLACE_BOOT_VOLUME"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

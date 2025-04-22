@@ -7,6 +7,7 @@ package com.oracle.bmc.visualbuilder.model;
 /** Public/Private endpoint access type. */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210601")
 public enum NetworkEndpointType implements com.oracle.bmc.http.internal.BmcEnum {
+    Public("PUBLIC"),
     Private("PRIVATE"),
 
     /**
