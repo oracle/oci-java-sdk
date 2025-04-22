@@ -26,7 +26,10 @@ package com.oracle.bmc.visualbuilder.model;
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = PrivateEndpointDetails.class,
-            name = "PRIVATE")
+            name = "PRIVATE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = PublicEndpointDetails.class,
+            name = "PUBLIC")
 })
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)

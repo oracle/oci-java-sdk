@@ -42,6 +42,120 @@ public class DbLifeCycleManagementPaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listDatabases
+     * operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListDatabasesResponse> listDatabasesResponseIterator(
+            final ListDatabasesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListDatabasesRequest.Builder, ListDatabasesRequest, ListDatabasesResponse>(
+                new java.util.function.Supplier<ListDatabasesRequest.Builder>() {
+                    @Override
+                    public ListDatabasesRequest.Builder get() {
+                        return ListDatabasesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListDatabasesResponse, String>() {
+                    @Override
+                    public String apply(ListDatabasesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListDatabasesRequest.Builder>,
+                        ListDatabasesRequest>() {
+                    @Override
+                    public ListDatabasesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListDatabasesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListDatabasesRequest, ListDatabasesResponse>() {
+                    @Override
+                    public ListDatabasesResponse apply(ListDatabasesRequest request) {
+                        return client.listDatabases(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.dblm.model.DatabasesSummary} objects contained in responses from the
+     * listDatabases operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.dblm.model.DatabasesSummary} objects contained in responses received from
+     *     the service.
+     */
+    public Iterable<com.oracle.bmc.dblm.model.DatabasesSummary> listDatabasesRecordIterator(
+            final ListDatabasesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListDatabasesRequest.Builder,
+                ListDatabasesRequest,
+                ListDatabasesResponse,
+                com.oracle.bmc.dblm.model.DatabasesSummary>(
+                new java.util.function.Supplier<ListDatabasesRequest.Builder>() {
+                    @Override
+                    public ListDatabasesRequest.Builder get() {
+                        return ListDatabasesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListDatabasesResponse, String>() {
+                    @Override
+                    public String apply(ListDatabasesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListDatabasesRequest.Builder>,
+                        ListDatabasesRequest>() {
+                    @Override
+                    public ListDatabasesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListDatabasesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListDatabasesRequest, ListDatabasesResponse>() {
+                    @Override
+                    public ListDatabasesResponse apply(ListDatabasesRequest request) {
+                        return client.listDatabases(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListDatabasesResponse,
+                        java.util.List<com.oracle.bmc.dblm.model.DatabasesSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.dblm.model.DatabasesSummary> apply(
+                            ListDatabasesResponse response) {
+                        return response.getPatchDatabasesCollection().getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the
      * listVulnerabilities operation. This iterable will fetch more data from the server as needed.
      *

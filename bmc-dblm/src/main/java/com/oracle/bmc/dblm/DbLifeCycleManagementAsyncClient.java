@@ -134,6 +134,39 @@ public class DbLifeCycleManagementAsyncClient extends com.oracle.bmc.http.intern
     }
 
     @Override
+    public java.util.concurrent.Future<GetPatchManagementResponse> getPatchManagement(
+            GetPatchManagementRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetPatchManagementRequest, GetPatchManagementResponse>
+                    handler) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, GetPatchManagementResponse::builder)
+                .logger(LOG, "getPatchManagement")
+                .serviceDetails("DbLifeCycleManagement", "GetPatchManagement", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetPatchManagementRequest::builder)
+                .basePath("/20240102")
+                .appendPathParam("patchManagement")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("databaseRelease", request.getDatabaseRelease())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam(
+                        "timeStartedGreaterThanOrEqualTo",
+                        request.getTimeStartedGreaterThanOrEqualTo())
+                .appendQueryParam("timeStartedLessThan", request.getTimeStartedLessThan())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.dblm.model.DblmPatchManagement.class,
+                        GetPatchManagementResponse.Builder::dblmPatchManagement)
+                .handleResponseHeaderString("etag", GetPatchManagementResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetPatchManagementResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<GetVulnerabilityResponse> getVulnerability(
             GetVulnerabilityRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -256,6 +289,48 @@ public class DbLifeCycleManagementAsyncClient extends com.oracle.bmc.http.intern
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ListAggregatedVulnerabilityDataResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDatabasesResponse> listDatabases(
+            ListDatabasesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<ListDatabasesRequest, ListDatabasesResponse>
+                    handler) {
+
+        return clientCall(request, ListDatabasesResponse::builder)
+                .logger(LOG, "listDatabases")
+                .serviceDetails("DbLifeCycleManagement", "ListDatabases", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListDatabasesRequest::builder)
+                .basePath("/20240102")
+                .appendPathParam("patchManagement")
+                .appendPathParam("databases")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("databaseRelease", request.getDatabaseRelease())
+                .appendEnumQueryParam("databaseType", request.getDatabaseType())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendQueryParam("imageId", request.getImageId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("drifterPatchId", request.getDrifterPatchId())
+                .appendEnumQueryParam("imageCompliance", request.getImageCompliance())
+                .appendListQueryParam(
+                        "severityType",
+                        request.getSeverityType(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.dblm.model.PatchDatabasesCollection.class,
+                        ListDatabasesResponse.Builder::patchDatabasesCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListDatabasesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListDatabasesResponse.Builder::opcNextPage)
                 .callAsync(handler);
     }
 

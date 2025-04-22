@@ -648,6 +648,39 @@ public interface ContainerEngine extends AutoCloseable {
     ListWorkloadMappingsResponse listWorkloadMappings(ListWorkloadMappingsRequest request);
 
     /**
+     * perform reboot action to node in cluster
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerengine/RebootClusterNodeExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use RebootClusterNode
+     *     API.
+     */
+    RebootClusterNodeResponse rebootClusterNode(RebootClusterNodeRequest request);
+
+    /**
+     * perform cycle action to node in cluster
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerengine/ReplaceBootVolumeClusterNodeExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ReplaceBootVolumeClusterNode API.
+     */
+    ReplaceBootVolumeClusterNodeResponse replaceBootVolumeClusterNode(
+            ReplaceBootVolumeClusterNodeRequest request);
+
+    /**
      * Start cluster credential rotation by adding new credentials, old credentials will still work
      * after this operation.
      *

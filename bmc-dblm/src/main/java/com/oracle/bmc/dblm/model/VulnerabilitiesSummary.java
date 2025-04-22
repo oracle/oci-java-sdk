@@ -57,12 +57,12 @@ public final class VulnerabilitiesSummary
             this.__explicitlySet__.add("total");
             return this;
         }
-        /** Cummulative number of resources that have critical level vulnerabilities. */
+        /** Cumulative number of resources that have critical level vulnerabilities. */
         @com.fasterxml.jackson.annotation.JsonProperty("critical")
         private Integer critical;
 
         /**
-         * Cummulative number of resources that have critical level vulnerabilities.
+         * Cumulative number of resources that have critical level vulnerabilities.
          *
          * @param critical the value to set
          * @return this builder
@@ -72,12 +72,12 @@ public final class VulnerabilitiesSummary
             this.__explicitlySet__.add("critical");
             return this;
         }
-        /** Cummulative number of resources that have high level vulnerabilities. */
+        /** Cumulative number of resources that have high level vulnerabilities. */
         @com.fasterxml.jackson.annotation.JsonProperty("high")
         private Integer high;
 
         /**
-         * Cummulative number of resources that have high level vulnerabilities.
+         * Cumulative number of resources that have high level vulnerabilities.
          *
          * @param high the value to set
          * @return this builder
@@ -87,12 +87,12 @@ public final class VulnerabilitiesSummary
             this.__explicitlySet__.add("high");
             return this;
         }
-        /** Cummulative number of resources that have medium level vulnerabilities. */
+        /** Cumulative number of resources that have medium level vulnerabilities. */
         @com.fasterxml.jackson.annotation.JsonProperty("medium")
         private Integer medium;
 
         /**
-         * Cummulative number of resources that have medium level vulnerabilities.
+         * Cumulative number of resources that have medium level vulnerabilities.
          *
          * @param medium the value to set
          * @return this builder
@@ -102,12 +102,12 @@ public final class VulnerabilitiesSummary
             this.__explicitlySet__.add("medium");
             return this;
         }
-        /** Cummulative number of resources that have info level vulnerabilities. */
+        /** Cumulative number of resources that have info level vulnerabilities. */
         @com.fasterxml.jackson.annotation.JsonProperty("info")
         private Integer info;
 
         /**
-         * Cummulative number of resources that have info level vulnerabilities.
+         * Cumulative number of resources that have info level vulnerabilities.
          *
          * @param info the value to set
          * @return this builder
@@ -117,12 +117,12 @@ public final class VulnerabilitiesSummary
             this.__explicitlySet__.add("info");
             return this;
         }
-        /** Cummulative number of resources that have low level vulnerabilities. */
+        /** Cumulative number of resources that have low level vulnerabilities. */
         @com.fasterxml.jackson.annotation.JsonProperty("low")
         private Integer low;
 
         /**
-         * Cummulative number of resources that have low level vulnerabilities.
+         * Cumulative number of resources that have low level vulnerabilities.
          *
          * @param low the value to set
          * @return this builder
@@ -192,12 +192,12 @@ public final class VulnerabilitiesSummary
         return total;
     }
 
-    /** Cummulative number of resources that have critical level vulnerabilities. */
+    /** Cumulative number of resources that have critical level vulnerabilities. */
     @com.fasterxml.jackson.annotation.JsonProperty("critical")
     private final Integer critical;
 
     /**
-     * Cummulative number of resources that have critical level vulnerabilities.
+     * Cumulative number of resources that have critical level vulnerabilities.
      *
      * @return the value
      */
@@ -205,12 +205,12 @@ public final class VulnerabilitiesSummary
         return critical;
     }
 
-    /** Cummulative number of resources that have high level vulnerabilities. */
+    /** Cumulative number of resources that have high level vulnerabilities. */
     @com.fasterxml.jackson.annotation.JsonProperty("high")
     private final Integer high;
 
     /**
-     * Cummulative number of resources that have high level vulnerabilities.
+     * Cumulative number of resources that have high level vulnerabilities.
      *
      * @return the value
      */
@@ -218,12 +218,12 @@ public final class VulnerabilitiesSummary
         return high;
     }
 
-    /** Cummulative number of resources that have medium level vulnerabilities. */
+    /** Cumulative number of resources that have medium level vulnerabilities. */
     @com.fasterxml.jackson.annotation.JsonProperty("medium")
     private final Integer medium;
 
     /**
-     * Cummulative number of resources that have medium level vulnerabilities.
+     * Cumulative number of resources that have medium level vulnerabilities.
      *
      * @return the value
      */
@@ -231,12 +231,12 @@ public final class VulnerabilitiesSummary
         return medium;
     }
 
-    /** Cummulative number of resources that have info level vulnerabilities. */
+    /** Cumulative number of resources that have info level vulnerabilities. */
     @com.fasterxml.jackson.annotation.JsonProperty("info")
     private final Integer info;
 
     /**
-     * Cummulative number of resources that have info level vulnerabilities.
+     * Cumulative number of resources that have info level vulnerabilities.
      *
      * @return the value
      */
@@ -244,12 +244,12 @@ public final class VulnerabilitiesSummary
         return info;
     }
 
-    /** Cummulative number of resources that have low level vulnerabilities. */
+    /** Cumulative number of resources that have low level vulnerabilities. */
     @com.fasterxml.jackson.annotation.JsonProperty("low")
     private final Integer low;
 
     /**
-     * Cummulative number of resources that have low level vulnerabilities.
+     * Cumulative number of resources that have low level vulnerabilities.
      *
      * @return the value
      */
